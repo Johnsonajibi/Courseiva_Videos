@@ -1,7 +1,7 @@
 node_modules/
 out/
 stills/
-tts-models/
+tts-models
 topics/*/audio/
 topics/*/timing.json
 topics/*/props.json
