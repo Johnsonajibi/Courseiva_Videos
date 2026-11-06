@@ -1,11 +1,11 @@
 {
  "topic": "hsrp",
  "title": "HSRP: The Complete Beginner's Guide",
- "kicker": "BEGINNER'S GUIDE \u00b7 HSRP",
+ "kicker": "BEGINNER'S GUIDE · HSRP",
  "voice": "af_heart",
  "lang": "en-us",
  "speed": 0.95,
- "version": "1.0",
+ "version": "1.1",
  "scenes": [
   {
    "id": "hook",

@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - id: pick
         shell: bash
         run: |
@@ -31,7 +31,10 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.topics }}" != "all" ]; then
             list="${{ inputs.topics }}"
           elif [ "${{ github.event_name }}" = "push" ]; then
-            list=$( (git diff --name-only HEAD~1 HEAD -- 'topics/*/script.json' 2>/dev/null || true) | cut -d/ -f2 | sort -u | tr '\n' ' ' || true)
+            base="${{ github.event.before }}"
+            case "$base" in ""|0000000000000000000000000000000000000000) base="HEAD~1";; esac
+            git cat-file -e "$base^{commit}" 2>/dev/null || base="HEAD~1"
+            list=$( (git diff --name-only "$base" HEAD -- 'topics/*/script.json' 2>/dev/null || true) | cut -d/ -f2 | sort -u | tr '\n' ' ' || true)
             [ -z "$list" ] && list="$all"
           else
             list="$all"
@@ -79,7 +82,12 @@ jobs:
       - name: Narration audio + timing
         run: python3 -I tools/prepare.py ${{ matrix.topic }}
       - name: Render
-        run: npx remotion render src/index.ts Topic out/${{ matrix.topic }}.mp4 --props=topics/${{ matrix.topic }}/props.json --log=info
+        run: |
+          for i in 1 2 3; do
+            npx remotion render src/index.ts Topic out/${{ matrix.topic }}.mp4 --props=topics/${{ matrix.topic }}/props.json --log=info && exit 0
+            echo "render attempt $i failed, retrying"; sleep 10
+          done
+          exit 1
       - uses: actions/upload-artifact@v4
         with:
           name: video-${{ matrix.topic }}
