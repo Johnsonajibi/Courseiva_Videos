@@ -1,0 +1,110 @@
+{
+ "topic": "ipv6-addressing",
+ "title": "IPv6 Addressing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IPV6 ADDRESSING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "question",
+   "narration": "The internet ran out of version four addresses. I P version six has three hundred and forty undecillion of them. But there are different kinds, and they're easy to mix up.",
+   "lines": [
+    {
+     "t": "IPv4 ran out",
+     "cue": 0,
+     "color": "#F87171"
+    },
+    {
+     "t": "IPv6 has 340 undecillion",
+     "cue": 1
+    },
+    {
+     "t": "Different kinds, easy to mix up",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Different kinds of address",
+   "narration": "Picture one person with several addresses. Their worldwide street address works from anywhere, and it starts with two or three. Their internal company address only works inside the business, and it starts with F C or F D. Their hallway slot number only works on the same floor, and it starts with F E. And announcements to a group use multicast, which starts with F F. There's no broadcast in version six at all.",
+   "items": [
+    {
+     "icon": "map",
+     "story": "Worldwide street address",
+     "real": "Global unicast: 2000::/3",
+     "cue": 1
+    },
+    {
+     "icon": "building",
+     "story": "Internal company address",
+     "real": "Unique local: FC00::/7",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "story": "Hallway slot number",
+     "real": "Link-local: FE80::/10",
+     "cue": 3
+    },
+    {
+     "icon": "bell",
+     "story": "A group announcement",
+     "real": "Multicast: FF00::/8",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three things to remember. Link-local addresses are never routed beyond their own link. Multicast isn't broadcast by another name, because only group members listen. And anycast isn't its own prefix. It's a normal address shared by several devices.",
+   "items": [
+    {
+     "wrong": "Link-local can be routed inside a site",
+     "right": "Link-local is never routed",
+     "cue": 1
+    },
+    {
+     "wrong": "Multicast is broadcast by another name",
+     "right": "Only group members receive it",
+     "cue": 2
+    },
+    {
+     "wrong": "Anycast has its own prefix",
+     "right": "A normal address shared by many",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IPv6 addressing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Global addresses start with two or three, and work everywhere. Link-local addresses start with F E, and never leave the link. And there's no broadcast, only multicast. Ready to practise? Try the Courseiva IPv6 addressing lab.",
+   "points": [
+    {
+     "t": "Global unicast: starts with 2 or 3",
+     "cue": 1
+    },
+    {
+     "t": "Link-local: FE80, never routed",
+     "cue": 2
+    },
+    {
+     "t": "No broadcast, only multicast",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

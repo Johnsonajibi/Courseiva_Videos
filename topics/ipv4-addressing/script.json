@@ -1,0 +1,144 @@
+{
+ "topic": "ipv4-addressing",
+ "title": "IPv4 Addressing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IPV4 ADDRESSING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Every device on a network needs an address, just like a house needs a street address. An I P version four address is just four numbers with dots between them. Let's decode one.",
+   "lines": [
+    {
+     "t": "Every device needs an address",
+     "cue": 0
+    },
+    {
+     "t": "Four numbers and three dots",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Let's decode one",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Street addresses",
+   "narration": "An I P address has two parts, like a street address. The first part is the street name, which is the network. The second part is the house number, which is the host. The first number on the street is the name of the street itself, the network address. The last number is the shout to everyone, the broadcast address. Everything in between belongs to real houses.",
+   "items": [
+    {
+     "icon": "map",
+     "story": "Street name",
+     "real": "Network portion",
+     "cue": 1
+    },
+    {
+     "icon": "building",
+     "story": "House number",
+     "real": "Host portion",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "First number on the street",
+     "real": "Network address",
+     "cue": 3
+    },
+    {
+     "icon": "bell",
+     "story": "Last number: shout to all",
+     "real": "Broadcast address",
+     "cue": 4
+    },
+    {
+     "icon": "people",
+     "story": "Houses in between",
+     "real": "Usable hosts",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "The old classes",
+   "narration": "Early on, addresses came in sizes called classes. Class A starts with one to one twenty-six, and has millions of hosts. Class B starts with one twenty-eight to one ninety-one. Class C starts with one ninety-two to two twenty-three, and has two fifty-four hosts. And three private ranges are kept for use inside your own network.",
+   "lines": [
+    {
+     "t": "Class A   1 \u2013 126   /8",
+     "note": "About 16 million hosts",
+     "cue": 1
+    },
+    {
+     "t": "Class B   128 \u2013 191   /16",
+     "note": "About 65 thousand hosts",
+     "cue": 2
+    },
+    {
+     "t": "Class C   192 \u2013 223   /24",
+     "note": "254 hosts",
+     "cue": 3
+    },
+    {
+     "t": "Private: 10.x  172.16.x  192.168.x",
+     "note": "Never routed on the internet",
+     "cue": 4,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three easy mistakes. One twenty-seven is loopback, not a usable class A network. A class B network uses slash sixteen, not slash twenty-four. And private addresses never travel across the public internet.",
+   "items": [
+    {
+     "wrong": "127.x.x.x is a normal Class A network",
+     "right": "It's reserved for loopback",
+     "cue": 1
+    },
+    {
+     "wrong": "Class B default mask is /24",
+     "right": "Class B is /16; /24 is Class C",
+     "cue": 2
+    },
+    {
+     "wrong": "Private addresses route on the internet",
+     "right": "Routers drop them",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IPv4 addressing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. An I P version four address is thirty-two bits, split into network and host. Usable hosts equal two to the power of the host bits, minus two. And remember the three private ranges. Ready to practise? Try the Courseiva IPv4 addressing lab.",
+   "points": [
+    {
+     "t": "32 bits: network + host",
+     "cue": 1
+    },
+    {
+     "t": "Hosts = 2^(host bits) \u2212 2",
+     "cue": 2
+    },
+    {
+     "t": "10.x, 172.16\u201331.x, 192.168.x are private",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

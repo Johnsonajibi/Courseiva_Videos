@@ -1,0 +1,148 @@
+{
+ "topic": "etherchannel",
+ "title": "EtherChannel: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 ETHERCHANNEL",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "link",
+   "narration": "Four cables between two switches. But only one actually carries traffic. The rest are switched off to avoid a loop. What a waste.",
+   "lines": [
+    {
+     "t": "Four cables between two switches",
+     "cue": 0
+    },
+    {
+     "t": "Only one carries traffic",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "The rest are switched off",
+     "cue": 2
+    },
+    {
+     "t": "What a waste",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Merging the tollbooths",
+   "narration": "Imagine four tollbooths into the same city. Spanning tree closes three of them to stop loops. EtherChannel merges all four into one super booth with four lanes. To the rest of the network, it looks like a single link. Cars are assigned a lane by a hash of who they are and where they're going. So one conversation always stays in one lane, and nothing arrives out of order.",
+   "items": [
+    {
+     "icon": "lock",
+     "story": "Booths closed to stop loops",
+     "real": "Spanning tree blocking",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "One super booth",
+     "real": "EtherChannel (port-channel)",
+     "cue": 2
+    },
+    {
+     "icon": "scale",
+     "story": "Lane picked by a hash",
+     "real": "Load balancing per flow",
+     "cue": 4
+    },
+    {
+     "icon": "list",
+     "story": "Same trip, same lane",
+     "real": "No out-of-order frames",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Negotiating the bundle",
+   "narration": "There are two ways to negotiate a bundle. L A C P is the open standard, with modes active and passive. Cisco has its own version, with modes desirable and auto. You can also force it with mode on, but nothing checks the other side.",
+   "left": {
+    "title": "LACP (open standard)",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "PAgP (Cisco)",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Standard",
+     "l": "Open (IEEE 802.3ad)",
+     "r": "Cisco only",
+     "cue": 1
+    },
+    {
+     "label": "Modes",
+     "l": "active / passive",
+     "r": "desirable / auto",
+     "cue": 2
+    },
+    {
+     "label": "No negotiation",
+     "l": "mode on",
+     "r": "mode on",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three things to watch. Traffic isn't shared packet by packet. It's hashed per flow. Two active L A C P ports do form a bundle. And every link in the bundle must match on speed and duplex.",
+   "items": [
+    {
+     "wrong": "Traffic is shared packet by packet",
+     "right": "A hash keeps each flow on one link",
+     "cue": 1
+    },
+    {
+     "wrong": "LACP active needs passive on the other end",
+     "right": "Active with active works fine",
+     "cue": 2
+    },
+    {
+     "wrong": "You can mix 1G and 10G links",
+     "right": "Speed and duplex must match",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva EtherChannel lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. EtherChannel bundles several links into one, for more speed and backup. L A C P is the standard, and active on both ends works well. Spanning tree sees one link, so nothing gets blocked. Ready to practise? Try the Courseiva EtherChannel lab.",
+   "points": [
+    {
+     "t": "Several links bundled into one",
+     "cue": 1
+    },
+    {
+     "t": "LACP: use active on both ends",
+     "cue": 2
+    },
+    {
+     "t": "STP sees one link, nothing is blocked",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

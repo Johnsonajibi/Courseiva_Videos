@@ -1,0 +1,138 @@
+{
+ "topic": "trunking",
+ "title": "Trunking and 802.1Q: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 TRUNKING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "link",
+   "narration": "Two switches. Ten different floors. Just one cable between them. So how does the mail avoid getting mixed up?",
+   "lines": [
+    {
+     "t": "Two switches",
+     "cue": 0
+    },
+    {
+     "t": "Ten floors",
+     "cue": 1
+    },
+    {
+     "t": "One cable",
+     "cue": 2,
+     "color": "#F87171"
+    },
+    {
+     "t": "Colour stickers to the rescue",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The colour-coded mailroom",
+   "narration": "Picture a mail carrier delivering letters for every floor of a building. Each letter gets a coloured sticker saying which floor it belongs to. That sticker is a small tag defined by the standard called eight oh two dot one Q. The cable between the two mailrooms is the trunk. Letters for the default floor travel with no sticker at all. That default floor is the native V L A N.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "A sticker on each letter",
+     "real": "VLAN tag (4 bytes)",
+     "cue": 1
+    },
+    {
+     "icon": "stamp",
+     "story": "The sticker standard",
+     "real": "802.1Q",
+     "cue": 2
+    },
+    {
+     "icon": "road",
+     "story": "Cable between mailrooms",
+     "real": "Trunk link",
+     "cue": 3
+    },
+    {
+     "icon": "door",
+     "story": "Letters with no sticker",
+     "real": "Native VLAN",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Trunk commands",
+   "narration": "The commands are short. Force the port to be a trunk. Limit which floors are allowed through. And check the result with show interfaces trunk.",
+   "lines": [
+    {
+     "t": "switchport mode trunk",
+     "note": "Force this port to trunk",
+     "cue": 1
+    },
+    {
+     "t": "switchport trunk allowed vlan 10,20",
+     "note": "Only these VLANs cross the link",
+     "cue": 2
+    },
+    {
+     "t": "show interfaces trunk",
+     "note": "Status, native VLAN, allowed VLANs",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Watch for three slip-ups. Frames on the native V L A N travel untagged. Both ends must agree on the native V L A N, or traffic leaks. And two ports set to dynamic auto will never form a trunk.",
+   "items": [
+    {
+     "wrong": "Every frame on a trunk is tagged",
+     "right": "Native VLAN frames are untagged",
+     "cue": 1
+    },
+    {
+     "wrong": "Native VLAN can differ per side",
+     "right": "Both ends must match or traffic leaks",
+     "cue": 2
+    },
+    {
+     "wrong": "Two dynamic auto ports make a trunk",
+     "right": "One side must be trunk or desirable",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva trunking lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A trunk carries many V L A N over one cable, using little tags. The native V L A N goes untagged, and both ends must match. And never rely on dynamic auto at both ends. Ready to practise? Try the Courseiva trunking lab.",
+   "points": [
+    {
+     "t": "A trunk carries many VLANs using 802.1Q tags",
+     "cue": 1
+    },
+    {
+     "t": "Native VLAN: untagged, must match",
+     "cue": 2
+    },
+    {
+     "t": "Never dynamic auto on both ends",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,136 @@
+{
+ "topic": "mac-address-table",
+ "title": "The MAC Address Table: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 MAC ADDRESS TABLE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "book",
+   "narration": "How does a switch know which cable leads to which computer? Nobody tells it. It simply watches and takes notes.",
+   "lines": [
+    {
+     "t": "Which cable leads where?",
+     "cue": 0
+    },
+    {
+     "t": "Nobody tells the switch",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "It watches and takes notes",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hotel guest directory",
+   "narration": "You're the front desk clerk at a big hotel. Every time a guest sends something, you note their name and room number. That's the switch learning the source M A C address. When a delivery arrives for a known guest, you send it straight to the room. For an unknown guest, you page every room, which is called flooding. Entries expire after five minutes without activity.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "Name and room number",
+     "real": "MAC address + port",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "story": "Straight to the room",
+     "real": "Forward",
+     "cue": 3
+    },
+    {
+     "icon": "bell",
+     "story": "Page every room",
+     "real": "Flood unknown unicast",
+     "cue": 4
+    },
+    {
+     "icon": "clock",
+     "story": "Entry expires",
+     "real": "Aging time: 300 seconds",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "Three decisions",
+   "narration": "For every frame, the switch makes one of three decisions. Forward: the guest is in a different room, so send it there. Filter: the guest is on the same port, so drop it. Flood: nobody knows this guest, so send it everywhere else.",
+   "steps": [
+    {
+     "icon": "door",
+     "title": "Forward",
+     "sub": "Known MAC, different port",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "title": "Filter",
+     "sub": "Known MAC, same port",
+     "cue": 2
+    },
+    {
+     "icon": "bell",
+     "title": "Flood",
+     "sub": "Unknown or broadcast",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. A switch learns from the source address, not the destination. It doesn't flood everything just because the table is empty. And static entries never age out.",
+   "items": [
+    {
+     "wrong": "Learns from the destination MAC",
+     "right": "It learns from the source MAC",
+     "cue": 1
+    },
+    {
+     "wrong": "Empty table = flood every frame",
+     "right": "Only unknown unicast and broadcast flood",
+     "cue": 2
+    },
+    {
+     "wrong": "Static entries age out too",
+     "right": "Only dynamic entries age out",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva MAC table lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A switch learns the source M A C address of every frame it sees. Then it forwards, filters or floods. And show M A C address table lets you look inside. Ready to practise? Try the Courseiva MAC table lab.",
+   "points": [
+    {
+     "t": "Learns from the source MAC",
+     "cue": 1
+    },
+    {
+     "t": "Forward, filter or flood",
+     "cue": 2
+    },
+    {
+     "t": "show mac address-table",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

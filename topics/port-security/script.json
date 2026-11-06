@@ -1,0 +1,172 @@
+{
+ "topic": "port-security",
+ "title": "Port Security: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 PORT SECURITY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "lock",
+   "narration": "Anyone can plug a laptop into a spare wall port. And just like that, they're on your network. Port security is the guard on the door.",
+   "lines": [
+    {
+     "t": "Any laptop, any spare wall port",
+     "cue": 0,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Instantly on your network",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Port security is the guard on the door",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The security guard",
+   "narration": "Think of an apartment where a guard checks every visitor. The guard knows the allowed devices by their M A C address. By default, only one device per port is allowed. Sticky learning means the guard memorises the first visitor. But the guard's notebook is only kept if you save the config.",
+   "items": [
+    {
+     "icon": "shield",
+     "story": "The guard",
+     "real": "Port security",
+     "cue": 0
+    },
+    {
+     "icon": "key",
+     "story": "A visitor's ID card",
+     "real": "MAC address",
+     "cue": 1
+    },
+    {
+     "icon": "people",
+     "story": "One visitor per door",
+     "real": "Maximum: 1 (default)",
+     "cue": 2
+    },
+    {
+     "icon": "book",
+     "story": "Guard memorises the first",
+     "real": "Sticky MAC address",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "story": "Notebook not saved",
+     "real": "Running config only",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "Three responses",
+   "narration": "When an unknown device shows up, you choose the response. Protect silently drops the frames. Restrict drops them and logs a warning. Shutdown, the default, locks the door completely.",
+   "steps": [
+    {
+     "icon": "shield",
+     "title": "Protect",
+     "sub": "Drops quietly, no log",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "title": "Restrict",
+     "sub": "Drops and logs",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "title": "Shutdown (default)",
+     "sub": "Port goes err-disabled",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "The configuration",
+   "narration": "Here's the config. Turn it on for the port. Set how many devices are allowed. Choose what happens on a violation. And verify with show port security.",
+   "lines": [
+    {
+     "t": "switchport port-security",
+     "note": "Enable on the interface",
+     "cue": 1
+    },
+    {
+     "t": "switchport port-security maximum 2",
+     "note": "Allow two devices",
+     "cue": 2
+    },
+    {
+     "t": "switchport port-security violation restrict",
+     "note": "Choose the response",
+     "cue": 3
+    },
+    {
+     "t": "show port-security interface",
+     "note": "Check the result",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three slip-ups. Protect mode doesn't send any log message. Sticky addresses aren't saved until you save the config. And the default maximum is one address, not zero.",
+   "items": [
+    {
+     "wrong": "Protect mode sends a syslog message",
+     "right": "Only restrict and shutdown log",
+     "cue": 1
+    },
+    {
+     "wrong": "Sticky MACs are saved automatically",
+     "right": "Save the running config yourself",
+     "cue": 2
+    },
+    {
+     "wrong": "Default maximum is zero",
+     "right": "The default maximum is one",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva port security lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Port security limits which devices can use a port. The default is one device, and the default response is shutdown. Sticky addresses need saving to survive a reboot. Ready to practise? Try the Courseiva port security lab.",
+   "points": [
+    {
+     "t": "Limits which devices may use a port",
+     "cue": 1
+    },
+    {
+     "t": "Default: 1 device, shutdown",
+     "cue": 2
+    },
+    {
+     "t": "Sticky MACs: save the config",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

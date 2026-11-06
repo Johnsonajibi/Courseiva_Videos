@@ -1,0 +1,144 @@
+{
+ "topic": "inter-vlan-routing",
+ "title": "Inter-VLAN Routing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 INTER-VLAN ROUTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Each floor of the building keeps to itself, and that's on purpose. So how does Sales send a file to Engineering? It needs an elevator.",
+   "lines": [
+    {
+     "t": "Each floor keeps to itself",
+     "cue": 0
+    },
+    {
+     "t": "Sales \u2192 Engineering?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "It needs an elevator",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Floors and elevators",
+   "narration": "Each floor is a V L A N, and people move freely inside it. To go between floors, you need a router, which is the elevator. A router on a stick is one elevator with a single door onto the shared stairwell. It works, but a crowd queues up. A Layer three switch is a whole bank of fast elevators. Each floor's button is a virtual interface called an S V I.",
+   "items": [
+    {
+     "icon": "router",
+     "story": "The elevator",
+     "real": "Router (the gateway)",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "One elevator, one door",
+     "real": "Router on a stick",
+     "cue": 2
+    },
+    {
+     "icon": "switch",
+     "story": "A bank of elevators",
+     "real": "Layer 3 switch",
+     "cue": 4
+    },
+    {
+     "icon": "door",
+     "story": "Each floor's button",
+     "real": "SVI",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Two ways to route",
+   "narration": "Here's how the two approaches compare. Router on a stick uses one cable, split into sub interfaces. A Layer three switch uses S V Is and routes at wire speed. Pick the switch when speed matters.",
+   "left": {
+    "title": "Router on a stick",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Layer 3 switch",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "How it's built",
+     "l": "One cable + subinterfaces",
+     "r": "SVIs inside the switch",
+     "cue": 1
+    },
+    {
+     "label": "Speed",
+     "l": "Can become a bottleneck",
+     "r": "Wire speed",
+     "cue": 2
+    },
+    {
+     "label": "Needs",
+     "l": "A trunk to the router",
+     "r": "ip routing turned on",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three common slip-ups. The switch port facing the router must be a trunk for router on a stick. A Layer three switch won't route until you turn on I P routing. And an S V I stays down unless a port in that V L A N is up.",
+   "items": [
+    {
+     "wrong": "Any switch port will do for the router",
+     "right": "It must be a trunk",
+     "cue": 1
+    },
+    {
+     "wrong": "SVIs route out of the box",
+     "right": "You must enter: ip routing",
+     "cue": 2
+    },
+    {
+     "wrong": "An SVI is always up",
+     "right": "Only if a port in that VLAN is up",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva inter-VLAN routing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Every V L A N needs a gateway, and that's a router or a Layer three switch. Router on a stick means sub interfaces on a trunk. Layer three switches use S V Is, and need I P routing turned on. Ready to practise? Try the Courseiva inter-VLAN routing lab.",
+   "points": [
+    {
+     "t": "Each VLAN needs a router as its gateway",
+     "cue": 1
+    },
+    {
+     "t": "Router on a stick = subinterfaces on a trunk",
+     "cue": 2
+    },
+    {
+     "t": "Layer 3 switch = SVIs + ip routing",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

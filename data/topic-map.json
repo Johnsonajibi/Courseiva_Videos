@@ -1,0 +1,1318 @@
+{
+ "wifi-standards-bands": {
+  "title": "Wi-Fi standards and channels",
+  "slugs": [
+   "80211-standards",
+   "wireless-standards-detail",
+   "wireless-basics-and-80211",
+   "wireless-channels",
+   "wireless-channels-bands",
+   "channel-interference",
+   "wireless-spectrum-analyzer"
+  ]
+ },
+ "wlan-architecture": {
+  "title": "Wireless LAN architecture (APs and controllers)",
+  "slugs": [
+   "wlan-architecture",
+   "wlc-aps",
+   "wlc-deployment-netplus",
+   "troubleshoot-capwap",
+   "ssid-bss",
+   "wireless-roaming-bss",
+   "mesh-networking",
+   "wireless-networking"
+  ]
+ },
+ "wifi-security": {
+  "title": "Wi-Fi security (WPA2, WPA3)",
+  "slugs": [
+   "wpa-wpa2-wpa3",
+   "compare-wpa2-wpa3",
+   "wpa3-deep-dive",
+   "wireless-security-netplus",
+   "evil-twin-attacks",
+   "wireless-deployment-and-security"
+  ]
+ },
+ "wifi-troubleshooting": {
+  "title": "Troubleshooting Wi-Fi",
+  "slugs": [
+   "troubleshoot-wireless",
+   "troubleshoot-wireless-netplus",
+   "wlan-troubleshooting",
+   "wireless-signal-issues",
+   "exam-trap-wireless"
+  ]
+ },
+ "poe": {
+  "title": "Power over Ethernet (PoE)",
+  "slugs": [
+   "poe-standards"
+  ]
+ },
+ "vlans": {
+  "title": "VLANs",
+  "slugs": [
+   "vlans",
+   "vlan-concepts",
+   "lab-configure-vlans",
+   "troubleshoot-vlan-access",
+   "troubleshoot-vlan-mismatch",
+   "vlan-mismatch",
+   "exam-trap-vlan"
+  ]
+ },
+ "trunking": {
+  "title": "Trunks and native VLAN",
+  "slugs": [
+   "8021q-trunking",
+   "lab-configure-trunk",
+   "troubleshoot-trunk-vlan",
+   "trunking-dot1q-netplus",
+   "switchport-modes",
+   "switch-port-modes",
+   "native-vlan",
+   "native-vlan-netplus"
+  ]
+ },
+ "vlan-security": {
+  "title": "VLAN hopping and private VLANs",
+  "slugs": [
+   "vlan-hopping",
+   "private-vlans"
+  ]
+ },
+ "inter-vlan-routing": {
+  "title": "Inter-VLAN routing",
+  "slugs": [
+   "inter-vlan-routing",
+   "inter-vlan-routing-netplus",
+   "router-on-a-stick",
+   "lab-router-on-stick",
+   "troubleshoot-inter-vlan",
+   "l3-switching",
+   "lab-l3-switch-routing"
+  ]
+ },
+ "vtp": {
+  "title": "VTP",
+  "slugs": [
+   "vtp-versions",
+   "troubleshoot-vtp"
+  ]
+ },
+ "etherchannel": {
+  "title": "EtherChannel and LACP",
+  "slugs": [
+   "etherchannel",
+   "etherchannel-and-switching-technologies",
+   "lab-etherchannel-lacp",
+   "troubleshoot-etherchannel",
+   "port-aggregation-lacp"
+  ]
+ },
+ "stp": {
+  "title": "Spanning Tree Protocol",
+  "slugs": [
+   "stp",
+   "spanning-tree-concepts",
+   "stp-port-states",
+   "stp-root-bridge",
+   "troubleshoot-spanning-tree",
+   "troubleshoot-stp-blocked",
+   "troubleshoot-stp-loop",
+   "stp-troubleshooting",
+   "lab-stp-root",
+   "exam-trap-stp",
+   "vlan-and-stp-concepts"
+  ]
+ },
+ "rstp": {
+  "title": "Rapid and Multiple Spanning Tree",
+  "slugs": [
+   "rstp",
+   "rstp-implementation",
+   "compare-stp-rstp",
+   "compare-rstp-mstp"
+  ]
+ },
+ "stp-protection": {
+  "title": "PortFast, BPDU Guard, Root Guard",
+  "slugs": [
+   "spanning-tree-portfast",
+   "portfast-bpduguard",
+   "bpduguard-bpdufilter",
+   "root-guard-loop-guard"
+  ]
+ },
+ "mac-address-table": {
+  "title": "MAC address table and switching",
+  "slugs": [
+   "mac-address-table",
+   "ethernet-switching"
+  ]
+ },
+ "ethernet-frames": {
+  "title": "Ethernet frames and standards",
+  "slugs": [
+   "ethernet-frame",
+   "ethernet-standards"
+  ]
+ },
+ "duplex": {
+  "title": "Duplex and speed mismatches",
+  "slugs": [
+   "duplex-modes",
+   "duplex-mismatch",
+   "troubleshoot-duplex"
+  ]
+ },
+ "interface-errors": {
+  "title": "Interface errors and statistics",
+  "slugs": [
+   "interface-errors",
+   "interface-statistics",
+   "troubleshoot-switch-interface"
+  ]
+ },
+ "network-devices": {
+  "title": "Hubs, switches and routers, collision domains",
+  "slugs": [
+   "collision-broadcast-domains",
+   "compare-hub-switch-router"
+  ]
+ },
+ "port-security": {
+  "title": "Port security",
+  "slugs": [
+   "port-security",
+   "port-security-netplus",
+   "lab-port-security",
+   "troubleshoot-port-security"
+  ]
+ },
+ "layer2-attacks": {
+  "title": "DHCP snooping, DAI and Layer 2 attacks",
+  "slugs": [
+   "dhcp-snooping",
+   "dynamic-arp-inspection",
+   "dynamic-arp-mitigation",
+   "arp-spoofing",
+   "dhcp-arp-attacks",
+   "rogue-dhcp",
+   "ra-guard",
+   "mac-flood-defense",
+   "storm-control"
+  ]
+ },
+ "dot1x": {
+  "title": "802.1X and network access control",
+  "slugs": [
+   "8021x-port-auth",
+   "dot1x-eap",
+   "troubleshoot-8021x",
+   "network-access-control",
+   "ise-overview"
+  ]
+ },
+ "cabling-types": {
+  "title": "Cable and media types",
+  "slugs": [
+   "cable-types-troubleshooting",
+   "media-types-netplus",
+   "wavelength-multiplexing"
+  ]
+ },
+ "cabling-install-test": {
+  "title": "Structured cabling and cable testing",
+  "slugs": [
+   "structured-cabling",
+   "patch-panel-wiring",
+   "cable-testers",
+   "troubleshoot-cable-physical",
+   "troubleshoot-layer1-netplus"
+  ]
+ },
+ "data-center-physical": {
+  "title": "Racks and physical infrastructure",
+  "slugs": [
+   "physical-infrastructure",
+   "rack-design-netplus"
+  ]
+ },
+ "wan-internet-access": {
+  "title": "Internet access (cable, DSL, fibre, satellite, 5G)",
+  "slugs": [
+   "cable-modem-dsl",
+   "fiber-to-premises",
+   "satellite-internet",
+   "cellular-lte-5g"
+  ]
+ },
+ "wan-technologies": {
+  "title": "WAN technologies",
+  "slugs": [
+   "wan-technologies",
+   "metro-ethernet",
+   "ppp-hdlc"
+  ]
+ },
+ "mpls": {
+  "title": "MPLS",
+  "slugs": [
+   "mpls-concepts",
+   "mpls-implementation",
+   "wan-mpls",
+   "mpls-l3vpn-basics"
+  ]
+ },
+ "osi-model": {
+  "title": "OSI model and encapsulation",
+  "slugs": [
+   "osi-model",
+   "osi-model-netplus",
+   "encapsulation-pdu"
+  ]
+ },
+ "tcpip-model": {
+  "title": "TCP/IP model",
+  "slugs": [
+   "tcpip-model",
+   "tcp-ip-netplus"
+  ]
+ },
+ "tcp-udp": {
+  "title": "TCP vs UDP",
+  "slugs": [
+   "tcp-vs-udp",
+   "compare-tcp-udp",
+   "udp-vs-tcp-netplus",
+   "udp-applications"
+  ]
+ },
+ "tcp-handshake-flow": {
+  "title": "TCP handshake and flow control",
+  "slugs": [
+   "tcp-handshake",
+   "tcp-flow-control"
+  ]
+ },
+ "ports-protocols": {
+  "title": "Ports and common protocols",
+  "slugs": [
+   "ports-protocols",
+   "http-https",
+   "tftp-ftp-sftp"
+  ]
+ },
+ "network-topologies": {
+  "title": "Network topologies",
+  "slugs": [
+   "network-topologies",
+   "network-topologies-netplus"
+  ]
+ },
+ "hierarchical-design": {
+  "title": "Three-tier hierarchical design",
+  "slugs": [
+   "cisco-hierarchical-model",
+   "network-architecture-fundamentals"
+  ]
+ },
+ "spine-leaf": {
+  "title": "Spine-leaf architecture",
+  "slugs": [
+   "spine-leaf-topology",
+   "spine-leaf-and-sdn-architectures"
+  ]
+ },
+ "ipv4-addressing": {
+  "title": "IPv4 addressing",
+  "slugs": [
+   "ipv4-addressing",
+   "ip-addressing-netplus",
+   "private-ip-ranges"
+  ]
+ },
+ "subnetting": {
+  "title": "Subnetting, CIDR and VLSM",
+  "slugs": [
+   "subnetting",
+   "subnetting-netplus",
+   "cidr",
+   "vlsm-cidr-netplus",
+   "exam-trap-subnetting"
+  ]
+ },
+ "ipv6-addressing": {
+  "title": "IPv6 addressing",
+  "slugs": [
+   "ipv6-address-types",
+   "ipv6-addressing-netplus",
+   "ipv6-global-unicast",
+   "ipv6-link-local",
+   "eui64",
+   "troubleshoot-ipv6-eui64",
+   "ipv6-solicited-node",
+   "compare-ipv4-ipv6",
+   "exam-trap-ipv6"
+  ]
+ },
+ "ipv6-ndp-dhcpv6": {
+  "title": "IPv6 neighbor discovery and DHCPv6",
+  "slugs": [
+   "ipv6-ndp",
+   "ipv6-dhcpv6",
+   "ipv6-dhcp-stateless",
+   "ipv6-connectivity",
+   "troubleshoot-ipv6"
+  ]
+ },
+ "ipv6-transition": {
+  "title": "IPv4 to IPv6 transition",
+  "slugs": [
+   "ipv4-ipv6-transition",
+   "ipv6-transition-mechanisms"
+  ]
+ },
+ "ipv6-routing": {
+  "title": "IPv6 routing",
+  "slugs": [
+   "ipv6-routing"
+  ]
+ },
+ "ip-troubleshooting": {
+  "title": "Troubleshooting IP addressing and gateways",
+  "slugs": [
+   "troubleshoot-ip-addressing",
+   "troubleshoot-no-ip",
+   "ip-conflict",
+   "default-gateway-issues",
+   "troubleshoot-default-gw",
+   "troubleshoot-connectivity",
+   "client-connectivity-os",
+   "edge-host-device-config"
+  ]
+ },
+ "arp": {
+  "title": "ARP",
+  "slugs": [
+   "arp",
+   "arp-troubleshooting"
+  ]
+ },
+ "icmp-ping-traceroute": {
+  "title": "Ping and traceroute",
+  "slugs": [
+   "icmp-ping",
+   "traceroute"
+  ]
+ },
+ "dhcp-process": {
+  "title": "DHCP",
+  "slugs": [
+   "dhcp-process",
+   "dhcp-dora",
+   "dhcp-scopes-options",
+   "dhcp-troubleshooting",
+   "troubleshoot-dhcp-no-addr",
+   "lab-dhcp-server",
+   "dns-dhcp-implementation"
+  ]
+ },
+ "dhcp-relay": {
+  "title": "DHCP relay",
+  "slugs": [
+   "dhcp-relay-agent",
+   "lab-dhcp-relay",
+   "troubleshoot-dhcp-relay"
+  ]
+ },
+ "dns": {
+  "title": "DNS",
+  "slugs": [
+   "dns-process",
+   "dns-resolution-netplus",
+   "dns-records-netplus",
+   "dns-zones-netplus",
+   "dns-record-diagnostics",
+   "dns-troubleshooting",
+   "dns-attacks"
+  ]
+ },
+ "nat-concepts": {
+  "title": "NAT and PAT concepts",
+  "slugs": [
+   "nat-types",
+   "nat-pat-concepts",
+   "compare-nat-pat",
+   "pat-nat-overload"
+  ]
+ },
+ "nat-config": {
+  "title": "Configuring and troubleshooting NAT",
+  "slugs": [
+   "nat-implementation",
+   "nat-verification",
+   "nat-troubleshooting",
+   "troubleshoot-nat",
+   "lab-configure-nat-pat",
+   "exam-trap-nat"
+  ]
+ },
+ "ip-services-overview": {
+  "title": "IP services (DHCP, NAT, DNS) overview",
+  "slugs": [
+   "ip-services-dhcp-nat-and-dns",
+   "infrastructure-services-dhcp-nat-and-ipv6"
+  ]
+ },
+ "routing-process": {
+  "title": "How a router chooses a route",
+  "slugs": [
+   "ip-routing-process",
+   "routing-table-lookup",
+   "routing-concepts",
+   "ip-route-commands",
+   "routing-table-issues",
+   "troubleshoot-route-missing",
+   "exam-trap-routing"
+  ]
+ },
+ "admin-distance": {
+  "title": "Administrative distance",
+  "slugs": [
+   "admin-distance"
+  ]
+ },
+ "routing-types": {
+  "title": "Static vs dynamic, IGP vs EGP",
+  "slugs": [
+   "compare-static-dynamic",
+   "static-vs-dynamic-routing",
+   "interior-exterior-routing",
+   "compare-distance-vector-ls"
+  ]
+ },
+ "static-routing": {
+  "title": "Static and default routes",
+  "slugs": [
+   "static-routing",
+   "lab-static-routing",
+   "troubleshoot-static-route",
+   "default-routes"
+  ]
+ },
+ "floating-static": {
+  "title": "Floating static and Null0 routes",
+  "slugs": [
+   "floating-static",
+   "null0-routing"
+  ]
+ },
+ "rip": {
+  "title": "RIP",
+  "slugs": [
+   "rip-v2-basics"
+  ]
+ },
+ "eigrp-concepts": {
+  "title": "EIGRP concepts",
+  "slugs": [
+   "eigrp-overview",
+   "eigrp-metric",
+   "eigrp-topology-table",
+   "eigrp-feasibility"
+  ]
+ },
+ "eigrp-config": {
+  "title": "Configuring and troubleshooting EIGRP",
+  "slugs": [
+   "lab-configure-eigrp",
+   "troubleshoot-eigrp",
+   "exam-trap-eigrp",
+   "lab-eigrp-ipv6"
+  ]
+ },
+ "eigrp-neighbors-advanced": {
+  "title": "EIGRP neighbors and advanced features",
+  "slugs": [
+   "eigrp-neighbor-adjacency-and-basics",
+   "eigrp-basics-and-advanced",
+   "advanced-eigrp-features"
+  ]
+ },
+ "eigrp-summarization": {
+  "title": "EIGRP summarization and filtering",
+  "slugs": [
+   "eigrp-route-summarization-and-filtering"
+  ]
+ },
+ "compare-ospf-eigrp": {
+  "title": "OSPF vs EIGRP",
+  "slugs": [
+   "compare-ospf-eigrp"
+  ]
+ },
+ "ospf-multi-area-lsa": {
+  "title": "OSPF areas and LSAs",
+  "slugs": [
+   "ospf-multi-area",
+   "ospf-lsa-types",
+   "ospf-stub-areas",
+   "lab-ospf-multi-area",
+   "troubleshoot-ospf-area"
+  ]
+ },
+ "ospf-basics": {
+  "title": "OSPF basics",
+  "slugs": [
+   "ospf-fundamentals",
+   "ospf-concepts-netplus",
+   "lab-ospf-single-area",
+   "exam-trap-ospf"
+  ]
+ },
+ "ospf-neighbors": {
+  "title": "OSPF neighbors, hello and DR/BDR",
+  "slugs": [
+   "ospf-hello",
+   "ospf-timers",
+   "ospf-dr-bdr",
+   "troubleshoot-ospf-init",
+   "troubleshoot-ospf-neighbor",
+   "ospf-neighbor-adjacency-and-basics"
+  ]
+ },
+ "ospf-cost-path": {
+  "title": "OSPF cost and path selection",
+  "slugs": [
+   "ospf-cost",
+   "ospf-path-selection",
+   "troubleshoot-ospf-metric"
+  ]
+ },
+ "ospf-authentication": {
+  "title": "OSPF authentication",
+  "slugs": [
+   "ospf-authentication"
+  ]
+ },
+ "ospf-summarization": {
+  "title": "Route summarization and OSPF filtering",
+  "slugs": [
+   "ospf-route-summarization-and-filtering",
+   "route-summarization"
+  ]
+ },
+ "ospfv3": {
+  "title": "OSPFv3",
+  "slugs": [
+   "ospfv3",
+   "ospfv3-single-area-config",
+   "ospfv2-and-ospfv3"
+  ]
+ },
+ "bgp-basics": {
+  "title": "BGP basics",
+  "slugs": [
+   "bgp-basics",
+   "bgp-concepts-netplus",
+   "bgp-fundamentals",
+   "bgp-basics-and-neighbor-relationships",
+   "troubleshoot-bgp-peer"
+  ]
+ },
+ "bgp-attributes": {
+  "title": "BGP attributes and route selection",
+  "slugs": [
+   "bgp-attributes",
+   "bgp-route-selection-and-policy"
+  ]
+ },
+ "redistribution": {
+  "title": "Route redistribution",
+  "slugs": [
+   "route-redistribution",
+   "redistribution-and-route-filtering",
+   "route-redistribution-and-mutual-redistribution"
+  ]
+ },
+ "policy-based-routing": {
+  "title": "Policy-based routing",
+  "slugs": [
+   "policy-based-routing",
+   "acl-based-traffic-filtering-and-pbr"
+  ]
+ },
+ "vrf-bgp": {
+  "title": "VRF-Lite and multi-protocol BGP",
+  "slugs": [
+   "vrf-lite-and-multi-protocol-bgp"
+  ]
+ },
+ "ip-sla": {
+  "title": "IP SLA and tracking",
+  "slugs": [
+   "ip-sla",
+   "ip-sla-tracking"
+  ]
+ },
+ "fhrp-concepts": {
+  "title": "First-hop redundancy (FHRP)",
+  "slugs": [
+   "fhrp-concepts",
+   "virtual-ip-redundancy",
+   "fhrp-comparison",
+   "vrrp-glbp"
+  ]
+ },
+ "hsrp": {
+  "title": "HSRP",
+  "slugs": [
+   "hsrp",
+   "lab-hsrp",
+   "troubleshoot-hsrp",
+   "troubleshoot-fhrp",
+   "fhrp-operational-status",
+   "exam-trap-fhrp"
+  ]
+ },
+ "multicast-basics": {
+  "title": "Multicast",
+  "slugs": [
+   "multicast-basics"
+  ]
+ },
+ "acl-standard-named": {
+  "title": "Standard and named ACLs",
+  "slugs": [
+   "standard-acls",
+   "named-acls",
+   "cisco-ios-acl-syntax",
+   "lab-standard-acl",
+   "acl-placement"
+  ]
+ },
+ "acl-extended": {
+  "title": "Extended ACLs",
+  "slugs": [
+   "extended-acls",
+   "lab-extended-acl",
+   "exam-trap-acl"
+  ]
+ },
+ "acl-troubleshooting": {
+  "title": "Troubleshooting ACLs and wildcard masks",
+  "slugs": [
+   "troubleshoot-acl-blocking",
+   "troubleshoot-acl-wildcard"
+  ]
+ },
+ "acl-ipv6": {
+  "title": "IPv6 ACLs",
+  "slugs": [
+   "acl-ipv6",
+   "troubleshoot-acl-ipv6"
+  ]
+ },
+ "acl-security-features": {
+  "title": "ACLs and security features (ENCOR)",
+  "slugs": [
+   "acl-and-security-features"
+  ]
+ },
+ "aaa": {
+  "title": "AAA",
+  "slugs": [
+   "aaa-framework",
+   "aaa-client-config-ios-xe",
+   "aaa-and-device-access-security",
+   "lab-aaa-tacacs",
+   "network-access-and-aaa"
+  ]
+ },
+ "radius-tacacs": {
+  "title": "RADIUS vs TACACS+",
+  "slugs": [
+   "radius-vs-tacacs",
+   "compare-radius-tacacs",
+   "radius-vs-ldap-netplus"
+  ]
+ },
+ "ssh-telnet": {
+  "title": "SSH vs Telnet and remote access",
+  "slugs": [
+   "ssh-vs-telnet",
+   "compare-telnet-ssh",
+   "lab-harden-ssh",
+   "troubleshoot-ssh",
+   "remote-access-management",
+   "console-aux-vty"
+  ]
+ },
+ "device-passwords": {
+  "title": "Device passwords and recovery",
+  "slugs": [
+   "ios-password-types",
+   "service-password-encryption",
+   "password-recovery"
+  ]
+ },
+ "network-hardening": {
+  "title": "Network hardening and zero trust",
+  "slugs": [
+   "network-hardening",
+   "network-architecture-hardening-and-compliance",
+   "defense-in-depth",
+   "zero-trust-networking",
+   "network-segmentation",
+   "security-zones"
+  ]
+ },
+ "firewalls": {
+  "title": "Firewalls",
+  "slugs": [
+   "zone-based-firewall",
+   "lab-zone-based-firewall",
+   "next-gen-firewall",
+   "firewall-acl-netplus",
+   "firewall-rule-troubleshoot",
+   "firewall-rules-and-policies",
+   "proxy-servers"
+  ]
+ },
+ "ids-ips": {
+  "title": "IDS, IPS and honeypots",
+  "slugs": [
+   "ids-ips-deployment",
+   "honeypot-honeynet",
+   "dlp-for-networks"
+  ]
+ },
+ "network-attacks": {
+  "title": "Network attacks and threats",
+  "slugs": [
+   "network-attacks",
+   "dos-ddos-attacks",
+   "reconnaissance-attacks",
+   "malware-types-netplus",
+   "social-engineering-netplus",
+   "threat-actors-motivation",
+   "exam-trap-security",
+   "troubleshoot-security-netplus"
+  ]
+ },
+ "crypto-basics": {
+  "title": "Cryptography and certificates",
+  "slugs": [
+   "cryptography-networking",
+   "certificate-based-auth",
+   "certificate-errors",
+   "vpn-and-cryptography-concepts"
+  ]
+ },
+ "vpn-types": {
+  "title": "VPN types and troubleshooting",
+  "slugs": [
+   "vpn-netplus",
+   "vpn-types-netplus",
+   "site-to-site-vs-remote-vpn",
+   "split-tunneling",
+   "vpn-troubleshooting",
+   "ipsec-modes-netplus"
+  ]
+ },
+ "ipsec-vpn": {
+  "title": "IPsec VPNs",
+  "slugs": [
+   "ipsec-vpn",
+   "troubleshoot-ipsec",
+   "site-to-site-vpn-and-ipsec"
+  ]
+ },
+ "gre": {
+  "title": "GRE tunnels",
+  "slugs": [
+   "gre-tunnels",
+   "gre-vs-ipsec",
+   "troubleshoot-gre"
+  ]
+ },
+ "dmvpn": {
+  "title": "DMVPN and FlexVPN",
+  "slugs": [
+   "dmvpn-and-flexvpn"
+  ]
+ },
+ "cisco-umbrella": {
+  "title": "Cisco Umbrella",
+  "slugs": [
+   "cisco-umbrella"
+  ]
+ },
+ "control-plane-policing": {
+  "title": "Control plane policing",
+  "slugs": [
+   "control-plane-policing",
+   "control-plane-policing-and-protection"
+  ]
+ },
+ "ios-cli-show": {
+  "title": "IOS CLI, show and debug commands",
+  "slugs": [
+   "ios-cli-modes",
+   "show-commands",
+   "show-commands-router",
+   "show-commands-switch",
+   "debug-commands",
+   "cli-tools-netplus"
+  ]
+ },
+ "ios-files-backup": {
+  "title": "IOS files and config backup",
+  "slugs": [
+   "ios-file-system",
+   "ios-backup-config",
+   "config-backup-restore",
+   "sftp-scp-ios-management",
+   "config-management"
+  ]
+ },
+ "ios-upgrade-licensing": {
+  "title": "IOS upgrades and licensing",
+  "slugs": [
+   "ios-image-management",
+   "ios-upgrade-process",
+   "ios-licensing"
+  ]
+ },
+ "boot-process": {
+  "title": "Router and switch boot process",
+  "slugs": [
+   "router-boot-process",
+   "switch-boot-process"
+  ]
+ },
+ "ntp": {
+  "title": "NTP and device clocks",
+  "slugs": [
+   "ntp",
+   "ntp-stratum",
+   "ntp-synchronization",
+   "troubleshoot-ntp",
+   "lab-ntp",
+   "cisco-ios-clock"
+  ]
+ },
+ "syslog": {
+  "title": "Syslog and logging",
+  "slugs": [
+   "syslog",
+   "syslog-content-interpretation",
+   "syslog-management",
+   "logging-configuration"
+  ]
+ },
+ "snmp": {
+  "title": "SNMP",
+  "slugs": [
+   "snmp",
+   "snmp-management",
+   "lab-snmp-v3"
+  ]
+ },
+ "netflow": {
+  "title": "NetFlow and sFlow",
+  "slugs": [
+   "netflow-basics",
+   "netflow-sflow",
+   "lab-netflow"
+  ]
+ },
+ "cdp-lldp": {
+  "title": "CDP and LLDP",
+  "slugs": [
+   "cdp-lldp",
+   "troubleshoot-cdp-lldp"
+  ]
+ },
+ "monitoring": {
+  "title": "Network monitoring",
+  "slugs": [
+   "monitoring-tools",
+   "bandwidth-monitoring",
+   "network-baseline",
+   "network-monitoring-and-troubleshooting",
+   "device-management-and-network-monitoring",
+   "network-logging-monitoring-and-audit",
+   "network-monitoring-with-cloud-monitoring"
+  ]
+ },
+ "packet-capture": {
+  "title": "Packet capture and Wireshark",
+  "slugs": [
+   "packet-capture-analysis",
+   "packet-capture-wireshark",
+   "tcpdump-analysis"
+  ]
+ },
+ "troubleshooting-method": {
+  "title": "Troubleshooting methodology",
+  "slugs": [
+   "troubleshoot-methodology",
+   "troubleshooting-methodology",
+   "troubleshooting-and-optimization"
+  ]
+ },
+ "performance": {
+  "title": "Latency and bandwidth problems",
+  "slugs": [
+   "bandwidth-saturation",
+   "latency-troubleshooting",
+   "network-performance-metrics-and-troubleshooting"
+  ]
+ },
+ "qos": {
+  "title": "Quality of Service (QoS)",
+  "slugs": [
+   "qos-fundamentals",
+   "qos-concepts-netplus",
+   "qos-marking",
+   "qos-queuing",
+   "lab-qos-marking",
+   "troubleshoot-qos",
+   "qos-and-network-performance"
+  ]
+ },
+ "network-management": {
+  "title": "Network management and DNA Center",
+  "slugs": [
+   "network-management",
+   "network-management-approaches-v2",
+   "dna-center",
+   "intent-based-networking"
+  ]
+ },
+ "automation-concepts": {
+  "title": "Network automation",
+  "slugs": [
+   "network-automation-benefits",
+   "network-automation-and-programmability",
+   "automating-network-operations",
+   "infrastructure-as-code-net"
+  ]
+ },
+ "config-mgmt-tools": {
+  "title": "Ansible, Puppet, Chef and Git",
+  "slugs": [
+   "ansible-networking",
+   "puppet-chef-networking",
+   "git-network-automation"
+  ]
+ },
+ "python-networking": {
+  "title": "Python for networking",
+  "slugs": [
+   "python-networking"
+  ]
+ },
+ "ai-network-ops": {
+  "title": "AI in network operations",
+  "slugs": [
+   "agentic-ai-network-operations",
+   "generative-ai-prompting-networks"
+  ]
+ },
+ "rest-apis": {
+  "title": "REST APIs",
+  "slugs": [
+   "rest-apis",
+   "api-authentication-tokens",
+   "postman-rest-testing"
+  ]
+ },
+ "data-formats": {
+  "title": "JSON, XML and YAML",
+  "slugs": [
+   "json-networking",
+   "xml-vs-json-networking",
+   "yaml-networking"
+  ]
+ },
+ "netconf-yang": {
+  "title": "NETCONF, RESTCONF and YANG",
+  "slugs": [
+   "yang-data-model",
+   "netconf-restconf"
+  ]
+ },
+ "sdn": {
+  "title": "SDN and controllers",
+  "slugs": [
+   "sdn",
+   "sdn-controllers-and-cisco-aci"
+  ]
+ },
+ "sdwan": {
+  "title": "SD-WAN",
+  "slugs": [
+   "sdwan-concepts"
+  ]
+ },
+ "virtualization": {
+  "title": "Virtualization, NFV and VXLAN",
+  "slugs": [
+   "nfv-concepts",
+   "network-virtualization-vxlan",
+   "virtualization-hypervisors-containers"
+  ]
+ },
+ "network-documentation": {
+  "title": "Network documentation and IPAM",
+  "slugs": [
+   "network-documentation",
+   "network-diagram-types",
+   "ip-address-documentation",
+   "asset-management-netplus",
+   "cmdb-netplus",
+   "ipam-tools"
+  ]
+ },
+ "change-management": {
+  "title": "Change and incident management",
+  "slugs": [
+   "change-management",
+   "change-advisory-board",
+   "patch-management-network",
+   "incident-management-netplus"
+  ]
+ },
+ "disaster-recovery": {
+  "title": "Backups and disaster recovery",
+  "slugs": [
+   "disaster-recovery-netplus",
+   "rpd-rto-netplus",
+   "backup-types-netplus",
+   "failover-testing"
+  ]
+ },
+ "high-availability": {
+  "title": "High availability and load balancing",
+  "slugs": [
+   "high-availability-netplus",
+   "network-redundancy",
+   "site-diversity",
+   "load-balancing-netplus"
+  ]
+ },
+ "capacity-planning": {
+  "title": "Capacity planning",
+  "slugs": [
+   "capacity-planning-netplus"
+  ]
+ },
+ "exam-strategy": {
+  "title": "Exam strategy and orientation",
+  "slugs": [
+   "ccna-exam-traps",
+   "exam-preparation-and-review",
+   "introduction-to-enarsi-exam-and-network-fundamentals"
+  ]
+ },
+ "aws-vpc-basics": {
+  "title": "AWS VPC design",
+  "slugs": [
+   "vpc-fundamentals-and-design",
+   "implementing-vpc-and-subnet-configurations"
+  ]
+ },
+ "aws-private-connectivity": {
+  "title": "AWS PrivateLink and VPC endpoints",
+  "slugs": [
+   "private-connectivity-and-vpc-endpoints"
+  ]
+ },
+ "aws-transit-gateway": {
+  "title": "AWS Transit Gateway and multi-account design",
+  "slugs": [
+   "advanced-vpc-routing-and-transit-gateway",
+   "multi-region-and-multi-account-network-design"
+  ]
+ },
+ "aws-hybrid": {
+  "title": "AWS VPN and Direct Connect",
+  "slugs": [
+   "hybrid-connectivity-vpn-and-direct-connect",
+   "deploying-network-connectivity-services"
+  ]
+ },
+ "aws-dns-cdn": {
+  "title": "Route 53 and CloudFront",
+  "slugs": [
+   "dns-and-content-delivery-with-route-53-and-cloudfront"
+  ]
+ },
+ "aws-network-security": {
+  "title": "AWS network security",
+  "slugs": [
+   "network-security-and-access-control",
+   "network-security-implementation-waf-and-firewall"
+  ]
+ },
+ "aws-network-ops": {
+  "title": "AWS network optimisation and HA",
+  "slugs": [
+   "network-services-optimization-and-high-availability"
+  ]
+ },
+ "gcp-vpc": {
+  "title": "Google Cloud VPC",
+  "slugs": [
+   "introduction-to-gcp-networking",
+   "vpc-planning-and-design",
+   "vpc-subnets-and-ip-addressing"
+  ]
+ },
+ "gcp-vpc-sharing": {
+  "title": "VPC peering and Shared VPC",
+  "slugs": [
+   "vpc-peering-and-shared-vpc"
+  ]
+ },
+ "gcp-hybrid": {
+  "title": "Google Cloud VPN and Interconnect",
+  "slugs": [
+   "cloud-vpn-and-cloud-interconnect",
+   "hybrid-connectivity-overview"
+  ]
+ },
+ "gcp-load-balancing-cdn": {
+  "title": "Google Cloud load balancing and CDN",
+  "slugs": [
+   "cloud-load-balancing-overview",
+   "cloud-cdn-and-traffic-management"
+  ]
+ },
+ "gcp-nat-router": {
+  "title": "Cloud NAT and Cloud Router",
+  "slugs": [
+   "cloud-nat-and-private-google-access",
+   "network-service-tiers-and-cloud-router"
+  ]
+ },
+ "gcp-ha-security": {
+  "title": "Google Cloud HA and security",
+  "slugs": [
+   "network-design-for-high-availability",
+   "security-best-practices-and-iam",
+   "vpc-flow-logs-and-packet-mirroring"
+  ]
+ },
+ "cloud-networking-concepts": {
+  "title": "Cloud networking concepts",
+  "slugs": [
+   "cloud-networking",
+   "cloud-service-models-net",
+   "cloud-connectivity-concepts"
+  ]
+ },
+ "cloud-networking-ops": {
+  "title": "Cloud networking operations and troubleshooting",
+  "slugs": [
+   "cloud-networking-ops",
+   "cloud-connectivity-troubleshoot"
+  ]
+ },
+ "junos-overview": {
+  "title": "Juniper and Junos overview",
+  "slugs": [
+   "juniper-networks-and-junos-overview"
+  ]
+ },
+ "junos-cli": {
+  "title": "Junos CLI fundamentals",
+  "slugs": [
+   "junos-os-cli-fundamentals"
+  ]
+ },
+ "junos-config": {
+  "title": "Junos configuration basics",
+  "slugs": [
+   "junos-configuration-basics"
+  ]
+ },
+ "junos-files-upgrades": {
+  "title": "Junos files and upgrades",
+  "slugs": [
+   "junos-file-management-and-upgrades"
+  ]
+ },
+ "junos-interfaces": {
+  "title": "Junos interfaces",
+  "slugs": [
+   "junos-network-interface-configuration"
+  ]
+ },
+ "junos-ospf": {
+  "title": "Junos OSPF",
+  "slugs": [
+   "junos-ospf-configuration-basics"
+  ]
+ },
+ "junos-static-routing": {
+  "title": "Junos routing basics",
+  "slugs": [
+   "junos-protocol-independent-routing"
+  ]
+ },
+ "junos-policy-filters": {
+  "title": "Junos routing policy and firewall filters",
+  "slugs": [
+   "junos-routing-policy-and-firewall-filters"
+  ]
+ },
+ "junos-nat": {
+  "title": "Junos NAT",
+  "slugs": [
+   "junos-nat-configuration"
+  ]
+ },
+ "junos-security": {
+  "title": "Junos security zones and policies",
+  "slugs": [
+   "junos-security-zones-and-policies"
+  ]
+ },
+ "junos-stp": {
+  "title": "Junos spanning tree",
+  "slugs": [
+   "junos-spanning-tree-protocol"
+  ]
+ },
+ "junos-monitoring": {
+  "title": "Junos monitoring and maintenance",
+  "slugs": [
+   "junos-system-monitoring-and-maintenance"
+  ]
+ },
+ "junos-troubleshooting": {
+  "title": "Junos troubleshooting",
+  "slugs": [
+   "junos-troubleshooting-basics"
+  ]
+ },
+ "junos-vlans": {
+  "title": "Junos VLANs and Layer 2",
+  "slugs": [
+   "junos-vlan-and-layer-2-switching"
+  ]
+ },
+ "junos-users": {
+  "title": "Junos user accounts",
+  "slugs": [
+   "user-accounts-and-authentication"
+  ]
+ }
+}

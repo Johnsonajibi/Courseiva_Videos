@@ -1,0 +1,164 @@
+{
+ "topic": "nat-concepts",
+ "title": "NAT and PAT: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NAT AND PAT",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "Your whole office shares one public address, yet everyone browses the web. So how does a reply find the right person? Meet the mail room clerk.",
+   "lines": [
+    {
+     "t": "One public address",
+     "cue": 0
+    },
+    {
+     "t": "Hundreds of people online",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Meet the mail room clerk",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The mail room clerk",
+   "narration": "A building with a thousand residents has one street address. The clerk logs each outgoing package with the resident's flat number and a package number. Then the clerk relabels it with the building's address and a new number. When the reply comes back, the clerk checks the log and sends it to the right flat. That log is the N A T table.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "Relabel with building address",
+     "real": "Private IP \u2192 public IP",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "story": "Reply goes to the right flat",
+     "real": "Port number finds the host",
+     "cue": 3
+    },
+    {
+     "icon": "book",
+     "story": "The clerk's log",
+     "real": "NAT table",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "Three types of NAT",
+   "narration": "There are three flavours of N A T. Static is a permanent one to one swap. Dynamic borrows an address from a pool, one to one. And P A T, also called overload, shares one address between many hosts, using port numbers.",
+   "steps": [
+    {
+     "icon": "lock",
+     "title": "Static",
+     "sub": "One private = one public, permanent",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "title": "Dynamic",
+     "sub": "One to one, from a pool",
+     "cue": 2
+    },
+    {
+     "icon": "people",
+     "title": "PAT (overload)",
+     "sub": "Many hosts, one address",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "PAT in a few lines",
+   "narration": "Here's the P A T setup. Mark which interface faces inside. And which faces outside. Match your private hosts with an access list. Then overload the outside interface. Check it with show I P nat translations.",
+   "lines": [
+    {
+     "t": "ip nat inside",
+     "note": "On the LAN interface",
+     "cue": 1
+    },
+    {
+     "t": "ip nat outside",
+     "note": "On the internet interface",
+     "cue": 2
+    },
+    {
+     "t": "access-list 1 permit 192.168.1.0 0.0.0.255",
+     "note": "Who may be translated",
+     "cue": 3
+    },
+    {
+     "t": "ip nat inside source list 1 interface g0/1 overload",
+     "note": "The PAT rule",
+     "cue": 4
+    },
+    {
+     "t": "show ip nat translations",
+     "note": "See the active log",
+     "cue": 5,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three slip-ups. P A T and dynamic N A T aren't the same thing. The access list matches your private addresses, not the public ones. And static N A T never times out.",
+   "items": [
+    {
+     "wrong": "PAT and dynamic NAT are the same",
+     "right": "PAT shares one address using ports",
+     "cue": 1
+    },
+    {
+     "wrong": "The ACL matches public addresses",
+     "right": "It matches the private (inside) ones",
+     "cue": 2
+    },
+    {
+     "wrong": "Static NAT times out",
+     "right": "It stays until you remove it",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva NAT lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. N A T swaps private addresses for public ones. P A T lets many hosts share one public address, using port numbers. And the N A T table is how replies find their way back. Ready to practise? Try the Courseiva NAT lab.",
+   "points": [
+    {
+     "t": "NAT swaps private for public addresses",
+     "cue": 1
+    },
+    {
+     "t": "PAT: many hosts, one address, using ports",
+     "cue": 2
+    },
+    {
+     "t": "The NAT table sends replies home",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

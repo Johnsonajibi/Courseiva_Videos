@@ -1,0 +1,148 @@
+{
+ "topic": "rstp",
+ "title": "Rapid Spanning Tree: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 RAPID STP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "clock",
+   "narration": "Classic spanning tree can take fifty seconds to recover. That's a long time with no network. Rapid S T P does it in about six. Here's how.",
+   "lines": [
+    {
+     "t": "Classic STP: up to 50 seconds",
+     "cue": 0,
+     "color": "#F87171"
+    },
+    {
+     "t": "That's a long time with no network",
+     "cue": 1
+    },
+    {
+     "t": "Rapid STP: about 6",
+     "cue": 2,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Here's how",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Fire doors that pop open",
+   "narration": "Classic spanning tree is a fire marshal who waits twenty seconds before unlocking any door. Rapid S T P is a building where every floor manager talks to their neighbours constantly. If a door fails, a neighbour just agrees to open its own straight away. That quick chat is called proposal and agreement. Doors to end devices open instantly, because they're edge ports.",
+   "items": [
+    {
+     "icon": "clock",
+     "story": "A marshal waits 20 seconds",
+     "real": "Classic STP timers",
+     "cue": 0
+    },
+    {
+     "icon": "people",
+     "story": "Managers talk constantly",
+     "real": "BPDUs on every port",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "The quick chat",
+     "real": "Proposal and agreement",
+     "cue": 3
+    },
+    {
+     "icon": "door",
+     "story": "Doors to end devices",
+     "real": "Edge ports (PortFast)",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Port states and roles",
+   "narration": "The port states got simpler. Classic has four working states, and Rapid has just three. The roles also changed, because Rapid adds alternate and backup ports. Both are ready to take over the moment something fails.",
+   "left": {
+    "title": "Classic STP",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Rapid STP",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Port states",
+     "l": "Blocking, Listening, Learning, Forwarding",
+     "r": "Discarding, Learning, Forwarding",
+     "cue": 1
+    },
+    {
+     "label": "Extra roles",
+     "l": "None",
+     "r": "Alternate and Backup",
+     "cue": 2
+    },
+    {
+     "label": "Recovery",
+     "l": "30 to 50 seconds",
+     "r": "About 6 seconds or less",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Rapid S T P has three states, not five. An alternate port backs up the root port, while a backup port backs up a designated port. And on shared half duplex links, it falls back to slow timers.",
+   "items": [
+    {
+     "wrong": "RSTP has five port states",
+     "right": "Just three: Discarding, Learning, Forwarding",
+     "cue": 1
+    },
+    {
+     "wrong": "Alternate backs up a designated port",
+     "right": "Alternate backs up the root port",
+     "cue": 2
+    },
+    {
+     "wrong": "RSTP is always fast",
+     "right": "Only on full-duplex, point-to-point links",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Rapid STP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Rapid S T P recovers in seconds, using handshakes instead of timers. It has three states and four roles. And Cisco's Rapid P V S T plus runs one copy per V L A N. Ready to practise? Try the Courseiva Rapid STP lab.",
+   "points": [
+    {
+     "t": "Handshakes instead of timers",
+     "cue": 1
+    },
+    {
+     "t": "3 states, 4 roles",
+     "cue": 2
+    },
+    {
+     "t": "Rapid PVST+ runs one instance per VLAN",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,152 @@
+{
+ "topic": "vlans",
+ "title": "VLANs: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 VLANS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Picture one giant open-plan office. Every announcement reaches every desk. That's a flat network. Let's split it into floors, using something called a V L A N.",
+   "lines": [
+    {
+     "t": "One open-plan office",
+     "cue": 0
+    },
+    {
+     "t": "Every message reaches everyone",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "A flat network",
+     "cue": 2
+    },
+    {
+     "t": "Split it into floors",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The apartment building",
+   "narration": "Think of an apartment building with one hundred flats. Each floor is its own V L A N. Mail only gets delivered to flats on the same floor. The sticker on each letter says which floor it belongs to. A flat's front door only belongs to one floor, and that's an access port. The shared stairwell that carries every floor is called a trunk.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Each floor",
+     "real": "A VLAN",
+     "cue": 1
+    },
+    {
+     "icon": "envelope",
+     "story": "Mail stays on the floor",
+     "real": "Separate broadcast domain",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "Floor sticker on a letter",
+     "real": "802.1Q tag",
+     "cue": 3
+    },
+    {
+     "icon": "door",
+     "story": "A flat's front door",
+     "real": "Access port (one VLAN)",
+     "cue": 4
+    },
+    {
+     "icon": "road",
+     "story": "The shared stairwell",
+     "real": "Trunk (many VLANs)",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "Setting one up",
+   "narration": "Setting one up takes three steps. First, create the V L A N on the switch. Second, put the port in access mode. Third, assign that port to the V L A N. Then check your work.",
+   "steps": [
+    {
+     "icon": "building",
+     "title": "Create the VLAN",
+     "sub": "vlan 10 and give it a name",
+     "cue": 1
+    },
+    {
+     "icon": "door",
+     "title": "Access mode",
+     "sub": "switchport mode access",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "title": "Assign the port",
+     "sub": "switchport access vlan 10",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "title": "Verify",
+     "sub": "show vlan brief",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups catch people out. A V L A N is a Layer two idea, not Layer three. A trunk port carries lots of floors at once, not just one. And the native V L A N doesn't have to be number one. Pick an unused one for safety.",
+   "items": [
+    {
+     "wrong": "A VLAN is a Layer 3 concept",
+     "right": "It's Layer 2; subnets just map onto it",
+     "cue": 1
+    },
+    {
+     "wrong": "A trunk carries only one VLAN",
+     "right": "It carries many, tagged with 802.1Q",
+     "cue": 2
+    },
+    {
+     "wrong": "Native VLAN must be VLAN 1",
+     "right": "Any VLAN works; use an unused one",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva VLAN lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A V L A N splits one switch into separate floors. Access ports belong to one floor, and trunks carry many. And create the V L A N before you assign ports to it. Ready to practise? Try the Courseiva VLAN lab.",
+   "points": [
+    {
+     "t": "A VLAN splits one switch into separate floors",
+     "cue": 1
+    },
+    {
+     "t": "Access ports: one VLAN. Trunks: many",
+     "cue": 2
+    },
+    {
+     "t": "Create the VLAN before assigning ports",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
