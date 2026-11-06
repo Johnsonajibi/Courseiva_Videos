@@ -1,0 +1,180 @@
+{
+ "topic": "dhcp-process",
+ "title": "DHCP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 DHCP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "wifi",
+   "narration": "Ever wondered how your phone gets online the second you join Wi-Fi? Nobody typed in an address. It just worked. That's D H C P, and today we'll explain it with a hotel.",
+   "lines": [
+    {
+     "t": "How does your phone get an address?",
+     "cue": 0
+    },
+    {
+     "t": "Nobody typed one in.",
+     "cue": 1
+    },
+    {
+     "t": "It just worked.",
+     "cue": 2,
+     "color": "#A3E635"
+    },
+    {
+     "t": "That's DHCP",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hotel front desk",
+   "narration": "Picture a big hotel. A guest arrives with nothing, so they head to the front desk. The clerk is your D H C P server. The room key is your I P address. The welcome pack, with directions and the Wi-Fi details, is the subnet mask, the default gateway and the D N S server. And how long you can stay is called the lease.",
+   "items": [
+    {
+     "icon": "person",
+     "story": "A guest arrives with nothing",
+     "real": "Your device",
+     "cue": 1
+    },
+    {
+     "icon": "building",
+     "story": "The front desk clerk",
+     "real": "DHCP server",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "story": "The room key",
+     "real": "IP address",
+     "cue": 3
+    },
+    {
+     "icon": "envelope",
+     "story": "The welcome pack",
+     "real": "Mask, gateway, DNS",
+     "cue": 4
+    },
+    {
+     "icon": "clock",
+     "story": "How long you can stay",
+     "real": "Lease time",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "dora",
+   "type": "flow",
+   "heading": "Getting a room: DORA",
+   "narration": "Getting a room takes four steps, and their first letters spell DORA. Step one is Discover: the guest shouts to the whole lobby, is there a clerk here? Step two is Offer: the clerk answers, I've got room twelve for you. Step three is Request: the guest says, great, I'll take it. Step four is Acknowledge: the clerk confirms and hands over the key.",
+   "steps": [
+    {
+     "icon": "mic",
+     "title": "Discover",
+     "sub": "Guest shouts: anyone there? (broadcast)",
+     "cue": 1
+    },
+    {
+     "icon": "envelope",
+     "title": "Offer",
+     "sub": "Clerk offers an address",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "title": "Request",
+     "sub": "Guest asks to keep it",
+     "cue": 3
+    },
+    {
+     "icon": "key",
+     "title": "Acknowledge",
+     "sub": "Clerk confirms the lease",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "config",
+   "type": "terminal",
+   "heading": "Setting up the front desk (Cisco)",
+   "narration": "On a Cisco router, setting up the front desk takes just a few lines. First, you reserve the rooms you never hand out, like the printer's address. Then you create the pool. Give it a network, and a way out. And to see who's checked in, use show I P, D H C P, binding.",
+   "lines": [
+    {
+     "t": "ip dhcp excluded-address 10.0.0.1 10.0.0.10",
+     "note": "Reserve addresses for printers and servers",
+     "cue": 1
+    },
+    {
+     "t": "ip dhcp pool OFFICE",
+     "note": "Create the pool of rooms",
+     "cue": 2
+    },
+    {
+     "t": "network 10.0.0.0 255.255.255.0",
+     "note": "plus default-router 10.0.0.1 = the way out",
+     "cue": 3
+    },
+    {
+     "t": "show ip dhcp binding",
+     "note": "Who has which address, and until when",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Three easy mix-ups",
+   "narration": "A few things catch people out. First, people think the offer is always a private message, but the guest can ask for it to be announced to the whole lobby. Second, the request is shouted to everyone, so every clerk knows which offer was accepted. And third, I P helper address goes on the interface facing the clients, not in global config.",
+   "items": [
+    {
+     "wrong": "The Offer is always unicast",
+     "right": "It can be broadcast or unicast, depending on the broadcast flag",
+     "cue": 1
+    },
+    {
+     "wrong": "The Request goes straight to one server",
+     "right": "It is broadcast, so every server knows which offer won",
+     "cue": 2
+    },
+    {
+     "wrong": "ip helper-address goes in global config",
+     "right": "Put it on the interface facing the clients",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva DHCP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. The device is the guest, the D H C P server is the front desk, and the I P address is the room key. Remember DORA: Discover, Offer, Request, Acknowledge. Leases renew halfway through, at fifty percent. Ready to practise? Try the Courseiva D H C P lab.",
+   "points": [
+    {
+     "t": "Guest = your device, front desk = DHCP server, key = IP address",
+     "cue": 1
+    },
+    {
+     "t": "DORA: Discover, Offer, Request, Acknowledge",
+     "cue": 2
+    },
+    {
+     "t": "Leases start renewing at 50% of the time",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

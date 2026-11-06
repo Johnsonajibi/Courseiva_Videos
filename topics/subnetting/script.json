@@ -1,0 +1,184 @@
+{
+ "topic": "subnetting",
+ "title": "Subnetting: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 SUBNETTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "Subnetting scares a lot of people. But it's really just cutting up a block of addresses, like mailboxes in an apartment lobby. Let's cut one up together.",
+   "lines": [
+    {
+     "t": "Subnetting scares everyone.",
+     "cue": 0
+    },
+    {
+     "t": "But it's just cutting up mailboxes.",
+     "cue": 1,
+     "color": "#A3E635"
+    },
+    {
+     "t": "Let's do it together.",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The apartment mailboxes",
+   "narration": "Imagine a lobby with two hundred and fifty-six mail slots. That's one network. The building manager gives each floor its own group of slots. That's subnetting. The size of each group is set by the subnet mask. The first slot is the name of the group, the network address. The last slot is the shout-to-everyone slot, the broadcast address. That leaves the slots in between for real residents, the usable hosts.",
+   "items": [
+    {
+     "icon": "box",
+     "story": "A group of slots for one floor",
+     "real": "A subnet",
+     "cue": 2
+    },
+    {
+     "icon": "ruler",
+     "story": "How big the group is",
+     "real": "Subnet mask (like /26)",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "story": "First slot: the group's name",
+     "real": "Network address",
+     "cue": 4
+    },
+    {
+     "icon": "bell",
+     "story": "Last slot: announce to all",
+     "real": "Broadcast address",
+     "cue": 5
+    },
+    {
+     "icon": "people",
+     "story": "Slots for real residents",
+     "real": "Usable hosts",
+     "cue": 6
+    }
+   ]
+  },
+  {
+   "id": "formula",
+   "type": "terminal",
+   "heading": "The one formula",
+   "narration": "There's one formula to remember. Count the host bits, which are the zeros in the mask. Two to the power of those bits gives you every address. Take away two, for the network and broadcast slots. The jump between subnets, called the block size, is two hundred and fifty-six minus the last mask number. So with one ninety-two, you jump in blocks of sixty-four.",
+   "lines": [
+    {
+     "t": "/26  \u2192  32 \u2212 26 = 6 host bits",
+     "note": "Count the zeros in the mask",
+     "cue": 1
+    },
+    {
+     "t": "2^6 = 64 addresses",
+     "note": "Every slot in the group",
+     "cue": 2
+    },
+    {
+     "t": "64 \u2212 2 = 62 usable hosts",
+     "note": "Minus network and broadcast",
+     "cue": 3,
+     "color": "#A3E635"
+    },
+    {
+     "t": "Block size = 256 \u2212 192",
+     "note": "Last octet of 255.255.255.192",
+     "cue": 4
+    },
+    {
+     "t": "= 64   \u2192   0, 64, 128, 192",
+     "note": "Subnet IDs jump in blocks of 64",
+     "cue": 5,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "vlsm",
+   "type": "versus",
+   "heading": "Fixed size vs VLSM",
+   "left": {
+    "title": "Fixed-size groups",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "VLSM",
+    "color": "#A3E635"
+   },
+   "narration": "Now the clever part. Say three floors need ten, fifty and a hundred slots. With fixed-size groups, every floor gets the same size, so lots of slots are wasted. With V L S M, each floor gets a group that actually fits. Waste drops from a hundred and four slots down to forty-eight.",
+   "rows": [
+    {
+     "label": "Group size",
+     "l": "Same for every floor",
+     "r": "Fitted to each floor",
+     "cue": 2
+    },
+    {
+     "label": "Masks used",
+     "l": "One mask, e.g. /26",
+     "r": "Mixed: /28, /26, /25",
+     "cue": 3
+    },
+    {
+     "label": "Slots wasted",
+     "l": "104",
+     "r": "48",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Classic slip-ups",
+   "narration": "Here are the classic slip-ups. People forget to subtract two, so a slash thirty has only two usable hosts, not four. They think a Class C network always uses slash twenty-four, but you can pick any mask. And with V L S M, always hand out the biggest groups first, so nothing overlaps.",
+   "items": [
+    {
+     "wrong": "A /30 gives 4 usable hosts",
+     "right": "4 addresses \u2212 2 = 2 usable hosts",
+     "cue": 1
+    },
+    {
+     "wrong": "Class C must always use /24",
+     "right": "Any mask can be used to subnet it",
+     "cue": 2
+    },
+    {
+     "wrong": "Hand out the smallest subnets first",
+     "right": "VLSM: largest first, so nothing overlaps",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva subnetting lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A subnet is one group of slots, sized by the mask. Usable hosts are two to the power of the host bits, minus two. And with V L S M, hand out the biggest groups first. Ready to practise? Try the Courseiva subnetting lab.",
+   "points": [
+    {
+     "t": "A subnet is one group of slots, sized by the mask",
+     "cue": 1
+    },
+    {
+     "t": "Usable hosts = 2^(host bits) \u2212 2",
+     "cue": 2
+    },
+    {
+     "t": "VLSM: hand out the biggest groups first",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

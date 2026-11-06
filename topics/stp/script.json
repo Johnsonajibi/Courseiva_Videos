@@ -1,0 +1,185 @@
+{
+ "topic": "stp",
+ "title": "Spanning Tree: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 SPANNING TREE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "switch",
+   "narration": "What happens if you plug two switches together with two cables? Frames chase each other round and round, forever. The whole network melts down. That's a loop, and S T P is the thing that stops it.",
+   "lines": [
+    {
+     "t": "Two switches. Two cables.",
+     "cue": 0
+    },
+    {
+     "t": "Frames go round and round",
+     "cue": 1
+    },
+    {
+     "t": "Network meltdown",
+     "cue": 2,
+     "color": "#F87171"
+    },
+    {
+     "t": "Spanning Tree stops it",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The meeting moderator",
+   "narration": "Think of a meeting with lots of microphones, all wired to one speaker. If two of them pick up the same voice, you get an awful screech. That's your loop. So the moderator picks one microphone as the boss. That's the root bridge. Everyone else listens on the microphone closest to the boss, called the root port. Any extra microphone gets muted, and that's a blocked port. If the boss drops out, a muted one switches back on.",
+   "items": [
+    {
+     "icon": "bell",
+     "story": "The awful screech",
+     "real": "A switching loop",
+     "cue": 2
+    },
+    {
+     "icon": "mic",
+     "story": "The boss microphone",
+     "real": "Root bridge",
+     "cue": 4
+    },
+    {
+     "icon": "ruler",
+     "story": "Closest mic to the boss",
+     "real": "Root port",
+     "cue": 5
+    },
+    {
+     "icon": "lock",
+     "story": "A muted microphone",
+     "real": "Blocked port",
+     "cue": 6
+    },
+    {
+     "icon": "clock",
+     "story": "Backup switched on",
+     "real": "Reconvergence",
+     "cue": 7
+    }
+   ]
+  },
+  {
+   "id": "election",
+   "type": "flow",
+   "heading": "Choosing the boss",
+   "narration": "How does it choose the boss? With a bridge I D. Every switch has a priority number, and the default is thirty-two thousand, seven hundred and sixty-eight. The lowest priority wins. If there's a tie, the lowest M A C address wins. Then every other switch picks its cheapest path back to the boss.",
+   "steps": [
+    {
+     "icon": "switch",
+     "title": "Bridge ID",
+     "sub": "Priority + MAC address",
+     "cue": 1
+    },
+    {
+     "icon": "scale",
+     "title": "Compare priority",
+     "sub": "Default 32768, lowest wins",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "title": "Tie? Lowest MAC",
+     "sub": "Breaks the tie",
+     "cue": 4
+    },
+    {
+     "icon": "road",
+     "title": "Cheapest path",
+     "sub": "Lowest cost to root = root port",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "rapid",
+   "type": "versus",
+   "heading": "Classic vs Rapid",
+   "left": {
+    "title": "Classic STP",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Rapid STP",
+    "color": "#A3E635"
+   },
+   "narration": "Classic S T P works, but it's slow. After a failure, it takes thirty to fifty seconds to recover. Rapid S T P has fewer port states, so it reacts much faster. And Rapid S T P is what you'll actually use today.",
+   "rows": [
+    {
+     "label": "Recovery time",
+     "l": "30 to 50 seconds",
+     "r": "About 6 seconds",
+     "cue": 1
+    },
+    {
+     "label": "Port states",
+     "l": "Blocking, Listening, Learning, Forwarding",
+     "r": "Discarding, Learning, Forwarding",
+     "cue": 2
+    },
+    {
+     "label": "Used today?",
+     "l": "Rarely",
+     "r": "Yes (Rapid PVST+)",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Three easy mix-ups",
+   "narration": "Watch out for these three. The root bridge has no root port, because it is the destination. Lower priority wins, not higher. And only the root bridge creates the test messages, called B P D Us. Everyone else just passes them on.",
+   "items": [
+    {
+     "wrong": "The root bridge has a root port",
+     "right": "Root ports exist only on non-root switches",
+     "cue": 1
+    },
+    {
+     "wrong": "A higher priority is better",
+     "right": "The lowest bridge ID wins the election",
+     "cue": 2
+    },
+    {
+     "wrong": "Every switch creates BPDUs",
+     "right": "Only the root creates them; others relay",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva STP lab",
+   "ctaCue": 4,
+   "narration": "So, what do you need to remember? One boss, the root bridge, chosen by the lowest I D. Extra links are blocked, not broken, ready to switch on if needed. And Rapid S T P recovers in about six seconds. Ready to practise? Try the Courseiva S T P lab.",
+   "points": [
+    {
+     "t": "One boss: the root bridge, lowest ID wins",
+     "cue": 1
+    },
+    {
+     "t": "Extra links are blocked, not broken",
+     "cue": 2
+    },
+    {
+     "t": "Rapid STP recovers in about 6 seconds",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+name: Render videos
+
+on:
+  # Manual: Actions tab -> Render videos -> Run workflow (topics: "all" or space-separated ids)
+  workflow_dispatch:
+    inputs:
+      topics:
+        description: "Topic ids (space separated) or 'all'"
+        default: "all"
+  # Automatic: render whichever topic scripts changed in a push to main
+  push:
+    branches: [main]
+    paths:
+      - "topics/**/script.json"
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      topics: ${{ steps.pick.outputs.topics }}
+      any: ${{ steps.pick.outputs.any }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: pick
+        shell: bash
+        run: |
+          set -e
+          all=$(ls topics | while read t; do [ -f topics/$t/script.json ] && echo $t; done)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.topics }}" != "all" ]; then
+            list="${{ inputs.topics }}"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            list=$(git diff --name-only HEAD~1 HEAD -- 'topics/*/script.json' 2>/dev/null | cut -d/ -f2 | sort -u | tr '\n' ' ')
+            [ -z "$list" ] && list="$all"
+          else
+            list="$all"
+          fi
+          json=$(python3 -c "import json,sys; print(json.dumps(sys.argv[1].split()))" "$list")
+          echo "topics=$json" >> "$GITHUB_OUTPUT"
+          [ "$json" = "[]" ] && echo "any=false" >> "$GITHUB_OUTPUT" || echo "any=true" >> "$GITHUB_OUTPUT"
+          echo "Rendering: $list"
+
+  render:
+    needs: plan
+    if: needs.plan.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        topic: ${{ fromJson(needs.plan.outputs.topics) }}
+    env:
+      CONC: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: System fonts
+        run: sudo apt-get update -y && sudo apt-get install -y fonts-dejavu-core
+      - name: Cache TTS model
+        uses: actions/cache@v4
+        with:
+          path: tts-models
+          key: kokoro-v1.0
+      - run: tools/fetch_models.sh
+      - run: pip install -r requirements.txt
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - name: Validate script
+        run: python3 -I tools/validate.py topics/${{ matrix.topic }}/script.json
+      - name: Narration audio + timing
+        run: python3 -I tools/prepare.py ${{ matrix.topic }}
+      - name: Render
+        run: npx remotion render src/index.ts Topic out/${{ matrix.topic }}.mp4 --props=topics/${{ matrix.topic }}/props.json --log=info
+      - uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ matrix.topic }}
+          path: out/${{ matrix.topic }}.mp4
+          retention-days: 30
+          if-no-files-found: error

@@ -1,0 +1,10 @@
+node_modules/
+out/
+stills/
+tts-models/
+topics/*/audio/
+topics/*/timing.json
+topics/*/props.json
+public/*/
+!public/fonts/
+*.log
