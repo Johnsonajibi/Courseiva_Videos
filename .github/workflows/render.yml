@@ -31,7 +31,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.topics }}" != "all" ]; then
             list="${{ inputs.topics }}"
           elif [ "${{ github.event_name }}" = "push" ]; then
-            list=$(git diff --name-only HEAD~1 HEAD -- 'topics/*/script.json' 2>/dev/null | cut -d/ -f2 | sort -u | tr '\n' ' ')
+            list=$( (git diff --name-only HEAD~1 HEAD -- 'topics/*/script.json' 2>/dev/null || true) | cut -d/ -f2 | sort -u | tr '\n' ' ' || true)
             [ -z "$list" ] && list="$all"
           else
             list="$all"
