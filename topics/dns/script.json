@@ -1,0 +1,129 @@
+{
+ "topic": "dns",
+ "title": "DNS: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 DNS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "book",
+   "narration": "You type a website name. But computers only talk in numbers. D N S is the phone book that connects the two.",
+   "lines": [
+    {
+     "t": "You type a name",
+     "cue": 0
+    },
+    {
+     "t": "Computers need a number",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "DNS is the phone book",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The phone book and the operator",
+   "narration": "Say you want to call Alice, but you only know her name. You look her up in a phone book and find her number. D N S does exactly that for websites. Your computer asks a helper called the resolver, and the resolver does the legwork. It asks the root servers, then the top level domain servers, then the one that really knows. Finally it hands the number back, and remembers it for a while.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "Name to number",
+     "real": "Domain name to IP address",
+     "cue": 1
+    },
+    {
+     "icon": "person",
+     "story": "Your computer asks a helper",
+     "real": "Recursive resolver",
+     "cue": 2
+    },
+    {
+     "icon": "tree",
+     "story": "Root, then TLD, then the expert",
+     "real": "Authoritative server",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "story": "Remembered for a while",
+     "real": "Cached for the TTL",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Setting it up on a router",
+   "narration": "On a Cisco router, two commands turn D N S on. One enables lookups. The other tells the router which server to ask.",
+   "lines": [
+    {
+     "t": "ip domain-lookup",
+     "note": "Allow name lookups",
+     "cue": 1
+    },
+    {
+     "t": "ip name-server 8.8.8.8",
+     "note": "Which server to ask",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Your computer does not ask the root server directly. It asks its resolver. D N S is not U D P only, because big answers and zone transfers use T C P. And the T T L is set by the authoritative server, not by the resolver.",
+   "items": [
+    {
+     "wrong": "The client asks the root server directly",
+     "right": "It asks its resolver, which does the walking",
+     "cue": 1
+    },
+    {
+     "wrong": "DNS only uses UDP",
+     "right": "Large replies and zone transfers use TCP",
+     "cue": 2
+    },
+    {
+     "wrong": "The resolver sets the TTL",
+     "right": "The authoritative server sets it",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva DNS lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. D N S turns names into I P addresses. Resolvers do the hard work, and cache the answers. It uses port fifty-three, mostly U D P. Ready to practise? Try the Courseiva DNS lab.",
+   "points": [
+    {
+     "t": "DNS turns names into IP addresses",
+     "cue": 1
+    },
+    {
+     "t": "Resolvers do the work and cache answers",
+     "cue": 2
+    },
+    {
+     "t": "Port 53, mostly UDP",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

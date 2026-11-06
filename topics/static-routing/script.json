@@ -1,0 +1,133 @@
+{
+ "topic": "static-routing",
+ "title": "Static Routing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 STATIC ROUTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Who tells a router where to send traffic? Sometimes, you do. By simply writing it down.",
+   "lines": [
+    {
+     "t": "Who tells the router where to go?",
+     "cue": 0
+    },
+    {
+     "t": "You do",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "By writing it down",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The note in the mailroom",
+   "narration": "Picture an office mailroom. The building manager writes a note. All packages for Accounting go to floor three. That note is a static route. It stays put until the manager changes it. If Accounting moves, the note is wrong, and packages go missing. The mailroom clerk never learns, they just follow the note.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "The note",
+     "real": "Static route",
+     "cue": 1
+    },
+    {
+     "icon": "clock",
+     "story": "Stays until changed",
+     "real": "Never updates itself",
+     "cue": 3
+    },
+    {
+     "icon": "question",
+     "story": "Accounting moves",
+     "real": "Traffic is lost",
+     "cue": 4
+    },
+    {
+     "icon": "person",
+     "story": "The clerk never learns",
+     "real": "No adapting to changes",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Writing a static route",
+   "narration": "The command is I P route, then the network, then the mask, then where to send it. A route to zero zero zero zero is the default route. And add a bigger number on the end, and you get a backup, called a floating static route.",
+   "lines": [
+    {
+     "t": "ip route 192.168.1.0 255.255.255.0 10.0.0.1",
+     "note": "Network, mask, next hop",
+     "cue": 0
+    },
+    {
+     "t": "ip route 0.0.0.0 0.0.0.0 10.0.0.1",
+     "note": "Default route: send everything here",
+     "cue": 1
+    },
+    {
+     "t": "ip route 192.168.1.0 255.255.255.0 10.0.0.1 120",
+     "note": "Floating backup (higher AD)",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three common slip-ups. Static routes do not update themselves when a link fails. The default distance is one, but you can change it. And the mask must be written in dotted form, not as a slash.",
+   "items": [
+    {
+     "wrong": "Static routes update when a link fails",
+     "right": "They never adapt on their own",
+     "cue": 1
+    },
+    {
+     "wrong": "AD is always 1",
+     "right": "Default is 1, but you can set it",
+     "cue": 2
+    },
+    {
+     "wrong": "You can write /24 in ip route",
+     "right": "Use a dotted mask: 255.255.255.0",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva static routing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A static route is a note you write by hand. A default route sends everything unknown one way. And a higher distance turns it into a backup. Ready to practise? Try the Courseiva static routing lab.",
+   "points": [
+    {
+     "t": "A static route is a hand-written note",
+     "cue": 1
+    },
+    {
+     "t": "Default route = 0.0.0.0 0.0.0.0",
+     "cue": 2
+    },
+    {
+     "t": "Higher AD = floating backup",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

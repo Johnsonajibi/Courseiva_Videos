@@ -1,0 +1,133 @@
+{
+ "topic": "eigrp-concepts",
+ "title": "EIGRP Concepts: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 EIGRP CONCEPTS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Think of a G P S that already has a backup route ready. It's ready before your road even closes. That's E I G R P.",
+   "lines": [
+    {
+     "t": "A GPS with a backup route",
+     "cue": 0
+    },
+    {
+     "t": "Ready before the road closes",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's EIGRP",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "GPS with alternate routes",
+   "narration": "Your G P S knows the main route, and keeps a few safe alternates in reserve. The main route is called the successor. A safe alternate is a feasible successor. It's only safe if it's guaranteed not to loop back through you. If the main road closes, the G P S switches instantly, without recalculating.",
+   "items": [
+    {
+     "icon": "map",
+     "story": "The main route",
+     "real": "Successor",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "A safe alternate",
+     "real": "Feasible successor",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "Guaranteed no loop",
+     "real": "Reported distance < feasible distance",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "story": "Switches instantly",
+     "real": "Fast convergence (DUAL)",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "What to check",
+   "narration": "Three show commands cover E I G R P. Neighbours. The topology table. And the routes it installs.",
+   "lines": [
+    {
+     "t": "show ip eigrp neighbors",
+     "note": "Who we've met",
+     "cue": 1
+    },
+    {
+     "t": "show ip eigrp topology",
+     "note": "Successors and backups",
+     "cue": 2
+    },
+    {
+     "t": "show ip route eigrp",
+     "note": "Routes installed",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. E I G R P is not link state, it's advanced distance vector. It doesn't use T C P or U D P, it has its own transport. And the successor is the lowest total metric, not the lowest reported distance.",
+   "items": [
+    {
+     "wrong": "EIGRP is link-state",
+     "right": "Advanced distance vector",
+     "cue": 1
+    },
+    {
+     "wrong": "EIGRP uses TCP or UDP",
+     "right": "Its own RTP over IP protocol 88",
+     "cue": 2
+    },
+    {
+     "wrong": "Successor = lowest reported distance",
+     "right": "Lowest total (feasible) distance",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva EIGRP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. E I G R P keeps a main route and safe backups. A backup is safe if its reported distance beats your feasible distance. Internal routes have distance ninety. Ready to practise? Try the Courseiva EIGRP lab.",
+   "points": [
+    {
+     "t": "A main route plus safe backups",
+     "cue": 1
+    },
+    {
+     "t": "Backup rule: RD < FD",
+     "cue": 2
+    },
+    {
+     "t": "Internal AD = 90",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

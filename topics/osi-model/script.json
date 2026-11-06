@@ -1,0 +1,138 @@
+{
+ "topic": "osi-model",
+ "title": "The OSI Model: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 OSI MODEL",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "box",
+   "narration": "Seven layers. One journey. Let's ship a package across the world and see what each layer does.",
+   "lines": [
+    {
+     "t": "Seven layers",
+     "cue": 0
+    },
+    {
+     "t": "One journey",
+     "cue": 1
+    },
+    {
+     "t": "Let's ship a package",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The shipping company",
+   "narration": "You're sending a package from New York to Tokyo. At the top, you write the letter, that's the application. Lower down, it's packed, numbered, and tracked so lost pieces get resent, that's transport. Then someone reads the address and picks the route, that's network. Next, the local truck and its driver, that's data link. And at the very bottom, the road itself, that's physical.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "Write the letter",
+     "real": "Layer 7: Application",
+     "cue": 1
+    },
+    {
+     "icon": "box",
+     "story": "Number and track it",
+     "real": "Layer 4: Transport",
+     "cue": 2
+    },
+    {
+     "icon": "map",
+     "story": "Pick the route",
+     "real": "Layer 3: Network",
+     "cue": 3
+    },
+    {
+     "icon": "road",
+     "story": "The truck and the road",
+     "real": "Layers 2 and 1",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Names to remember",
+   "narration": "Each layer wraps the data in a new name. Layer four makes segments. Layer three makes packets. Layer two makes frames. And layer one is just bits. Routers live at layer three, and switches at layer two.",
+   "lines": [
+    {
+     "t": "Layer 4   Segment",
+     "note": "TCP or UDP",
+     "cue": 1
+    },
+    {
+     "t": "Layer 3   Packet",
+     "note": "Routers, IP address",
+     "cue": 2
+    },
+    {
+     "t": "Layer 2   Frame",
+     "note": "Switches, MAC address",
+     "cue": 3
+    },
+    {
+     "t": "Layer 1   Bits",
+     "note": "Cables and signals",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. The internet runs on T C P I P, and O S I is just a reference model. Layer seven is the network service, not the app itself. And encryption belongs to the presentation layer, not the session layer.",
+   "items": [
+    {
+     "wrong": "OSI is what the internet uses",
+     "right": "The internet uses TCP/IP; OSI is a model",
+     "cue": 1
+    },
+    {
+     "wrong": "Layer 7 is your browser",
+     "right": "It's the service the browser uses",
+     "cue": 2
+    },
+    {
+     "wrong": "Session layer encrypts",
+     "right": "Presentation layer does",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva OSI model lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. The O S I model has seven layers, from physical up to application. Data is wrapped as it goes down: segment, packet, frame, bits. Routers work at layer three, and switches at layer two. Ready to practise? Try the Courseiva OSI model lab.",
+   "points": [
+    {
+     "t": "7 layers, physical to application",
+     "cue": 1
+    },
+    {
+     "t": "Segment, packet, frame, bits",
+     "cue": 2
+    },
+    {
+     "t": "Routers: L3. Switches: L2",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

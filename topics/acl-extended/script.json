@@ -1,0 +1,133 @@
+{
+ "topic": "acl-extended",
+ "title": "Extended ACLs: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 EXTENDED ACLS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Now meet a stricter guard. They check who you are. Then they check where you're going, and why.",
+   "lines": [
+    {
+     "t": "A stricter guard",
+     "cue": 0
+    },
+    {
+     "t": "Who you are",
+     "cue": 1
+    },
+    {
+     "t": "Where you're going, and why",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The embassy checkpoint",
+   "narration": "At an embassy, the guard checks more than nationality. They also check which office you want, and what you're there for. In networking, that's the source, the destination and the port. For example, allow staff to reach the visa office, but only for secure web. Block everyone else. Because it can be so specific, an extended list goes close to the source.",
+   "items": [
+    {
+     "icon": "person",
+     "story": "Who you are",
+     "real": "Source IP",
+     "cue": 1
+    },
+    {
+     "icon": "building",
+     "story": "Which office",
+     "real": "Destination IP",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "story": "What for",
+     "real": "Protocol and port",
+     "cue": 3
+    },
+    {
+     "icon": "map",
+     "story": "Place it near the source",
+     "real": "Close to the source",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Writing one",
+   "narration": "Here's an example. Permit T C P from one network to a server on port four four three. The wildcard masks are inverse masks. And the invisible last line denies everything else.",
+   "lines": [
+    {
+     "t": "ip access-list extended WEB",
+     "note": "Create and name it",
+     "cue": 1
+    },
+    {
+     "t": "permit tcp 10.1.1.0 0.0.0.255 host 10.2.2.2 eq 443",
+     "note": "Source, destination, port",
+     "cue": 2
+    },
+    {
+     "t": "ip access-group WEB in",
+     "note": "Apply it",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Extended lists can match ports and protocols, not just addresses. The wildcard is the inverse of the mask. And a list with only permits still blocks everything else.",
+   "items": [
+    {
+     "wrong": "Only source and destination IP",
+     "right": "Also protocol, ports, ICMP types",
+     "cue": 1
+    },
+    {
+     "wrong": "Wildcard = subnet mask",
+     "right": "It's the inverse: 0 = match",
+     "cue": 2
+    },
+    {
+     "wrong": "Only permits allows everything else",
+     "right": "Implicit deny blocks the rest",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva extended ACL lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Extended lists check source, destination and port. Place them close to the source. And remember the implicit deny at the end. Ready to practise? Try the Courseiva extended ACL lab.",
+   "points": [
+    {
+     "t": "Source, destination, port",
+     "cue": 1
+    },
+    {
+     "t": "Place near the source",
+     "cue": 2
+    },
+    {
+     "t": "Implicit deny at the end",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "topic": "ospf-basics",
+ "title": "OSPF Basics: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 OSPF BASICS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Imagine every router drawing the exact same map of the network. Then each one works out the shortest way across it. That's O S P F.",
+   "lines": [
+    {
+     "t": "Every router draws the same map",
+     "cue": 0
+    },
+    {
+     "t": "Then finds the shortest way",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's OSPF",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The postal planners",
+   "narration": "Think of a national postal service with a team of planners. Each planner tells everyone which cities they connect to, and how far each road is. That message is a link state advertisement. Everyone collects all the messages and builds the same complete map. Then each planner works out the cheapest path for themselves. The cost is based on how fast the road is.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "Each planner shares roads",
+     "real": "LSA",
+     "cue": 1
+    },
+    {
+     "icon": "map",
+     "story": "Everyone builds the same map",
+     "real": "Link-state database",
+     "cue": 2
+    },
+    {
+     "icon": "ruler",
+     "story": "Each finds the cheapest path",
+     "real": "SPF calculation",
+     "cue": 3
+    },
+    {
+     "icon": "scale",
+     "story": "Faster road, lower cost",
+     "real": "Cost = 100 Mbps / bandwidth",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Turning it on",
+   "narration": "Three things to remember. Start the process. Tell it which interfaces to use, with a wildcard mask. And check your neighbours. Hello packets go out every ten seconds.",
+   "lines": [
+    {
+     "t": "router ospf 1",
+     "note": "Start OSPF",
+     "cue": 1
+    },
+    {
+     "t": "network 192.168.1.0 0.0.0.255 area 0",
+     "note": "Wildcard mask, not subnet mask",
+     "cue": 2
+    },
+    {
+     "t": "show ip ospf neighbor",
+     "note": "Check your neighbours",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three slip-ups. O S P F uses cost, not hop count. The network command takes a wildcard mask. And two way is perfectly normal between routers that are not the D R or B D R.",
+   "items": [
+    {
+     "wrong": "OSPF counts hops like RIP",
+     "right": "It uses cost, based on bandwidth",
+     "cue": 1
+    },
+    {
+     "wrong": "network uses a subnet mask",
+     "right": "It uses a wildcard mask",
+     "cue": 2
+    },
+    {
+     "wrong": "2-Way means a problem",
+     "right": "Normal between non-DR routers",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva OSPF lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. O S P F shares a full map, and every router finds its own best path. Cost is based on bandwidth, not hops. And the network command uses wildcard masks. Ready to practise? Try the Courseiva OSPF lab.",
+   "points": [
+    {
+     "t": "Shared map, each router picks its path",
+     "cue": 1
+    },
+    {
+     "t": "Cost comes from bandwidth",
+     "cue": 2
+    },
+    {
+     "t": "network uses wildcard masks",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

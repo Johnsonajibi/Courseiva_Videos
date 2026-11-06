@@ -1,0 +1,139 @@
+{
+ "topic": "hsrp",
+ "title": "HSRP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 HSRP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "router",
+   "narration": "If your one gateway fails, everyone loses the internet. That's a big problem. H S R P keeps a spare ready to step in.",
+   "lines": [
+    {
+     "t": "One gateway fails",
+     "cue": 0,
+     "color": "#F87171"
+    },
+    {
+     "t": "Everyone loses the internet",
+     "cue": 1
+    },
+    {
+     "t": "HSRP keeps a spare ready",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Captain and first officer",
+   "narration": "A plane has two pilots, but only one flies at a time. The captain is the active router. The first officer is the standby. Air traffic control uses one call sign, and that's the virtual I P address. If the captain can't fly, the first officer takes over. And the call sign never changes, so nobody notices.",
+   "items": [
+    {
+     "icon": "router",
+     "story": "The captain",
+     "real": "Active router",
+     "cue": 1
+    },
+    {
+     "icon": "person",
+     "story": "The first officer",
+     "real": "Standby router",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "story": "One shared call sign",
+     "real": "Virtual IP",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "Seamless takeover",
+     "real": "Failover",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Setting it up",
+   "narration": "Give the group a virtual I P. Set a priority, where higher wins. And turn on preempt, because it's off by default. Then check with show standby brief.",
+   "lines": [
+    {
+     "t": "standby 1 ip 10.0.0.1",
+     "note": "The shared virtual IP",
+     "cue": 0
+    },
+    {
+     "t": "standby 1 priority 110",
+     "note": "Higher priority wins",
+     "cue": 1
+    },
+    {
+     "t": "standby 1 preempt",
+     "note": "Off by default",
+     "cue": 2
+    },
+    {
+     "t": "show standby brief",
+     "note": "Who is active",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three slip-ups. H S R P Hellos come from the real address, not the virtual one. H S R P is active standby, so it doesn't load balance by default. And only the active router answers A R P for the virtual address.",
+   "items": [
+    {
+     "wrong": "Hellos come from the virtual IP",
+     "right": "They use the real interface IP",
+     "cue": 1
+    },
+    {
+     "wrong": "HSRP load balances by default",
+     "right": "One active router per group",
+     "cue": 2
+    },
+    {
+     "wrong": "Standby answers ARP too",
+     "right": "Only the active router replies",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva HSRP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. H S R P gives hosts one gateway that never goes down. Highest priority wins, default is one hundred. Remember to turn on preempt. Ready to practise? Try the Courseiva HSRP lab.",
+   "points": [
+    {
+     "t": "One virtual gateway that survives failure",
+     "cue": 1
+    },
+    {
+     "t": "Highest priority wins; default 100",
+     "cue": 2
+    },
+    {
+     "t": "Enable preempt",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

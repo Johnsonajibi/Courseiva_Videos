@@ -1,0 +1,134 @@
+{
+ "topic": "acl-standard-named",
+ "title": "Standard ACLs: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 STANDARD ACLS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Picture a bouncer at a club door. This one checks only one thing. Where you came from.",
+   "lines": [
+    {
+     "t": "A bouncer at the door",
+     "cue": 0
+    },
+    {
+     "t": "Checks one thing only",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Where you came from",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The guest list",
+   "narration": "The bouncer holds a clipboard, and that's the access list. Each line says allow or deny. Every person is checked from the top, and the first match wins. If you're not on the list at all, you're turned away. That's the implicit deny at the end. A standard list checks only the source address.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "The clipboard",
+     "real": "ACL",
+     "cue": 1
+    },
+    {
+     "icon": "door",
+     "story": "Checked top to bottom",
+     "real": "First match wins",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "Not on the list: out",
+     "real": "Implicit deny",
+     "cue": 3
+    },
+    {
+     "icon": "person",
+     "story": "Only checks who you are",
+     "real": "Source IP only",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Writing one",
+   "narration": "Here's a named standard list. Permit one network. Then apply it to an interface, with a direction. Standard lists go close to the destination.",
+   "lines": [
+    {
+     "t": "ip access-list standard GUESTS",
+     "note": "Create and name it",
+     "cue": 1
+    },
+    {
+     "t": "permit 192.168.1.0 0.0.0.255",
+     "note": "Wildcard mask",
+     "cue": 2
+    },
+    {
+     "t": "ip access-group GUESTS out",
+     "note": "Apply with a direction",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three slip-ups. Standard lists cannot look at destinations or ports. A wildcard of all zeros matches one exact host, not everything. And lists don't work until you apply them with a direction.",
+   "items": [
+    {
+     "wrong": "Standard ACLs filter by destination",
+     "right": "Source IP only",
+     "cue": 1
+    },
+    {
+     "wrong": "Wildcard 0.0.0.0 matches any",
+     "right": "It matches one exact host",
+     "cue": 2
+    },
+    {
+     "wrong": "ACLs apply inbound by default",
+     "right": "Apply them yourself; pick in or out",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva standard ACL lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A standard list checks only the source. Top to bottom, first match wins, then implicit deny. Place it close to the destination. Ready to practise? Try the Courseiva standard ACL lab.",
+   "points": [
+    {
+     "t": "Standard ACL = source only",
+     "cue": 1
+    },
+    {
+     "t": "Top-down, first match, implicit deny",
+     "cue": 2
+    },
+    {
+     "t": "Place close to the destination",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

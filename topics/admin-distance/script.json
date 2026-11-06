@@ -1,0 +1,149 @@
+{
+ "topic": "admin-distance",
+ "title": "Administrative Distance: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 ADMIN DISTANCE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "scale",
+   "narration": "Two routing sources give you two different answers for the same place. Who does the router believe? The one with the best trust rating.",
+   "lines": [
+    {
+     "t": "Two sources, two answers",
+     "cue": 0
+    },
+    {
+     "t": "Who do you believe?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Trust ratings decide",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The trusted messenger",
+   "narration": "Imagine a boss getting reports from three people. A veteran vice president, a decent senior manager, and a brand new intern. When their reports disagree, the boss goes with the most trusted source. In networking, that trust score is called administrative distance. Lower means more trusted. And it's checked before the metric ever is.",
+   "items": [
+    {
+     "icon": "person",
+     "story": "The veteran VP",
+     "real": "Connected = 0, Static = 1",
+     "cue": 1
+    },
+    {
+     "icon": "people",
+     "story": "The senior manager",
+     "real": "OSPF = 110",
+     "cue": 2
+    },
+    {
+     "icon": "question",
+     "story": "The new intern",
+     "real": "RIP = 120",
+     "cue": 3
+    },
+    {
+     "icon": "scale",
+     "story": "Trust is checked first",
+     "real": "Lowest AD wins",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Distances to know",
+   "narration": "Here are the numbers worth learning. Connected is zero. Static is one. Internal E I G R P is ninety. O S P F is one ten. R I P is one twenty. And external E I G R P is one seventy.",
+   "lines": [
+    {
+     "t": "Connected   0",
+     "note": "Most trusted",
+     "cue": 1
+    },
+    {
+     "t": "Static   1",
+     "note": "Your own note",
+     "cue": 2
+    },
+    {
+     "t": "EIGRP internal   90",
+     "note": "",
+     "cue": 3
+    },
+    {
+     "t": "OSPF   110",
+     "note": "",
+     "cue": 4
+    },
+    {
+     "t": "RIP   120",
+     "note": "",
+     "cue": 5
+    },
+    {
+     "t": "EIGRP external   170",
+     "note": "Least trusted of these",
+     "cue": 6,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. A lower metric does not beat a lower distance across protocols. Static routes can have a different distance if you set one. And external E I G R P is less trusted than O S P F.",
+   "items": [
+    {
+     "wrong": "Lowest metric always wins",
+     "right": "AD is compared first, then metric",
+     "cue": 1
+    },
+    {
+     "wrong": "Static AD can't be changed",
+     "right": "Set any value 1 to 255",
+     "cue": 2
+    },
+    {
+     "wrong": "EIGRP external = internal",
+     "right": "External is 170, internal is 90",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva administrative distance lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Administrative distance is how much the router trusts a source. Lower is better, and it beats the metric. Learn the big ones: zero, one, ninety, one ten, one twenty. Ready to practise? Try the Courseiva administrative distance lab.",
+   "points": [
+    {
+     "t": "AD = how much a source is trusted",
+     "cue": 1
+    },
+    {
+     "t": "Lower wins, before the metric",
+     "cue": 2
+    },
+    {
+     "t": "0, 1, 90, 110, 120",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

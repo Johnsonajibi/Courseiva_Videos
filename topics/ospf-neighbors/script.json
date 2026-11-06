@@ -1,0 +1,144 @@
+{
+ "topic": "ospf-neighbors",
+ "title": "OSPF Neighbors: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 OSPF NEIGHBORS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "people",
+   "narration": "Two O S P F routers meet on a link. They don't automatically become neighbours. That only happens if a few details match.",
+   "lines": [
+    {
+     "t": "Two routers meet",
+     "cue": 0
+    },
+    {
+     "t": "They only become neighbours",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "If the details match",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The neighbourhood watch",
+   "narration": "Picture a gated community where every house waves a flag every ten seconds. The flag shows the house name, the street, and a secret handshake code. If a house stops waving for forty seconds, the others assume it's empty and cross it off. Those waves are hello packets, and forty seconds is the dead interval. For two houses to become neighbours, their street, handshake and timers must all match.",
+   "items": [
+    {
+     "icon": "clock",
+     "story": "Wave every 10 seconds",
+     "real": "Hello interval",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "Silent for 40 seconds",
+     "real": "Dead interval",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "story": "Secret handshake",
+     "real": "Authentication",
+     "cue": 3
+    },
+    {
+     "icon": "map",
+     "story": "Same street",
+     "real": "Area ID must match",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "What must match",
+   "narration": "Here's the checklist. Area, subnet, timers, authentication and stub flags must all match. The process I D and the router I D do not need to match at all.",
+   "left": {
+    "title": "Must match",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Does not need to match",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Area and subnet",
+     "l": "Yes",
+     "r": "",
+     "cue": 0
+    },
+    {
+     "label": "Hello and Dead timers",
+     "l": "Yes",
+     "r": "",
+     "cue": 1
+    },
+    {
+     "label": "Process ID",
+     "l": "",
+     "r": "Local only",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three things catch people out. Process I Ds are local, and can differ. O S P F does not negotiate timers, so a mismatch means no neighbour. And the router I D does not need to be on the link's subnet.",
+   "items": [
+    {
+     "wrong": "Process IDs must match",
+     "right": "They are only locally significant",
+     "cue": 1
+    },
+    {
+     "wrong": "Mismatched timers get negotiated",
+     "right": "No: they just won't form a neighbour",
+     "cue": 2
+    },
+    {
+     "wrong": "Router ID must be an interface on the link",
+     "right": "It can be any 32-bit ID",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva OSPF neighbor lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Routers wave hello every ten seconds. Area, timers and authentication must match. And show I P O S P F neighbor is your first check. Ready to practise? Try the Courseiva OSPF neighbor lab.",
+   "points": [
+    {
+     "t": "Hello: every 10 seconds",
+     "cue": 1
+    },
+    {
+     "t": "Area, timers, authentication must match",
+     "cue": 2
+    },
+    {
+     "t": "show ip ospf neighbor",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
