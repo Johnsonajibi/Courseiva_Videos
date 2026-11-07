@@ -1,0 +1,144 @@
+{
+ "topic": "icmp-ping-traceroute",
+ "title": "ICMP, Ping and Traceroute: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 PING AND TRACEROUTE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "bell",
+   "narration": "Is anybody out there? Ping is how you ask. And traceroute follows the trail to show you where things stop.",
+   "lines": [
+    {
+     "t": "Is anybody out there?",
+     "cue": 0
+    },
+    {
+     "t": "Ping asks",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Traceroute follows the trail",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The return to sender slip",
+   "narration": "Think of the postal service's pink return to sender slip. You didn't ask for it. It simply tells you why a delivery failed. That slip is I C M P. Ping is a letter marked, please reply if you get this. If the host is there, it writes back. Traceroute is cleverer. It sends letters that expire early, one hop at a time. Each router that tosses one back reveals itself.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "The pink slip",
+     "real": "ICMP messages",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "Please reply if you get this",
+     "real": "Ping: Echo request and reply",
+     "cue": 3
+    },
+    {
+     "icon": "map",
+     "story": "Letters that expire early",
+     "real": "Traceroute uses TTL",
+     "cue": 5
+    },
+    {
+     "icon": "router",
+     "story": "Each router reveals itself",
+     "real": "Time Exceeded replies",
+     "cue": 6
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Types to remember",
+   "narration": "A few I C M P types show up on the exam. Type eight is the echo request, and type zero is the reply. Type three means destination unreachable. And type eleven means time exceeded, which is what traceroute listens for.",
+   "lines": [
+    {
+     "t": "Type 8",
+     "note": "Echo request (ping)",
+     "cue": 0
+    },
+    {
+     "t": "Type 0",
+     "note": "Echo reply",
+     "cue": 1
+    },
+    {
+     "t": "Type 3",
+     "note": "Destination unreachable",
+     "cue": 2
+    },
+    {
+     "t": "Type 11",
+     "note": "Time exceeded (traceroute)",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three slip-ups. Ping has no ports, because I C M P sits straight on top of I P. A good ping doesn't mean the web server works. And a failed ping doesn't prove there's no connection, because I C M P may be filtered. Also, Cisco traceroute sends U D P probes by default, not I C M P.",
+   "items": [
+    {
+     "wrong": "Ping uses TCP or UDP",
+     "right": "ICMP sits directly on IP, no ports",
+     "cue": 1
+    },
+    {
+     "wrong": "Ping works so the app works",
+     "right": "It only tests IP reachability",
+     "cue": 2
+    },
+    {
+     "wrong": "Failed ping means no connectivity",
+     "right": "ICMP may simply be filtered",
+     "cue": 3
+    },
+    {
+     "wrong": "Cisco traceroute uses ICMP",
+     "right": "It uses UDP probes by default",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva ping and traceroute lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Ping checks if a host answers, using echo request and reply. Traceroute uses the T T L to reveal every router on the way. And a failed ping doesn't always mean a broken network. Ready to practise? Try the Courseiva ping and traceroute lab.",
+   "points": [
+    {
+     "t": "Ping = echo request and reply",
+     "cue": 1
+    },
+    {
+     "t": "Traceroute reveals each hop",
+     "cue": 2
+    },
+    {
+     "t": "Failed ping is not proof of failure",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

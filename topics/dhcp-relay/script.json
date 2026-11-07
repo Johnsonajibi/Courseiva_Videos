@@ -1,0 +1,138 @@
+{
+ "topic": "dhcp-relay",
+ "title": "DHCP Relay: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 DHCP RELAY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "question",
+   "narration": "You have one D H C P server. And many subnets. But broadcasts never cross a router. So how does a new device ever get an address?",
+   "lines": [
+    {
+     "t": "One DHCP server",
+     "cue": 0
+    },
+    {
+     "t": "Many subnets",
+     "cue": 1
+    },
+    {
+     "t": "Broadcasts don't cross routers",
+     "cue": 2,
+     "color": "#F87171"
+    },
+    {
+     "t": "So how does it work?",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The campus mailroom",
+   "narration": "A university has one central post office and lots of buildings. A student in the science building drops a request in the local mailroom. The clerk can't shout across campus, so they write a proper addressed envelope to the central post office. They also stamp it with the science building's return address, so the post office knows which pool of addresses to use. That clerk is the relay agent, and the return address is called the giaddr.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Each building",
+     "real": "A subnet",
+     "cue": 0
+    },
+    {
+     "icon": "person",
+     "story": "The local clerk",
+     "real": "Relay agent (the router)",
+     "cue": 1
+    },
+    {
+     "icon": "envelope",
+     "story": "A proper addressed envelope",
+     "real": "Unicast to the DHCP server",
+     "cue": 2
+    },
+    {
+     "icon": "map",
+     "story": "Building's return address",
+     "real": "giaddr picks the pool",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "The command",
+   "narration": "The magic command is I P helper address. It goes on the interface facing the clients, not the one facing the server. And you can add more than one, for backup.",
+   "lines": [
+    {
+     "t": "interface g0/0",
+     "note": "The interface facing the clients",
+     "cue": 0
+    },
+    {
+     "t": "ip helper-address 10.0.0.5",
+     "note": "Where the DHCP server lives",
+     "cue": 1
+    },
+    {
+     "t": "show ip interface g0/0",
+     "note": "Verify it's set",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. The relay doesn't pass the broadcast along. It creates a brand new unicast to the server. The giaddr holds the relay's own address, not the client's, because the client has none yet. And helper address goes on the client facing interface.",
+   "items": [
+    {
+     "wrong": "Relay forwards the broadcast as a broadcast",
+     "right": "It sends a new unicast to the server",
+     "cue": 1
+    },
+    {
+     "wrong": "giaddr is the client's address",
+     "right": "It's the relay's address on the client's subnet",
+     "cue": 2
+    },
+    {
+     "wrong": "Helper goes on the server-facing side",
+     "right": "It goes on the client-facing interface",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva DHCP relay lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A relay lets one D H C P server serve many subnets. The helper address goes on the client facing interface. And the giaddr tells the server which pool to use. Ready to practise? Try the Courseiva DHCP relay lab.",
+   "points": [
+    {
+     "t": "One DHCP server, many subnets",
+     "cue": 1
+    },
+    {
+     "t": "ip helper-address on the client side",
+     "cue": 2
+    },
+    {
+     "t": "giaddr selects the address pool",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "topic": "wlan-architecture",
+ "title": "WLAN Architecture: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 WLAN ARCHITECTURE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "wifi",
+   "narration": "Managing one access point is easy. Managing five hundred is chaos. You need a central dispatcher.",
+   "lines": [
+    {
+     "t": "One access point is easy",
+     "cue": 0
+    },
+    {
+     "t": "Five hundred is chaos",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Time for a dispatcher",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Pizza delivery",
+   "narration": "A pizza shop starts with a few drivers, each with their own map and phone. Every driver makes their own decisions, and that's autonomous mode. As the city grows, drivers get lost and orders clash. So the shop opens a dispatch office, the wireless controller. Drivers still drive and carry the pizzas, but the office decides the routes and keeps everyone coordinated. Those drivers are lightweight access points, and they talk to the dispatcher using a tunnel called CAPWAP.",
+   "items": [
+    {
+     "icon": "person",
+     "story": "Drivers decide alone",
+     "real": "Autonomous APs",
+     "cue": 1
+    },
+    {
+     "icon": "building",
+     "story": "The dispatch office",
+     "real": "Wireless LAN controller",
+     "cue": 3
+    },
+    {
+     "icon": "router",
+     "story": "Drivers still deliver",
+     "real": "Lightweight APs forward data",
+     "cue": 4
+    },
+    {
+     "icon": "link",
+     "story": "The phone line to the office",
+     "real": "CAPWAP tunnel",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Three models",
+   "narration": "There are a few ways to arrange it. A central controller manages every access point from one place. FlexConnect lets remote offices switch traffic locally while still managed centrally. And cloud managed, like Meraki, needs no on site controller, but does need the internet.",
+   "left": {
+    "title": "Controller based",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Cloud or FlexConnect",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Where's the brain",
+     "l": "Central controller",
+     "r": "Cloud, or central with local switching",
+     "cue": 0
+    },
+    {
+     "label": "Traffic",
+     "l": "Tunnelled to the controller",
+     "r": "Switched locally at the AP",
+     "cue": 1
+    },
+    {
+     "label": "Needs",
+     "l": "A controller on site",
+     "r": "Internet access (cloud)",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. CAPWAP uses U D P, not T C P. Control uses port fifty-two forty-six, and data uses fifty-two forty-seven. Not all traffic must go through the controller, because FlexConnect can switch it locally. And autonomous access points are still used in small sites.",
+   "items": [
+    {
+     "wrong": "CAPWAP uses TCP",
+     "right": "UDP: 5246 control, 5247 data",
+     "cue": 1
+    },
+    {
+     "wrong": "All traffic goes through the WLC",
+     "right": "FlexConnect can switch locally",
+     "cue": 2
+    },
+    {
+     "wrong": "Autonomous APs are obsolete",
+     "right": "Still used in small deployments",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva WLAN architecture lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Autonomous access points work alone, and lightweight ones need a controller. They talk to the controller using CAPWAP over U D P. FlexConnect keeps traffic local at remote sites. Ready to practise? Try the Courseiva WLAN architecture lab.",
+   "points": [
+    {
+     "t": "Autonomous vs lightweight APs",
+     "cue": 1
+    },
+    {
+     "t": "CAPWAP over UDP",
+     "cue": 2
+    },
+    {
+     "t": "FlexConnect = local switching",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

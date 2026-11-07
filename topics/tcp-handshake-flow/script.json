@@ -1,0 +1,141 @@
+{
+ "topic": "tcp-handshake-flow",
+ "title": "The TCP Three-Way Handshake: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 TCP HANDSHAKE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "question",
+   "narration": "Before any data moves, two computers have to say hello. It's a quick routine. And it takes exactly three steps.",
+   "lines": [
+    {
+     "t": "Before any data moves",
+     "cue": 0
+    },
+    {
+     "t": "Two computers say hello",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "In exactly three steps",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "A phone call",
+   "narration": "Think of a phone call between Alice and Bob. Alice dials. That's the SYN. Bob picks up and says hello, and that's the SYN ACK. But Alice still has to say hello back, so he knows she can hear him. That's the final ACK. Only now do both sides know the line works, and the real conversation can start. If Bob is busy, he sends a busy signal, which is a reset.",
+   "items": [
+    {
+     "icon": "mic",
+     "story": "Alice dials",
+     "real": "1. SYN",
+     "cue": 1
+    },
+    {
+     "icon": "person",
+     "story": "Bob picks up",
+     "real": "2. SYN-ACK",
+     "cue": 2
+    },
+    {
+     "icon": "people",
+     "story": "Alice says hello back",
+     "real": "3. ACK",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "Busy signal",
+     "real": "RST",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "The three steps",
+   "narration": "Here are the three steps in order. The client sends a SYN. The server answers with a SYN ACK. The client finishes with an ACK. Now both sides are established.",
+   "steps": [
+    {
+     "icon": "laptop",
+     "title": "Client sends SYN",
+     "sub": "I'd like to talk",
+     "cue": 0
+    },
+    {
+     "icon": "server",
+     "title": "Server sends SYN-ACK",
+     "sub": "Fine, and I hear you",
+     "cue": 1
+    },
+    {
+     "icon": "laptop",
+     "title": "Client sends ACK",
+     "sub": "Great, we're connected",
+     "cue": 2
+    },
+    {
+     "icon": "link",
+     "title": "Both sides ESTABLISHED",
+     "sub": "Data can flow",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three common slip-ups. The client never sends the first SYN ACK. It starts with a plain SYN. The handshake isn't finished after the SYN ACK. It needs that last ACK. And sequence numbers start at a random number. Wireshark just shows them as zero to make them easier to read.",
+   "items": [
+    {
+     "wrong": "Client sends SYN-ACK first",
+     "right": "Client sends SYN; server sends SYN-ACK",
+     "cue": 1
+    },
+    {
+     "wrong": "Done after the SYN-ACK",
+     "right": "It needs the final ACK",
+     "cue": 2
+    },
+    {
+     "wrong": "Sequence numbers start at 0",
+     "right": "Random start; Wireshark shows relative",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva TCP handshake lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. The handshake is SYN, then SYN ACK, then ACK. Both sides must reach established before data flows. Sequence numbers start random, not at zero. Ready to practise? Try the Courseiva TCP handshake lab.",
+   "points": [
+    {
+     "t": "SYN, SYN-ACK, ACK",
+     "cue": 1
+    },
+    {
+     "t": "Both sides ESTABLISHED, then data",
+     "cue": 2
+    },
+    {
+     "t": "Random starting sequence numbers",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

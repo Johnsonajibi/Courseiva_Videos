@@ -1,0 +1,148 @@
+{
+ "topic": "tcp-udp",
+ "title": "TCP vs UDP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 TCP VS UDP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "There are two ways to send data across a network. One is like certified mail. The other is like a postcard. Which one you need depends on the job.",
+   "lines": [
+    {
+     "t": "Two ways to send data",
+     "cue": 0
+    },
+    {
+     "t": "Certified mail",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Or a postcard",
+     "cue": 2,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Which one do you need?",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Certified mail or postcard",
+   "narration": "Certified mail is T C P. You fill in a form, pay for tracking, and get a signature back as proof. If it gets lost, you find out and send it again. It's reliable, but all that paperwork takes time. A postcard is U D P. You scribble a message, drop it in the box, and hope for the best. There's no receipt and no resend, but it's very quick. That's why video calls use postcards, and file downloads use certified mail.",
+   "items": [
+    {
+     "icon": "stamp",
+     "story": "Forms, tracking, signature",
+     "real": "TCP: reliable, connection first",
+     "cue": 1
+    },
+    {
+     "icon": "clock",
+     "story": "Paperwork takes time",
+     "real": "TCP: slower, more overhead",
+     "cue": 3
+    },
+    {
+     "icon": "envelope",
+     "story": "Quick scribble, no receipt",
+     "real": "UDP: fast, no guarantees",
+     "cue": 4
+    },
+    {
+     "icon": "mic",
+     "story": "Live calls can't wait",
+     "real": "Voice and video use UDP",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Side by side",
+   "narration": "Here's the comparison. T C P sets up a connection first, using a handshake. U D P just sends. T C P has a bigger header, between twenty and sixty bytes. U D P's header is always exactly eight. And for apps, web and email use T C P, while D N S queries, voice and streaming use U D P.",
+   "left": {
+    "title": "TCP",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "UDP",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Connection",
+     "l": "Handshake first",
+     "r": "None",
+     "cue": 0
+    },
+    {
+     "label": "Header size",
+     "l": "20 to 60 bytes",
+     "r": "Exactly 8 bytes",
+     "cue": 1
+    },
+    {
+     "label": "Typical apps",
+     "l": "Web, email, file transfer",
+     "r": "DNS queries, voice, streaming",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. U D P isn't faster because its packets are smaller. It's faster because it skips setup, receipts and resends. T C P can't promise delivery on a broken link. It only tells you when it gave up. And U D P still has port numbers, just like T C P.",
+   "items": [
+    {
+     "wrong": "UDP is faster because packets are smaller",
+     "right": "It skips setup, acknowledgments and resends",
+     "cue": 1
+    },
+    {
+     "wrong": "TCP guarantees delivery",
+     "right": "On a dead link it gives up and reports failure",
+     "cue": 2
+    },
+    {
+     "wrong": "UDP has no port numbers",
+     "right": "It has source and destination ports",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva TCP and UDP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. T C P is reliable but slower, and U D P is fast but has no guarantees. The exam trick is to match the app. Files use T C P, and streaming uses U D P. D N S queries use U D P, but zone transfers use T C P. Ready to practise? Try the Courseiva TCP and UDP lab.",
+   "points": [
+    {
+     "t": "TCP: reliable. UDP: fast, no guarantees",
+     "cue": 1
+    },
+    {
+     "t": "Match the app: files = TCP, streaming = UDP",
+     "cue": 2
+    },
+    {
+     "t": "DNS: UDP for queries, TCP for zone transfers",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

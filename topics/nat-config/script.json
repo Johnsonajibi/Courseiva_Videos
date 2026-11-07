@@ -1,0 +1,178 @@
+{
+ "topic": "nat-config",
+ "title": "NAT Configuration: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NAT CONFIGURATION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "router",
+   "narration": "Now let's actually configure N A T. There are three ways to set it up. Static. Dynamic. And overload.",
+   "lines": [
+    {
+     "t": "Same idea, three ways to set it up",
+     "cue": 1
+    },
+    {
+     "t": "Static",
+     "cue": 2,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Dynamic",
+     "cue": 3,
+     "color": "#A3E635"
+    },
+    {
+     "t": "And overload",
+     "cue": 4,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The switchboard operator",
+   "narration": "Think of a company switchboard. Two hundred staff share one public phone number, and each has a private extension. When extension two oh one calls out, the operator swaps in the company number, and notes it in a call log. When the customer calls back, she checks the log and connects them to the right extension. Outsiders never see the extensions, only the company number.",
+   "items": [
+    {
+     "icon": "people",
+     "story": "Staff with private extensions",
+     "real": "Private IP addresses",
+     "cue": 1
+    },
+    {
+     "icon": "router",
+     "story": "The operator swaps the number",
+     "real": "NAT on the router",
+     "cue": 2
+    },
+    {
+     "icon": "book",
+     "story": "The call log",
+     "real": "NAT translation table",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "Outsiders see one number",
+     "real": "Internal addresses hidden",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Static or dynamic",
+   "narration": "Here's how the first two differ. Static gives one fixed public address to one inside host. That's what you use for a server people connect to. Dynamic hands out addresses from a pool, and each host borrows one for a while.",
+   "left": {
+    "title": "Static NAT",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Dynamic NAT",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Mapping",
+     "l": "Fixed one-to-one",
+     "r": "Borrowed from a pool",
+     "cue": 0
+    },
+    {
+     "label": "Best for",
+     "l": "Servers reachable from outside",
+     "r": "Hosts going out",
+     "cue": 1
+    },
+    {
+     "label": "Lasts",
+     "l": "Until you remove it",
+     "r": "Until it times out",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Overload in four steps",
+   "narration": "The most common setup is overload, also called P A T. Mark the inside and outside interfaces. Write an access list for who may be translated. Then tie it to the outside interface with overload. And verify with show I P nat translations.",
+   "lines": [
+    {
+     "t": "ip nat inside / ip nat outside",
+     "note": "Mark the interfaces",
+     "cue": 0
+    },
+    {
+     "t": "access-list 1 permit 192.168.1.0 0.0.0.255",
+     "note": "Who may be translated",
+     "cue": 1
+    },
+    {
+     "t": "ip nat inside source list 1 interface g0/1 overload",
+     "note": "The PAT rule",
+     "cue": 2
+    },
+    {
+     "t": "show ip nat translations",
+     "note": "Verify",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three things to remember. N A T hides addresses, but it isn't encryption or authentication. It can break protocols that hide addresses inside the data, like F T P. And translations time out, so entries disappear after a while.",
+   "items": [
+    {
+     "wrong": "NAT is a security feature",
+     "right": "It hides addresses; no encryption or authentication",
+     "cue": 1
+    },
+    {
+     "wrong": "NAT works with every protocol",
+     "right": "FTP and others embed IPs and need help",
+     "cue": 2
+    },
+    {
+     "wrong": "Translations stay forever",
+     "right": "Dynamic entries time out",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva NAT configuration lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Static is one to one, dynamic uses a pool, and overload shares one address. Mark the inside and outside interfaces first. And check your work with show I P nat translations. Ready to practise? Try the Courseiva NAT configuration lab.",
+   "points": [
+    {
+     "t": "Static, dynamic, overload",
+     "cue": 1
+    },
+    {
+     "t": "Mark inside and outside first",
+     "cue": 2
+    },
+    {
+     "t": "show ip nat translations",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

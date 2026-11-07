@@ -1,0 +1,156 @@
+{
+ "topic": "poe",
+ "title": "Power over Ethernet: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 POE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "switch",
+   "narration": "One cable. Data and power together. No wall socket needed. That's power over Ethernet.",
+   "lines": [
+    {
+     "t": "One cable",
+     "cue": 0
+    },
+    {
+     "t": "Data and power",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "No wall socket needed",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The power strip",
+   "narration": "A TV, a console and a soundbar each need a signal and a socket. A power strip lets one wall outlet feed several devices, but it has a total wattage limit. Go over it, and the breaker trips. Think of your switch as that power strip. Each port is a socket, and the switch's power supply is the wall outlet. The P o E standards say how much power each socket can give. And the switch has a total budget to share.",
+   "items": [
+    {
+     "icon": "switch",
+     "story": "The power strip",
+     "real": "The PoE switch",
+     "cue": 2
+    },
+    {
+     "icon": "box",
+     "story": "Each socket",
+     "real": "A PoE port",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "story": "The total wattage limit",
+     "real": "The switch's power budget",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Power levels",
+   "narration": "There are three standards to know. A F gives fifteen point four watts per port. A T, called P o E plus, gives thirty. And B T goes up to sixty, or even a hundred watts.",
+   "lines": [
+    {
+     "t": "802.3af (PoE)",
+     "note": "15.4 W per port",
+     "cue": 0
+    },
+    {
+     "t": "802.3at (PoE+)",
+     "note": "30 W per port",
+     "cue": 1
+    },
+    {
+     "t": "802.3bt (PoE++)",
+     "note": "60 W or 100 W per port",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Checking your power",
+   "narration": "To check power, use show power inline. By default, ports are on auto, which negotiates just what's needed. Static reserves the full amount. And never turns power off.",
+   "lines": [
+    {
+     "t": "show power inline",
+     "note": "Budget and per-port status",
+     "cue": 0
+    },
+    {
+     "t": "power inline auto",
+     "note": "Default: negotiate",
+     "cue": 1
+    },
+    {
+     "t": "power inline static",
+     "note": "Reserves the maximum",
+     "cue": 2
+    },
+    {
+     "t": "power inline never",
+     "note": "Switch PoE off",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Not every P o E switch gives thirty watts. Check the standard. A normal device with an Ethernet port won't get power. It needs to be a powered device. And static mode wastes budget, because it reserves the maximum.",
+   "items": [
+    {
+     "wrong": "All PoE switches give 30 W",
+     "right": "af = 15.4 W, at = 30 W, bt = up to 100 W",
+     "cue": 1
+    },
+    {
+     "wrong": "PoE powers anything with an Ethernet port",
+     "right": "Only powered devices with the right signature",
+     "cue": 2
+    },
+    {
+     "wrong": "Static saves budget",
+     "right": "It reserves the maximum; auto is more efficient",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva PoE lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. P o E sends power and data over one cable. Learn the three levels: fifteen, thirty and up to a hundred watts. And remember the switch has a total power budget. Ready to practise? Try the Courseiva PoE lab.",
+   "points": [
+    {
+     "t": "PoE = power and data on one cable",
+     "cue": 1
+    },
+    {
+     "t": "15.4 W, 30 W, up to 100 W",
+     "cue": 2
+    },
+    {
+     "t": "The switch has a total power budget",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

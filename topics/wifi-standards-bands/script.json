@@ -1,0 +1,144 @@
+{
+ "topic": "wifi-standards-bands",
+ "title": "Wi-Fi Standards and Bands: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 WI-FI STANDARDS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "wifi",
+   "narration": "B, G, N, A C, A X. Wi Fi standards look like alphabet soup. Let's make sense of them.",
+   "lines": [
+    {
+     "t": "b, g, n, a c, a x",
+     "cue": 0
+    },
+    {
+     "t": "Alphabet soup",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Let's make sense of it",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Highways getting wider",
+   "narration": "Think of Wi Fi standards as an upgrading highway system. The data rate is the speed limit. But real speed depends on traffic and road conditions, which is interference. Each new standard widens the road, and adds smarter lanes. Even so, you'll only ever get about half the posted speed in real life.",
+   "items": [
+    {
+     "icon": "road",
+     "story": "The speed limit",
+     "real": "Maximum data rate",
+     "cue": 1
+    },
+    {
+     "icon": "cloud",
+     "story": "Traffic and weather",
+     "real": "Interference",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "Wider road, smarter lanes",
+     "real": "Newer standard",
+     "cue": 3
+    },
+    {
+     "icon": "scale",
+     "story": "Real life is about half",
+     "real": "Throughput is ~50-60% of rate",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "The family tree",
+   "narration": "Here's the list in order. Eight oh two dot eleven b is old, with eleven megabits, on two point four gigahertz. Then a and g reach fifty-four. N is called Wi Fi four, and reaches six hundred. A C is Wi Fi five, and lives only on five gigahertz. And A X is Wi Fi six, which adds the six gigahertz band.",
+   "lines": [
+    {
+     "t": "802.11b",
+     "note": "11 Mbps, 2.4 GHz",
+     "cue": 1
+    },
+    {
+     "t": "802.11a / g",
+     "note": "54 Mbps, 5 GHz / 2.4 GHz",
+     "cue": 2
+    },
+    {
+     "t": "802.11n (Wi-Fi 4)",
+     "note": "Up to 600 Mbps, both bands",
+     "cue": 3
+    },
+    {
+     "t": "802.11ac (Wi-Fi 5)",
+     "note": "Up to 6.93 Gbps, 5 GHz only",
+     "cue": 4
+    },
+    {
+     "t": "802.11ax (Wi-Fi 6)",
+     "note": "Up to 9.6 Gbps, 2.4, 5 and 6 GHz",
+     "cue": 5,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three slip-ups. A C works only on five gigahertz. Wider channels aren't always better, because you get fewer that don't overlap. On two point four, there are only three clear channels, one, six and eleven. And N goes up to six hundred megabits, not fifty-four.",
+   "items": [
+    {
+     "wrong": "802.11ac uses both bands",
+     "right": "5 GHz only",
+     "cue": 1
+    },
+    {
+     "wrong": "Wider channels are always better",
+     "right": "Fewer non-overlapping channels, more interference",
+     "cue": 2
+    },
+    {
+     "wrong": "802.11n tops out at 54 Mbps",
+     "right": "Up to 600 Mbps",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Wi-Fi standards lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Each Wi Fi standard is a wider, smarter road. A C is five gigahertz only, and A X adds six gigahertz. On two point four, stick to channels one, six and eleven. Ready to practise? Try the Courseiva Wi-Fi standards lab.",
+   "points": [
+    {
+     "t": "Each standard widens and speeds up the road",
+     "cue": 1
+    },
+    {
+     "t": "ac: 5 GHz only. ax adds 6 GHz",
+     "cue": 2
+    },
+    {
+     "t": "2.4 GHz: use channels 1, 6, 11",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

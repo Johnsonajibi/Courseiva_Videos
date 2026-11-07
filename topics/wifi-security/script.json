@@ -1,0 +1,144 @@
+{
+ "topic": "wifi-security",
+ "title": "Wi-Fi Security: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 WI-FI SECURITY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "lock",
+   "narration": "Your Wi Fi has a password. But is it really safe? That depends entirely on which lock you're using.",
+   "lines": [
+    {
+     "t": "Your Wi Fi password",
+     "cue": 0
+    },
+    {
+     "t": "Is it really safe?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "It depends which lock you use",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Hotel keys over the years",
+   "narration": "Think of how hotel keys evolved. W E P was one metal key shared by every guest. Copy it once, and you can enter any room. W P A brought electronic locks with a new key per guest, but the cipher inside could still be picked. W P A two upgraded the lock to A E S, which is far tougher. But guests still shared one passphrase, so a weak one could be guessed offline. W P A three fixed that, and a stolen password no longer unlocks old traffic.",
+   "items": [
+    {
+     "icon": "key",
+     "story": "One key for everyone",
+     "real": "WEP: static, easy to crack",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "Electronic lock, weak cipher",
+     "real": "WPA: TKIP",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "Much tougher lock",
+     "real": "WPA2: AES (CCMP)",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "story": "Fresh key, can't be replayed",
+     "real": "WPA3: SAE, forward secrecy",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "WPA2 vs WPA3",
+   "narration": "Here are the key differences. W P A two uses A E S with a hundred and twenty-eight bit key. W P A three moves to two fifty-six bit. W P A two Personal can be attacked offline if the passphrase is weak. W P A three uses S A E, which stops that.",
+   "left": {
+    "title": "WPA2",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "WPA3",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Encryption",
+     "l": "AES-128 (CCMP)",
+     "r": "AES-256 (GCMP)",
+     "cue": 0
+    },
+    {
+     "label": "Key exchange",
+     "l": "PSK 4-way handshake",
+     "r": "SAE handshake first",
+     "cue": 1
+    },
+    {
+     "label": "Weak password",
+     "l": "Can be cracked offline",
+     "r": "Resists offline guessing",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. W P A three isn't backward compatible, though many access points offer a transition mode. Enterprise mode adds per user logins, but W P A three Personal can still be stronger in some ways. And W P A three still has a four way handshake, but it follows S A E.",
+   "items": [
+    {
+     "wrong": "WPA3 is backward compatible",
+     "right": "Transition mode offers both",
+     "cue": 1
+    },
+    {
+     "wrong": "WPA2-Enterprise always beats WPA3",
+     "right": "Different strengths; WPA3 has forward secrecy",
+     "cue": 2
+    },
+    {
+     "wrong": "WPA3 drops the 4-way handshake",
+     "right": "It keeps it, after SAE",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Wi-Fi security lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. W E P is broken. W P A uses T K I P. W P A two uses A E S. W P A three adds S A E and forward secrecy. Never use T K I P, and prefer W P A three. Ready to practise? Try the Courseiva Wi-Fi security lab.",
+   "points": [
+    {
+     "t": "WEP broken, WPA TKIP, WPA2 AES",
+     "cue": 1
+    },
+    {
+     "t": "WPA3: SAE + forward secrecy",
+     "cue": 2
+    },
+    {
+     "t": "Avoid TKIP; prefer WPA3",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

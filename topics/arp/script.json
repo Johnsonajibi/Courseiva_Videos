@@ -1,0 +1,149 @@
+{
+ "topic": "arp",
+ "title": "ARP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 ARP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "question",
+   "narration": "Your computer knows the I P address it wants to reach. But the switch only understands M A C addresses. So how does it find the match? It asks.",
+   "lines": [
+    {
+     "t": "You know the I P address",
+     "cue": 0
+    },
+    {
+     "t": "The switch needs a M A C",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "So who has it?",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The office directory",
+   "narration": "Picture a big office with no central directory. Everyone keeps a personal notebook of who sits where. Bob wants to send Alice a document, but he only knows her name. So he shouts down the hallway. Who is Alice? Please tell me your office number. That shout is the A R P request, and everyone hears it. Alice answers Bob directly, just to him. Bob writes it in his notebook, and next time he doesn't need to shout.",
+   "items": [
+    {
+     "icon": "mic",
+     "story": "Bob shouts to everyone",
+     "real": "ARP request (broadcast)",
+     "cue": 3
+    },
+    {
+     "icon": "person",
+     "story": "Alice answers just Bob",
+     "real": "ARP reply (unicast)",
+     "cue": 4
+    },
+    {
+     "icon": "book",
+     "story": "Bob's notebook",
+     "real": "ARP cache",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "Request and reply",
+   "narration": "It's a two step conversation. First, a broadcast asking who owns the address. Second, a direct reply with the answer. Then the answer is cached for later.",
+   "steps": [
+    {
+     "icon": "mic",
+     "title": "Request",
+     "sub": "Broadcast to FF:FF:FF:FF:FF:FF",
+     "cue": 0
+    },
+    {
+     "icon": "envelope",
+     "title": "Reply",
+     "sub": "Unicast straight back",
+     "cue": 1
+    },
+    {
+     "icon": "book",
+     "title": "Cache it",
+     "sub": "Reuse for 4 hours on Cisco",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Useful commands",
+   "narration": "Two commands to know. Show I P arp lets you see the cache. And clear arp cache empties it.",
+   "lines": [
+    {
+     "t": "show ip arp",
+     "note": "See the ARP cache",
+     "cue": 0
+    },
+    {
+     "t": "clear arp-cache",
+     "note": "Flush it",
+     "cue": 1,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. A R P never crosses a router. It stays within one subnet. The reply is a unicast, not a broadcast. And cached entries do expire. On Cisco, after four hours by default.",
+   "items": [
+    {
+     "wrong": "ARP works across routers",
+     "right": "It stays inside one broadcast domain",
+     "cue": 1
+    },
+    {
+     "wrong": "The reply is a broadcast",
+     "right": "The reply is a unicast",
+     "cue": 2
+    },
+    {
+     "wrong": "ARP entries last forever",
+     "right": "They time out (4 hours on Cisco)",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva ARP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A R P turns an I P address into a M A C address on the same network. The request is a broadcast, and the reply goes straight back. Answers are cached, so it doesn't have to ask again. Ready to practise? Try the Courseiva ARP lab.",
+   "points": [
+    {
+     "t": "ARP: IP address to MAC address, same subnet",
+     "cue": 1
+    },
+    {
+     "t": "Request: broadcast. Reply: unicast",
+     "cue": 2
+    },
+    {
+     "t": "Answers are cached",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
