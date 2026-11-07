@@ -1,0 +1,110 @@
+{
+ "topic": "dmvpn",
+ "title": "DMVPN and FlexVPN: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 DMVPN",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "A company has fifty offices. Building a tunnel between every pair would be a nightmare. D M V P N builds them as needed.",
+   "lines": [
+    {
+     "t": "Fifty offices",
+     "cue": 0
+    },
+    {
+     "t": "A tunnel between each pair?",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "DMVPN builds them on demand",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The private driver guild",
+   "narration": "Drivers register with a central office, called the hub. The hub is the register of where everyone is. Each spoke tells the hub its real address. Spokes then find each other and build direct tunnels. The I P sec profile goes on the tunnel interface.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Hub",
+     "real": "NHRP server",
+     "cue": 1
+    },
+    {
+     "icon": "people",
+     "story": "Spokes register",
+     "real": "Using NHRP",
+     "cue": 2
+    },
+    {
+     "icon": "link",
+     "story": "Spoke-to-spoke tunnels",
+     "real": "Dynamic",
+     "cue": 3
+    },
+    {
+     "icon": "key",
+     "story": "IPsec profile",
+     "real": "Not a crypto map",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. They share the same purpose. Phase three lets spokes talk directly. Use an I P sec profile.",
+   "items": [
+    {
+     "wrong": "DMVPN and FlexVPN are unrelated",
+     "right": "Same purpose",
+     "cue": 1
+    },
+    {
+     "wrong": "Phase 3 still goes via the hub",
+     "right": "Spokes talk directly",
+     "cue": 2
+    },
+    {
+     "wrong": "Use a crypto map",
+     "right": "Use an IPsec profile",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva DMVPN lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. N H R P lets spokes find each other. Phase three builds direct tunnels. Flex V P N is the I K E version two way. Ready to practise? Try the Courseiva DMVPN lab.",
+   "points": [
+    {
+     "t": "NHRP lets spokes find each other",
+     "cue": 1
+    },
+    {
+     "t": "Phase 3: direct tunnels",
+     "cue": 2
+    },
+    {
+     "t": "FlexVPN is IKEv2-based",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

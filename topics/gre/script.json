@@ -1,0 +1,110 @@
+{
+ "topic": "gre",
+ "title": "GRE Tunnels: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 GRE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "Imagine putting a letter inside a bigger envelope. The outer one carries the inner one across the network. That's a G R E tunnel.",
+   "lines": [
+    {
+     "t": "An express envelope",
+     "cue": 0
+    },
+    {
+     "t": "It travels as one thing",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's GRE",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The express envelope",
+   "narration": "G R E wraps packets inside new ones. It adds a four byte G R E header and a new I P header. The outer I P protocol number is forty seven. Tunnels are point to point, and can carry multicast. But G R E gives no encryption at all.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "24 bytes overhead",
+     "real": "4 + 20",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "IP protocol 47",
+     "real": "GRE",
+     "cue": 2
+    },
+    {
+     "icon": "link",
+     "story": "Point-to-point",
+     "real": "Supports multicast",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "No encryption",
+     "real": "Add IPsec for that",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. G R E has no security. G R E is forty seven, E S P is fifty. G R E is point to point by default.",
+   "items": [
+    {
+     "wrong": "GRE encrypts traffic",
+     "right": "It doesn't",
+     "cue": 1
+    },
+    {
+     "wrong": "GRE is protocol 50",
+     "right": "47 (ESP is 50)",
+     "cue": 2
+    },
+    {
+     "wrong": "GRE is multipoint by default",
+     "right": "Point-to-point",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva GRE lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. G R E wraps packets, and adds twenty four bytes. It's I P protocol forty seven. Add I P sec if you need encryption. Ready to practise? Try the Courseiva GRE lab.",
+   "points": [
+    {
+     "t": "GRE adds 24 bytes",
+     "cue": 1
+    },
+    {
+     "t": "IP protocol 47",
+     "cue": 2
+    },
+    {
+     "t": "Add IPsec for encryption",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

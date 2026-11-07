@@ -1,0 +1,110 @@
+{
+ "topic": "vrf-bgp",
+ "title": "VRF-Lite and MP-BGP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 VRF AND MP-BGP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "One router can serve many customers. Each one wants their own private routing table. A V R F gives them exactly that.",
+   "lines": [
+    {
+     "t": "One router",
+     "cue": 0
+    },
+    {
+     "t": "Each wants privacy",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "VRF gives them that",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The apartment mailroom",
+   "narration": "Picture one mailroom with separate shelves for each tenant. Each V R F is its own private routing table. V R F lite works on one router, and needs no M P L S. M P B G P carries V P N routes between routers. A route distinguisher makes each route unique.",
+   "items": [
+    {
+     "icon": "box",
+     "story": "VRF",
+     "real": "Isolated routes",
+     "cue": 1
+    },
+    {
+     "icon": "router",
+     "story": "VRF-Lite",
+     "real": "Single router, no MPLS",
+     "cue": 2
+    },
+    {
+     "icon": "link",
+     "story": "MP-BGP",
+     "real": "Multiple address families",
+     "cue": 3
+    },
+    {
+     "icon": "stamp",
+     "story": "Route Distinguisher",
+     "real": "Unique, but not a filter",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. V R F lite doesn't use M P L S. M P B G P carries many address families. The route target controls import, not the R D.",
+   "items": [
+    {
+     "wrong": "VRF-Lite uses MPLS",
+     "right": "It doesn't",
+     "cue": 1
+    },
+    {
+     "wrong": "MP-BGP is only for IPv6",
+     "right": "Many address families",
+     "cue": 2
+    },
+    {
+     "wrong": "RD controls which VRF",
+     "right": "Route targets do",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva VRF and MP-BGP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A V R F is a private routing table. M P B G P carries V P N routes. The R D only makes routes unique. Ready to practise? Try the Courseiva VRF and MP-BGP lab.",
+   "points": [
+    {
+     "t": "VRF = private routing table",
+     "cue": 1
+    },
+    {
+     "t": "MP-BGP carries VPN routes",
+     "cue": 2
+    },
+    {
+     "t": "RD = unique only",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

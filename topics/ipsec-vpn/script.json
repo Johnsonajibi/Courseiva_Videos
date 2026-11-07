@@ -1,0 +1,110 @@
+{
+ "topic": "ipsec-vpn",
+ "title": "IPsec VPN: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IPSEC",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Picture an armoured convoy. It protects the cargo, and checks it hasn't been touched. That's what I P sec does for packets.",
+   "lines": [
+    {
+     "t": "An armoured convoy",
+     "cue": 0
+    },
+    {
+     "t": "Protects what's inside",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's IPsec",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The armoured convoy",
+   "narration": "I P sec builds the convoy in two phases. Phase one agrees the rules, using I K E on U D P five hundred. Phase two builds the tunnel that carries the data. E S P encrypts and checks the data. The crypto lists on each side must mirror each other.",
+   "items": [
+    {
+     "icon": "key",
+     "story": "IKE Phase 1",
+     "real": "UDP 500, lasts 86400 s",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "IKE Phase 2",
+     "real": "IPsec SA, lasts 3600 s",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "ESP",
+     "real": "Encryption and integrity",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "story": "Mirror-image ACLs",
+     "real": "Source and destination swapped",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. I K E uses U D P. E S P can encrypt and authenticate. They must be mirror images.",
+   "items": [
+    {
+     "wrong": "IKE uses TCP 500",
+     "right": "UDP 500",
+     "cue": 1
+    },
+    {
+     "wrong": "AH is more secure than ESP",
+     "right": "ESP can do both",
+     "cue": 2
+    },
+    {
+     "wrong": "Both ACLs are identical",
+     "right": "They are mirrors",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IPsec lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. I K E phase one, then phase two. E S P encrypts and checks data. Crypto lists must mirror each other. Ready to practise? Try the Courseiva IPsec lab.",
+   "points": [
+    {
+     "t": "IKE phase 1, then phase 2",
+     "cue": 1
+    },
+    {
+     "t": "ESP encrypts and authenticates",
+     "cue": 2
+    },
+    {
+     "t": "Mirror the crypto ACLs",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

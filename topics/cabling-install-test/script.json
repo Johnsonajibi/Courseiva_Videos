@@ -1,0 +1,107 @@
+{
+ "topic": "cabling-install-test",
+ "title": "Structured Cabling: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 STRUCTURED CABLING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "road",
+   "narration": "Cables are a building's utility grid. A few strict rules keep it working. You need to know the numbers.",
+   "lines": [
+    {
+     "t": "Cables are the city's utilities",
+     "cue": 0
+    },
+    {
+     "t": "Rules keep it working",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Know the numbers",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Numbers to remember",
+   "narration": "Here are the key limits. The permanent link is ninety metres. The full channel, with patch cords, is a hundred. Cat six only does ten gig for fifty five metres. Pick T five six eight A or B, and don't mix them.",
+   "lines": [
+    {
+     "t": "Permanent link   90 m",
+     "note": "Wall socket run",
+     "cue": 1
+    },
+    {
+     "t": "Full channel   100 m",
+     "note": "With patch cords",
+     "cue": 2
+    },
+    {
+     "t": "Cat6   10G to 55 m",
+     "note": "Cat6a for 100 m",
+     "cue": 3
+    },
+    {
+     "t": "T568A or T568B",
+     "note": "Never mix in one site",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Patch cords count toward the hundred. Pick one standard for the building. Cat six A is needed for the full distance.",
+   "items": [
+    {
+     "wrong": "Only the run counts toward 100 m",
+     "right": "Patch cords count too",
+     "cue": 1
+    },
+    {
+     "wrong": "Mix A and B freely",
+     "right": "Pick one standard",
+     "cue": 2
+    },
+    {
+     "wrong": "Cat6 is fine for 10G at full length",
+     "right": "Needs Cat6a",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva structured cabling lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Ninety metres of cable, and a hundred in total. Cat six A for full distance ten gig. One wiring standard per site. Ready to practise? Try the Courseiva structured cabling lab.",
+   "points": [
+    {
+     "t": "90 m link, 100 m channel",
+     "cue": 1
+    },
+    {
+     "t": "Cat6a for 10G at 100 m",
+     "cue": 2
+    },
+    {
+     "t": "One wiring standard",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

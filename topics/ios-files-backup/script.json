@@ -1,0 +1,134 @@
+{
+ "topic": "ios-files-backup",
+ "title": "IOS Files and Backups: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IOS FILES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "book",
+   "narration": "A router has a filing cabinet and a notepad. One survives a power cut. The other doesn't.",
+   "lines": [
+    {
+     "t": "A filing cabinet and a notepad",
+     "cue": 0
+    },
+    {
+     "t": "One survives a reboot",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "One doesn't",
+     "cue": 2,
+     "color": "#F87171"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The cabinet and notepad",
+   "narration": "Where things live decides whether they survive. Flash holds the I O S image, and it survives a reboot. N V R A M holds the startup config, and it survives too. R A M holds the running config, and a reboot wipes it. So always copy running config to startup config.",
+   "items": [
+    {
+     "icon": "box",
+     "story": "Flash",
+     "real": "Non-volatile, IOS image",
+     "cue": 1
+    },
+    {
+     "icon": "book",
+     "story": "NVRAM",
+     "real": "startup-config",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "RAM",
+     "real": "running-config, volatile",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "story": "copy run start",
+     "real": "Saves your work",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Commands",
+   "narration": "Three commands to remember. List what's in flash. Save your changes. And see what will survive a reboot.",
+   "lines": [
+    {
+     "t": "dir flash:",
+     "note": "List the files",
+     "cue": 1
+    },
+    {
+     "t": "copy running-config startup-config",
+     "note": "Save changes",
+     "cue": 2
+    },
+    {
+     "t": "show startup-config",
+     "note": "What survives a reboot",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Startup config is in N V R A M. You have to save it yourself. Delete just marks the file.",
+   "items": [
+    {
+     "wrong": "Startup config lives in flash",
+     "right": "NVRAM",
+     "cue": 1
+    },
+    {
+     "wrong": "Config saves itself on exit",
+     "right": "You must save",
+     "cue": 2
+    },
+    {
+     "wrong": "Delete frees space right away",
+     "right": "It only marks the file",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IOS files lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Running is in R A M, and startup is in N V R A M. Always copy run start. Flash holds the I O S image. Ready to practise? Try the Courseiva IOS files lab.",
+   "points": [
+    {
+     "t": "Running: RAM. Startup: NVRAM",
+     "cue": 1
+    },
+    {
+     "t": "copy run start",
+     "cue": 2
+    },
+    {
+     "t": "Flash = IOS image",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

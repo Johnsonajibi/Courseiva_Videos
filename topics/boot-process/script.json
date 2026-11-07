@@ -1,0 +1,140 @@
+{
+ "topic": "boot-process",
+ "title": "Router Boot Process: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 BOOT PROCESS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "clock",
+   "narration": "A router starts up much like a smartphone. It goes through a set order of steps. The order is easy to learn.",
+   "lines": [
+    {
+     "t": "A phone starting up",
+     "cue": 0
+    },
+    {
+     "t": "Step by step",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Learn the order",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "Boot order",
+   "narration": "Here's what happens. The hardware test runs, called P O S T. The bootloader starts, called R O M mon. It finds the I O S image. It loads the I O S. Then it reads the startup config.",
+   "steps": [
+    {
+     "icon": "gear",
+     "title": "POST",
+     "sub": "Hardware check",
+     "cue": 1
+    },
+    {
+     "icon": "key",
+     "title": "ROMMON",
+     "sub": "Bootloader",
+     "cue": 2
+    },
+    {
+     "icon": "box",
+     "title": "Locate IOS",
+     "sub": "Flash by default",
+     "cue": 3
+    },
+    {
+     "icon": "router",
+     "title": "Load IOS",
+     "sub": "Into RAM",
+     "cue": 4
+    },
+    {
+     "icon": "book",
+     "title": "Load startup-config",
+     "sub": "From NVRAM",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "The config register",
+   "narration": "A single register steers it. The default is zero x two one oh two. Zero x two one four two ignores the saved config, for password recovery. And zero x two one zero zero stays in ROM mon.",
+   "lines": [
+    {
+     "t": "0x2102",
+     "note": "Default: boot from flash",
+     "cue": 1
+    },
+    {
+     "t": "0x2142",
+     "note": "Ignore startup config",
+     "cue": 2
+    },
+    {
+     "t": "0x2100",
+     "note": "Stay in ROMMON",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. P O S T only tests the hardware. The register is stored separately. The boot variable and the register are different.",
+   "items": [
+    {
+     "wrong": "POST loads the IOS",
+     "right": "POST tests hardware",
+     "cue": 1
+    },
+    {
+     "wrong": "Register is in the running config",
+     "right": "It's separate",
+     "cue": 2
+    },
+    {
+     "wrong": "BOOT variable = register",
+     "right": "Different things",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva booting lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. P O S T, then R O M mon, then I O S, then config. Zero x two one zero two is the default. Zero x two one four two skips the config. Ready to practise? Try the Courseiva booting lab.",
+   "points": [
+    {
+     "t": "POST, ROMMON, IOS, config",
+     "cue": 1
+    },
+    {
+     "t": "0x2102 default",
+     "cue": 2
+    },
+    {
+     "t": "0x2142 skips startup config",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

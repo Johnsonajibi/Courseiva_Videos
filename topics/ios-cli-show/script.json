@@ -1,0 +1,110 @@
+{
+ "topic": "ios-cli-show",
+ "title": "The Cisco CLI Modes: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IOS CLI",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Think of an office building with security. Each floor needs a higher pass. I O S modes work the same way.",
+   "lines": [
+    {
+     "t": "An office building",
+     "cue": 0
+    },
+    {
+     "t": "Floors you need a pass for",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "IOS modes work the same way",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The security levels",
+   "narration": "You climb through the modes one at a time. User mode ends with a greater than sign, and only allows basic checks. Type enable to reach privileged mode, which ends with a hash. Configure terminal takes you to global configuration. From there, you enter interface or line modes.",
+   "items": [
+    {
+     "icon": "door",
+     "story": "User EXEC  >",
+     "real": "Basic show and ping",
+     "cue": 1
+    },
+    {
+     "icon": "key",
+     "story": "Privileged EXEC  #",
+     "real": "enable",
+     "cue": 2
+    },
+    {
+     "icon": "gear",
+     "story": "Global config  (config)#",
+     "real": "configure terminal",
+     "cue": 3
+    },
+    {
+     "icon": "switch",
+     "story": "Sub-modes  (config-if)#",
+     "real": "Interface, line, router",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. You must enable first. Exit goes back one level. Enable secret takes priority.",
+   "items": [
+    {
+     "wrong": "Config mode straight from user mode",
+     "right": "Enable first",
+     "cue": 1
+    },
+    {
+     "wrong": "Exit always goes to privileged",
+     "right": "It goes back one level",
+     "cue": 2
+    },
+    {
+     "wrong": "Password and secret are the same",
+     "right": "Secret wins",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva the CLI lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Greater than is user mode, and hash is privileged. Configure terminal enters global config. Exit goes back one level. Ready to practise? Try the Courseiva the CLI lab.",
+   "points": [
+    {
+     "t": "> user; # privileged",
+     "cue": 1
+    },
+    {
+     "t": "configure terminal",
+     "cue": 2
+    },
+    {
+     "t": "exit = back one level",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

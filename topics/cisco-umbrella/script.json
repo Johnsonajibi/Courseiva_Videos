@@ -1,0 +1,110 @@
+{
+ "topic": "cisco-umbrella",
+ "title": "Cisco Umbrella: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CISCO UMBRELLA",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Picture a hotel concierge who checks every address you ask for. If it's a known bad one, they don't let you go. That's what Umbrella does with D N S.",
+   "lines": [
+    {
+     "t": "A hotel concierge",
+     "cue": 0
+    },
+    {
+     "t": "Bad address?",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's DNS filtering",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The DNS concierge",
+   "narration": "Umbrella sits in the cloud, and checks names before you connect. It's a cloud service, backed by Cisco Talos threat research. It judges each name by its reputation. Then it allows, blocks, or warns. You can point a whole network at it, or use a roaming client.",
+   "items": [
+    {
+     "icon": "cloud",
+     "story": "Cloud DNS security",
+     "real": "Talos intelligence",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "Domain reputation",
+     "real": "Not IP reputation",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "Policy actions",
+     "real": "Allow, block, warn",
+     "cue": 3
+    },
+    {
+     "icon": "laptop",
+     "story": "Deployment options",
+     "real": "DNS settings, appliance, client",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It's a cloud service. Pointing D N S at it protects the whole network. It mainly uses domain reputation.",
+   "items": [
+    {
+     "wrong": "Umbrella is an on-site firewall",
+     "right": "It's cloud-based",
+     "cue": 1
+    },
+    {
+     "wrong": "Only clients are protected",
+     "right": "Network-wide DNS works too",
+     "cue": 2
+    },
+    {
+     "wrong": "It blocks by IP reputation",
+     "right": "By domain reputation",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Umbrella lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Umbrella filters D N S in the cloud. It judges domain reputation. Use network D N S settings or a roaming client. Ready to practise? Try the Courseiva Umbrella lab.",
+   "points": [
+    {
+     "t": "Cloud DNS filtering",
+     "cue": 1
+    },
+    {
+     "t": "Domain reputation",
+     "cue": 2
+    },
+    {
+     "t": "DNS settings or roaming client",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

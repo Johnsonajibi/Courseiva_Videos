@@ -1,0 +1,110 @@
+{
+ "topic": "data-center-physical",
+ "title": "Data Centre Physical Layer: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 DATA CENTRE CABLING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "server",
+   "narration": "A data centre is rows and rows of racks. Every one has to be cabled neatly. The physical layer matters more than you'd think.",
+   "lines": [
+    {
+     "t": "Racks and racks of kit",
+     "cue": 0
+    },
+    {
+     "t": "Everything is cabled",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "The physical layer matters",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The utility grid",
+   "narration": "Think of cables as a city's power and water. Copper runs stop at ninety metres, plus ten for patch cords. Fibre ignores electrical noise, and goes much further. Straight through cables need the same standard at both ends. And neat labelled racks make faults far easier to find.",
+   "items": [
+    {
+     "icon": "ruler",
+     "story": "90 + 10 = 100 m",
+     "real": "Twisted pair limit",
+     "cue": 1
+    },
+    {
+     "icon": "wifi",
+     "story": "Fibre: immune to EMI",
+     "real": "Longer distances",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "story": "T568B at both ends",
+     "real": "Most common standard",
+     "cue": 3
+    },
+    {
+     "icon": "box",
+     "story": "Label and organise",
+     "real": "Faster fixes",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Copper stops at a hundred metres. Fibre ignores interference. Use the same standard at both ends.",
+   "items": [
+    {
+     "wrong": "Copper goes any distance",
+     "right": "100 m limit",
+     "cue": 1
+    },
+    {
+     "wrong": "Fibre is affected by EMI",
+     "right": "Fibre is immune",
+     "cue": 2
+    },
+    {
+     "wrong": "Different standards at each end are fine",
+     "right": "Use the same",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva data centre cabling lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Copper to a hundred metres, fibre beyond. Fibre ignores interference. Label everything. Ready to practise? Try the Courseiva data centre cabling lab.",
+   "points": [
+    {
+     "t": "Copper 100 m; fibre further",
+     "cue": 1
+    },
+    {
+     "t": "Fibre is immune to EMI",
+     "cue": 2
+    },
+    {
+     "t": "Label everything",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

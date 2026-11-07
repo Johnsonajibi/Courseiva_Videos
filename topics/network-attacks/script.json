@@ -1,0 +1,110 @@
+{
+ "topic": "network-attacks",
+ "title": "Common Network Attacks: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NETWORK ATTACKS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Meet the digital break in crew. Each member has a different trick. Learn each one by name.",
+   "lines": [
+    {
+     "t": "The digital break-in crew",
+     "cue": 0
+    },
+    {
+     "t": "Different tricks",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Know them by name",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The break-in crew",
+   "narration": "Four tricks come up all the time. A denial of service attack floods a target so nobody can reach it. A S Y N flood starts handshakes and never finishes them. D N S amplification uses open resolvers to magnify a flood. A R P spoofing lies about who owns an address.",
+   "items": [
+    {
+     "icon": "bell",
+     "story": "DoS / DDoS",
+     "real": "Targets availability",
+     "cue": 1
+    },
+    {
+     "icon": "envelope",
+     "story": "SYN flood",
+     "real": "Fix: SYN cookies",
+     "cue": 2
+    },
+    {
+     "icon": "people",
+     "story": "DNS amplification",
+     "real": "Open resolvers",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "ARP spoofing",
+     "real": "Fix: DAI",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Quick matches. D D o S uses many sources. S Y N floods abuse the T C P handshake. A R P spoofing stays on the local subnet.",
+   "items": [
+    {
+     "wrong": "DDoS comes from one source",
+     "right": "Many sources",
+     "cue": 1
+    },
+    {
+     "wrong": "SYN flood hits UDP",
+     "right": "It abuses the TCP handshake",
+     "cue": 2
+    },
+    {
+     "wrong": "ARP spoofing works across routers",
+     "right": "Same subnet only",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva network attacks lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. D o S attacks hit availability. S Y N cookies help against S Y N floods. D A I stops A R P spoofing. Ready to practise? Try the Courseiva network attacks lab.",
+   "points": [
+    {
+     "t": "DoS hits availability",
+     "cue": 1
+    },
+    {
+     "t": "SYN cookies stop SYN floods",
+     "cue": 2
+    },
+    {
+     "t": "DAI stops ARP spoofing",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

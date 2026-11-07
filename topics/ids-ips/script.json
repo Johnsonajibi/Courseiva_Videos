@@ -1,0 +1,121 @@
+{
+ "topic": "ids-ips",
+ "title": "IDS vs IPS: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IDS AND IPS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Think of airport security. One system just watches and raises the alarm. Another stops you at the gate.",
+   "lines": [
+    {
+     "t": "Airport security",
+     "cue": 0
+    },
+    {
+     "t": "One camera watches",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "One stops you",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Screening",
+   "narration": "Both look for bad traffic, but they act differently. An I D S sits beside the traffic and only alerts. An I P S sits in the path and can block. Both match signatures, odd behaviour and protocol rules. The price is that an I P S adds delay.",
+   "items": [
+    {
+     "icon": "bell",
+     "story": "IDS: passive",
+     "real": "Out of band, uses SPAN or tap",
+     "cue": 1
+    },
+    {
+     "icon": "door",
+     "story": "IPS: inline",
+     "real": "Can drop traffic",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "Detection methods",
+     "real": "Signature, anomaly, protocol",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "story": "IPS adds latency",
+     "real": "Inline cost",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Compare",
+   "narration": "Here's the difference at a glance. An I D S sits out of band, and an I P S sits inline. An I D S only alerts, but an I P S can block. And an I P S adds a little delay.",
+   "left": {
+    "title": "IDS",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "IPS",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Placement",
+     "l": "Out of band",
+     "r": "Inline",
+     "cue": 1
+    },
+    {
+     "label": "Action",
+     "l": "Alert only",
+     "r": "Alert and block",
+     "cue": 2
+    },
+    {
+     "label": "Delay",
+     "l": "None",
+     "r": "Adds latency",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IDS and IPS lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. I D S alerts, and I P S blocks. I P S sits inline. An I P S adds a little delay. Ready to practise? Try the Courseiva IDS and IPS lab.",
+   "points": [
+    {
+     "t": "IDS alerts; IPS blocks",
+     "cue": 1
+    },
+    {
+     "t": "IPS is inline",
+     "cue": 2
+    },
+    {
+     "t": "IPS adds latency",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

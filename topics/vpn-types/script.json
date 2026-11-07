@@ -1,0 +1,110 @@
+{
+ "topic": "vpn-types",
+ "title": "VPN Types: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 VPN TYPES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "lock",
+   "narration": "There are two main kinds of V P N. One connects whole offices together. The other connects one person to the office.",
+   "lines": [
+    {
+     "t": "Two kinds of VPN",
+     "cue": 0
+    },
+    {
+     "t": "For offices",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "For people",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Mailroom vs personal courier",
+   "narration": "Think of the company mailroom and the personal courier. A site to site V P N is the mailroom, moving all mail between offices. A remote access V P N is a personal courier for one worker. Site to site normally uses I P sec, with I K E on U D P five hundred. Remote access can use I P sec or S S L.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Site-to-site VPN",
+     "real": "Router to router",
+     "cue": 1
+    },
+    {
+     "icon": "person",
+     "story": "Remote access VPN",
+     "real": "Client software",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "story": "IPsec + IKE",
+     "real": "UDP 500",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "IPsec or SSL/TLS",
+     "real": "Both are valid",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Remote access can use S S L too. Site to site needs no client software. Phase one makes the management tunnel.",
+   "items": [
+    {
+     "wrong": "Remote access is IPsec only",
+     "right": "SSL works too",
+     "cue": 1
+    },
+    {
+     "wrong": "Site-to-site needs a client",
+     "right": "Routers do it",
+     "cue": 2
+    },
+    {
+     "wrong": "Phase 2 is the management tunnel",
+     "right": "Phase 1 is",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva VPN types lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Site to site joins offices, and remote access joins people. I K E has two phases. Remote access can use S S L. Ready to practise? Try the Courseiva VPN types lab.",
+   "points": [
+    {
+     "t": "Site-to-site: offices. Remote: people",
+     "cue": 1
+    },
+    {
+     "t": "IKE has two phases",
+     "cue": 2
+    },
+    {
+     "t": "Remote can use SSL",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

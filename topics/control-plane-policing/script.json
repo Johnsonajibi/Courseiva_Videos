@@ -1,0 +1,110 @@
+{
+ "topic": "control-plane-policing",
+ "title": "Control Plane Policing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 COPP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Think of a bouncer at the VIP door. If everyone rushes in, the party stops. Control plane policing limits the rush to the router's brain.",
+   "lines": [
+    {
+     "t": "A bouncer at the VIP door",
+     "cue": 0
+    },
+    {
+     "t": "Too many people at once",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "CoPP limits the rush",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The VIP bouncer",
+   "narration": "CoPP protects the router's processor. A class map picks out which traffic counts. A policy map says how fast it may arrive. You attach it under the control plane with service policy input. It only affects traffic sent to the router itself.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "class-map",
+     "real": "Matches with an ACL",
+     "cue": 1
+    },
+    {
+     "icon": "scale",
+     "story": "policy-map: police",
+     "real": "Rate in bits per second",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "story": "control-plane",
+     "real": "service-policy input",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "Control-plane traffic only",
+     "real": "Not transit traffic",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It only handles traffic to the router. You have to configure it. The rate is in bits per second.",
+   "items": [
+    {
+     "wrong": "CoPP filters transit traffic",
+     "right": "Only traffic to the router",
+     "cue": 1
+    },
+    {
+     "wrong": "It's on by default",
+     "right": "You must configure it",
+     "cue": 2
+    },
+    {
+     "wrong": "Rate is in packets per second",
+     "right": "Bits per second",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva CoPP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. CoPP protects the router's processor. It uses class and policy maps. It isn't on by default. Ready to practise? Try the Courseiva CoPP lab.",
+   "points": [
+    {
+     "t": "Protects the CPU",
+     "cue": 1
+    },
+    {
+     "t": "Class map + policy map",
+     "cue": 2
+    },
+    {
+     "t": "Not on by default",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

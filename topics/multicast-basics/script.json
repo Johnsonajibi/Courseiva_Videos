@@ -1,0 +1,110 @@
+{
+ "topic": "multicast-basics",
+ "title": "Multicast Basics: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 MULTICAST",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "mic",
+   "narration": "A conference call sends one voice to many people. It doesn't call each person separately. That's multicast.",
+   "lines": [
+    {
+     "t": "A conference call",
+     "cue": 0
+    },
+    {
+     "t": "Not one at a time",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's multicast",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The conference call",
+   "narration": "Multicast uses a shared group address. Group addresses start from two twenty four, called class D. Hosts tell the router they want to join using I G M P. The M A C address starts with zero one, zero zero, five E. And thirty two group addresses can share one M A C address.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "Class D: 224.0.0.0/4",
+     "real": "Group addresses",
+     "cue": 1
+    },
+    {
+     "icon": "people",
+     "story": "IGMP",
+     "real": "Hosts to router",
+     "cue": 2
+    },
+    {
+     "icon": "book",
+     "story": "MAC 01-00-5E",
+     "real": "23 bits from the IP",
+     "cue": 3
+    },
+    {
+     "icon": "bell",
+     "story": "32 IPs per MAC",
+     "real": "Overlap is normal",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. The source is always a unicast address. I G M P runs between hosts and the router. Several groups can share one M A C address.",
+   "items": [
+    {
+     "wrong": "The source is the group address",
+     "right": "The source is always unicast",
+     "cue": 1
+    },
+    {
+     "wrong": "IGMP runs between routers",
+     "right": "Between hosts and their router",
+     "cue": 2
+    },
+    {
+     "wrong": "Each group has its own MAC",
+     "right": "Thirty two share one",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva multicast lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Multicast sends once to many. I G M P handles joining. Group addresses are two twenty four and up. Ready to practise? Try the Courseiva multicast lab.",
+   "points": [
+    {
+     "t": "One send, many receivers",
+     "cue": 1
+    },
+    {
+     "t": "IGMP handles joining",
+     "cue": 2
+    },
+    {
+     "t": "224.0.0.0 and up",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

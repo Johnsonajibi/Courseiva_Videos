@@ -1,0 +1,116 @@
+{
+ "topic": "ios-upgrade-licensing",
+ "title": "Upgrading IOS: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IOS UPGRADE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "gear",
+   "narration": "Upgrading a router is a lot like updating a phone. You download the new version first. Then you restart onto it.",
+   "lines": [
+    {
+     "t": "Like a phone update",
+     "cue": 0
+    },
+    {
+     "t": "Download first",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Then restart",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "Upgrade steps",
+   "narration": "Here's the sequence. Check the current version. Check there's room in flash. Copy the image from the server. Set the boot variable to the new file. Save, then reload.",
+   "steps": [
+    {
+     "icon": "wrench",
+     "title": "show version",
+     "sub": "Version and uptime",
+     "cue": 1
+    },
+    {
+     "icon": "box",
+     "title": "show flash:",
+     "sub": "Free space",
+     "cue": 2
+    },
+    {
+     "icon": "server",
+     "title": "copy tftp: flash:",
+     "sub": "Source then destination",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "title": "boot system flash:",
+     "sub": "Before reload",
+     "cue": 4
+    },
+    {
+     "icon": "clock",
+     "title": "copy run start; reload",
+     "sub": "Reload asks to confirm",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Source first, then destination. Set the boot variable to the new file. Reload asks first, and can be cancelled.",
+   "items": [
+    {
+     "wrong": "copy tftp flash goes to the server",
+     "right": "From the server to flash",
+     "cue": 1
+    },
+    {
+     "wrong": "Overwrite the old file to upgrade",
+     "right": "Set the boot variable",
+     "cue": 2
+    },
+    {
+     "wrong": "Reload is instant",
+     "right": "It asks for confirmation",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IOS upgrades lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Copy the image, then set the boot variable. Source comes before destination. Save before you reload. Ready to practise? Try the Courseiva IOS upgrades lab.",
+   "points": [
+    {
+     "t": "Copy image; set boot variable",
+     "cue": 1
+    },
+    {
+     "t": "copy source destination",
+     "cue": 2
+    },
+    {
+     "t": "Save, then reload",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

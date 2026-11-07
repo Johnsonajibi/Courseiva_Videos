@@ -1,0 +1,110 @@
+{
+ "topic": "wifi-troubleshooting",
+ "title": "Wi-Fi Troubleshooting: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 WI-FI TROUBLESHOOTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "wifi",
+   "narration": "Wi Fi is slow, or it keeps dropping. Where do you even start? Work through it in a set order.",
+   "lines": [
+    {
+     "t": "Wi-Fi is slow",
+     "cue": 0
+    },
+    {
+     "t": "Where do you start?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Work through it in order",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The noisy concert",
+   "narration": "Imagine trying to chat in a loud concert venue. First check the device actually joins the network. Then check the signal, since below minus seventy five is poor. Then look for noise from other Wi Fi and other gadgets. Last, check the settings and how clients roam.",
+   "items": [
+    {
+     "icon": "wifi",
+     "story": "1. Association",
+     "real": "Can it connect at all?",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "2. Signal: RSSI, SNR",
+     "real": "RSSI below -75 dBm is weak",
+     "cue": 2
+    },
+    {
+     "icon": "people",
+     "story": "3. Interference",
+     "real": "Channel use above 80% is congested",
+     "cue": 3
+    },
+    {
+     "icon": "wrench",
+     "story": "4. Config and roaming",
+     "real": "SSID, VLAN, DHCP",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Common traps. Seeing the name doesn't prove the setup is right. More power can add interference. Having an address doesn't prove D H C P is right.",
+   "items": [
+    {
+     "wrong": "Seeing the SSID means the AP is fine",
+     "right": "Other config can still be wrong",
+     "cue": 1
+    },
+    {
+     "wrong": "More power always helps",
+     "right": "It can add interference",
+     "cue": 2
+    },
+    {
+     "wrong": "An IP address means DHCP is fine",
+     "right": "The scope may be wrong",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Wi-Fi troubleshooting lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Go in order: join, signal, interference, config. Below minus seventy five is a weak signal. More power isn't always better. Ready to practise? Try the Courseiva Wi-Fi troubleshooting lab.",
+   "points": [
+    {
+     "t": "Join, signal, interference, config",
+     "cue": 1
+    },
+    {
+     "t": "RSSI below -75 dBm",
+     "cue": 2
+    },
+    {
+     "t": "More power can hurt",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

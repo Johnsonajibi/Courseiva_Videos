@@ -1,0 +1,116 @@
+{
+ "topic": "eigrp-neighbors-advanced",
+ "title": "EIGRP Neighbor Adjacency: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 EIGRP NEIGHBORS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "people",
+   "narration": "Two E I G R P routers sit on the same link. But they won't become neighbours. Check the five conditions.",
+   "lines": [
+    {
+     "t": "Two EIGRP routers",
+     "cue": 0
+    },
+    {
+     "t": "They won't talk",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Check the five conditions",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The fifteen door building",
+   "narration": "To become neighbours, five things must line up. The A S number must match. They must be on the same subnet. The K values must match. Any authentication must match. And the interface must not be passive.",
+   "items": [
+    {
+     "icon": "key",
+     "story": "1. Same AS",
+     "real": "Autonomous system number",
+     "cue": 1
+    },
+    {
+     "icon": "map",
+     "story": "2. Same subnet",
+     "real": "On the shared link",
+     "cue": 2
+    },
+    {
+     "icon": "scale",
+     "story": "3. Same K-values",
+     "real": "Metric weights",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "4. Same authentication",
+     "real": "If configured",
+     "cue": 4
+    },
+    {
+     "icon": "door",
+     "story": "5. Not passive",
+     "real": "Passive blocks hellos",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Hostnames don't matter. Each router sets its own timers. You must also use the network command.",
+   "items": [
+    {
+     "wrong": "Hostnames must match",
+     "right": "Router IDs just need to be unique",
+     "cue": 1
+    },
+    {
+     "wrong": "Changing hello changes the neighbour's",
+     "right": "Hold time is per router",
+     "cue": 2
+    },
+    {
+     "wrong": "Enabling EIGRP forms neighbours",
+     "right": "You must advertise networks",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva EIGRP adjacency lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Same A S, subnet, K values, authentication. The interface must not be passive. Hello is five seconds and hold is fifteen. Ready to practise? Try the Courseiva EIGRP adjacency lab.",
+   "points": [
+    {
+     "t": "Same AS, subnet, K-values, auth",
+     "cue": 1
+    },
+    {
+     "t": "Not passive",
+     "cue": 2
+    },
+    {
+     "t": "Hello 5 s, hold 15 s",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

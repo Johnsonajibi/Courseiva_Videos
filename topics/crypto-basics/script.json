@@ -1,0 +1,110 @@
+{
+ "topic": "crypto-basics",
+ "title": "Cryptography Basics: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CRYPTOGRAPHY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "lock",
+   "narration": "Imagine a courier with a locked briefcase. Does the sender and receiver share one key, or use two? That's the big split in cryptography.",
+   "lines": [
+    {
+     "t": "A locked briefcase",
+     "cue": 0
+    },
+    {
+     "t": "One key or two",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's the big split",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The courier",
+   "narration": "Two kinds of locks exist. Symmetric uses one shared key, and it's fast. Asymmetric uses a public key and a private key. A hash is a fingerprint that proves nothing changed. Diffie Hellman lets two sides agree on a key in public.",
+   "items": [
+    {
+     "icon": "key",
+     "story": "Symmetric",
+     "real": "One shared key, AES",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "Asymmetric",
+     "real": "Key pair, RSA",
+     "cue": 2
+    },
+    {
+     "icon": "stamp",
+     "story": "Hash",
+     "real": "SHA-256 or better",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "Diffie-Hellman",
+     "real": "Group 14 or better",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. S S H uses R S A only for authentication. M D five is broken. Signatures use asymmetric keys, H M A C doesn't.",
+   "items": [
+    {
+     "wrong": "SSH encrypts everything with RSA",
+     "right": "RSA authenticates; the session uses symmetric",
+     "cue": 1
+    },
+    {
+     "wrong": "MD5 is still fine",
+     "right": "MD5 is broken",
+     "cue": 2
+    },
+    {
+     "wrong": "Signatures equal HMAC",
+     "right": "Signatures use asymmetric keys",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva cryptography lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Symmetric is fast, and asymmetric solves key sharing. Use S H A two fifty six or better. Avoid M D five and D E S. Ready to practise? Try the Courseiva cryptography lab.",
+   "points": [
+    {
+     "t": "Symmetric: fast. Asymmetric: key sharing",
+     "cue": 1
+    },
+    {
+     "t": "SHA-256 minimum",
+     "cue": 2
+    },
+    {
+     "t": "Avoid MD5 and DES",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
