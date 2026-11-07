@@ -1,0 +1,110 @@
+{
+ "topic": "acl-ipv6",
+ "title": "IPv6 ACLs: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IPV6 ACLS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "I P version six has its own access lists. They work a little differently. Let's see how.",
+   "lines": [
+    {
+     "t": "ACLs for IPv6",
+     "cue": 0
+    },
+    {
+     "t": "Slightly different",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Let's compare",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The museum guard",
+   "narration": "A museum guard checks visitors against a list. I P version six lists are always named, never numbered. You apply one with I P version six traffic filter. For remote access lines, use access class. And some neighbour discovery messages are allowed automatically.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "Named only",
+     "real": "No numbered IPv6 ACLs",
+     "cue": 1
+    },
+    {
+     "icon": "door",
+     "story": "ipv6 traffic-filter",
+     "real": "Not ip access-group",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "ipv6 access-class",
+     "real": "On VTY lines",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "Implicit permits",
+     "real": "ICMPv6 ND types 133 to 137",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. I P version six lists are always named. The apply command is I P version six traffic filter. And neighbour discovery is allowed by default.",
+   "items": [
+    {
+     "wrong": "IPv6 ACLs can be numbered",
+     "right": "Always named",
+     "cue": 1
+    },
+    {
+     "wrong": "Apply with ip access-group",
+     "right": "Use ipv6 traffic-filter",
+     "cue": 2
+    },
+    {
+     "wrong": "Only an implicit deny exists",
+     "right": "ND permits are implicit too",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IPv6 ACLs lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. They are always named. Apply with I P version six traffic filter. Neighbour discovery is permitted by default. Ready to practise? Try the Courseiva IPv6 ACLs lab.",
+   "points": [
+    {
+     "t": "Always named",
+     "cue": 1
+    },
+    {
+     "t": "ipv6 traffic-filter",
+     "cue": 2
+    },
+    {
+     "t": "ND is implicitly permitted",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

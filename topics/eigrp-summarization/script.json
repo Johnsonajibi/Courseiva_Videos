@@ -1,0 +1,110 @@
+{
+ "topic": "eigrp-summarization",
+ "title": "EIGRP Summarization: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 EIGRP SUMMARIZATION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "list",
+   "narration": "A big network has lots of small routes. You can squash them into one summary. That means fewer updates, and smaller tables.",
+   "lines": [
+    {
+     "t": "Many small routes",
+     "cue": 0
+    },
+    {
+     "t": "Squash into one",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Fewer updates",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The library sorting system",
+   "narration": "A library groups many books under one shelf label. A summary route covers many subnets at once. You set it on the interface, not under the router process. E I G R P adds a null zero route to stop loops. Filtering uses a distribute list, in or out.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "Summary route",
+     "real": "One route, many subnets",
+     "cue": 1
+    },
+    {
+     "icon": "gear",
+     "story": "ip summary-address eigrp",
+     "real": "Interface level",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "Null0 route",
+     "real": "Prevents loops",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "distribute-list",
+     "real": "Inbound or outbound",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Manual summaries work without auto summary. They behave differently. The summary points to null zero.",
+   "items": [
+    {
+     "wrong": "Needs auto-summary",
+     "right": "Manual works on its own",
+     "cue": 1
+    },
+    {
+     "wrong": "Inbound = outbound filtering",
+     "right": "Inbound blocks installation",
+     "cue": 2
+    },
+    {
+     "wrong": "Summary points at the next hop",
+     "right": "It points to Null0",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva EIGRP summarization lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Summaries shrink tables and updates. They're set per interface. A null zero route stops loops. Ready to practise? Try the Courseiva EIGRP summarization lab.",
+   "points": [
+    {
+     "t": "Summaries shrink tables",
+     "cue": 1
+    },
+    {
+     "t": "Set per interface",
+     "cue": 2
+    },
+    {
+     "t": "Null0 stops loops",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

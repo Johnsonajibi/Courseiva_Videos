@@ -1,0 +1,139 @@
+{
+ "topic": "ssh-telnet",
+ "title": "SSH vs Telnet: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 SSH VS TELNET",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "Telnet is a postcard, and anyone can read it. S S H is a locked box. Always use the locked box.",
+   "lines": [
+    {
+     "t": "A postcard",
+     "cue": 0
+    },
+    {
+     "t": "A lockbox",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Use the lockbox",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Postcard vs lockbox",
+   "narration": "Both reach the device, but one is safe. Telnet uses port twenty three and sends everything in plain text. S S H uses port twenty two and encrypts the whole session. To turn S S H on, you need a hostname, a domain and an R S A key. Then limit the V T Y lines to S S H only.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "Telnet: TCP 23",
+     "real": "Plaintext",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "SSH: TCP 22",
+     "real": "Encrypted",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "story": "Hostname, domain, RSA key",
+     "real": "2048 bits recommended",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "story": "transport input ssh",
+     "real": "Under line vty",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Enable SSH",
+   "narration": "Here's the quick recipe. Set a domain name. Generate the R S A keys. Open the V T Y lines. Allow S S H only.",
+   "lines": [
+    {
+     "t": "ip domain-name courseiva.com",
+     "note": "Set a domain",
+     "cue": 1
+    },
+    {
+     "t": "crypto key generate rsa modulus 2048",
+     "note": "Make the keys",
+     "cue": 2
+    },
+    {
+     "t": "line vty 0 4",
+     "note": "Enter the lines",
+     "cue": 3
+    },
+    {
+     "t": "transport input ssh",
+     "note": "SSH only",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Both use T C P, only S S H encrypts. S S H isn't on until you make keys. The transport command goes under the V T Y lines.",
+   "items": [
+    {
+     "wrong": "Telnet is safer because it uses TCP",
+     "right": "Both use TCP; only SSH encrypts",
+     "cue": 1
+    },
+    {
+     "wrong": "SSH is on by default",
+     "right": "Generate keys first",
+     "cue": 2
+    },
+    {
+     "wrong": "transport input is global",
+     "right": "It's under the VTY lines",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva SSH lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. S S H is encrypted, and Telnet is not. Generate R S A keys to turn S S H on. Allow only S S H on the V T Y lines. Ready to practise? Try the Courseiva SSH lab.",
+   "points": [
+    {
+     "t": "SSH: encrypted. Telnet: plaintext",
+     "cue": 1
+    },
+    {
+     "t": "Generate RSA keys",
+     "cue": 2
+    },
+    {
+     "t": "transport input ssh",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "topic": "ospfv3",
+ "title": "OSPFv3: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 OSPFV3",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "O S P F version three is O S P F for I P version six. The ideas are the same. But the setup is different.",
+   "lines": [
+    {
+     "t": "OSPF for IPv6",
+     "cue": 0
+    },
+    {
+     "t": "Same ideas",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Different setup",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The neighbourhood address book",
+   "narration": "Each router still keeps a map of its neighbourhood. Neighbours talk using link local addresses, not global ones. You enable it on the interface, not with a network command. It needs a thirty two bit router I D, set by hand if needed. And it adds new L S A types, like the link L S A.",
+   "items": [
+    {
+     "icon": "door",
+     "story": "Link-local neighbours",
+     "real": "FE80 addresses",
+     "cue": 1
+    },
+    {
+     "icon": "gear",
+     "story": "ipv6 ospf 1 area 0",
+     "real": "Interface-level",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "story": "32-bit router ID",
+     "real": "Set manually if no IPv4",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "story": "New LSA types",
+     "real": "Link LSA, Intra-Area Prefix LSA",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Setup",
+   "narration": "Setting it up takes a few lines. Turn on I P version six routing first. Start the process. Set the router I D. And enable it on each interface.",
+   "lines": [
+    {
+     "t": "ipv6 unicast-routing",
+     "note": "Turn on IPv6 routing",
+     "cue": 1
+    },
+    {
+     "t": "router ospfv3 1",
+     "note": "Start OSPFv3",
+     "cue": 2
+    },
+    {
+     "t": "router-id 1.1.1.1",
+     "note": "Needed if no IPv4 address",
+     "cue": 3
+    },
+    {
+     "t": "ipv6 ospf 1 area 0",
+     "note": "On each interface",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It's enabled on the interface. Link local addresses are enough. And some L S A types are new.",
+   "items": [
+    {
+     "wrong": "OSPFv3 uses network commands",
+     "right": "Interface-level config",
+     "cue": 1
+    },
+    {
+     "wrong": "It needs IPv4 on interfaces",
+     "right": "Link-local is enough",
+     "cue": 2
+    },
+    {
+     "wrong": "Same LSA types as v2",
+     "right": "New types were added",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva OSPFv3 lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. O S P F version three runs over link local addresses. Enable it per interface. It needs a thirty two bit router I D. Ready to practise? Try the Courseiva OSPFv3 lab.",
+   "points": [
+    {
+     "t": "Runs over link-local",
+     "cue": 1
+    },
+    {
+     "t": "Enable per interface",
+     "cue": 2
+    },
+    {
+     "t": "32-bit router ID needed",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "topic": "redistribution",
+ "title": "Route Redistribution: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 REDISTRIBUTION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "question",
+   "narration": "Two parts of your network run different routing protocols. They can't understand each other's routes. Redistribution is the translator.",
+   "lines": [
+    {
+     "t": "Two routing protocols",
+     "cue": 0
+    },
+    {
+     "t": "They don't understand each other",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "A translator is needed",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The bilingual translator",
+   "narration": "A translator carries routes from one language into the other. You set it up under the protocol that receives the routes. E I G R P needs a seed metric, or nothing arrives. O S P F gives redistributed routes a default metric of twenty. And O S P F needs the subnets keyword for subnetted routes.",
+   "items": [
+    {
+     "icon": "gear",
+     "story": "redistribute",
+     "real": "Under the destination protocol",
+     "cue": 1
+    },
+    {
+     "icon": "scale",
+     "story": "EIGRP needs a seed metric",
+     "real": "Set with default-metric",
+     "cue": 2
+    },
+    {
+     "icon": "ruler",
+     "story": "OSPF default seed = 20",
+     "real": "Except BGP routes",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "story": "subnets keyword",
+     "real": "Else only classful networks",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Examples",
+   "narration": "Two quick examples. Into O S P F, redistribute with subnets. Add the subnets keyword. Into E I G R P, give a metric. The metric is required.",
+   "lines": [
+    {
+     "t": "router ospf 1",
+     "note": "Into OSPF",
+     "cue": 1
+    },
+    {
+     "t": "redistribute eigrp 100 subnets",
+     "note": "Learn EIGRP routes",
+     "cue": 2
+    },
+    {
+     "t": "router eigrp 100",
+     "note": "Into EIGRP",
+     "cue": 3
+    },
+    {
+     "t": "redistribute ospf 1 metric 10000 100 255 1 1500",
+     "note": "Seed metric needed",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. O S P F's default seed metric is twenty. E I G R P has no default seed metric. Without subnets, only classful networks come across.",
+   "items": [
+    {
+     "wrong": "OSPF seed metric is 1",
+     "right": "It's 20 by default",
+     "cue": 1
+    },
+    {
+     "wrong": "EIGRP has a default seed",
+     "right": "It has none; routes fail",
+     "cue": 2
+    },
+    {
+     "wrong": "subnets is optional",
+     "right": "Without it only classful networks",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva redistribution lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Redistribution moves routes between protocols. E I G R P needs a seed metric. O S P F needs the subnets keyword. Ready to practise? Try the Courseiva redistribution lab.",
+   "points": [
+    {
+     "t": "Moves routes between protocols",
+     "cue": 1
+    },
+    {
+     "t": "EIGRP needs a seed metric",
+     "cue": 2
+    },
+    {
+     "t": "OSPF needs subnets",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

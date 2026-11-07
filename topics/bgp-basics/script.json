@@ -1,0 +1,139 @@
+{
+ "topic": "bgp-basics",
+ "title": "BGP Basics: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 BGP BASICS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "The internet is thousands of separate networks. Something has to tell them how to reach each other. That something is B G P.",
+   "lines": [
+    {
+     "t": "The internet is many networks",
+     "cue": 0
+    },
+    {
+     "t": "Who tells them how to connect?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "That's BGP",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The postal service for the internet",
+   "narration": "Think of the world's postal services swapping delivery routes. Each network has an autonomous system number. B G P peers talk over T C P port one seventy nine. Peers in different A S numbers are e B G P. Peers in the same A S number are i B G P.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "AS number",
+     "real": "Identifies each network",
+     "cue": 1
+    },
+    {
+     "icon": "link",
+     "story": "TCP port 179",
+     "real": "Neighbours set up by hand",
+     "cue": 2
+    },
+    {
+     "icon": "people",
+     "story": "eBGP",
+     "real": "Different AS",
+     "cue": 3
+    },
+    {
+     "icon": "building",
+     "story": "iBGP",
+     "real": "Same AS",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Basic setup",
+   "narration": "A basic setup is short. Start B G P with your A S number. Name the neighbour and their A S. Advertise a network that exists exactly in your table. And check the summary.",
+   "lines": [
+    {
+     "t": "router bgp 65001",
+     "note": "Your AS number",
+     "cue": 1
+    },
+    {
+     "t": "neighbor 203.0.113.1 remote-as 65002",
+     "note": "Name the peer",
+     "cue": 2
+    },
+    {
+     "t": "network 192.0.2.0 mask 255.255.255.0",
+     "note": "Must match the table exactly",
+     "cue": 3
+    },
+    {
+     "t": "show ip bgp summary",
+     "note": "Neighbour states",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. B G P only advertises what you ask it to. It uses T C P port one seventy nine. And active means it's still trying to connect.",
+   "items": [
+    {
+     "wrong": "BGP advertises every connected route",
+     "right": "Only what you network-command",
+     "cue": 1
+    },
+    {
+     "wrong": "BGP uses UDP",
+     "right": "TCP port 179",
+     "cue": 2
+    },
+    {
+     "wrong": "Active is a healthy state",
+     "right": "Active = still trying to connect",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva BGP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. B G P connects separate networks, called autonomous systems. It uses T C P one seventy nine. e B G P is between A S numbers, and i B G P is inside one. Ready to practise? Try the Courseiva BGP lab.",
+   "points": [
+    {
+     "t": "BGP connects autonomous systems",
+     "cue": 1
+    },
+    {
+     "t": "TCP 179",
+     "cue": 2
+    },
+    {
+     "t": "eBGP: between ASes. iBGP: inside one",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "topic": "ospf-summarization",
+ "title": "OSPF Summarization: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 OSPF SUMMARIZATION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "A big network can have a thousand routes. Do you really want every router to carry all of them? Summarisation squeezes them into one.",
+   "lines": [
+    {
+     "t": "A thousand routes",
+     "cue": 0
+    },
+    {
+     "t": "Do you share every one?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Summarise",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The postal sorting office",
+   "narration": "Instead of listing every street, you list just the city. A summary route replaces many small ones with one big one. On the border between areas, an A B R uses the area range command. At the edge of the network, an A S B R uses summary address. The not advertise keyword hides the summary completely.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "Summary route",
+     "real": "One route covers many",
+     "cue": 1
+    },
+    {
+     "icon": "router",
+     "story": "ABR: area range",
+     "real": "Inter-area summary",
+     "cue": 2
+    },
+    {
+     "icon": "cloud",
+     "story": "ASBR: summary-address",
+     "real": "External summary",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "not-advertise",
+     "real": "Suppresses the summary",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "The commands",
+   "narration": "Two commands, depending on the job. On an A B R, use area range. On an A S B R, use summary address. And check the routing table.",
+   "lines": [
+    {
+     "t": "area 1 range 10.1.0.0 255.255.0.0",
+     "note": "On an ABR",
+     "cue": 1
+    },
+    {
+     "t": "summary-address 172.16.0.0 255.255.0.0",
+     "note": "On an ASBR",
+     "cue": 2
+    },
+    {
+     "t": "show ip route ospf",
+     "note": "Check the result",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. The detailed routes stay in the database. It stops the route being installed, not learned. Only A B Rs and A S B Rs can summarise.",
+   "items": [
+    {
+     "wrong": "Summarising deletes the detailed routes",
+     "right": "They stay in the database",
+     "cue": 1
+    },
+    {
+     "wrong": "distribute-list in stops learning routes",
+     "right": "It only blocks installation",
+     "cue": 2
+    },
+    {
+     "wrong": "Any OSPF router can summarise",
+     "right": "Only ABRs and ASBRs",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva OSPF summarization lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Summaries keep routing tables small. A B R uses area range, and A S B R uses summary address. Detailed routes remain in the database. Ready to practise? Try the Courseiva OSPF summarization lab.",
+   "points": [
+    {
+     "t": "Summaries shrink tables",
+     "cue": 1
+    },
+    {
+     "t": "ABR: area range. ASBR: summary-address",
+     "cue": 2
+    },
+    {
+     "t": "Details stay in the database",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

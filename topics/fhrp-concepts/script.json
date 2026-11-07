@@ -1,0 +1,121 @@
+{
+ "topic": "fhrp-concepts",
+ "title": "FHRP Concepts: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 FHRP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "router",
+   "narration": "Every computer has one default gateway. If it dies, nobody gets out. A first hop redundancy protocol keeps a spare ready.",
+   "lines": [
+    {
+     "t": "One default gateway",
+     "cue": 0
+    },
+    {
+     "t": "If it dies",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "FHRP keeps a spare",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hotel concierge",
+   "narration": "Two concierges share one desk number. H S R P is Cisco's own, with one active and one standby router. V R R P does the same job, but it is an open standard. G L B P is Cisco's too, and it can share traffic between routers. All of them hand out one shared virtual address.",
+   "items": [
+    {
+     "icon": "router",
+     "story": "HSRP",
+     "real": "Cisco proprietary",
+     "cue": 1
+    },
+    {
+     "icon": "shield",
+     "story": "VRRP",
+     "real": "Open standard",
+     "cue": 2
+    },
+    {
+     "icon": "scale",
+     "story": "GLBP",
+     "real": "Load balancing",
+     "cue": 3
+    },
+    {
+     "icon": "key",
+     "story": "Virtual IP and MAC",
+     "real": "Hosts never notice a failure",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Compare",
+   "narration": "Here are the defaults. H S R P is Cisco only, and V R R P is an open standard. H S R P says hello every three seconds, and V R R P every one. H S R P calls the working router active, and V R R P calls it master.",
+   "left": {
+    "title": "HSRP",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "VRRP",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Standard",
+     "l": "Cisco",
+     "r": "Open",
+     "cue": 1
+    },
+    {
+     "label": "Hello",
+     "l": "3 seconds",
+     "r": "1 second",
+     "cue": 2
+    },
+    {
+     "label": "Active router",
+     "l": "Active",
+     "r": "Master",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva FHRP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. F H R P gives hosts a gateway that survives failure. H S R P and G L B P are Cisco, and V R R P is open. Only G L B P load balances by default. Ready to practise? Try the Courseiva FHRP lab.",
+   "points": [
+    {
+     "t": "A gateway that survives failure",
+     "cue": 1
+    },
+    {
+     "t": "HSRP, GLBP: Cisco. VRRP: open",
+     "cue": 2
+    },
+    {
+     "t": "Only GLBP load-balances by default",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

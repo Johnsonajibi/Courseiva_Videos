@@ -1,0 +1,318 @@
+import sys; sys.path.insert(0, "tools")
+from mk import *
+
+save("ospf-authentication", "OSPF Authentication", "OSPF authentication", [
+ H("lock", [("Any router can join",  "By default, any router can join your O S P F network."),("Even a rogue one",  "Even one an attacker plugged in.",RED),("Authentication stops that","Authentication makes routers prove who they are.",CY)]),
+ S("The guarded conference room", "Think of a conference room with a guard at the door.",
+  [("door","Type zero means no guard at all.","Type 0: none","Anyone walks in"),
+   ("book","Type one is a password shouted out loud for anyone to hear.","Type 1: plaintext password","Not secure"),
+   ("shield","Type three uses a secret that is never spoken, only proven.","Type 3: MD5 hash","Key is never sent"),
+   ("list","Set it on each interface, or for a whole area.","Per interface or per area","Both ends must match")]),
+ T("The commands", "Here's the cryptographic version.",
+  [("ip ospf authentication message-digest","Turn on MD5 on the interface","Turn on message digest mode on the interface."),
+   ("ip ospf message-digest-key 1 md5 SECRET","Key number and secret","Then give it a key number and a secret."),
+   ("show ip ospf neighbor","Stuck in INIT = key mismatch","And check the neighbour list.",CY)]),
+ TR("Three traps.",
+  [("OSPF auth encrypts the password","Only type 3 hashes it","Only type three hashes the key."),
+   ("Area auth alone is enough","Keys still go on interfaces","You still need keys on each interface."),
+   ("A failure drops the neighbour to DOWN","It sticks at INIT or EXSTART","A mismatch leaves the neighbour stuck before full.")]),
+ rc("OSPF authentication", [("Type three uses an M D five hash, and type one is plaintext.","Type 3 = MD5; Type 1 = plaintext"),("Both ends need the same key.","Keys must match"),("A mismatch leaves neighbours stuck.","Mismatch = stuck neighbour")]),
+])
+
+save("ospf-summarization", "OSPF Summarization", "OSPF summarization", [
+ H("envelope", [("A thousand routes",  "A big network can have a thousand routes."),("Do you share every one?",  "Do you really want every router to carry all of them?",OR),("Summarise","Summarisation squeezes them into one.",CY)]),
+ S("The postal sorting office", "Instead of listing every street, you list just the city.",
+  [("list","A summary route replaces many small ones with one big one.","Summary route","One route covers many"),
+   ("router","On the border between areas, an A B R uses the area range command.","ABR: area range","Inter-area summary"),
+   ("cloud","At the edge of the network, an A S B R uses summary address.","ASBR: summary-address","External summary"),
+   ("shield","The not advertise keyword hides the summary completely.","not-advertise","Suppresses the summary")]),
+ T("The commands", "Two commands, depending on the job.",
+  [("area 1 range 10.1.0.0 255.255.0.0","On an ABR","On an A B R, use area range."),
+   ("summary-address 172.16.0.0 255.255.0.0","On an ASBR","On an A S B R, use summary address."),
+   ("show ip route ospf","Check the result","And check the routing table.",CY)]),
+ TR("Three traps.",
+  [("Summarising deletes the detailed routes","They stay in the database","The detailed routes stay in the database."),
+   ("distribute-list in stops learning routes","It only blocks installation","It stops the route being installed, not learned."),
+   ("Any OSPF router can summarise","Only ABRs and ASBRs","Only A B Rs and A S B Rs can summarise.")]),
+ rc("OSPF summarization", [("Summaries keep routing tables small.","Summaries shrink tables"),("A B R uses area range, and A S B R uses summary address.","ABR: area range. ASBR: summary-address"),("Detailed routes remain in the database.","Details stay in the database")]),
+])
+
+save("ospfv3", "OSPFv3", "OSPFv3", [
+ H("map", [("OSPF for IPv6",  "O S P F version three is O S P F for I P version six."),("Same ideas",  "The ideas are the same.",CY),("Different setup","But the setup is different.",OR)]),
+ S("The neighbourhood address book", "Each router still keeps a map of its neighbourhood.",
+  [("door","Neighbours talk using link local addresses, not global ones.","Link-local neighbours","FE80 addresses"),
+   ("gear","You enable it on the interface, not with a network command.","ipv6 ospf 1 area 0","Interface-level"),
+   ("key","It needs a thirty two bit router I D, set by hand if needed.","32-bit router ID","Set manually if no IPv4"),
+   ("list","And it adds new L S A types, like the link L S A.","New LSA types","Link LSA, Intra-Area Prefix LSA")]),
+ T("Setup", "Setting it up takes a few lines.",
+  [("ipv6 unicast-routing","Turn on IPv6 routing","Turn on I P version six routing first."),
+   ("router ospfv3 1","Start OSPFv3","Start the process."),
+   ("router-id 1.1.1.1","Needed if no IPv4 address","Set the router I D."),
+   ("ipv6 ospf 1 area 0","On each interface","And enable it on each interface.",CY)]),
+ TR("Three traps.",
+  [("OSPFv3 uses network commands","Interface-level config","It's enabled on the interface."),
+   ("It needs IPv4 on interfaces","Link-local is enough","Link local addresses are enough."),
+   ("Same LSA types as v2","New types were added","And some L S A types are new.")]),
+ rc("OSPFv3", [("O S P F version three runs over link local addresses.","Runs over link-local"),("Enable it per interface.","Enable per interface"),("It needs a thirty two bit router I D.","32-bit router ID needed")]),
+])
+
+save("bgp-basics", "BGP Basics", "BGP basics", [
+ H("map", [("The internet is many networks",  "The internet is thousands of separate networks."),("Who tells them how to connect?",  "Something has to tell them how to reach each other.",OR),("That's BGP","That something is B G P.",CY)]),
+ S("The postal service for the internet", "Think of the world's postal services swapping delivery routes.",
+  [("list","Each network has an autonomous system number.","AS number","Identifies each network"),
+   ("link","B G P peers talk over T C P port one seventy nine.","TCP port 179","Neighbours set up by hand"),
+   ("people","Peers in different A S numbers are e B G P.","eBGP","Different AS"),
+   ("building","Peers in the same A S number are i B G P.","iBGP","Same AS")]),
+ T("Basic setup", "A basic setup is short.",
+  [("router bgp 65001","Your AS number","Start B G P with your A S number."),
+   ("neighbor 203.0.113.1 remote-as 65002","Name the peer","Name the neighbour and their A S."),
+   ("network 192.0.2.0 mask 255.255.255.0","Must match the table exactly","Advertise a network that exists exactly in your table."),
+   ("show ip bgp summary","Neighbour states","And check the summary.",CY)]),
+ TR("Three traps.",
+  [("BGP advertises every connected route","Only what you network-command","B G P only advertises what you ask it to."),
+   ("BGP uses UDP","TCP port 179","It uses T C P port one seventy nine."),
+   ("Active is a healthy state","Active = still trying to connect","And active means it's still trying to connect.")]),
+ rc("BGP", [("B G P connects separate networks, called autonomous systems.","BGP connects autonomous systems"),("It uses T C P one seventy nine.","TCP 179"),("e B G P is between A S numbers, and i B G P is inside one.","eBGP: between ASes. iBGP: inside one")]),
+])
+
+save("bgp-attributes", "BGP Attributes", "BGP attributes", [
+ H("envelope", [("Many routes to one place",  "B G P often has several ways to reach the same place."),("How does it choose?",  "It picks one using tags on each route.",CY),("Those tags are attributes","Those tags are called path attributes.",OR)]),
+ S("Airline baggage tags", "Every bag carries tags that decide its route.",
+  [("list","A S path lists the networks the route passed through, and shorter wins.","AS_PATH","Shorter is better"),
+   ("scale","Local preference sets which exit your own network prefers.","LOCAL_PREF (default 100)","Outbound; higher wins"),
+   ("map","M E D hints to a neighbour which entrance you prefer.","MED (default 0)","Inbound; lower wins"),
+   ("stamp","Prepending adds extra A S numbers to make a route look worse.","AS_PATH prepending","Less preferred")]),
+ TR("Three traps.",
+  [("MED controls outbound traffic","MED influences inbound","M E D influences inbound traffic."),
+   ("Prepending makes a route better","It makes it less preferred","Prepending makes a route less attractive."),
+   ("MED compares across neighbours","Only from the same neighbouring AS","By default, M E D is only compared for the same neighbouring A S.")]),
+ rc("BGP attributes", [("Shorter A S path wins.","Shorter AS_PATH wins"),("Local preference is outbound, and M E D is inbound.","LOCAL_PREF: outbound; MED: inbound"),("Prepending makes a route less attractive.","Prepending = less preferred")]),
+])
+
+save("redistribution", "Route Redistribution", "Redistribution", [
+ H("question", [("Two routing protocols",  "Two parts of your network run different routing protocols."),("They don't understand each other",  "They can't understand each other's routes.",RED),("A translator is needed","Redistribution is the translator.",CY)]),
+ S("The bilingual translator", "A translator carries routes from one language into the other.",
+  [("gear","You set it up under the protocol that receives the routes.","redistribute","Under the destination protocol"),
+   ("scale","E I G R P needs a seed metric, or nothing arrives.","EIGRP needs a seed metric","Set with default-metric"),
+   ("ruler","O S P F gives redistributed routes a default metric of twenty.","OSPF default seed = 20","Except BGP routes"),
+   ("list","And O S P F needs the subnets keyword for subnetted routes.","subnets keyword","Else only classful networks")]),
+ T("Examples", "Two quick examples.",
+  [("router ospf 1","Into OSPF","Into O S P F, redistribute with subnets."),
+   ("redistribute eigrp 100 subnets","Learn EIGRP routes","Add the subnets keyword."),
+   ("router eigrp 100","Into EIGRP","Into E I G R P, give a metric."),
+   ("redistribute ospf 1 metric 10000 100 255 1 1500","Seed metric needed","The metric is required.",CY)]),
+ TR("Three traps.",
+  [("OSPF seed metric is 1","It's 20 by default","O S P F's default seed metric is twenty."),
+   ("EIGRP has a default seed","It has none; routes fail","E I G R P has no default seed metric."),
+   ("subnets is optional","Without it only classful networks","Without subnets, only classful networks come across.")]),
+ rc("redistribution", [("Redistribution moves routes between protocols.","Moves routes between protocols"),("E I G R P needs a seed metric.","EIGRP needs a seed metric"),("O S P F needs the subnets keyword.","OSPF needs subnets")]),
+])
+
+save("policy-based-routing", "Policy-Based Routing", "Policy-based routing", [
+ H("door", [("Normal routing is by destination",  "Normally, routers decide by destination alone."),("What if you want something else?",  "What if you want to route by who sent the packet?",OR),("That's PBR","That's policy based routing.",CY)]),
+ S("The VIP entrance", "Think of a concert with a special VIP entrance.",
+  [("list","A route map decides who counts as VIP, using match rules.","route-map: match","Source IP, protocol, size"),
+   ("map","The set command sends them down a different path.","route-map: set","e.g. set ip next-hop"),
+   ("door","You apply it on the interface where packets come in.","ip policy route-map","Ingress interface"),
+   ("router","Everyone else goes through the normal door as usual.","Unmatched = normal routing","Routing table unchanged")]),
+ TR("Three traps.",
+  [("PBR changes the routing table","Only the forwarding of matches","It doesn't change the routing table."),
+   ("PBR goes on the outbound side","Apply it inbound","Apply it on the incoming interface."),
+   ("PBR only matches destinations","Source, protocol, length too","And it can match on much more than destination.")]),
+ rc("policy-based routing", [("P B R routes by policy, not just destination.","PBR routes by policy"),("Use a route map with match and set.","route-map: match and set"),("Apply it inbound.","Apply inbound")]),
+])
+
+save("ip-sla", "IP SLA", "IP SLA", [
+ H("clock", [("Is the link actually good?",  "A link can be up, and still be terrible."),("Ping once isn't enough",  "One ping doesn't tell you much.",OR),("IP SLA keeps measuring","I P S L A keeps measuring, on a schedule.",CY)]),
+ S("The postal inspector", "An inspector sends test letters to see how good the service is.",
+  [("envelope","I P S L A sends fake traffic to measure delay, jitter and loss.","Synthetic probes","Latency, jitter, loss"),
+   ("clock","By default it sends one every sixty seconds.","Frequency: 60 seconds","Default timeout 5000 ms"),
+   ("bell","Common probes are I C M P echo, U D P jitter and T C P connect.","Probe types","icmp-echo, udp-jitter, tcp-connect"),
+   ("gear","It only watches, so you link it to a track to change routes.","Track + static route","Used for failover")]),
+ TR("Three traps.",
+  [("IP SLA is a routing protocol","It's a monitoring tool","It only monitors; it doesn't route."),
+   ("Every probe needs a responder","Only advanced ones like UDP jitter","Only advanced probes need a responder."),
+   ("It measures real user traffic","It sends synthetic traffic","It sends fake test traffic.")]),
+ rc("IP SLA", [("I P S L A measures delay, jitter and loss.","Measures delay, jitter, loss"),("It sends test traffic every sixty seconds.","Probes every 60 seconds"),("Link it to a track for automatic failover.","Track it for failover")]),
+])
+
+save("fhrp-concepts", "FHRP Concepts", "FHRP", [
+ H("router", [("One default gateway",  "Every computer has one default gateway."),("If it dies",  "If it dies, nobody gets out.",RED),("FHRP keeps a spare","A first hop redundancy protocol keeps a spare ready.",CY)]),
+ S("The hotel concierge", "Two concierges share one desk number.",
+  [("router","H S R P is Cisco's own, with one active and one standby router.","HSRP","Cisco proprietary"),
+   ("shield","V R R P does the same job, but it is an open standard.","VRRP","Open standard"),
+   ("scale","G L B P is Cisco's too, and it can share traffic between routers.","GLBP","Load balancing"),
+   ("key","All of them hand out one shared virtual address.","Virtual IP and MAC","Hosts never notice a failure")]),
+ V("Compare", "HSRP", "VRRP", "Here are the defaults.",
+  [("Standard","Cisco","Open","H S R P is Cisco only, and V R R P is an open standard."),
+   ("Hello","3 seconds","1 second","H S R P says hello every three seconds, and V R R P every one."),
+   ("Active router","Active","Master","H S R P calls the working router active, and V R R P calls it master.")]),
+ rc("FHRP", [("F H R P gives hosts a gateway that survives failure.","A gateway that survives failure"),("H S R P and G L B P are Cisco, and V R R P is open.","HSRP, GLBP: Cisco. VRRP: open"),("Only G L B P load balances by default.","Only GLBP load-balances by default")]),
+])
+
+save("acl-troubleshooting", "Troubleshooting ACLs", "ACL troubleshooting", [
+ H("shield", [("The bouncer has a bad list",  "Imagine a bouncer working from a bad guest list."),("The wrong people get in",  "The wrong people get in, or good ones get turned away.",OR),("Let's check the list","Let's learn to check the list.",CY)]),
+ S("Reading the list", "Most ACL problems come from a few simple causes.",
+  [("list","Entries are read top down, and the first match wins.","Top-down, first match","Order matters"),
+   ("lock","Every list ends with an invisible deny.","Implicit deny","Add a permit if needed"),
+   ("ruler","In a wildcard mask, zero means match and one means ignore.","Wildcard: 0 = match","0.0.0.255 ignores the last octet"),
+   ("door","And a list does nothing until you apply it with in or out.","ip access-group in/out","Direction matters")]),
+ T("Check commands", "Three commands find most problems.",
+  [("show access-lists","See match counters","Look at the match counters."),
+   ("show ip interface g0/0","Which ACL, which direction","See which list is applied, and where."),
+   ("show running-config | section access","Review the order","And review the order of entries.",CY)]),
+ TR("Three traps.",
+  [("Only permits allow everything else","Implicit deny blocks the rest","A list of only permits still blocks the rest."),
+   ("0.0.0.255 is a subnet mask","It's the inverse wildcard","That's a wildcard, not a mask."),
+   ("No direction needed","Must say in or out","You must always choose a direction.")]),
+ rc("ACL troubleshooting", [("Order matters, and the first match wins.","Order matters"),("Don't forget the implicit deny.","Remember the implicit deny"),("Use show access lists to check the counters.","show access-lists counters")]),
+])
+
+save("acl-ipv6", "IPv6 ACLs", "IPv6 ACLs", [
+ H("shield", [("ACLs for IPv6",  "I P version six has its own access lists."),("Slightly different",  "They work a little differently.",CY),("Let's compare","Let's see how.",OR)]),
+ S("The museum guard", "A museum guard checks visitors against a list.",
+  [("list","I P version six lists are always named, never numbered.","Named only","No numbered IPv6 ACLs"),
+   ("door","You apply one with I P version six traffic filter.","ipv6 traffic-filter","Not ip access-group"),
+   ("lock","For remote access lines, use access class.","ipv6 access-class","On VTY lines"),
+   ("shield","And some neighbour discovery messages are allowed automatically.","Implicit permits","ICMPv6 ND types 133 to 137")]),
+ TR("Three traps.",
+  [("IPv6 ACLs can be numbered","Always named","I P version six lists are always named."),
+   ("Apply with ip access-group","Use ipv6 traffic-filter","The apply command is I P version six traffic filter."),
+   ("Only an implicit deny exists","ND permits are implicit too","And neighbour discovery is allowed by default.")]),
+ rc("IPv6 ACLs", [("They are always named.","Always named"),("Apply with I P version six traffic filter.","ipv6 traffic-filter"),("Neighbour discovery is permitted by default.","ND is implicitly permitted")]),
+])
+
+save("acl-security-features", "ACLs as Security", "ACL security", [
+ H("shield", [("A members only club",  "Picture a members only club."),("Rules checked in order",  "The guard checks the rules in order.",CY),("Most specific first","The most specific rules must come first.",OR)]),
+ S("The club rules", "A few facts drive every access list.",
+  [("list","Rules are checked top down, and the first match wins.","Top-down, first match","Put specific rules first"),
+   ("lock","Everything not allowed is blocked by the implicit deny.","Implicit deny ip any any","Cannot be removed"),
+   ("map","Standard lists go near the destination.","Standard: near destination","Source IP only"),
+   ("router","Extended lists go near the source.","Extended: near source","More detail")]),
+ TR("Three traps.",
+  [("ACLs only look at IPs","Extended can match ports and protocols","Extended lists match ports and protocols too."),
+   ("Inbound ACLs filter router-made traffic","Only traffic passing through","Inbound lists don't filter traffic the router creates."),
+   ("The implicit deny is optional","It's always there","The implicit deny is always present.")]),
+ rc("ACL security", [("Specific rules go first.","Specific rules first"),("Standard near destination, extended near source.","Standard: near destination. Extended: near source"),("The implicit deny is always there.","Implicit deny always applies")]),
+])
+
+save("aaa", "AAA", "AAA", [
+ H("shield", [("Who are you?",  "Who are you? That's authentication."),("What can you do?",  "What are you allowed to do? That's authorization.",CY),("What did you do?","And what did you do? That's accounting.",OR)]),
+ S("The nightclub security team", "Three guards share the job.",
+  [("key","The first guard checks your I D.","Authentication","Who are you?"),
+   ("door","The second guard decides which rooms you can enter.","Authorization","What can you do?"),
+   ("book","The third guard writes down where you went.","Accounting","What did you do?"),
+   ("gear","On Cisco, turn it all on with aaa new model.","aaa new-model","Enables AAA")]),
+ V("The protocols", "RADIUS", "TACACS+", "A A A is a framework, and two protocols deliver it.",
+  [("Transport","UDP 1812 / 1813","TCP 49","R A D I U S uses U D P, and T A C A C S plus uses T C P."),
+   ("Encryption","Password only","Whole packet","R A D I U S encrypts only the password, but T A C A C S plus encrypts everything."),
+   ("Functions","Combines auth and authz","Separates all three","T A C A C S plus keeps all three separate.")]),
+ rc("AAA", [("Authentication, authorization, accounting.","Authentication, authorization, accounting"),("R A D I U S uses U D P, and T A C A C S plus uses T C P.","RADIUS: UDP. TACACS+: TCP"),("A A A is a framework, not a protocol.","AAA is a framework")]),
+])
+
+save("radius-tacacs", "RADIUS vs TACACS+", "RADIUS vs TACACS+", [
+ H("key", [("Two ways to ask the server",  "There are two ways for a switch to check your login."),("RADIUS",  "R A D I U S is like a hotel key card.",CY),("TACACS+","T A C A C S plus is like a personal security guard.",OR)]),
+ S("Key card vs security guard", "Both do the job, but differently.",
+  [("key","A key card checks you in, then opens the doors you're allowed.","RADIUS","Auth and authz combined"),
+   ("shield","A guard checks you in, then approves each door one at a time.","TACACS+","Per-command authorization"),
+   ("lock","The guard keeps the whole conversation private.","Encrypts the whole body","RADIUS only the password"),
+   ("link","And the guard uses reliable T C P.","TCP port 49","RADIUS: UDP 1812/1813")]),
+ TR("Three traps.",
+  [("RADIUS encrypts the whole packet","Only the password","R A D I U S only encrypts the password."),
+   ("TACACS+ uses UDP","TCP port 49","T A C A C S plus uses T C P."),
+   ("Both do per-command authorization","Only TACACS+","Only T A C A C S plus can authorise each command.")]),
+ rc("RADIUS and TACACS+", [("R A D I U S: U D P eighteen twelve, password encryption only.","RADIUS: UDP 1812/1813; password only"),("T A C A C S plus: T C P forty nine, full encryption.","TACACS+: TCP 49; full encryption"),("Use T A C A C S plus for device admin.","TACACS+ for device admin")]),
+])
+
+save("ssh-telnet", "SSH vs Telnet", "SSH vs Telnet", [
+ H("envelope", [("A postcard",  "Telnet is a postcard, and anyone can read it."),("A lockbox",  "S S H is a locked box.",CY),("Use the lockbox","Always use the locked box.",OR)]),
+ S("Postcard vs lockbox", "Both reach the device, but one is safe.",
+  [("envelope","Telnet uses port twenty three and sends everything in plain text.","Telnet: TCP 23","Plaintext"),
+   ("lock","S S H uses port twenty two and encrypts the whole session.","SSH: TCP 22","Encrypted"),
+   ("key","To turn S S H on, you need a hostname, a domain and an R S A key.","Hostname, domain, RSA key","2048 bits recommended"),
+   ("gear","Then limit the V T Y lines to S S H only.","transport input ssh","Under line vty")]),
+ T("Enable SSH", "Here's the quick recipe.",
+  [("ip domain-name courseiva.com","Set a domain","Set a domain name."),
+   ("crypto key generate rsa modulus 2048","Make the keys","Generate the R S A keys."),
+   ("line vty 0 4","Enter the lines","Open the V T Y lines."),
+   ("transport input ssh","SSH only","Allow S S H only.",CY)]),
+ TR("Three traps.",
+  [("Telnet is safer because it uses TCP","Both use TCP; only SSH encrypts","Both use T C P, only S S H encrypts."),
+   ("SSH is on by default","Generate keys first","S S H isn't on until you make keys."),
+   ("transport input is global","It's under the VTY lines","The transport command goes under the V T Y lines.")]),
+ rc("SSH", [("S S H is encrypted, and Telnet is not.","SSH: encrypted. Telnet: plaintext"),("Generate R S A keys to turn S S H on.","Generate RSA keys"),("Allow only S S H on the V T Y lines.","transport input ssh")]),
+])
+
+save("device-passwords", "Cisco Password Types", "Device passwords", [
+ H("key", [("A key ring",  "Picture a ring of castle keys."),("Some are strong",  "Some keys are strong.",CY),("Some can be copied in seconds","Others anyone can copy in seconds.",RED)]),
+ S("The castle key ring", "Cisco stores passwords in different types.",
+  [("book","Type zero is plain text, written on the key itself.","Type 0","Plaintext"),
+   ("key","Type seven is scrambled, but anyone can unscramble it.","Type 7","Reversible, weak"),
+   ("lock","Type five is an M D five hash, which is much better.","Type 5 (MD5)","Hashed with salt"),
+   ("shield","Types eight and nine are the strongest, and nine uses scrypt.","Type 8 and 9","PBKDF2 and scrypt")]),
+ T("Use these", "Pick the strong options.",
+  [("enable algorithm-type scrypt secret MyPass","Type 9","Use enable secret with the scrypt type."),
+   ("service password-encryption","Only makes type 7","Service password encryption only makes type seven."),
+   ("show running-config | include enable","See what's stored","And check what's stored.",CY)]),
+ TR("Three traps.",
+  [("Type 7 is secure","Free tools reverse it","Type seven is reversible."),
+   ("enable password = enable secret","Password is plaintext","Enable password is plain text."),
+   ("service password-encryption secures all","It only touches type 0","It only converts plain text to type seven.")]),
+ rc("passwords", [("Use enable secret, never enable password.","enable secret, not enable password"),("Type seven is weak.","Type 7 is weak"),("Type nine is the strongest.","Type 9 is strongest")]),
+])
+
+save("network-hardening", "Network Hardening", "Network hardening", [
+ H("shield", [("A castle",  "Think of fortifying a castle."),("Fewer doors",  "You start by closing every door you don't need.",CY),("That's hardening","On a network, that's hardening.",OR)]),
+ S("Fortifying the castle", "Hardening means shrinking the attack surface.",
+  [("lock","Turn off every port and service you don't use.","Disable unused ports","Shut and park them"),
+   ("key","Change every default password straight away.","Change default credentials","First thing"),
+   ("shield","Use S S H and S N M P version three instead of the old, open ones.","SSH and SNMPv3","Secure management"),
+   ("bell","Keep the software up to date, and turn on logging.","Patch and log","Detect and respond")]),
+ TR("Quick wins.",
+  [("Defaults are fine","Change them first","Change defaults immediately."),
+   ("Unused ports can stay on","Shut them down","Shut unused ports."),
+   ("Telnet is fine inside","Use SSH","Use S S H even inside.")]),
+ rc("hardening", [("Close what you don't use.","Close what you don't use"),("Change every default.","Change defaults"),("Patch and log everything.","Patch and log")]),
+])
+
+save("firewalls", "Zone-Based Firewalls", "Firewalls", [
+ H("building", [("Security zones",  "Picture an office with different security zones."),("Reception, offices, vault",  "Reception, the offices, and a vault.",CY),("Rules between zones","The rules apply when you move between them.",OR)]),
+ S("Office security zones", "A zone based firewall groups interfaces into zones.",
+  [("building","Inside a zone, everyone moves freely by default.","Within a zone: allowed","Default"),
+   ("lock","Between zones, everything is blocked until you say otherwise.","Between zones: denied","Default"),
+   ("list","A zone pair names the direction, such as inside to outside.","Zone pair","One direction only"),
+   ("gear","A policy decides: inspect, drop or pass.","Inspect, drop, pass","Inspect is stateful")]),
+ TR("Three traps.",
+  [("ZBF is just an ACL","It's stateful and tracks sessions","It's stateful, unlike a plain list."),
+   ("Same-zone traffic is blocked","It's permitted by default","Traffic within a zone is permitted."),
+   ("Pass is stateful","Pass has no inspection","Pass forwards without tracking.")]),
+ rc("firewalls", [("Zones group interfaces.","Zones group interfaces"),("Inside a zone is allowed, and between zones is denied.","Within: allowed. Between: denied"),("Inspect makes it stateful.","inspect = stateful")]),
+])
+
+save("eigrp-summarization", "EIGRP Summarization", "EIGRP summarization", [
+ H("list", [("Many small routes",  "A big network has lots of small routes."),("Squash into one",  "You can squash them into one summary.",CY),("Fewer updates","That means fewer updates, and smaller tables.",OR)]),
+ S("The library sorting system", "A library groups many books under one shelf label.",
+  [("list","A summary route covers many subnets at once.","Summary route","One route, many subnets"),
+   ("gear","You set it on the interface, not under the router process.","ip summary-address eigrp","Interface level"),
+   ("shield","E I G R P adds a null zero route to stop loops.","Null0 route","Prevents loops"),
+   ("lock","Filtering uses a distribute list, in or out.","distribute-list","Inbound or outbound")]),
+ TR("Three traps.",
+  [("Needs auto-summary","Manual works on its own","Manual summaries work without auto summary."),
+   ("Inbound = outbound filtering","Inbound blocks installation","They behave differently."),
+   ("Summary points at the next hop","It points to Null0","The summary points to null zero.")]),
+ rc("EIGRP summarization", [("Summaries shrink tables and updates.","Summaries shrink tables"),("They're set per interface.","Set per interface"),("A null zero route stops loops.","Null0 stops loops")]),
+])
+
+save("compare-ospf-eigrp", "OSPF vs EIGRP", "OSPF vs EIGRP", [
+ H("map", [("GPS or local landmarks",  "Do you navigate by G P S or by local landmarks?"),("OSPF has the full map",  "O S P F gives every router the full map.",CY),("EIGRP trusts neighbours","E I G R P trusts what its neighbours say.",OR)]),
+ V("Side by side", "OSPF", "EIGRP", "Here's the comparison.",
+  [("Type","Link-state (SPF)","Advanced distance vector (DUAL)","O S P F is link state, and E I G R P is advanced distance vector."),
+   ("Metric","Cost from bandwidth","Bandwidth plus delay","O S P F uses cost, and E I G R P uses bandwidth and delay."),
+   ("AD","110","90 internal, 170 external","O S P F is one ten, and E I G R P is ninety, or one seventy external."),
+   ("Design","Area 0 backbone","No areas","O S P F needs area zero, and E I G R P has no areas.")]),
+ TR("Three traps.",
+  [("EIGRP is link-state","Advanced distance vector","E I G R P is not link state."),
+   ("OSPF uses hop count","It uses cost","O S P F uses cost."),
+   ("EIGRP always auto-summarises","Off by default in modern IOS","Auto summary is off on modern I O S.")]),
+ rc("OSPF vs EIGRP", [("O S P F is link state, and E I G R P is advanced distance vector.","OSPF: link-state. EIGRP: advanced distance vector"),("Distances: one ten, ninety and one seventy.","AD: 110, 90, 170"),("Only E I G R P is Cisco's own, by origin.","EIGRP is Cisco origin; OSPF is open")]),
+])

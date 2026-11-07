@@ -1,0 +1,110 @@
+{
+ "topic": "bgp-attributes",
+ "title": "BGP Attributes: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 BGP ATTRIBUTES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "B G P often has several ways to reach the same place. It picks one using tags on each route. Those tags are called path attributes.",
+   "lines": [
+    {
+     "t": "Many routes to one place",
+     "cue": 0
+    },
+    {
+     "t": "How does it choose?",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Those tags are attributes",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Airline baggage tags",
+   "narration": "Every bag carries tags that decide its route. A S path lists the networks the route passed through, and shorter wins. Local preference sets which exit your own network prefers. M E D hints to a neighbour which entrance you prefer. Prepending adds extra A S numbers to make a route look worse.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "AS_PATH",
+     "real": "Shorter is better",
+     "cue": 1
+    },
+    {
+     "icon": "scale",
+     "story": "LOCAL_PREF (default 100)",
+     "real": "Outbound; higher wins",
+     "cue": 2
+    },
+    {
+     "icon": "map",
+     "story": "MED (default 0)",
+     "real": "Inbound; lower wins",
+     "cue": 3
+    },
+    {
+     "icon": "stamp",
+     "story": "AS_PATH prepending",
+     "real": "Less preferred",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. M E D influences inbound traffic. Prepending makes a route less attractive. By default, M E D is only compared for the same neighbouring A S.",
+   "items": [
+    {
+     "wrong": "MED controls outbound traffic",
+     "right": "MED influences inbound",
+     "cue": 1
+    },
+    {
+     "wrong": "Prepending makes a route better",
+     "right": "It makes it less preferred",
+     "cue": 2
+    },
+    {
+     "wrong": "MED compares across neighbours",
+     "right": "Only from the same neighbouring AS",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva BGP attributes lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Shorter A S path wins. Local preference is outbound, and M E D is inbound. Prepending makes a route less attractive. Ready to practise? Try the Courseiva BGP attributes lab.",
+   "points": [
+    {
+     "t": "Shorter AS_PATH wins",
+     "cue": 1
+    },
+    {
+     "t": "LOCAL_PREF: outbound; MED: inbound",
+     "cue": 2
+    },
+    {
+     "t": "Prepending = less preferred",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

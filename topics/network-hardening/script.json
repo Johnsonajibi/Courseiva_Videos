@@ -1,0 +1,110 @@
+{
+ "topic": "network-hardening",
+ "title": "Network Hardening: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NETWORK HARDENING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Think of fortifying a castle. You start by closing every door you don't need. On a network, that's hardening.",
+   "lines": [
+    {
+     "t": "A castle",
+     "cue": 0
+    },
+    {
+     "t": "Fewer doors",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's hardening",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Fortifying the castle",
+   "narration": "Hardening means shrinking the attack surface. Turn off every port and service you don't use. Change every default password straight away. Use S S H and S N M P version three instead of the old, open ones. Keep the software up to date, and turn on logging.",
+   "items": [
+    {
+     "icon": "lock",
+     "story": "Disable unused ports",
+     "real": "Shut and park them",
+     "cue": 1
+    },
+    {
+     "icon": "key",
+     "story": "Change default credentials",
+     "real": "First thing",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "SSH and SNMPv3",
+     "real": "Secure management",
+     "cue": 3
+    },
+    {
+     "icon": "bell",
+     "story": "Patch and log",
+     "real": "Detect and respond",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Quick wins. Change defaults immediately. Shut unused ports. Use S S H even inside.",
+   "items": [
+    {
+     "wrong": "Defaults are fine",
+     "right": "Change them first",
+     "cue": 1
+    },
+    {
+     "wrong": "Unused ports can stay on",
+     "right": "Shut them down",
+     "cue": 2
+    },
+    {
+     "wrong": "Telnet is fine inside",
+     "right": "Use SSH",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva hardening lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Close what you don't use. Change every default. Patch and log everything. Ready to practise? Try the Courseiva hardening lab.",
+   "points": [
+    {
+     "t": "Close what you don't use",
+     "cue": 1
+    },
+    {
+     "t": "Change defaults",
+     "cue": 2
+    },
+    {
+     "t": "Patch and log",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

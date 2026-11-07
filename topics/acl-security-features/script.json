@@ -1,0 +1,110 @@
+{
+ "topic": "acl-security-features",
+ "title": "ACLs as Security: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 ACL SECURITY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Picture a members only club. The guard checks the rules in order. The most specific rules must come first.",
+   "lines": [
+    {
+     "t": "A members only club",
+     "cue": 0
+    },
+    {
+     "t": "Rules checked in order",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Most specific first",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The club rules",
+   "narration": "A few facts drive every access list. Rules are checked top down, and the first match wins. Everything not allowed is blocked by the implicit deny. Standard lists go near the destination. Extended lists go near the source.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "Top-down, first match",
+     "real": "Put specific rules first",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "Implicit deny ip any any",
+     "real": "Cannot be removed",
+     "cue": 2
+    },
+    {
+     "icon": "map",
+     "story": "Standard: near destination",
+     "real": "Source IP only",
+     "cue": 3
+    },
+    {
+     "icon": "router",
+     "story": "Extended: near source",
+     "real": "More detail",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Extended lists match ports and protocols too. Inbound lists don't filter traffic the router creates. The implicit deny is always present.",
+   "items": [
+    {
+     "wrong": "ACLs only look at IPs",
+     "right": "Extended can match ports and protocols",
+     "cue": 1
+    },
+    {
+     "wrong": "Inbound ACLs filter router-made traffic",
+     "right": "Only traffic passing through",
+     "cue": 2
+    },
+    {
+     "wrong": "The implicit deny is optional",
+     "right": "It's always there",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva ACL security lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Specific rules go first. Standard near destination, extended near source. The implicit deny is always there. Ready to practise? Try the Courseiva ACL security lab.",
+   "points": [
+    {
+     "t": "Specific rules first",
+     "cue": 1
+    },
+    {
+     "t": "Standard: near destination. Extended: near source",
+     "cue": 2
+    },
+    {
+     "t": "Implicit deny always applies",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

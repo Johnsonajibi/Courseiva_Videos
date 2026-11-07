@@ -1,0 +1,134 @@
+{
+ "topic": "device-passwords",
+ "title": "Cisco Password Types: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 DEVICE PASSWORDS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "key",
+   "narration": "Picture a ring of castle keys. Some keys are strong. Others anyone can copy in seconds.",
+   "lines": [
+    {
+     "t": "A key ring",
+     "cue": 0
+    },
+    {
+     "t": "Some are strong",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Some can be copied in seconds",
+     "cue": 2,
+     "color": "#F87171"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The castle key ring",
+   "narration": "Cisco stores passwords in different types. Type zero is plain text, written on the key itself. Type seven is scrambled, but anyone can unscramble it. Type five is an M D five hash, which is much better. Types eight and nine are the strongest, and nine uses scrypt.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "Type 0",
+     "real": "Plaintext",
+     "cue": 1
+    },
+    {
+     "icon": "key",
+     "story": "Type 7",
+     "real": "Reversible, weak",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "Type 5 (MD5)",
+     "real": "Hashed with salt",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "Type 8 and 9",
+     "real": "PBKDF2 and scrypt",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Use these",
+   "narration": "Pick the strong options. Use enable secret with the scrypt type. Service password encryption only makes type seven. And check what's stored.",
+   "lines": [
+    {
+     "t": "enable algorithm-type scrypt secret MyPass",
+     "note": "Type 9",
+     "cue": 1
+    },
+    {
+     "t": "service password-encryption",
+     "note": "Only makes type 7",
+     "cue": 2
+    },
+    {
+     "t": "show running-config | include enable",
+     "note": "See what's stored",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Type seven is reversible. Enable password is plain text. It only converts plain text to type seven.",
+   "items": [
+    {
+     "wrong": "Type 7 is secure",
+     "right": "Free tools reverse it",
+     "cue": 1
+    },
+    {
+     "wrong": "enable password = enable secret",
+     "right": "Password is plaintext",
+     "cue": 2
+    },
+    {
+     "wrong": "service password-encryption secures all",
+     "right": "It only touches type 0",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva passwords lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Use enable secret, never enable password. Type seven is weak. Type nine is the strongest. Ready to practise? Try the Courseiva passwords lab.",
+   "points": [
+    {
+     "t": "enable secret, not enable password",
+     "cue": 1
+    },
+    {
+     "t": "Type 7 is weak",
+     "cue": 2
+    },
+    {
+     "t": "Type 9 is strongest",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

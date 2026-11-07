@@ -1,0 +1,110 @@
+{
+ "topic": "ip-sla",
+ "title": "IP SLA: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IP SLA",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "clock",
+   "narration": "A link can be up, and still be terrible. One ping doesn't tell you much. I P S L A keeps measuring, on a schedule.",
+   "lines": [
+    {
+     "t": "Is the link actually good?",
+     "cue": 0
+    },
+    {
+     "t": "Ping once isn't enough",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "IP SLA keeps measuring",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The postal inspector",
+   "narration": "An inspector sends test letters to see how good the service is. I P S L A sends fake traffic to measure delay, jitter and loss. By default it sends one every sixty seconds. Common probes are I C M P echo, U D P jitter and T C P connect. It only watches, so you link it to a track to change routes.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "Synthetic probes",
+     "real": "Latency, jitter, loss",
+     "cue": 1
+    },
+    {
+     "icon": "clock",
+     "story": "Frequency: 60 seconds",
+     "real": "Default timeout 5000 ms",
+     "cue": 2
+    },
+    {
+     "icon": "bell",
+     "story": "Probe types",
+     "real": "icmp-echo, udp-jitter, tcp-connect",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "story": "Track + static route",
+     "real": "Used for failover",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It only monitors; it doesn't route. Only advanced probes need a responder. It sends fake test traffic.",
+   "items": [
+    {
+     "wrong": "IP SLA is a routing protocol",
+     "right": "It's a monitoring tool",
+     "cue": 1
+    },
+    {
+     "wrong": "Every probe needs a responder",
+     "right": "Only advanced ones like UDP jitter",
+     "cue": 2
+    },
+    {
+     "wrong": "It measures real user traffic",
+     "right": "It sends synthetic traffic",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IP SLA lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. I P S L A measures delay, jitter and loss. It sends test traffic every sixty seconds. Link it to a track for automatic failover. Ready to practise? Try the Courseiva IP SLA lab.",
+   "points": [
+    {
+     "t": "Measures delay, jitter, loss",
+     "cue": 1
+    },
+    {
+     "t": "Probes every 60 seconds",
+     "cue": 2
+    },
+    {
+     "t": "Track it for failover",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

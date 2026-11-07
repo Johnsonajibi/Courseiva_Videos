@@ -1,0 +1,110 @@
+{
+ "topic": "firewalls",
+ "title": "Zone-Based Firewalls: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 FIREWALLS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Picture an office with different security zones. Reception, the offices, and a vault. The rules apply when you move between them.",
+   "lines": [
+    {
+     "t": "Security zones",
+     "cue": 0
+    },
+    {
+     "t": "Reception, offices, vault",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Rules between zones",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Office security zones",
+   "narration": "A zone based firewall groups interfaces into zones. Inside a zone, everyone moves freely by default. Between zones, everything is blocked until you say otherwise. A zone pair names the direction, such as inside to outside. A policy decides: inspect, drop or pass.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Within a zone: allowed",
+     "real": "Default",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "Between zones: denied",
+     "real": "Default",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "Zone pair",
+     "real": "One direction only",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "story": "Inspect, drop, pass",
+     "real": "Inspect is stateful",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It's stateful, unlike a plain list. Traffic within a zone is permitted. Pass forwards without tracking.",
+   "items": [
+    {
+     "wrong": "ZBF is just an ACL",
+     "right": "It's stateful and tracks sessions",
+     "cue": 1
+    },
+    {
+     "wrong": "Same-zone traffic is blocked",
+     "right": "It's permitted by default",
+     "cue": 2
+    },
+    {
+     "wrong": "Pass is stateful",
+     "right": "Pass has no inspection",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva firewalls lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Zones group interfaces. Inside a zone is allowed, and between zones is denied. Inspect makes it stateful. Ready to practise? Try the Courseiva firewalls lab.",
+   "points": [
+    {
+     "t": "Zones group interfaces",
+     "cue": 1
+    },
+    {
+     "t": "Within: allowed. Between: denied",
+     "cue": 2
+    },
+    {
+     "t": "inspect = stateful",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

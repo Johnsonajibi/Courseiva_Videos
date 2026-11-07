@@ -1,0 +1,110 @@
+{
+ "topic": "radius-tacacs",
+ "title": "RADIUS vs TACACS+: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 RADIUS VS TACACS+",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "key",
+   "narration": "There are two ways for a switch to check your login. R A D I U S is like a hotel key card. T A C A C S plus is like a personal security guard.",
+   "lines": [
+    {
+     "t": "Two ways to ask the server",
+     "cue": 0
+    },
+    {
+     "t": "RADIUS",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "TACACS+",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Key card vs security guard",
+   "narration": "Both do the job, but differently. A key card checks you in, then opens the doors you're allowed. A guard checks you in, then approves each door one at a time. The guard keeps the whole conversation private. And the guard uses reliable T C P.",
+   "items": [
+    {
+     "icon": "key",
+     "story": "RADIUS",
+     "real": "Auth and authz combined",
+     "cue": 1
+    },
+    {
+     "icon": "shield",
+     "story": "TACACS+",
+     "real": "Per-command authorization",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "Encrypts the whole body",
+     "real": "RADIUS only the password",
+     "cue": 3
+    },
+    {
+     "icon": "link",
+     "story": "TCP port 49",
+     "real": "RADIUS: UDP 1812/1813",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. R A D I U S only encrypts the password. T A C A C S plus uses T C P. Only T A C A C S plus can authorise each command.",
+   "items": [
+    {
+     "wrong": "RADIUS encrypts the whole packet",
+     "right": "Only the password",
+     "cue": 1
+    },
+    {
+     "wrong": "TACACS+ uses UDP",
+     "right": "TCP port 49",
+     "cue": 2
+    },
+    {
+     "wrong": "Both do per-command authorization",
+     "right": "Only TACACS+",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva RADIUS and TACACS+ lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. R A D I U S: U D P eighteen twelve, password encryption only. T A C A C S plus: T C P forty nine, full encryption. Use T A C A C S plus for device admin. Ready to practise? Try the Courseiva RADIUS and TACACS+ lab.",
+   "points": [
+    {
+     "t": "RADIUS: UDP 1812/1813; password only",
+     "cue": 1
+    },
+    {
+     "t": "TACACS+: TCP 49; full encryption",
+     "cue": 2
+    },
+    {
+     "t": "TACACS+ for device admin",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

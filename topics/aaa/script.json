@@ -1,0 +1,121 @@
+{
+ "topic": "aaa",
+ "title": "AAA: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 AAA",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Who are you? That's authentication. What are you allowed to do? That's authorization. And what did you do? That's accounting.",
+   "lines": [
+    {
+     "t": "Who are you?",
+     "cue": 0
+    },
+    {
+     "t": "What can you do?",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "What did you do?",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The nightclub security team",
+   "narration": "Three guards share the job. The first guard checks your I D. The second guard decides which rooms you can enter. The third guard writes down where you went. On Cisco, turn it all on with aaa new model.",
+   "items": [
+    {
+     "icon": "key",
+     "story": "Authentication",
+     "real": "Who are you?",
+     "cue": 1
+    },
+    {
+     "icon": "door",
+     "story": "Authorization",
+     "real": "What can you do?",
+     "cue": 2
+    },
+    {
+     "icon": "book",
+     "story": "Accounting",
+     "real": "What did you do?",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "story": "aaa new-model",
+     "real": "Enables AAA",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "The protocols",
+   "narration": "A A A is a framework, and two protocols deliver it. R A D I U S uses U D P, and T A C A C S plus uses T C P. R A D I U S encrypts only the password, but T A C A C S plus encrypts everything. T A C A C S plus keeps all three separate.",
+   "left": {
+    "title": "RADIUS",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "TACACS+",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Transport",
+     "l": "UDP 1812 / 1813",
+     "r": "TCP 49",
+     "cue": 1
+    },
+    {
+     "label": "Encryption",
+     "l": "Password only",
+     "r": "Whole packet",
+     "cue": 2
+    },
+    {
+     "label": "Functions",
+     "l": "Combines auth and authz",
+     "r": "Separates all three",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva AAA lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Authentication, authorization, accounting. R A D I U S uses U D P, and T A C A C S plus uses T C P. A A A is a framework, not a protocol. Ready to practise? Try the Courseiva AAA lab.",
+   "points": [
+    {
+     "t": "Authentication, authorization, accounting",
+     "cue": 1
+    },
+    {
+     "t": "RADIUS: UDP. TACACS+: TCP",
+     "cue": 2
+    },
+    {
+     "t": "AAA is a framework",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

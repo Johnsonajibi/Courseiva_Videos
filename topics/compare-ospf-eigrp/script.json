@@ -1,0 +1,118 @@
+{
+ "topic": "compare-ospf-eigrp",
+ "title": "OSPF vs EIGRP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 OSPF VS EIGRP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Do you navigate by G P S or by local landmarks? O S P F gives every router the full map. E I G R P trusts what its neighbours say.",
+   "lines": [
+    {
+     "t": "GPS or local landmarks",
+     "cue": 0
+    },
+    {
+     "t": "OSPF has the full map",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "EIGRP trusts neighbours",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Side by side",
+   "narration": "Here's the comparison. O S P F is link state, and E I G R P is advanced distance vector. O S P F uses cost, and E I G R P uses bandwidth and delay. O S P F is one ten, and E I G R P is ninety, or one seventy external. O S P F needs area zero, and E I G R P has no areas.",
+   "left": {
+    "title": "OSPF",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "EIGRP",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Type",
+     "l": "Link-state (SPF)",
+     "r": "Advanced distance vector (DUAL)",
+     "cue": 1
+    },
+    {
+     "label": "Metric",
+     "l": "Cost from bandwidth",
+     "r": "Bandwidth plus delay",
+     "cue": 2
+    },
+    {
+     "label": "AD",
+     "l": "110",
+     "r": "90 internal, 170 external",
+     "cue": 3
+    },
+    {
+     "label": "Design",
+     "l": "Area 0 backbone",
+     "r": "No areas",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. E I G R P is not link state. O S P F uses cost. Auto summary is off on modern I O S.",
+   "items": [
+    {
+     "wrong": "EIGRP is link-state",
+     "right": "Advanced distance vector",
+     "cue": 1
+    },
+    {
+     "wrong": "OSPF uses hop count",
+     "right": "It uses cost",
+     "cue": 2
+    },
+    {
+     "wrong": "EIGRP always auto-summarises",
+     "right": "Off by default in modern IOS",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva OSPF vs EIGRP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. O S P F is link state, and E I G R P is advanced distance vector. Distances: one ten, ninety and one seventy. Only E I G R P is Cisco's own, by origin. Ready to practise? Try the Courseiva OSPF vs EIGRP lab.",
+   "points": [
+    {
+     "t": "OSPF: link-state. EIGRP: advanced distance vector",
+     "cue": 1
+    },
+    {
+     "t": "AD: 110, 90, 170",
+     "cue": 2
+    },
+    {
+     "t": "EIGRP is Cisco origin; OSPF is open",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

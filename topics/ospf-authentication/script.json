@@ -1,0 +1,134 @@
+{
+ "topic": "ospf-authentication",
+ "title": "OSPF Authentication: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 OSPF AUTHENTICATION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "lock",
+   "narration": "By default, any router can join your O S P F network. Even one an attacker plugged in. Authentication makes routers prove who they are.",
+   "lines": [
+    {
+     "t": "Any router can join",
+     "cue": 0
+    },
+    {
+     "t": "Even a rogue one",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Authentication stops that",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The guarded conference room",
+   "narration": "Think of a conference room with a guard at the door. Type zero means no guard at all. Type one is a password shouted out loud for anyone to hear. Type three uses a secret that is never spoken, only proven. Set it on each interface, or for a whole area.",
+   "items": [
+    {
+     "icon": "door",
+     "story": "Type 0: none",
+     "real": "Anyone walks in",
+     "cue": 1
+    },
+    {
+     "icon": "book",
+     "story": "Type 1: plaintext password",
+     "real": "Not secure",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "Type 3: MD5 hash",
+     "real": "Key is never sent",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "story": "Per interface or per area",
+     "real": "Both ends must match",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "The commands",
+   "narration": "Here's the cryptographic version. Turn on message digest mode on the interface. Then give it a key number and a secret. And check the neighbour list.",
+   "lines": [
+    {
+     "t": "ip ospf authentication message-digest",
+     "note": "Turn on MD5 on the interface",
+     "cue": 1
+    },
+    {
+     "t": "ip ospf message-digest-key 1 md5 SECRET",
+     "note": "Key number and secret",
+     "cue": 2
+    },
+    {
+     "t": "show ip ospf neighbor",
+     "note": "Stuck in INIT = key mismatch",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Only type three hashes the key. You still need keys on each interface. A mismatch leaves the neighbour stuck before full.",
+   "items": [
+    {
+     "wrong": "OSPF auth encrypts the password",
+     "right": "Only type 3 hashes it",
+     "cue": 1
+    },
+    {
+     "wrong": "Area auth alone is enough",
+     "right": "Keys still go on interfaces",
+     "cue": 2
+    },
+    {
+     "wrong": "A failure drops the neighbour to DOWN",
+     "right": "It sticks at INIT or EXSTART",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva OSPF authentication lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Type three uses an M D five hash, and type one is plaintext. Both ends need the same key. A mismatch leaves neighbours stuck. Ready to practise? Try the Courseiva OSPF authentication lab.",
+   "points": [
+    {
+     "t": "Type 3 = MD5; Type 1 = plaintext",
+     "cue": 1
+    },
+    {
+     "t": "Keys must match",
+     "cue": 2
+    },
+    {
+     "t": "Mismatch = stuck neighbour",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

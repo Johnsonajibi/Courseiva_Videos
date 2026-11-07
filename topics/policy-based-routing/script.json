@@ -1,0 +1,110 @@
+{
+ "topic": "policy-based-routing",
+ "title": "Policy-Based Routing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 POLICY-BASED ROUTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "door",
+   "narration": "Normally, routers decide by destination alone. What if you want to route by who sent the packet? That's policy based routing.",
+   "lines": [
+    {
+     "t": "Normal routing is by destination",
+     "cue": 0
+    },
+    {
+     "t": "What if you want something else?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "That's PBR",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The VIP entrance",
+   "narration": "Think of a concert with a special VIP entrance. A route map decides who counts as VIP, using match rules. The set command sends them down a different path. You apply it on the interface where packets come in. Everyone else goes through the normal door as usual.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "route-map: match",
+     "real": "Source IP, protocol, size",
+     "cue": 1
+    },
+    {
+     "icon": "map",
+     "story": "route-map: set",
+     "real": "e.g. set ip next-hop",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "story": "ip policy route-map",
+     "real": "Ingress interface",
+     "cue": 3
+    },
+    {
+     "icon": "router",
+     "story": "Unmatched = normal routing",
+     "real": "Routing table unchanged",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It doesn't change the routing table. Apply it on the incoming interface. And it can match on much more than destination.",
+   "items": [
+    {
+     "wrong": "PBR changes the routing table",
+     "right": "Only the forwarding of matches",
+     "cue": 1
+    },
+    {
+     "wrong": "PBR goes on the outbound side",
+     "right": "Apply it inbound",
+     "cue": 2
+    },
+    {
+     "wrong": "PBR only matches destinations",
+     "right": "Source, protocol, length too",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva policy-based routing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. P B R routes by policy, not just destination. Use a route map with match and set. Apply it inbound. Ready to practise? Try the Courseiva policy-based routing lab.",
+   "points": [
+    {
+     "t": "PBR routes by policy",
+     "cue": 1
+    },
+    {
+     "t": "route-map: match and set",
+     "cue": 2
+    },
+    {
+     "t": "Apply inbound",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

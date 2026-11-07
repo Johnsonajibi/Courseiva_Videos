@@ -1,0 +1,134 @@
+{
+ "topic": "acl-troubleshooting",
+ "title": "Troubleshooting ACLs: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 ACL TROUBLESHOOTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Imagine a bouncer working from a bad guest list. The wrong people get in, or good ones get turned away. Let's learn to check the list.",
+   "lines": [
+    {
+     "t": "The bouncer has a bad list",
+     "cue": 0
+    },
+    {
+     "t": "The wrong people get in",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Let's check the list",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Reading the list",
+   "narration": "Most ACL problems come from a few simple causes. Entries are read top down, and the first match wins. Every list ends with an invisible deny. In a wildcard mask, zero means match and one means ignore. And a list does nothing until you apply it with in or out.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "Top-down, first match",
+     "real": "Order matters",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "Implicit deny",
+     "real": "Add a permit if needed",
+     "cue": 2
+    },
+    {
+     "icon": "ruler",
+     "story": "Wildcard: 0 = match",
+     "real": "0.0.0.255 ignores the last octet",
+     "cue": 3
+    },
+    {
+     "icon": "door",
+     "story": "ip access-group in/out",
+     "real": "Direction matters",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Check commands",
+   "narration": "Three commands find most problems. Look at the match counters. See which list is applied, and where. And review the order of entries.",
+   "lines": [
+    {
+     "t": "show access-lists",
+     "note": "See match counters",
+     "cue": 1
+    },
+    {
+     "t": "show ip interface g0/0",
+     "note": "Which ACL, which direction",
+     "cue": 2
+    },
+    {
+     "t": "show running-config | section access",
+     "note": "Review the order",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. A list of only permits still blocks the rest. That's a wildcard, not a mask. You must always choose a direction.",
+   "items": [
+    {
+     "wrong": "Only permits allow everything else",
+     "right": "Implicit deny blocks the rest",
+     "cue": 1
+    },
+    {
+     "wrong": "0.0.0.255 is a subnet mask",
+     "right": "It's the inverse wildcard",
+     "cue": 2
+    },
+    {
+     "wrong": "No direction needed",
+     "right": "Must say in or out",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva ACL troubleshooting lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Order matters, and the first match wins. Don't forget the implicit deny. Use show access lists to check the counters. Ready to practise? Try the Courseiva ACL troubleshooting lab.",
+   "points": [
+    {
+     "t": "Order matters",
+     "cue": 1
+    },
+    {
+     "t": "Remember the implicit deny",
+     "cue": 2
+    },
+    {
+     "t": "show access-lists counters",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
