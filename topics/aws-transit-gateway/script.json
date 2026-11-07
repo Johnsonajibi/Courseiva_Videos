@@ -1,0 +1,110 @@
+{
+ "topic": "aws-transit-gateway",
+ "title": "Transit Gateway: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 TRANSIT GATEWAY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "link",
+   "narration": "You have twenty V P Cs. Peering every pair means a tangle of connections. A Transit Gateway is the hub that replaces the tangle.",
+   "lines": [
+    {
+     "t": "Twenty VPCs",
+     "cue": 0
+    },
+    {
+     "t": "A tunnel between each pair",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Transit Gateway is the hub",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The train network",
+   "narration": "Think of a central station that every line passes through. Transit Gateway is a regional hub in a star shape. Each V P C and each site attaches once to the hub. The gateway has its own route tables, separate from the V P C ones. Different tables let you keep some networks isolated.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Hub and spoke",
+     "real": "Regional",
+     "cue": 1
+    },
+    {
+     "icon": "link",
+     "story": "Attachments",
+     "real": "One per network",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "TGW route tables",
+     "real": "Independent",
+     "cue": 3
+    },
+    {
+     "icon": "map",
+     "story": "Segmentation",
+     "real": "Associations and propagation",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It has its own route tables. Peering isn't transitive. It's regional, so you peer gateways across regions.",
+   "items": [
+    {
+     "wrong": "TGW uses VPC route tables",
+     "right": "It has its own",
+     "cue": 1
+    },
+    {
+     "wrong": "Peering is transitive",
+     "right": "Peering isn't; TGW is",
+     "cue": 2
+    },
+    {
+     "wrong": "It spans regions on its own",
+     "right": "Regional; needs peering",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Transit Gateway lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. It's a hub that replaces many peerings. It has its own route tables. It's regional. Ready to practise? Try the Courseiva Transit Gateway lab.",
+   "points": [
+    {
+     "t": "A hub replacing many peerings",
+     "cue": 1
+    },
+    {
+     "t": "Own route tables",
+     "cue": 2
+    },
+    {
+     "t": "Regional",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

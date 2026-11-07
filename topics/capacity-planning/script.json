@@ -1,0 +1,110 @@
+{
+ "topic": "capacity-planning",
+ "title": "Capacity Planning: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CAPACITY PLANNING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "road",
+   "narration": "Every year, more cars use the road. A sensible council adds lanes before it jams. That's capacity planning.",
+   "lines": [
+    {
+     "t": "The road gets busier",
+     "cue": 0
+    },
+    {
+     "t": "Add lanes before it jams",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's capacity planning",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The highway system",
+   "narration": "Capacity planning follows a simple loop. Measure how busy your links are today. Set limits, seventy percent as a warning and ninety as critical. Forecast how much growth is coming. Upgrade before the link saturates.",
+   "items": [
+    {
+     "icon": "scale",
+     "story": "Measure",
+     "real": "SNMP history",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "Thresholds",
+     "real": "70% / 90%",
+     "cue": 2
+    },
+    {
+     "icon": "map",
+     "story": "Forecast",
+     "real": "Trend lines",
+     "cue": 3
+    },
+    {
+     "icon": "wrench",
+     "story": "Upgrade early",
+     "real": "Before the jam",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three tips. Plan ahead of saturation. Look at the trend as well. Use NetFlow to see who's talking.",
+   "items": [
+    {
+     "wrong": "Wait until it's full",
+     "right": "Plan before saturation",
+     "cue": 1
+    },
+    {
+     "wrong": "Only peak counts",
+     "right": "Trends count too",
+     "cue": 2
+    },
+    {
+     "wrong": "SNMP shows who's talking",
+     "right": "NetFlow does",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva capacity planning lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Measure, set thresholds, forecast, upgrade. Seventy is a warning, and ninety is critical. Use S N M P for history, and NetFlow for who. Ready to practise? Try the Courseiva capacity planning lab.",
+   "points": [
+    {
+     "t": "Measure, threshold, forecast, upgrade",
+     "cue": 1
+    },
+    {
+     "t": "70% warn; 90% critical",
+     "cue": 2
+    },
+    {
+     "t": "SNMP: history. NetFlow: who",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

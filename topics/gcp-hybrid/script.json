@@ -1,0 +1,110 @@
+{
+ "topic": "gcp-hybrid",
+ "title": "Cloud VPN and Interconnect: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 GCP HYBRID",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Your factory has sites in two cities. They need a road between them. There are two kinds of road.",
+   "lines": [
+    {
+     "t": "Two cities, one factory",
+     "cue": 0
+    },
+    {
+     "t": "A road between them",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Two kinds of road",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The two city factory",
+   "narration": "Google offers a cheap road and a fast road. Cloud V P N is encrypted, over the public internet. Cloud Interconnect is a private dedicated connection. Choose Interconnect for high performance. Many firms use V P N as a backup.",
+   "items": [
+    {
+     "icon": "lock",
+     "story": "Cloud VPN",
+     "real": "Lower bandwidth, backup",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "Cloud Interconnect",
+     "real": "Bypasses the internet",
+     "cue": 2
+    },
+    {
+     "icon": "scale",
+     "story": "High-performance",
+     "real": "Dedicated",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "VPN as backup",
+     "real": "Common design",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Interconnect is faster. It bypasses the internet. They're often combined.",
+   "items": [
+    {
+     "wrong": "VPN is the faster one",
+     "right": "Interconnect",
+     "cue": 1
+    },
+    {
+     "wrong": "Interconnect uses the internet",
+     "right": "It bypasses it",
+     "cue": 2
+    },
+    {
+     "wrong": "They can't be combined",
+     "right": "Often used together",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva GCP hybrid lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. V P N is encrypted over the internet. Interconnect is private and fast. Use both for resilience. Ready to practise? Try the Courseiva GCP hybrid lab.",
+   "points": [
+    {
+     "t": "VPN: encrypted, over internet",
+     "cue": 1
+    },
+    {
+     "t": "Interconnect: private, fast",
+     "cue": 2
+    },
+    {
+     "t": "Use both for resilience",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

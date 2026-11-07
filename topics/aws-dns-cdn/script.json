@@ -1,0 +1,110 @@
+{
+ "topic": "aws-dns-cdn",
+ "title": "Route 53 and CloudFront: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 ROUTE 53 AND CLOUDFRONT",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "book",
+   "narration": "Route fifty three is a phone directory for your sites. CloudFront keeps copies near your visitors. Together, they make sites fast.",
+   "lines": [
+    {
+     "t": "A phone directory",
+     "cue": 0
+    },
+    {
+     "t": "CloudFront is the local branch",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Together they're quick",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The library directory",
+   "narration": "Two services, two jobs. Route fifty three turns names into addresses. An alias record is the only way to point a root domain at an A W S resource. CloudFront caches copies at edge locations. It's pull based, so the first visitor fetches the file.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "Route 53",
+     "real": "DNS",
+     "cue": 1
+    },
+    {
+     "icon": "link",
+     "story": "Alias record",
+     "real": "Zone apex",
+     "cue": 2
+    },
+    {
+     "icon": "cloud",
+     "story": "CloudFront",
+     "real": "CDN",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "story": "Pull-based cache",
+     "real": "Cached after first request",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. You can't use a C N A M E at the root. It caches after the first request. It also does health checks.",
+   "items": [
+    {
+     "wrong": "CNAME works at the root",
+     "right": "Use an alias",
+     "cue": 1
+    },
+    {
+     "wrong": "CloudFront pre-loads everything",
+     "right": "Pull-based",
+     "cue": 2
+    },
+    {
+     "wrong": "Route 53 is only DNS",
+     "right": "Also health checks",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Route 53 and CloudFront lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Use an alias for the root domain. CloudFront caches at the edge. It fills the cache on first request. Ready to practise? Try the Courseiva Route 53 and CloudFront lab.",
+   "points": [
+    {
+     "t": "Alias for the root domain",
+     "cue": 1
+    },
+    {
+     "t": "CloudFront caches at the edge",
+     "cue": 2
+    },
+    {
+     "t": "Cache fills on first request",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

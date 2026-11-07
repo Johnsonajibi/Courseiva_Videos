@@ -1,0 +1,110 @@
+{
+ "topic": "gcp-load-balancing-cdn",
+ "title": "GCP Load Balancing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 GCP LOAD BALANCING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "people",
+   "narration": "Imagine a food truck festival with a long queue. You'd send people to the shortest line. That's what a load balancer does.",
+   "lines": [
+    {
+     "t": "A food truck festival",
+     "cue": 0
+    },
+    {
+     "t": "Spread the people out",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's load balancing",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The food truck festival",
+   "narration": "Load balancers come at two layers. Layer four balancers decide using addresses and ports. Layer seven balancers look at the content of the request. Both spread traffic across several backends. A C D N caches content near the visitor.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "Layer 4",
+     "real": "IP and port",
+     "cue": 1
+    },
+    {
+     "icon": "map",
+     "story": "Layer 7",
+     "real": "URLs and headers",
+     "cue": 2
+    },
+    {
+     "icon": "server",
+     "story": "Backends",
+     "real": "No single server overwhelmed",
+     "cue": 3
+    },
+    {
+     "icon": "cloud",
+     "story": "CDN",
+     "real": "Edge caching",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Only layer seven reads the content. It only distributes traffic. They do different jobs.",
+   "items": [
+    {
+     "wrong": "Layer 4 reads URLs",
+     "right": "Layer 7 does",
+     "cue": 1
+    },
+    {
+     "wrong": "A balancer stores your data",
+     "right": "It just distributes",
+     "cue": 2
+    },
+    {
+     "wrong": "CDN is the same as a balancer",
+     "right": "Different jobs",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva GCP load balancing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Layer four uses addresses and ports. Layer seven reads the request. A C D N caches near users. Ready to practise? Try the Courseiva GCP load balancing lab.",
+   "points": [
+    {
+     "t": "L4: IP and port",
+     "cue": 1
+    },
+    {
+     "t": "L7: reads the content",
+     "cue": 2
+    },
+    {
+     "t": "CDN caches near users",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

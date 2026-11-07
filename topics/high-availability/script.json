@@ -1,0 +1,110 @@
+{
+ "topic": "high-availability",
+ "title": "Network Redundancy: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 HIGH AVAILABILITY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Every car needs a spare tyre. A network needs spares as well. That's called redundancy.",
+   "lines": [
+    {
+     "t": "A spare tyre",
+     "cue": 0
+    },
+    {
+     "t": "Networks need spares too",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's redundancy",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The spare tyre",
+   "narration": "Each layer has its own way of being redundant. Spanning tree stops loops, with a hello of two seconds. Rapid S T P recovers in one to three seconds. H S R P gives hosts a gateway that survives failure. Ether channel bundles links, so one failing doesn't matter.",
+   "items": [
+    {
+     "icon": "switch",
+     "story": "STP",
+     "real": "Hello 2, max age 20, forward 15",
+     "cue": 1
+    },
+    {
+     "icon": "clock",
+     "story": "RSTP",
+     "real": "Proposal and agreement",
+     "cue": 2
+    },
+    {
+     "icon": "router",
+     "story": "HSRP",
+     "real": "3 s hello, 10 s hold",
+     "cue": 3
+    },
+    {
+     "icon": "link",
+     "story": "EtherChannel",
+     "real": "Bundled links",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It reduces downtime, not removes it. Classic S T P is slow to recover. A single link is a single point of failure.",
+   "items": [
+    {
+     "wrong": "Redundancy means no downtime",
+     "right": "It reduces it",
+     "cue": 1
+    },
+    {
+     "wrong": "STP is fast",
+     "right": "Classic STP is slow",
+     "cue": 2
+    },
+    {
+     "wrong": "One link is enough",
+     "right": "Add a backup",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva redundancy lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Add a spare at every layer. R S T P is much faster than S T P. Test the backups. Ready to practise? Try the Courseiva redundancy lab.",
+   "points": [
+    {
+     "t": "A spare at every layer",
+     "cue": 1
+    },
+    {
+     "t": "RSTP faster than STP",
+     "cue": 2
+    },
+    {
+     "t": "Test the backups",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

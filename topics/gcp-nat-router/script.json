@@ -1,0 +1,110 @@
+{
+ "topic": "gcp-nat-router",
+ "title": "Cloud NAT: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CLOUD NAT",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "lock",
+   "narration": "Your servers have no public addresses. But they still need to download updates. Cloud N A T lets them out, safely.",
+   "lines": [
+    {
+     "t": "Private servers",
+     "cue": 0
+    },
+    {
+     "t": "They still need updates",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Cloud NAT lets them out",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The mailroom underground",
+   "narration": "Cloud NAT is a one way door. It gives private V Ms outbound internet access. Nothing from the internet can start a connection in. Private Google Access reaches Google's own services privately. So private V Ms can still use Google A P Is.",
+   "items": [
+    {
+     "icon": "door",
+     "story": "Outbound only",
+     "real": "No public IP on the VM",
+     "cue": 1
+    },
+    {
+     "icon": "shield",
+     "story": "No inbound",
+     "real": "Safer",
+     "cue": 2
+    },
+    {
+     "icon": "cloud",
+     "story": "Private Google Access",
+     "real": "Stays on Google's network",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "Google APIs",
+     "real": "Without public IPs",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It's outbound only. They don't need public addresses. It uses Google's internal network.",
+   "items": [
+    {
+     "wrong": "Cloud NAT allows inbound",
+     "right": "Outbound only",
+     "cue": 1
+    },
+    {
+     "wrong": "VMs need public IPs",
+     "right": "They don't",
+     "cue": 2
+    },
+    {
+     "wrong": "Private Google Access uses the internet",
+     "right": "Internal network",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Cloud NAT lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Cloud N A T gives outbound access only. V Ms keep no public address. Private Google Access reaches Google A P Is. Ready to practise? Try the Courseiva Cloud NAT lab.",
+   "points": [
+    {
+     "t": "Outbound only",
+     "cue": 1
+    },
+    {
+     "t": "No public IPs",
+     "cue": 2
+    },
+    {
+     "t": "Private Google Access = Google APIs",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "topic": "cloud-networking-concepts",
+ "title": "Cloud Networking Concepts: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CLOUD NETWORKING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "cloud",
+   "narration": "Think of the cloud as a shared office building. Your floor is private, though the building is shared. That's how cloud networking works.",
+   "lines": [
+    {
+     "t": "A shared office building",
+     "cue": 0
+    },
+    {
+     "t": "Your floor is private",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's how cloud networking works",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The shared building",
+   "narration": "A few models and terms organise the cloud. Public, private, hybrid and community are the four deployment models. I a a S, P a a S and S a a S are the three service models. You control less as you move from I a a S to S a a S. A V P C is your isolated network inside the cloud.",
+   "items": [
+    {
+     "icon": "cloud",
+     "story": "Deployment models",
+     "real": "Public, private, hybrid, community",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "Service models",
+     "real": "IaaS, PaaS, SaaS",
+     "cue": 2
+    },
+    {
+     "icon": "scale",
+     "story": "Control decreases",
+     "real": "IaaS > PaaS > SaaS",
+     "cue": 3
+    },
+    {
+     "icon": "building",
+     "story": "VPC / VNet",
+     "real": "Logically isolated",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. I a a S gives most control. Hybrid mixes cloud with on premises. It's a logical network.",
+   "items": [
+    {
+     "wrong": "SaaS gives most control",
+     "right": "IaaS does",
+     "cue": 1
+    },
+    {
+     "wrong": "Hybrid means two clouds",
+     "right": "Cloud plus on-premises",
+     "cue": 2
+    },
+    {
+     "wrong": "A VPC is physical",
+     "right": "It's logical",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva cloud networking lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Four deployment models, three service models. Control falls from I a a S to S a a S. A V P C is a private logical network. Ready to practise? Try the Courseiva cloud networking lab.",
+   "points": [
+    {
+     "t": "4 deployment, 3 service models",
+     "cue": 1
+    },
+    {
+     "t": "Control: IaaS > PaaS > SaaS",
+     "cue": 2
+    },
+    {
+     "t": "VPC = private logical network",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

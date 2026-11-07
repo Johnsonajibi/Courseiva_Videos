@@ -1,0 +1,110 @@
+{
+ "topic": "aws-network-ops",
+ "title": "AWS Network High Availability: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 AWS NETWORK OPS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Picture a hot dog cart with one stand. If that stand is shut, there are no sales. Run several, in different places.",
+   "lines": [
+    {
+     "t": "A hot dog cart",
+     "cue": 0
+    },
+    {
+     "t": "If it's closed, no sales",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Run more than one",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hot dog carts",
+   "narration": "A few ideas keep services running. One availability zone is a single point of failure. So spread across at least two zones. A load balancer shares traffic between healthy targets. It doesn't cache or change the data.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Single AZ",
+     "real": "Risky",
+     "cue": 1
+    },
+    {
+     "icon": "people",
+     "story": "Multi-AZ",
+     "real": "Survives a data centre outage",
+     "cue": 2
+    },
+    {
+     "icon": "router",
+     "story": "Load balancer",
+     "real": "Healthy targets only",
+     "cue": 3
+    },
+    {
+     "icon": "box",
+     "story": "Not a cache",
+     "real": "Just distributes",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Use at least two. It doesn't cache. It only uses healthy targets.",
+   "items": [
+    {
+     "wrong": "One AZ is fine",
+     "right": "Use two or more",
+     "cue": 1
+    },
+    {
+     "wrong": "A load balancer caches",
+     "right": "It only distributes",
+     "cue": 2
+    },
+    {
+     "wrong": "It sends to every target",
+     "right": "Only healthy ones",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva AWS high availability lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Use at least two zones. A load balancer spreads traffic. It skips unhealthy targets. Ready to practise? Try the Courseiva AWS high availability lab.",
+   "points": [
+    {
+     "t": "Use 2+ AZs",
+     "cue": 1
+    },
+    {
+     "t": "Load balancer spreads traffic",
+     "cue": 2
+    },
+    {
+     "t": "Skips unhealthy targets",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

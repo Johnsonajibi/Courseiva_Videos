@@ -1,0 +1,116 @@
+{
+ "topic": "exam-strategy",
+ "title": "CCNA Exam Traps: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 EXAM STRATEGY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "question",
+   "narration": "The CCNA exam is full of traps. Most come down to numbers you should know cold. Let's learn the key ones.",
+   "lines": [
+    {
+     "t": "The exam is full of traps",
+     "cue": 0
+    },
+    {
+     "t": "Most are the same numbers",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Let's learn them",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Numbers to know cold",
+   "narration": "Learn these defaults. O S P F dead time is forty seconds. E I G R P hold is fifteen seconds. S T P uses two, twenty and fifteen. M A C entries age out after three hundred seconds.",
+   "lines": [
+    {
+     "t": "OSPF dead   40 s",
+     "note": "Four times the 10 s hello",
+     "cue": 1
+    },
+    {
+     "t": "EIGRP hold   15 s",
+     "note": "Three times the 5 s hello",
+     "cue": 2
+    },
+    {
+     "t": "STP   2 / 20 / 15",
+     "note": "Hello, max age, forward delay",
+     "cue": 3
+    },
+    {
+     "t": "MAC aging   300 s",
+     "note": "Five minutes",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The airport checkpoint",
+   "narration": "A few habits pay off on exam day. Read the whole question, because the trap is often in the last line. Eliminate the answers that are clearly wrong first. Don't spend too long on any one question. Learn the defaults, since many questions are just defaults.",
+   "items": [
+    {
+     "icon": "question",
+     "story": "Read it all",
+     "real": "Spot the trap",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "Eliminate",
+     "real": "Narrow it down",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "Watch the clock",
+     "real": "Flag and move on",
+     "cue": 3
+    },
+    {
+     "icon": "book",
+     "story": "Know the defaults",
+     "real": "Numbers matter",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva the exam lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Learn the default timers. Read the whole question. Eliminate, then guess. Ready to practise? Try the Courseiva the exam lab.",
+   "points": [
+    {
+     "t": "Learn default timers",
+     "cue": 1
+    },
+    {
+     "t": "Read the whole question",
+     "cue": 2
+    },
+    {
+     "t": "Eliminate, then guess",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "topic": "aws-vpc-basics",
+ "title": "AWS VPC Basics: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 AWS VPC",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Imagine owning a private condo in a huge city. Nobody else can walk in. That's an A W S V P C.",
+   "lines": [
+    {
+     "t": "A condo in a big city",
+     "cue": 0
+    },
+    {
+     "t": "Yours alone",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's a VPC",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The big city condo",
+   "narration": "A V P C has a few building blocks. A V P C is your private network inside one region. Plan the address range carefully, because the C I D R can't be changed. Each subnet lives in exactly one availability zone. A subnet is public only if its route table points at an internet gateway.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "VPC",
+     "real": "One region",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "CIDR block",
+     "real": "Plan it first",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "story": "Subnet",
+     "real": "One AZ",
+     "cue": 3
+    },
+    {
+     "icon": "road",
+     "story": "Public subnet",
+     "real": "Route to the IGW",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. A V P C lives in one region. A subnet lives in one zone. It needs a route to an internet gateway.",
+   "items": [
+    {
+     "wrong": "A VPC spans regions",
+     "right": "One region only",
+     "cue": 1
+    },
+    {
+     "wrong": "A subnet spans zones",
+     "right": "One AZ only",
+     "cue": 2
+    },
+    {
+     "wrong": "Any subnet is public by default",
+     "right": "Needs an IGW route",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva AWS VPC lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A V P C is a private network in one region. A subnet lives in one zone. Public means a route to an internet gateway. Ready to practise? Try the Courseiva AWS VPC lab.",
+   "points": [
+    {
+     "t": "VPC: private network, one region",
+     "cue": 1
+    },
+    {
+     "t": "Subnet: one AZ",
+     "cue": 2
+    },
+    {
+     "t": "Public = IGW route",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

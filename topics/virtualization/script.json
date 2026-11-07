@@ -1,0 +1,110 @@
+{
+ "topic": "virtualization",
+ "title": "NFV: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NFV",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "box",
+   "narration": "Traditionally, every network job needed its own special box. A router box, a firewall box, a load balancer box. N F V turns them into software.",
+   "lines": [
+    {
+     "t": "A box for every job",
+     "cue": 0
+    },
+    {
+     "t": "A router box, a firewall box",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "NFV turns them into software",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "From appliances to apps",
+   "narration": "Think of swapping a drawer full of gadgets for apps on one phone. Network functions run as software on ordinary servers. The servers and hypervisor underneath are the N F V I. M A N O is the manager that starts, stops and scales them. Virtual routers and firewalls are common examples.",
+   "items": [
+    {
+     "icon": "box",
+     "story": "VNF",
+     "real": "Virtual network function",
+     "cue": 1
+    },
+    {
+     "icon": "server",
+     "story": "NFVI",
+     "real": "The hardware and virtualisation layer",
+     "cue": 2
+    },
+    {
+     "icon": "gear",
+     "story": "MANO",
+     "real": "Orchestration",
+     "cue": 3
+    },
+    {
+     "icon": "cloud",
+     "story": "Examples",
+     "real": "Virtual router, firewall, load balancer",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three tips. Ordinary servers do the job. N F V virtualises functions, and S D N separates control. M A N O manages, it doesn't forward.",
+   "items": [
+    {
+     "wrong": "NFV needs special hardware",
+     "right": "Commodity servers are enough",
+     "cue": 1
+    },
+    {
+     "wrong": "NFV and SDN are the same",
+     "right": "Different ideas, often paired",
+     "cue": 2
+    },
+    {
+     "wrong": "MANO runs the traffic",
+     "right": "It manages the functions",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva NFV lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. N F V turns network boxes into software. Three parts: N F V I, V N F and M A N O. It runs on ordinary servers. Ready to practise? Try the Courseiva NFV lab.",
+   "points": [
+    {
+     "t": "NFV: boxes become software",
+     "cue": 1
+    },
+    {
+     "t": "NFVI, VNFs, MANO",
+     "cue": 2
+    },
+    {
+     "t": "Runs on commodity servers",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

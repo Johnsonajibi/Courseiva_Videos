@@ -1,0 +1,110 @@
+{
+ "topic": "gcp-vpc",
+ "title": "GCP VPC Basics: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 GCP VPC",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Think of a university campus. One campus, many buildings, in different cities. That's a Google Cloud V P C.",
+   "lines": [
+    {
+     "t": "A university campus",
+     "cue": 0
+    },
+    {
+     "t": "One campus, many buildings",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's a GCP VPC",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The campus",
+   "narration": "Google's V P C works differently from Amazon's. A V P C is global, and can span regions. Subnets are regional, and cover every zone in the region. Firewall rules are stateful. Rules match tags or service accounts, not just addresses.",
+   "items": [
+    {
+     "icon": "map",
+     "story": "Global VPC",
+     "real": "Spans regions",
+     "cue": 1
+    },
+    {
+     "icon": "building",
+     "story": "Regional subnets",
+     "real": "All zones",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "Stateful firewall",
+     "real": "VPC level",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "Targets",
+     "real": "Tags and service accounts",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It's global in Google Cloud. Subnets are regional. The firewall is stateful.",
+   "items": [
+    {
+     "wrong": "A VPC is regional",
+     "right": "It's global",
+     "cue": 1
+    },
+    {
+     "wrong": "A subnet is zonal",
+     "right": "Regional",
+     "cue": 2
+    },
+    {
+     "wrong": "Rules are stateless",
+     "right": "They're stateful",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva GCP VPC lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A V P C is global. Subnets are regional. Firewall rules are stateful. Ready to practise? Try the Courseiva GCP VPC lab.",
+   "points": [
+    {
+     "t": "VPC: global",
+     "cue": 1
+    },
+    {
+     "t": "Subnets: regional",
+     "cue": 2
+    },
+    {
+     "t": "Firewall: stateful",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

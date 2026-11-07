@@ -1,0 +1,110 @@
+{
+ "topic": "network-documentation",
+ "title": "Network Documentation: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 DOCUMENTATION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "book",
+   "narration": "Your best engineer leaves the company. And everything about the network was in their head. Good documentation is the cure.",
+   "lines": [
+    {
+     "t": "The engineer leaves",
+     "cue": 0
+    },
+    {
+     "t": "Everything is in their head",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Documentation is the cure",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Blueprints for engineers",
+   "narration": "Networks need two kinds of drawings. A physical diagram shows cables, ports and where things sit. A logical diagram shows addresses, V L A Ns and routing. A baseline records what normal looks like. Every change needs a rollback plan written down.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Physical diagram",
+     "real": "Cables, ports, locations",
+     "cue": 1
+    },
+    {
+     "icon": "map",
+     "story": "Logical diagram",
+     "real": "IPs, VLANs, routing",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "Baseline",
+     "real": "Taken in normal operation",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "story": "Rollback plan",
+     "real": "In every change record",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three tips. You need both kinds. Keep it up to date all the time. Take a baseline while things are healthy.",
+   "items": [
+    {
+     "wrong": "One diagram is enough",
+     "right": "You need physical and logical",
+     "cue": 1
+    },
+    {
+     "wrong": "Document after problems",
+     "right": "Keep it current always",
+     "cue": 2
+    },
+    {
+     "wrong": "Baselines can wait",
+     "right": "Take one while healthy",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva documentation lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Keep a physical and a logical diagram. Take a baseline when things are healthy. Always write a rollback plan. Ready to practise? Try the Courseiva documentation lab.",
+   "points": [
+    {
+     "t": "Physical + logical diagrams",
+     "cue": 1
+    },
+    {
+     "t": "Baseline when healthy",
+     "cue": 2
+    },
+    {
+     "t": "Always write a rollback plan",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

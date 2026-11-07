@@ -1,0 +1,110 @@
+{
+ "topic": "gcp-ha-security",
+ "title": "GCP High Availability: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 GCP HA",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "A hospital has a backup generator. And a second hospital in another city. That's high availability and disaster recovery.",
+   "lines": [
+    {
+     "t": "A hospital",
+     "cue": 0
+    },
+    {
+     "t": "And a second hospital",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's HA and DR",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Generator and second hospital",
+   "narration": "Two ideas protect services at different scales. High availability spreads across zones in one region. Disaster recovery spreads across regions. Load balancing sends traffic only to healthy backends. Together they survive both small and big failures.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "High availability",
+     "real": "Multiple zones",
+     "cue": 1
+    },
+    {
+     "icon": "map",
+     "story": "Disaster recovery",
+     "real": "Multiple regions",
+     "cue": 2
+    },
+    {
+     "icon": "router",
+     "story": "Health checks",
+     "real": "Skip failed backends",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "Layered protection",
+     "real": "Zone and region",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. That's disaster recovery. Use more than one zone. They protect against different things.",
+   "items": [
+    {
+     "wrong": "HA covers a region outage",
+     "right": "Needs multiple regions",
+     "cue": 1
+    },
+    {
+     "wrong": "One zone is enough",
+     "right": "Use several",
+     "cue": 2
+    },
+    {
+     "wrong": "DR and HA are the same",
+     "right": "Different scale",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva GCP HA lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Zones give high availability. Regions give disaster recovery. Health checks skip failed backends. Ready to practise? Try the Courseiva GCP HA lab.",
+   "points": [
+    {
+     "t": "Zones = HA",
+     "cue": 1
+    },
+    {
+     "t": "Regions = DR",
+     "cue": 2
+    },
+    {
+     "t": "Health checks skip failures",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

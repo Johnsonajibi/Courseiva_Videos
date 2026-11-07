@@ -1,0 +1,110 @@
+{
+ "topic": "cloud-networking-ops",
+ "title": "Cloud Networking Operations: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CLOUD OPS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "road",
+   "narration": "Cloud networking is like a city transit system. It has stops, lines and ticket checks. Let's learn the key rules.",
+   "lines": [
+    {
+     "t": "A city transit system",
+     "cue": 0
+    },
+    {
+     "t": "Stops, lines and tickets",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Let's learn the rules",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The transit system",
+   "narration": "Four rules cause most problems. Address ranges must never overlap between connected networks. Security groups are stateful. Network A C Ls are stateless. A N A T gateway lets private subnets out, but nothing in.",
+   "items": [
+    {
+     "icon": "map",
+     "story": "No overlapping CIDRs",
+     "real": "With VPCs or on-prem",
+     "cue": 1
+    },
+    {
+     "icon": "shield",
+     "story": "Security groups",
+     "real": "Stateful",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "Network ACLs",
+     "real": "Stateless",
+     "cue": 3
+    },
+    {
+     "icon": "door",
+     "story": "NAT gateway",
+     "real": "Outbound only",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Overlaps break routing. They only allow outbound. Only security groups are stateful.",
+   "items": [
+    {
+     "wrong": "Overlapping ranges are fine",
+     "right": "They break routing",
+     "cue": 1
+    },
+    {
+     "wrong": "NAT gateways allow inbound",
+     "right": "Outbound only",
+     "cue": 2
+    },
+    {
+     "wrong": "Both firewalls are stateful",
+     "right": "SG yes, NACL no",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva cloud operations lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Never overlap address ranges. Security groups are stateful, and N A C Ls are stateless. N A T gateways are outbound only. Ready to practise? Try the Courseiva cloud operations lab.",
+   "points": [
+    {
+     "t": "No overlapping CIDRs",
+     "cue": 1
+    },
+    {
+     "t": "SG stateful; NACL stateless",
+     "cue": 2
+    },
+    {
+     "t": "NAT gateway: outbound only",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

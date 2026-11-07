@@ -1,0 +1,110 @@
+{
+ "topic": "disaster-recovery",
+ "title": "Failover Testing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 FAILOVER TESTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "bell",
+   "narration": "A fire drill tests that people can leave the building. Your network needs the same kind of test. Does the backup really take over?",
+   "lines": [
+    {
+     "t": "A fire drill",
+     "cue": 0
+    },
+    {
+     "t": "Your network needs one",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Does the backup really work?",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Fire drill for your network",
+   "narration": "Backups are only useful if they actually work. Pull the plug on the main router and watch what happens. H S R P says hello every three seconds, with a ten second hold. V R R P advertises every second, with about three seconds before takeover. Write down how long it took, and compare with your target.",
+   "items": [
+    {
+     "icon": "router",
+     "story": "Failover test",
+     "real": "Simulate a failure",
+     "cue": 1
+    },
+    {
+     "icon": "clock",
+     "story": "HSRP: 3 s / 10 s",
+     "real": "Default timers",
+     "cue": 2
+    },
+    {
+     "icon": "scale",
+     "story": "VRRP: 1 s / ~3 s",
+     "real": "Default timers",
+     "cue": 3
+    },
+    {
+     "icon": "book",
+     "story": "Measure convergence",
+     "real": "Under a second is the goal for FHRPs",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three tips. Untested redundancy is a guess. Schedule tests as changes. Retest after any change.",
+   "items": [
+    {
+     "wrong": "Redundancy works without testing",
+     "right": "Test it",
+     "cue": 1
+    },
+    {
+     "wrong": "Test in business hours",
+     "right": "Schedule it",
+     "cue": 2
+    },
+    {
+     "wrong": "One test is enough",
+     "right": "Repeat after changes",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva failover testing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Test your backups before you need them. Know the default timers. Write down how long failover takes. Ready to practise? Try the Courseiva failover testing lab.",
+   "points": [
+    {
+     "t": "Test backups early",
+     "cue": 1
+    },
+    {
+     "t": "Know default timers",
+     "cue": 2
+    },
+    {
+     "t": "Record failover time",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

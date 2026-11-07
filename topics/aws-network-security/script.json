@@ -1,0 +1,115 @@
+{
+ "topic": "aws-network-security",
+ "title": "AWS Network Security: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 AWS NETWORK SECURITY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "An embassy has several security checkpoints. Each one checks something different. A W S layers its security in the same way.",
+   "lines": [
+    {
+     "t": "An embassy checkpoint",
+     "cue": 0
+    },
+    {
+     "t": "Each one checks something different",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "AWS works the same way",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Security groups vs NACLs",
+   "narration": "These two get mixed up all the time. Security groups guard the instance, and network A C Ls guard the subnet. Security groups are stateful, and network A C Ls are stateless. Security groups only allow, but network A C Ls can also deny.",
+   "left": {
+    "title": "Security group",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Network ACL",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Level",
+     "l": "On the instance",
+     "r": "On the subnet",
+     "cue": 1
+    },
+    {
+     "label": "State",
+     "l": "Stateful",
+     "r": "Stateless",
+     "cue": 2
+    },
+    {
+     "label": "Rules",
+     "l": "Allow only",
+     "r": "Allow and deny",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Higher up",
+   "narration": "Other tools go further. W A F inspects web requests, at layer seven. It can also rate limit noisy addresses. Shield helps against flood attacks.",
+   "items": [
+    {
+     "icon": "shield",
+     "story": "AWS WAF",
+     "real": "Blocks SQL injection, XSS",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "Rate limiting",
+     "real": "Per IP",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "AWS Shield",
+     "real": "DDoS protection",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva AWS security lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Security groups are stateful and allow only. Network A C Ls are stateless, with allow and deny. W A F protects at layer seven. Ready to practise? Try the Courseiva AWS security lab.",
+   "points": [
+    {
+     "t": "SG: stateful, allow only",
+     "cue": 1
+    },
+    {
+     "t": "NACL: stateless, allow and deny",
+     "cue": 2
+    },
+    {
+     "t": "WAF: layer 7",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

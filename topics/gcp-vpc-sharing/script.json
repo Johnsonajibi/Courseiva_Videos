@@ -1,0 +1,110 @@
+{
+ "topic": "gcp-vpc-sharing",
+ "title": "VPC Peering and Shared VPC: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 VPC PEERING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "link",
+   "narration": "You have two separate networks. They need to talk privately. There are two ways to do it.",
+   "lines": [
+    {
+     "t": "Two networks",
+     "cue": 0
+    },
+    {
+     "t": "They need to talk",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Two ways to do it",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Apartments and a shared driveway",
+   "narration": "Peering and sharing solve different problems. Peering joins two V P Cs directly and privately. It isn't transitive, so A to B and B to C doesn't give A to C. Shared V P C puts network control in one host project. Other projects, the service projects, use it.",
+   "items": [
+    {
+     "icon": "link",
+     "story": "VPC peering",
+     "real": "Direct, private",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "Not transitive",
+     "real": "Needs its own peering",
+     "cue": 2
+    },
+    {
+     "icon": "building",
+     "story": "Shared VPC",
+     "real": "Central network",
+     "cue": 3
+    },
+    {
+     "icon": "people",
+     "story": "Service projects",
+     "real": "Use the shared network",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Peering isn't transitive. It's within one organisation. Peering is direct.",
+   "items": [
+    {
+     "wrong": "Peering is transitive",
+     "right": "It isn't",
+     "cue": 1
+    },
+    {
+     "wrong": "Shared VPC joins different orgs",
+     "right": "Same organisation",
+     "cue": 2
+    },
+    {
+     "wrong": "Peering needs a gateway",
+     "right": "Direct",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva peering and Shared VPC lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Peering is direct but not transitive. Shared V P C centralises control. Service projects use the host's network. Ready to practise? Try the Courseiva peering and Shared VPC lab.",
+   "points": [
+    {
+     "t": "Peering: direct, not transitive",
+     "cue": 1
+    },
+    {
+     "t": "Shared VPC: central control",
+     "cue": 2
+    },
+    {
+     "t": "Service projects share it",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

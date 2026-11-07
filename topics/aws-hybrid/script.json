@@ -1,0 +1,110 @@
+{
+ "topic": "aws-hybrid",
+ "title": "AWS Hybrid Connectivity: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 AWS HYBRID",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Your office needs a link to the cloud. There are different delivery services to choose from. Picking the right one depends on speed, cost and time.",
+   "lines": [
+    {
+     "t": "Your office and the cloud",
+     "cue": 0
+    },
+    {
+     "t": "Three delivery services",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Pick the right one",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Three delivery services",
+   "narration": "Each option suits a different need. A Site to Site V P N is encrypted, over the public internet. Direct Connect is a private dedicated cable to the cloud. Direct Connect takes weeks to set up, but is steadier. Many firms run a V P N as a backup for Direct Connect.",
+   "items": [
+    {
+     "icon": "lock",
+     "story": "Site-to-Site VPN",
+     "real": "Quickest, cheapest",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "Direct Connect",
+     "real": "Dedicated, consistent",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "Longer setup",
+     "real": "Consistent performance",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "VPN as backup",
+     "real": "Common design",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Direct Connect is more consistent. It isn't encrypted by default. It can take weeks.",
+   "items": [
+    {
+     "wrong": "VPN is the most consistent",
+     "right": "Direct Connect is",
+     "cue": 1
+    },
+    {
+     "wrong": "Direct Connect is encrypted by default",
+     "right": "It isn't",
+     "cue": 2
+    },
+    {
+     "wrong": "Direct Connect is quick to order",
+     "right": "It takes time",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva AWS hybrid lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. V P N is quick and cheap. Direct Connect is dedicated and steady. Use a V P N as backup. Ready to practise? Try the Courseiva AWS hybrid lab.",
+   "points": [
+    {
+     "t": "VPN: quick, cheap",
+     "cue": 1
+    },
+    {
+     "t": "Direct Connect: dedicated",
+     "cue": 2
+    },
+    {
+     "t": "VPN as backup",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

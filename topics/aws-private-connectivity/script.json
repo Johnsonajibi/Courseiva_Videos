@@ -1,0 +1,110 @@
+{
+ "topic": "aws-private-connectivity",
+ "title": "VPC Endpoints: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 VPC ENDPOINTS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "Your server needs to reach S three. Does that traffic really have to go over the internet? No, a V P C endpoint keeps it private.",
+   "lines": [
+    {
+     "t": "Reaching S3",
+     "cue": 0
+    },
+    {
+     "t": "Through the internet?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "No, use an endpoint",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The private mailroom",
+   "narration": "There are two kinds of endpoint. Gateway endpoints are free, and only work for S three and Dynamo D B. They work through your route table. Interface endpoints use PrivateLink, and cover most other services. They cost an hourly fee, plus data charges.",
+   "items": [
+    {
+     "icon": "box",
+     "story": "Gateway endpoint",
+     "real": "S3 and DynamoDB, free",
+     "cue": 1
+    },
+    {
+     "icon": "link",
+     "story": "Route table entry",
+     "real": "No ENI",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "Interface endpoint",
+     "real": "PrivateLink",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "story": "Paid",
+     "real": "Hourly + per GB",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Only S three and Dynamo D B. They have an hourly cost. Only gateway endpoints use route tables.",
+   "items": [
+    {
+     "wrong": "Gateway endpoints cover every service",
+     "right": "S3 and DynamoDB only",
+     "cue": 1
+    },
+    {
+     "wrong": "Interface endpoints are free",
+     "right": "They cost money",
+     "cue": 2
+    },
+    {
+     "wrong": "Both use route tables",
+     "right": "Only gateway endpoints",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva VPC endpoints lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Gateway endpoints: free, S three and Dynamo D B. Interface endpoints use PrivateLink. Both keep traffic off the internet. Ready to practise? Try the Courseiva VPC endpoints lab.",
+   "points": [
+    {
+     "t": "Gateway: free; S3, DynamoDB",
+     "cue": 1
+    },
+    {
+     "t": "Interface: PrivateLink",
+     "cue": 2
+    },
+    {
+     "t": "Both avoid the internet",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

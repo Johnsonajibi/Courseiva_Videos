@@ -1,0 +1,127 @@
+{
+ "topic": "change-management",
+ "title": "Change Management: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CHANGE MANAGEMENT",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "clock",
+   "narration": "A quick fix on a Friday afternoon seems harmless. Then the whole network goes down. Change management is there to prevent that.",
+   "lines": [
+    {
+     "t": "A quick fix on Friday",
+     "cue": 0
+    },
+    {
+     "t": "Then the network goes down",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Change management prevents that",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "The five steps",
+   "narration": "Every change follows the same path. Someone raises a request for change. Others review the risk. Someone approves it. The change is carried out. Afterwards, the result is reviewed.",
+   "steps": [
+    {
+     "icon": "list",
+     "title": "1. RFC",
+     "sub": "Request",
+     "cue": 1
+    },
+    {
+     "icon": "people",
+     "title": "2. Review",
+     "sub": "Impact and risk",
+     "cue": 2
+    },
+    {
+     "icon": "stamp",
+     "title": "3. Approval",
+     "sub": "Sign-off",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "title": "4. Implementation",
+     "sub": "With a rollback plan",
+     "cue": 4
+    },
+    {
+     "icon": "book",
+     "title": "5. PIR",
+     "sub": "Post-implementation review",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Types of change",
+   "narration": "Not every change takes the same route. Standard changes are pre-approved. Normal changes carry more risk. Replacing a core switch is a normal change.",
+   "left": {
+    "title": "Standard",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Normal",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Approval",
+     "l": "Pre-approved",
+     "r": "Needs review",
+     "cue": 1
+    },
+    {
+     "label": "Risk",
+     "l": "Low and routine",
+     "r": "Higher",
+     "cue": 2
+    },
+    {
+     "label": "Example",
+     "l": "Add a user",
+     "r": "Replace a core switch",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva change management lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Five steps from request to review. Every change needs a rollback plan. Standard changes are pre-approved. Ready to practise? Try the Courseiva change management lab.",
+   "points": [
+    {
+     "t": "RFC, review, approval, implement, PIR",
+     "cue": 1
+    },
+    {
+     "t": "Always a rollback plan",
+     "cue": 2
+    },
+    {
+     "t": "Standard = pre-approved",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
