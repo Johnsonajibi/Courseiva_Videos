@@ -1,0 +1,130 @@
+{
+ "topic": "junos-security",
+ "title": "Security Zones and Policies: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS SECURITY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "A Junos firewall divides your network into zones. Think of them as floors in an office building. And a security guard between each floor.",
+   "lines": [
+    {
+     "t": "A firewall with floors",
+     "cue": 0
+    },
+    {
+     "t": "Like floors in a building",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "With a guard between them",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The security desk",
+   "narration": "The lobby is public, the second floor is sales, and the server room is high security. The guard controls who moves between them. Each floor is a zone. Moving within a floor is allowed. Moving between floors needs a policy.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Security zone",
+     "real": "Interfaces belong to zones",
+     "cue": 1
+    },
+    {
+     "icon": "people",
+     "story": "Intra-zone",
+     "real": "Permitted by default",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "Inter-zone",
+     "real": "Denied by default",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "A policy",
+   "narration": "A policy names a source zone, a destination zone, and the action. The first matching policy wins. And if nothing matches, the traffic is denied. A policy names the two zones. Then what it matches. And the action to take.",
+   "lines": [
+    {
+     "t": "from-zone trust to-zone untrust",
+     "note": "Where it's going",
+     "cue": 1,
+     "color": null
+    },
+    {
+     "t": "match source-address any",
+     "note": "What it matches",
+     "cue": 2,
+     "color": null
+    },
+    {
+     "t": "then permit",
+     "note": "The action",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three misunderstandings. Traffic inside a zone is allowed by default. Policies reference zones, not interfaces. And if nothing matches, the traffic is denied.",
+   "items": [
+    {
+     "wrong": "Intra-zone traffic is blocked",
+     "right": "It's permitted by default",
+     "cue": 1
+    },
+    {
+     "wrong": "Policies attach to interfaces",
+     "right": "They attach to zones",
+     "cue": 2
+    },
+    {
+     "wrong": "No match means permit",
+     "right": "No match means deny",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos security lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Interfaces belong to zones, and one interface lives in one zone. Between zones is denied by default, and inside a zone is allowed. Policies are checked top down, first match wins. Ready to practise? Try the Courseiva Junos security lab.",
+   "points": [
+    {
+     "t": "One interface, one zone",
+     "cue": 1
+    },
+    {
+     "t": "Inter-zone denied; intra-zone allowed",
+     "cue": 2
+    },
+    {
+     "t": "Policies: top-down, first match",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

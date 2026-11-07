@@ -1,0 +1,138 @@
+{
+ "topic": "junos-policy-filters",
+ "title": "Routing Policy and Firewall Filters: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS POLICY AND FILTERS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Junos has two kinds of checkpoint. One checks the packets. The other checks the routes.",
+   "lines": [
+    {
+     "t": "Two kinds of checkpoint",
+     "cue": 0
+    },
+    {
+     "t": "One checks passengers",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "One checks the flights",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Airport security and customs",
+   "narration": "At an airport, security screens the passengers, and customs checks the paperwork. Both follow a list of rules, from the top down. Screening checks every passenger. Customs checks the flight list. Both use terms with from and then.",
+   "items": [
+    {
+     "icon": "shield",
+     "story": "Firewall filter",
+     "real": "Works on packets",
+     "cue": 1
+    },
+    {
+     "icon": "map",
+     "story": "Routing policy",
+     "real": "Works on routes",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "Terms",
+     "real": "Evaluated top to bottom",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "What can they do",
+   "narration": "Each one has its own set of actions. A filter can accept, discard, reject or log a packet. A policy can accept or reject a route, and also change its attributes. A filter handles packets, and a policy handles routes. Only a policy can change a route's attributes. And a policy applies on import or export.",
+   "left": {
+    "title": "Firewall filter",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Routing policy",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Acts on",
+     "l": "Packets",
+     "r": "Routes",
+     "cue": 1
+    },
+    {
+     "label": "Can modify",
+     "l": "No, only pass or drop",
+     "r": "Yes, route attributes",
+     "cue": 2
+    },
+    {
+     "label": "Apply point",
+     "l": "On an interface",
+     "r": "Import or export",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three misunderstandings. They're different, one works on packets and the other on routes. A reject stops the route being used, it doesn't wipe it from every table. By default Junos allows traffic unless you apply a filter.",
+   "items": [
+    {
+     "wrong": "Filters and policies are the same",
+     "right": "One acts on packets, one on routes",
+     "cue": 1
+    },
+    {
+     "wrong": "Reject deletes the route",
+     "right": "It just stops it being used",
+     "cue": 2
+    },
+    {
+     "wrong": "By default Junos blocks everything",
+     "right": "By default it accepts",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos policy lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Filters check packets, and policies check routes. Both read terms from the top, first match wins. Reject sends a message back, and discard stays silent. Ready to practise? Try the Courseiva Junos policy lab.",
+   "points": [
+    {
+     "t": "Filters: packets. Policies: routes",
+     "cue": 1
+    },
+    {
+     "t": "Both are term-based, top-down",
+     "cue": 2
+    },
+    {
+     "t": "reject tells the sender; discard is silent",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

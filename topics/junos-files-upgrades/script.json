@@ -1,0 +1,136 @@
+{
+ "topic": "junos-files-upgrades",
+ "title": "Junos Files and Upgrades: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS UPGRADES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "box",
+   "narration": "Upgrading a router sounds scary. Junos makes it much safer. Because it keeps a spare copy of the old software.",
+   "lines": [
+    {
+     "t": "Upgrading a router",
+     "cue": 0
+    },
+    {
+     "t": "Junos makes it safer",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "It keeps the old version",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Moving house",
+   "narration": "Imagine moving house, and keeping everything safe in labelled boxes. Your old home stays available until you're sure the new one is fine. Boxes hold your files and images. There are two homes, current and backup. Moving in doesn't happen until you decide.",
+   "items": [
+    {
+     "icon": "box",
+     "story": "Directories like /var/tmp",
+     "real": "Survives reboots",
+     "cue": 1
+    },
+    {
+     "icon": "building",
+     "story": "Dual partitions",
+     "real": "Old version is the fallback",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "story": "request system software add",
+     "real": "Installs, does not reboot",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "The upgrade path",
+   "narration": "Here's the safe upgrade path. Copy the image over. Validate it. Install it. Then reboot when you're ready. Copy the new image over. Check it's good. Install it into the backup side. Restart when you choose.",
+   "steps": [
+    {
+     "icon": "box",
+     "title": "file copy",
+     "sub": "Use FTP, SCP or HTTP",
+     "cue": 1
+    },
+    {
+     "icon": "shield",
+     "title": "Validate the image",
+     "sub": "request system software validate",
+     "cue": 2
+    },
+    {
+     "icon": "gear",
+     "title": "Install",
+     "sub": "request system software add",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "title": "Reboot",
+     "sub": "request system reboot",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three misunderstandings. An upgrade doesn't delete your configuration or logs. The add command doesn't reboot anything. And don't delete the old version straight away, it's your fallback.",
+   "items": [
+    {
+     "wrong": "Upgrading deletes your config",
+     "right": "Config and logs stay untouched",
+     "cue": 1
+    },
+    {
+     "wrong": "software add restarts the router",
+     "right": "A separate reboot is needed",
+     "cue": 2
+    },
+    {
+     "wrong": "Delete the old version straight away",
+     "right": "Wait a few days as a fallback",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos upgrade lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Junos keeps two software partitions, current and backup. Validate, add, then reboot when ready. And keep the old version for a few days. Ready to practise? Try the Courseiva Junos upgrade lab.",
+   "points": [
+    {
+     "t": "Two partitions: current and backup",
+     "cue": 1
+    },
+    {
+     "t": "Validate, add, then reboot",
+     "cue": 2
+    },
+    {
+     "t": "Keep the old version for a few days",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

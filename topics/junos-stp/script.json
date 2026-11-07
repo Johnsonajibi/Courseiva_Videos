@@ -1,0 +1,144 @@
+{
+ "topic": "junos-stp",
+ "title": "Spanning Tree on Junos: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS STP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "tree",
+   "narration": "A department store adds a second emergency exit. Extra paths in a network can cause loops. Spanning tree keeps them safe.",
+   "lines": [
+    {
+     "t": "Extra exits are useful",
+     "cue": 0
+    },
+    {
+     "t": "But extra paths cause loops",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "S T P keeps them safe",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The escape routes",
+   "narration": "Shoppers can use any exit, but if every exit stays open, a crowd can circle forever. So some exits stay closed until they're needed. One switch is chosen as the boss. Backup exits stay closed. The old way is slow to reopen. The new way is quick.",
+   "items": [
+    {
+     "icon": "tree",
+     "story": "Root bridge",
+     "real": "Lowest priority, then lowest MAC",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "Blocked ports",
+     "real": "Alternate and backup ports",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "STP",
+     "real": "30 to 50 seconds",
+     "cue": 3
+    },
+    {
+     "icon": "wifi",
+     "story": "RSTP",
+     "real": "One to two seconds",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "STP vs RSTP",
+   "narration": "The two differ in speed and states. Classic S T P has five port states. R S T P has three, and recovers in seconds. And on Juniper E X switches, R S T P is the default. STP has five states, and RSTP has three. RSTP recovers in just a second or two. And it's the default on E X switches.",
+   "left": {
+    "title": "Classic STP (802.1D)",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "RSTP (802.1w)",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Port states",
+     "l": "Five",
+     "r": "Three",
+     "cue": 1
+    },
+    {
+     "label": "Recovery",
+     "l": "30 to 50 seconds",
+     "r": "1 to 2 seconds",
+     "cue": 2
+    },
+    {
+     "label": "On Juniper EX",
+     "l": "Not default",
+     "r": "Default: rstp",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three misconceptions. They're different standards, not a rebrand. In a stable network, some ports stay blocked. And the root is chosen by priority and M A C, not location.",
+   "items": [
+    {
+     "wrong": "STP and RSTP are the same",
+     "right": "Different standards, different speed",
+     "cue": 1
+    },
+    {
+     "wrong": "Every port always forwards",
+     "right": "Alternates and backups are blocked",
+     "cue": 2
+    },
+    {
+     "wrong": "The root is the most central switch",
+     "right": "It's the lowest priority, then lowest MAC",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos STP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Spanning tree blocks extra paths to stop loops. R S T P is faster, with three states. Check it with show spanning tree. Ready to practise? Try the Courseiva Junos STP lab.",
+   "points": [
+    {
+     "t": "STP blocks extra paths to stop loops",
+     "cue": 1
+    },
+    {
+     "t": "RSTP: faster, three states",
+     "cue": 2
+    },
+    {
+     "t": "show spanning-tree",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

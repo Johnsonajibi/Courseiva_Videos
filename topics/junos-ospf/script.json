@@ -1,0 +1,130 @@
+{
+ "topic": "junos-ospf",
+ "title": "OSPF on Junos: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS OSPF",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Dynamic routing means routers learn paths without you typing them. O S P F is one of the best known. Let's see how Junos does it.",
+   "lines": [
+    {
+     "t": "Routers that learn on their own",
+     "cue": 0
+    },
+    {
+     "t": "O S P F does that",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Here it is on Junos",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The sorting hub",
+   "narration": "Imagine a regional post office hub manager. They don't drive every van, but they know the map of how mail flows between hubs. The manager knows every hub in the region. Hubs must agree on the basics to cooperate. The faster the road, the cheaper the trip.",
+   "items": [
+    {
+     "icon": "map",
+     "story": "Same area",
+     "real": "Routers in an area share one map",
+     "cue": 1
+    },
+    {
+     "icon": "people",
+     "story": "Neighbours",
+     "real": "Same area, subnet and hello timers",
+     "cue": 2
+    },
+    {
+     "icon": "ruler",
+     "story": "Cost",
+     "real": "Based on bandwidth, not hops",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Turning it on",
+   "narration": "The command is short. Put an interface into an area. Then check the neighbour state, and look at the routes you learned. Put the interface into an area. Check the neighbour, and look for Full. Then see what routes you learned.",
+   "lines": [
+    {
+     "t": "set protocols ospf area 0 interface ge-0/0/0.0",
+     "note": "Add the interface to area 0",
+     "cue": 1,
+     "color": null
+    },
+    {
+     "t": "show ospf neighbor",
+     "note": "Look for state Full",
+     "cue": 2,
+     "color": null
+    },
+    {
+     "t": "show route protocol ospf",
+     "note": "See learned routes",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Here are three mix-ups. O S P F still needs an I P address on the interface. It only learns routes advertised by other O S P F routers. And cost comes from bandwidth, not hops.",
+   "items": [
+    {
+     "wrong": "OSPF replaces the need for an IP address",
+     "right": "It needs a valid IP on the interface",
+     "cue": 1
+    },
+    {
+     "wrong": "OSPF learns every route in the world",
+     "right": "Only routes advertised in its area",
+     "cue": 2
+    },
+    {
+     "wrong": "Cost is the hop count",
+     "right": "Cost comes from bandwidth",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos OSPF lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Add each interface to an area under protocols O S P F. Neighbours must match on area, subnet and timers. Check for the Full state with show O S P F neighbor. Ready to practise? Try the Courseiva Junos OSPF lab.",
+   "points": [
+    {
+     "t": "set protocols ospf area N interface X",
+     "cue": 1
+    },
+    {
+     "t": "Neighbours must match: area, subnet, timers",
+     "cue": 2
+    },
+    {
+     "t": "show ospf neighbor: look for Full",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

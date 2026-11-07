@@ -1,0 +1,138 @@
+{
+ "topic": "junos-interfaces",
+ "title": "Junos Interfaces: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS INTERFACES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "link",
+   "narration": "One physical port can carry many separate networks. Junos splits every interface into two parts. Let's decode the name.",
+   "lines": [
+    {
+     "t": "One port, many identities",
+     "cue": 0
+    },
+    {
+     "t": "Physical and logical",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Let's decode the name",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The letterbox with slots",
+   "narration": "Picture one letterbox at the door with several slots inside, one for each department. The box is the hardware, and each slot is its own compartment. The letterbox itself is the physical interface. Each slot is a logical unit. The address goes on the slot, never the box.",
+   "items": [
+    {
+     "icon": "box",
+     "story": "Physical interface",
+     "real": "ge-0/0/0",
+     "cue": 1
+    },
+    {
+     "icon": "door",
+     "story": "Logical unit",
+     "real": "ge-0/0/0 unit 10",
+     "cue": 2
+    },
+    {
+     "icon": "map",
+     "story": "IP goes on the unit",
+     "real": "family inet address",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Special interfaces",
+   "narration": "Two special interfaces are worth knowing. The loopback is always up, so it's ideal for router I Ds. And an aggregated interface bundles several ports into one, using L A C P. The loopback needs no cable. Aggregated links add bandwidth and backup. Only the ae interface gets the address.",
+   "left": {
+    "title": "Loopback (lo0)",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Aggregated (ae)",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Always up",
+     "l": "Yes, no cable needed",
+     "r": "Only while members are up",
+     "cue": 1
+    },
+    {
+     "label": "Used for",
+     "l": "Router ID, management",
+     "r": "More bandwidth, backup",
+     "cue": 2
+    },
+    {
+     "label": "IP address goes on",
+     "l": "The lo0 unit",
+     "r": "The ae unit, not members",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three common traps. A logical unit always belongs to a physical port. The address goes on a unit, never the bare port. And only the aggregate gets an address, not its members.",
+   "items": [
+    {
+     "wrong": "Logical units stand alone",
+     "right": "Always tied to a physical port",
+     "cue": 1
+    },
+    {
+     "wrong": "Put the IP on the physical port",
+     "right": "Put it on a logical unit",
+     "cue": 2
+    },
+    {
+     "wrong": "Every ae member needs the same IP",
+     "right": "Only ae0 gets an IP",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos interfaces lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Names follow type, then F P C, P I C and port, then the unit. The address goes on the logical unit. Loopback is always up, and ae bundles links. Ready to practise? Try the Courseiva Junos interfaces lab.",
+   "points": [
+    {
+     "t": "Name: type-fpc/pic/port.unit",
+     "cue": 1
+    },
+    {
+     "t": "IP goes on the unit",
+     "cue": 2
+    },
+    {
+     "t": "lo0 always up; ae bundles links",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

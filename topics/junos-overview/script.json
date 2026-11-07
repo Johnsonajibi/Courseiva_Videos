@@ -1,0 +1,129 @@
+{
+ "topic": "junos-overview",
+ "title": "Junos OS Overview: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS OVERVIEW",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "router",
+   "narration": "Juniper has one operating system for every router, switch and firewall. It's called Junos. And it's built in a clever, careful way.",
+   "lines": [
+    {
+     "t": "One OS, every device",
+     "cue": 0
+    },
+    {
+     "t": "Called Junos",
+     "cue": 1
+    },
+    {
+     "t": "Built differently",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The office building",
+   "narration": "Think of a big office building. The concrete and steel are one thing, and the rules and security passes are another. You can renovate a floor without shutting the building. The management office makes the decisions. The lifts and corridors move people fast.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Control and forwarding are separate",
+     "real": "Two planes",
+     "cue": 1
+    },
+    {
+     "icon": "gear",
+     "story": "The Routing Engine",
+     "real": "Control plane: routing protocols",
+     "cue": 2
+    },
+    {
+     "icon": "router",
+     "story": "The Packet Forwarding Engine",
+     "real": "Forwarding plane: fast packets",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Safe changes",
+   "narration": "Junos protects you from mistakes. Changes go into a draft first, called the candidate. Nothing is live until you commit. And if it goes wrong, you can roll back. First, you edit the draft candidate. Then commit makes it live. And rollback takes you to an earlier version.",
+   "lines": [
+    {
+     "t": "set ... (edit candidate)",
+     "note": "Draft only, nothing live",
+     "cue": 1,
+     "color": null
+    },
+    {
+     "t": "commit",
+     "note": "Make the draft live",
+     "cue": 2,
+     "color": null
+    },
+    {
+     "t": "rollback 1",
+     "note": "Go back one version",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three things catch people out. Junos is not like Windows, it's a purpose built system based on FreeBSD. Not every vendor separates control from forwarding, but Juniper does. And a change only takes effect after you commit.",
+   "items": [
+    {
+     "wrong": "Junos is like Windows",
+     "right": "It's a purpose-built OS based on FreeBSD",
+     "cue": 1
+    },
+    {
+     "wrong": "Every vendor splits control and forwarding",
+     "right": "Not all do; Juniper does it by design",
+     "cue": 2
+    },
+    {
+     "wrong": "A set command takes effect immediately",
+     "right": "Only after commit",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Junos is one operating system for all Juniper devices. The control plane and forwarding plane are separate. And nothing goes live until you commit. Ready to practise? Try the Courseiva Junos lab.",
+   "points": [
+    {
+     "t": "One OS for all Juniper devices",
+     "cue": 1
+    },
+    {
+     "t": "Control plane and forwarding plane are separate",
+     "cue": 2
+    },
+    {
+     "t": "Nothing goes live until commit",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "topic": "junos-nat",
+ "title": "NAT on Junos: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS NAT",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "Private addresses can't travel across the internet. N A T fixes that. But on Junos, there's a catch.",
+   "lines": [
+    {
+     "t": "Private addresses can't reach the internet",
+     "cue": 0
+    },
+    {
+     "t": "NAT fixes that",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "But there's a catch",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The visitor parking pass",
+   "narration": "Imagine an apartment block that only lets resident cars into the lot. A visitor's van is turned away until it's given a pass. The pass swaps a private plate for a public one. Visitors arriving get sent to the right flat. A permanent reserved space is another option.",
+   "items": [
+    {
+     "icon": "key",
+     "story": "Source NAT",
+     "real": "Outbound: private to public",
+     "cue": 1
+    },
+    {
+     "icon": "door",
+     "story": "Destination NAT",
+     "real": "Inbound: public to private server",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "Static NAT",
+     "real": "Fixed one-to-one mapping",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "Two parts to every setup",
+   "narration": "On Junos, you always need two parts. The N A T rule changes the address. And a security policy allows the traffic. Without both, nothing flows. Write the NAT rule. Add a security policy. Check it worked.",
+   "steps": [
+    {
+     "icon": "key",
+     "title": "NAT rule",
+     "sub": "Rewrites the address",
+     "cue": 1
+    },
+    {
+     "icon": "shield",
+     "title": "Security policy",
+     "sub": "Actually permits the traffic",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "title": "Verify",
+     "sub": "show security nat source",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps to avoid. One public address can serve thousands of devices with source N A T. Destination N A T and static N A T are not the same thing. And a N A T rule doesn't permit traffic, you still need a policy.",
+   "items": [
+    {
+     "wrong": "Every device needs its own public IP",
+     "right": "One public address can serve thousands",
+     "cue": 1
+    },
+    {
+     "wrong": "Destination NAT and static NAT are identical",
+     "right": "Destination is often per-port; static is one-to-one",
+     "cue": 2
+    },
+    {
+     "wrong": "A NAT rule lets traffic through",
+     "right": "You still need a security policy",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos NAT lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Source N A T rewrites outbound traffic, and destination N A T rewrites inbound. Static N A T is a permanent one to one mapping. A N A T rule needs a matching security policy. Ready to practise? Try the Courseiva Junos NAT lab.",
+   "points": [
+    {
+     "t": "Source = outbound, destination = inbound",
+     "cue": 1
+    },
+    {
+     "t": "Static = permanent one-to-one",
+     "cue": 2
+    },
+    {
+     "t": "NAT rule needs a security policy",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

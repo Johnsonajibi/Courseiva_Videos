@@ -1,0 +1,136 @@
+{
+ "topic": "junos-troubleshooting",
+ "title": "Junos Troubleshooting: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS TROUBLESHOOTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "question",
+   "narration": "You're standing outside, and your keys are inside. You don't kick the door down. You work through it step by step.",
+   "lines": [
+    {
+     "t": "Locked out of your own house",
+     "cue": 0
+    },
+    {
+     "t": "Don't kick the door down",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Work through it step by step",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Finding the keys",
+   "narration": "You check the last place you remember, then retrace your steps. Troubleshooting a router works exactly the same way. Check the last place you remember. Is the cable even plugged in? Retrace every step.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "show log messages",
+     "real": "Recent events",
+     "cue": 1
+    },
+    {
+     "icon": "link",
+     "story": "show interfaces",
+     "real": "Physical link: Up",
+     "cue": 2
+    },
+    {
+     "icon": "map",
+     "story": "traceroute",
+     "real": "Where do packets stop?",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "A simple routine",
+   "narration": "Here's a routine that works. Check the log. Check the link. Ping the destination. Then trace the path. Roll back as a last resort. Start with the log. Then the physical link. Ping the destination. Trace the path.",
+   "steps": [
+    {
+     "icon": "book",
+     "title": "Log",
+     "sub": "show log messages",
+     "cue": 1
+    },
+    {
+     "icon": "link",
+     "title": "Link",
+     "sub": "show interfaces",
+     "cue": 2
+    },
+    {
+     "icon": "bell",
+     "title": "Ping",
+     "sub": "Reachable or not?",
+     "cue": 3
+    },
+    {
+     "icon": "map",
+     "title": "Traceroute",
+     "sub": "Find the hop that fails",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three misunderstandings. A failed ping could be the source, a router, a firewall or the destination. Rebooting rarely fixes things, and logs stay on disk. And there are many logs, not just messages.",
+   "items": [
+    {
+     "wrong": "A failed ping means the destination is broken",
+     "right": "It could be anything on the path",
+     "cue": 1
+    },
+    {
+     "wrong": "A reboot clears logs and fixes problems",
+     "right": "Logs persist; it rarely fixes config",
+     "cue": 2
+    },
+    {
+     "wrong": "All logs live in messages",
+     "right": "Many log files exist",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos troubleshooting lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Start with the logs, then the link, then the path. A failed ping could be caused by anything along the way. And rollback is your safety net. Ready to practise? Try the Courseiva Junos troubleshooting lab.",
+   "points": [
+    {
+     "t": "Logs, then link, then path",
+     "cue": 1
+    },
+    {
+     "t": "A failed ping can have many causes",
+     "cue": 2
+    },
+    {
+     "t": "Rollback is your safety net",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

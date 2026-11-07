@@ -1,0 +1,136 @@
+{
+ "topic": "junos-cli",
+ "title": "The Junos CLI: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS CLI",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "book",
+   "narration": "A Junos device gives you two menus. One is for looking, and one is for changing. The prompt tells you which is which.",
+   "lines": [
+    {
+     "t": "Two menus",
+     "cue": 0
+    },
+    {
+     "t": "Customers and kitchen",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Know which one you're in",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The restaurant and kitchen",
+   "narration": "Think of a restaurant. Customers read one menu, and the kitchen staff use another. In the dining room, you can only look. In the kitchen, you can change things. To walk into the kitchen, you type configure.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "Operational mode",
+     "real": "Prompt ends in >",
+     "cue": 1
+    },
+    {
+     "icon": "wrench",
+     "story": "Configuration mode",
+     "real": "Prompt ends in #",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "story": "configure",
+     "real": "Switch from > to #",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Moving around",
+   "narration": "Here are the key commands. Configure takes you into the kitchen. Commit check tests your draft without serving it. Commit serves it. And rollback zero throws away unsaved changes. Configure takes you into configuration mode. Commit check validates the draft without applying it. Commit applies it. And rollback zero discards everything you haven't committed.",
+   "lines": [
+    {
+     "t": "configure",
+     "note": "Enter configuration mode",
+     "cue": 1,
+     "color": null
+    },
+    {
+     "t": "commit check",
+     "note": "Test the draft safely",
+     "cue": 2,
+     "color": null
+    },
+    {
+     "t": "commit",
+     "note": "Make it live",
+     "cue": 3,
+     "color": null
+    },
+    {
+     "t": "rollback 0",
+     "note": "Discard uncommitted changes",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Here are three common mix-ups. Commands only work in the right mode. Typing configure does not apply anything. And exit does not silently discard changes, it asks you.",
+   "items": [
+    {
+     "wrong": "Any command works in any mode",
+     "right": "Modes are strictly separate",
+     "cue": 1
+    },
+    {
+     "wrong": "configure applies changes at once",
+     "right": "It only opens the draft",
+     "cue": 2
+    },
+    {
+     "wrong": "exit discards changes automatically",
+     "right": "It asks you first",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos CLI lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. The prompt tells you the mode. Greater than means operational, and hash means configuration. Nothing is live until you commit. And rollback zero discards uncommitted changes. Ready to practise? Try the Courseiva Junos CLI lab.",
+   "points": [
+    {
+     "t": "> is operational, # is configuration",
+     "cue": 1
+    },
+    {
+     "t": "Nothing is live until commit",
+     "cue": 2
+    },
+    {
+     "t": "rollback 0 discards uncommitted changes",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "topic": "junos-vlans",
+ "title": "VLANs and Layer 2 on Junos: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS VLANS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Imagine an apartment building with hundreds of residents. There's one mail room with numbered mailboxes. The postie sorts by the number on the envelope, not the contents.",
+   "lines": [
+    {
+     "t": "Hundreds of residents",
+     "cue": 0
+    },
+    {
+     "t": "One mail room",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Sorted by the number on the envelope",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The mail room",
+   "narration": "Each mailbox number is a VLAN. The postie never opens letters, they just read the number. A VLAN is one broadcast domain at layer two. An access port serves one VLAN. A trunk port carries many. Between VLANs, you need a layer three interface.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "VLAN",
+     "real": "Isolated traffic",
+     "cue": 1
+    },
+    {
+     "icon": "door",
+     "story": "Access port",
+     "real": "Strips the 802.1Q tag",
+     "cue": 2
+    },
+    {
+     "icon": "road",
+     "story": "Trunk port",
+     "real": "Keeps the 802.1Q tag",
+     "cue": 3
+    },
+    {
+     "icon": "router",
+     "story": "IRB or router",
+     "real": "Routes between VLANs",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "VLAN vs subnet",
+   "narration": "These two are related, but not the same thing. A V L A N is layer two. A subnet is layer three. You connect them by giving the I R B interface an address. A VLAN lives at layer two, and a subnet at layer three. The address goes on the I R B. Routing needs that layer three interface.",
+   "left": {
+    "title": "VLAN",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Subnet",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Layer",
+     "l": "2",
+     "r": "3",
+     "cue": 1
+    },
+    {
+     "label": "Where's the IP",
+     "l": "None on the VLAN",
+     "r": "On the IRB interface",
+     "cue": 2
+    },
+    {
+     "label": "Routes between",
+     "l": "No",
+     "r": "Yes, via IRB",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three misunderstandings. A V L A N is not a subnet. Trunks can also connect servers, routers and access points. And a switch won't route between V L A Ns without one.",
+   "items": [
+    {
+     "wrong": "A VLAN is a subnet",
+     "right": "VLAN is layer 2; subnet is layer 3",
+     "cue": 1
+    },
+    {
+     "wrong": "Trunks only connect switches",
+     "right": "They can connect servers, routers, APs",
+     "cue": 2
+    },
+    {
+     "wrong": "A switch routes between VLANs on its own",
+     "right": "It needs a layer 3 interface",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos VLANs lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Access ports serve one VLAN, and trunks carry many. The native VLAN is untagged, and both ends must match. Routing between VLANs needs a layer three interface. Ready to practise? Try the Courseiva Junos VLANs lab.",
+   "points": [
+    {
+     "t": "Access: one VLAN. Trunk: many",
+     "cue": 1
+    },
+    {
+     "t": "Native VLAN must match at both ends",
+     "cue": 2
+    },
+    {
+     "t": "Inter-VLAN routing needs layer 3",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

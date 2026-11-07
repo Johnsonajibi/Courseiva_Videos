@@ -1,0 +1,130 @@
+{
+ "topic": "junos-static-routing",
+ "title": "Static Routing on Junos: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS STATIC ROUTES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Imagine moving into a brand new housing estate. Your sat nav doesn't know the roads yet. So you draw the map by hand.",
+   "lines": [
+    {
+     "t": "A brand new estate",
+     "cue": 0
+    },
+    {
+     "t": "Your sat nav doesn't know it",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "You draw the map yourself",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hand-drawn map",
+   "narration": "A static route is a hand drawn map. You tell the router exactly where to send traffic, and it never changes unless you change it. You need a destination and a next hop. The catch-all road is the default route. If two maps disagree, the lower number wins.",
+   "items": [
+    {
+     "icon": "map",
+     "story": "Prefix plus next hop",
+     "real": "Both are required",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "0.0.0.0/0",
+     "real": "Used when nothing else matches",
+     "cue": 2
+    },
+    {
+     "icon": "scale",
+     "story": "Preference",
+     "real": "Static default is 5",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "In Junos",
+   "narration": "Here's the syntax. A static route needs a prefix and a next hop. The default route uses zero slash zero. And you can add a higher preference to make it a backup. Here's a normal static route. This is the default route. And a higher preference makes it a backup.",
+   "lines": [
+    {
+     "t": "set routing-options static route 10.0.0.0/8 next-hop 192.168.1.2",
+     "note": "A normal static route",
+     "cue": 1,
+     "color": null
+    },
+    {
+     "t": "set routing-options static route 0.0.0.0/0 next-hop 192.168.1.1",
+     "note": "The default route",
+     "cue": 2,
+     "color": null
+    },
+    {
+     "t": "... preference 200",
+     "note": "A backup route",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. A static route doesn't switch to a backup unless you configure one. The default route is the last resort, because the most specific match wins. And every static route needs a next hop.",
+   "items": [
+    {
+     "wrong": "Static routes fail over by themselves",
+     "right": "Only if the interface goes down",
+     "cue": 1
+    },
+    {
+     "wrong": "The default route beats everything",
+     "right": "It's the least specific, so it loses",
+     "cue": 2
+    },
+    {
+     "wrong": "The next hop is optional",
+     "right": "You need a next hop or interface",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos static routing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A static route is a hand drawn map. The default route is the last resort. Lower preference wins, and static defaults to five. Ready to practise? Try the Courseiva Junos static routing lab.",
+   "points": [
+    {
+     "t": "A static route is a hand-drawn map",
+     "cue": 1
+    },
+    {
+     "t": "Default route = last resort",
+     "cue": 2
+    },
+    {
+     "t": "Lower preference wins; static default is 5",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

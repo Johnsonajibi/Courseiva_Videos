@@ -1,0 +1,136 @@
+{
+ "topic": "junos-config",
+ "title": "Junos Configuration Basics: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS CONFIGURATION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "list",
+   "narration": "In Junos, every setting has exactly one place to live. The configuration is a tree. So you follow the branches, you never guess.",
+   "lines": [
+    {
+     "t": "Everything has one place",
+     "cue": 0
+    },
+    {
+     "t": "A tree, not a list",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Follow the branches",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The menu with pages",
+   "narration": "Think of a restaurant menu with different pages for starters, mains and drinks. You write your order, and only then does the kitchen start cooking. Each page is a section of the tree. You write your order on a slip. Handing it to the chef starts the cooking. The chef keeps the last fifty orders.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "Hierarchy",
+     "real": "Interfaces, protocols, system",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "Candidate configuration",
+     "real": "Edits go here first",
+     "cue": 2
+    },
+    {
+     "icon": "stamp",
+     "story": "commit",
+     "real": "Makes it active",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "story": "Rollback history",
+     "real": "Last 50 commits",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "A deep example",
+   "narration": "Here's how deep the tree can go. This one line sets an address five levels down. Then you check it, commit it, and keep a note for the team. Here's one line five levels deep. Check it first. Then commit it with a note.",
+   "lines": [
+    {
+     "t": "set interfaces ge-0/0/0 unit 0 family inet address 192.168.1.1/24",
+     "note": "Five levels deep",
+     "cue": 1,
+     "color": null
+    },
+    {
+     "t": "commit check",
+     "note": "Validate first",
+     "cue": 2,
+     "color": null
+    },
+    {
+     "t": "commit comment \"add uplink\"",
+     "note": "Go live, with a note",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three things to remember. A set command doesn't apply until you commit. Rollback zero doesn't undo a commit, it resets your draft to match the last commit. And the tree goes many levels deep.",
+   "items": [
+    {
+     "wrong": "A set command applies at once",
+     "right": "Only after commit",
+     "cue": 1
+    },
+    {
+     "wrong": "rollback 0 undoes the last commit",
+     "right": "It resets the draft to the last commit",
+     "cue": 2
+    },
+    {
+     "wrong": "Only one level under each section",
+     "right": "It goes many levels deep",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos configuration lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. The configuration is a tree, and every setting has one place. Edits go in a draft, and only commit makes them live. Junos keeps the last fifty commits for rollback. Ready to practise? Try the Courseiva Junos configuration lab.",
+   "points": [
+    {
+     "t": "A tree: every setting has one place",
+     "cue": 1
+    },
+    {
+     "t": "Draft first; commit makes it live",
+     "cue": 2
+    },
+    {
+     "t": "Last 50 commits kept",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

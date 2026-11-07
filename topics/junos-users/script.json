@@ -1,0 +1,138 @@
+{
+ "topic": "junos-users",
+ "title": "Users and Authentication on Junos: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS USERS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "lock",
+   "narration": "Who gets to log in to your router? And what are they allowed to do once they're in? That's users and login classes.",
+   "lines": [
+    {
+     "t": "Who can log in",
+     "cue": 0
+    },
+    {
+     "t": "And what can they do",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's users and classes",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The security badge",
+   "narration": "On your first day, security made you a badge with your name, photo and a chip listing the doors you can open. Every morning, the guard checks it. The badge is a user account. The chip lists your doors. The root badge is special.",
+   "items": [
+    {
+     "icon": "person",
+     "story": "User account",
+     "real": "Name plus authentication",
+     "cue": 1
+    },
+    {
+     "icon": "key",
+     "story": "Login class",
+     "real": "Decides which commands run",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "root",
+     "real": "Can't be deleted",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "RADIUS vs TACACS+",
+   "narration": "There are two main servers for central logins. R A D I U S combines authentication and authorisation in one packet. T A C A C S plus keeps them separate, which gives finer control over commands. RADIUS combines them, and TACACS plus separates them. So TACACS plus can control individual commands. They're not interchangeable.",
+   "left": {
+    "title": "RADIUS",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "TACACS+",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Packets",
+     "l": "Combined",
+     "r": "Three separate",
+     "cue": 1
+    },
+    {
+     "label": "Fine control",
+     "l": "Less",
+     "r": "More, per command",
+     "cue": 2
+    },
+    {
+     "label": "Interchangeable",
+     "l": "No",
+     "r": "No",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three misunderstandings. The root account can't be deleted, only its authentication changed. The operator class can also run ping and traceroute. And RADIUS and TACACS plus split the work differently.",
+   "items": [
+    {
+     "wrong": "Root is a normal account",
+     "right": "It can't be deleted",
+     "cue": 1
+    },
+    {
+     "wrong": "Operator can only look",
+     "right": "It can run ping and traceroute",
+     "cue": 2
+    },
+    {
+     "wrong": "RADIUS and TACACS+ are the same",
+     "right": "They split AAA differently",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos users lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Every user needs a login class. The root account can't be deleted. The default order checks the local password first. Ready to practise? Try the Courseiva Junos users lab.",
+   "points": [
+    {
+     "t": "Every user needs a login class",
+     "cue": 1
+    },
+    {
+     "t": "root can't be deleted",
+     "cue": 2
+    },
+    {
+     "t": "Default: local password first",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

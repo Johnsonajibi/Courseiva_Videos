@@ -1,0 +1,130 @@
+{
+ "topic": "junos-monitoring",
+ "title": "Junos Monitoring: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JUNOS MONITORING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "bell",
+   "narration": "Your router is always trying to tell you something. It works like a house alarm. You just have to know where to look.",
+   "lines": [
+    {
+     "t": "Your router is trying to tell you something",
+     "cue": 0
+    },
+    {
+     "t": "Like a house alarm",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "You just have to listen",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The house alarm",
+   "narration": "The alarm panel has a timeline of everything that happened, even while you were away. The timeline is the log. Each sensor has its own report. Severity runs from zero to seven.",
+   "items": [
+    {
+     "icon": "bell",
+     "story": "/var/log/messages",
+     "real": "General system events",
+     "cue": 1
+    },
+    {
+     "icon": "gear",
+     "story": "Other logs",
+     "real": "chassisd, auth, interactive-commands",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "Syslog levels",
+     "real": "0 to 3 are serious",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Checking health",
+   "narration": "Three commands cover most checks. Look at the hardware, look at the logs, and reboot only when you must. Check temperature, fans and power. Read the main log. And only then, reboot gracefully.",
+   "lines": [
+    {
+     "t": "show chassis environment",
+     "note": "Temperature, fans, power",
+     "cue": 1,
+     "color": null
+    },
+    {
+     "t": "show log messages",
+     "note": "Main system log",
+     "cue": 2,
+     "color": null
+    },
+    {
+     "t": "request system reboot",
+     "note": "Graceful restart",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three misunderstandings. For per process detail, use show system processes extensive. There are many logs, each with a purpose. And a graceful reboot is different from a forced one.",
+   "items": [
+    {
+     "wrong": "show system health shows per-process CPU",
+     "right": "Use show system processes extensive",
+     "cue": 1
+    },
+    {
+     "wrong": "messages is the only log that matters",
+     "right": "There are many logs",
+     "cue": 2
+    },
+    {
+     "wrong": "A reboot is always the same",
+     "right": "Graceful versus forced",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Junos monitoring lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Logs live in slash var slash log, and messages is the main one. Show chassis environment checks the hardware. Reboot gracefully, and force only when stuck. Ready to practise? Try the Courseiva Junos monitoring lab.",
+   "points": [
+    {
+     "t": "Logs live in /var/log; messages is main",
+     "cue": 1
+    },
+    {
+     "t": "show chassis environment = hardware health",
+     "cue": 2
+    },
+    {
+     "t": "Graceful reboot; force only when stuck",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
