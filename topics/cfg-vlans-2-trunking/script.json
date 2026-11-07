@@ -1,0 +1,561 @@
+{
+ "topic": "cfg-vlans-2-trunking",
+ "title": "VLAN Configuration, Part 2: Trunks Between Switches",
+ "kicker": "CONFIGURATION LAB \u00b7 VLANS \u00b7 PART 2",
+ "labTitle": "Trunks between switches",
+ "labSub": "Carry many VLANs over one cable",
+ "part": 2,
+ "parts": 4,
+ "level": "INTERMEDIATE",
+ "topology": {
+  "nodes": [
+   {
+    "id": "SW1",
+    "label": "SW1",
+    "type": "switch",
+    "x": 26,
+    "y": 28,
+    "sub": "2960-8TC",
+    "pos": "top"
+   },
+   {
+    "id": "SW2",
+    "label": "SW2",
+    "type": "switch",
+    "x": 74,
+    "y": 28,
+    "sub": "2960-8TC",
+    "pos": "top"
+   },
+   {
+    "id": "PC1",
+    "label": "PC1",
+    "type": "pc",
+    "x": 8,
+    "y": 86,
+    "sub": "VLAN 10"
+   },
+   {
+    "id": "PC2",
+    "label": "PC2",
+    "type": "pc",
+    "x": 34,
+    "y": 86,
+    "sub": "VLAN 20"
+   },
+   {
+    "id": "PC3",
+    "label": "PC3",
+    "type": "pc",
+    "x": 66,
+    "y": 86,
+    "sub": "VLAN 10"
+   },
+   {
+    "id": "PC4",
+    "label": "PC4",
+    "type": "pc",
+    "x": 92,
+    "y": 86,
+    "sub": "VLAN 20"
+   }
+  ],
+  "links": [
+   {
+    "a": "SW1",
+    "b": "SW2",
+    "kind": "trunk",
+    "la": "Gi0/1",
+    "lb": "Gi0/1",
+    "label": "802.1Q trunk"
+   },
+   {
+    "a": "SW1",
+    "b": "PC1",
+    "lb": "Fa0/1"
+   },
+   {
+    "a": "SW1",
+    "b": "PC2",
+    "lb": "Fa0/2"
+   },
+   {
+    "a": "SW2",
+    "b": "PC3",
+    "lb": "Fa0/1"
+   },
+   {
+    "a": "SW2",
+    "b": "PC4",
+    "lb": "Fa0/2"
+   }
+  ]
+ },
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "intro",
+   "type": "labintro",
+   "narration": "In part one, we split one switch into separate networks. Now we have a second switch, and a problem. Here's what you'll do in this part. First, you'll see exactly what breaks when two switches share V L A Ns without one. Then you'll build the trunk, one command on each end. Next, you'll control which V L A Ns are allowed across. And finally, you'll find and fix a native V L A N mismatch.",
+   "items": [
+    {
+     "t": "See why two switches need a trunk",
+     "cue": 3
+    },
+    {
+     "t": "Build an 802.1Q trunk",
+     "cue": 4
+    },
+    {
+     "t": "Control which VLANs may cross it",
+     "cue": 5
+    },
+    {
+     "t": "Find and fix a native VLAN mismatch",
+     "cue": 6
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "One cable, many floors",
+   "narration": "Imagine two apartment buildings with just one corridor between them. Every floor's mail has to use that one corridor. So each letter gets a sticker saying which floor it belongs to. The corridor that carries every floor is the trunk. Letters with no sticker are treated as belonging to the native V L A N.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "A sticker on each letter",
+     "real": "802.1Q tag",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "The shared corridor",
+     "real": "Trunk port",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "story": "No sticker means native",
+     "real": "Native VLAN, untagged",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "before",
+   "type": "cli",
+   "device": "SW2",
+   "heading": null,
+   "narration": "SW2 already has the same two V L A Ns as SW1. Let's prove the problem first. On SW2, show V L A N brief confirms V L A N ten and twenty exist here too. Now from PC one, we ping PC three, which is also in V L A N ten but on the other switch. It fails. The cable between the switches is an access port, so only one V L A N can use it.",
+   "steps": [
+    {
+     "cue": 2,
+     "note": "Both switches need the same VLANs created.",
+     "lines": [
+      {
+       "c": "show vlan brief",
+       "p": "exec",
+       "out": [
+        "10   SALES               active    Fa0/1",
+        "20   ENGINEERING         active    Fa0/2"
+       ]
+      }
+     ],
+     "hl": [
+      "SALES",
+      "ENGINEERING"
+     ]
+    },
+    {
+     "cue": 3,
+     "note": "Same VLAN, different switch. This should work.",
+     "lines": [
+      {
+       "c": "ping 192.168.10.12",
+       "p": "user",
+       "out": [
+        "Pinging 192.168.10.12 with 32 bytes of data:",
+        "Request timed out.",
+        "Request timed out.",
+        "Ping statistics for 192.168.10.12:",
+        "    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss)"
+       ]
+      }
+     ],
+     "dev": "PC1",
+     "clear": true,
+     "hl": [
+      "100% loss"
+     ]
+    },
+    {
+     "cue": 4,
+     "note": "No trunk yet, so nothing crosses.",
+     "lines": []
+    }
+   ]
+  },
+  {
+   "id": "trunk",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "Now let's build the trunk, starting on SW one. We select the gigabit port that faces SW2. And we set it to trunk mode. Now the same on SW2, because both ends of a trunk must agree. Show interfaces trunk on SW one lists the result. It says trunking, and V L A Ns one, ten and twenty are active.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "This is the port with the corridor cable.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface gi0/1",
+       "p": "cfg"
+      }
+     ]
+    },
+    {
+     "cue": 2,
+     "note": "trunk = carry many VLANs, with tags.",
+     "lines": [
+      {
+       "c": "switchport mode trunk",
+       "p": "if",
+       "out": [
+        "%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1,",
+        "changed state to up"
+       ]
+      }
+     ],
+     "key": "switchport mode trunk"
+    },
+    {
+     "cue": 3,
+     "note": "Both ends need trunk mode.",
+     "lines": [
+      {
+       "c": "interface gi0/1",
+       "p": "cfg",
+       "d": "SW2"
+      },
+      {
+       "c": "switchport mode trunk",
+       "p": "if",
+       "d": "SW2"
+      },
+      {
+       "c": "end",
+       "p": "if",
+       "d": "SW2"
+      }
+     ],
+     "dev": "SW2",
+     "clear": true
+    },
+    {
+     "cue": 4,
+     "note": "One command shows the whole trunk.",
+     "lines": [
+      {
+       "c": "show interfaces trunk",
+       "p": "exec",
+       "d": "SW1",
+       "out": [
+        "Port        Mode         Encapsulation  Status        Native vlan",
+        "Gi0/1       on           802.1q         trunking      1",
+        "",
+        "Port        Vlans allowed on trunk",
+        "Gi0/1       1-4094",
+        "",
+        "Port        Vlans allowed and active in management domain",
+        "Gi0/1       1,10,20"
+       ]
+      }
+     ],
+     "dev": "SW1",
+     "hl": [
+      "trunking",
+      "1,10,20"
+     ]
+    },
+    {
+     "cue": 5,
+     "note": "Trunking, with VLANs 10 and 20 active.",
+     "lines": []
+    }
+   ]
+  },
+  {
+   "id": "pingok",
+   "type": "cli",
+   "device": "PC1",
+   "heading": null,
+   "narration": "Time for the real test. Back on PC one, we repeat the same ping to PC three. Every reply comes back. Two switches, one cable, and V L A Ns that follow the traffic.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "Same ping as before.",
+     "lines": [
+      {
+       "c": "ping 192.168.10.12",
+       "p": "user",
+       "out": [
+        "Pinging 192.168.10.12 with 32 bytes of data:",
+        "Reply from 192.168.10.12: bytes=32 time<1ms TTL=128",
+        "Reply from 192.168.10.12: bytes=32 time<1ms TTL=128",
+        "Ping statistics for 192.168.10.12:",
+        "    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)"
+       ]
+      }
+     ],
+     "hl": [
+      "0% loss"
+     ]
+    },
+    {
+     "cue": 2,
+     "note": "It works across the trunk.",
+     "lines": []
+    }
+   ]
+  },
+  {
+   "id": "allowed",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "Now a security habit. By default, a trunk carries every V L A N. We can limit that with the allowed list, so only ten and twenty may cross. Later, to add V L A N thirty without losing the others, you must use the word add. Leave out add, and you replace the whole list. That mistake takes networks down. So we put it right again.",
+   "steps": [
+    {
+     "cue": 2,
+     "note": "Only list the VLANs you really need.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface gi0/1",
+       "p": "cfg"
+      },
+      {
+       "c": "switchport trunk allowed vlan 10,20",
+       "p": "if"
+      }
+     ],
+     "key": "switchport trunk allowed vlan 10,20"
+    },
+    {
+     "cue": 3,
+     "note": "'add' keeps the existing list.",
+     "lines": [
+      {
+       "c": "switchport trunk allowed vlan add 30",
+       "p": "if"
+      }
+     ],
+     "key": "switchport trunk allowed vlan add 30"
+    },
+    {
+     "cue": 4,
+     "note": "No 'add' = the old list is erased!",
+     "lines": [
+      {
+       "c": "switchport trunk allowed vlan 30",
+       "p": "if"
+      },
+      {
+       "c": "do show interfaces trunk | begin allowed",
+       "p": "if",
+       "out": [
+        "Port        Vlans allowed on trunk",
+        "Gi0/1       30"
+       ]
+      }
+     ],
+     "hl": [
+      "Gi0/1       30"
+     ]
+    },
+    {
+     "cue": 5,
+     "note": "Restore the full list.",
+     "lines": [
+      {
+       "c": "switchport trunk allowed vlan 10,20,30",
+       "p": "if"
+      },
+      {
+       "c": "end",
+       "p": "if"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "native",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "The last piece is the native V L A N. Ours is still V L A N one, which is the default and not a good idea. We create a dedicated V L A N ninety nine and make it native, but only on SW one for now. Within seconds, the switch complains about the mismatch. The fix is to set the same native V L A N on SW2. The warnings stop, and we have a clean, matching trunk.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "Native VLAN 1 is the default; avoid it.",
+     "lines": [
+      {
+       "c": "show interfaces trunk | include trunking",
+       "p": "exec",
+       "out": [
+        "Gi0/1       on           802.1q         trunking      1"
+       ]
+      }
+     ]
+    },
+    {
+     "cue": 2,
+     "note": "Change one side only, on purpose.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "vlan 99",
+       "p": "cfg"
+      },
+      {
+       "c": "name NATIVE",
+       "p": "vlan"
+      },
+      {
+       "c": "interface gi0/1",
+       "p": "cfg"
+      },
+      {
+       "c": "switchport trunk native vlan 99",
+       "p": "if"
+      }
+     ],
+     "key": "switchport trunk native vlan 99"
+    },
+    {
+     "cue": 3,
+     "note": "The two ends disagree about the native VLAN.",
+     "lines": [
+      {
+       "c": "",
+       "p": "if",
+       "out": [
+        "%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on",
+        "GigabitEthernet0/1 (99), with SW2 GigabitEthernet0/1 (1)."
+       ]
+      }
+     ],
+     "hl": [
+      "MISMATCH",
+      "(99)"
+     ]
+    },
+    {
+     "cue": 4,
+     "note": "Both ends must match.",
+     "lines": [
+      {
+       "c": "vlan 99",
+       "p": "cfg",
+       "d": "SW2"
+      },
+      {
+       "c": "interface gi0/1",
+       "p": "cfg",
+       "d": "SW2"
+      },
+      {
+       "c": "switchport trunk native vlan 99",
+       "p": "if",
+       "d": "SW2"
+      },
+      {
+       "c": "end",
+       "p": "if",
+       "d": "SW2"
+      }
+     ],
+     "dev": "SW2",
+     "clear": true,
+     "key": "switchport trunk native vlan 99"
+    },
+    {
+     "cue": 5,
+     "note": "Matching native VLAN: no more warnings.",
+     "lines": [
+      {
+       "c": "show interfaces trunk | include trunking",
+       "p": "exec",
+       "d": "SW2",
+       "out": [
+        "Gi0/1       on           802.1q         trunking      99"
+       ]
+      }
+     ],
+     "hl": [
+      "trunking      99"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three trunk mistakes to avoid. Both ends of a trunk must agree. Leaving out the word add replaces the whole allowed list. And mismatched native V L A Ns leak traffic between V L A Ns.",
+   "items": [
+    {
+     "wrong": "Trunk on one end only",
+     "right": "Both ends must be trunk, or one end drops tags",
+     "cue": 1
+    },
+    {
+     "wrong": "Forgetting 'add'",
+     "right": "Allowed vlan without add replaces the list",
+     "cue": 2
+    },
+    {
+     "wrong": "Different native VLANs",
+     "right": "Mismatch leaks traffic between VLANs",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva trunking lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A trunk carries many V L A Ns on one cable, using tags. Limit it with the allowed list, and always use add to extend it. Match the native V L A N on both ends, and avoid V L A N one. Ready to practise? Try the Courseiva trunking lab.",
+   "points": [
+    {
+     "t": "A trunk carries many VLANs using 802.1Q tags",
+     "cue": 1
+    },
+    {
+     "t": "Allowed list: use 'add' to extend",
+     "cue": 2
+    },
+    {
+     "t": "Match native VLAN; avoid VLAN 1",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

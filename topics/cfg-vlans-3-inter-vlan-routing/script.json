@@ -1,0 +1,612 @@
+{
+ "topic": "cfg-vlans-3-inter-vlan-routing",
+ "title": "VLAN Configuration, Part 3: Inter-VLAN Routing",
+ "kicker": "CONFIGURATION LAB \u00b7 VLANS \u00b7 PART 3",
+ "labTitle": "Inter-VLAN routing",
+ "labSub": "Let different VLANs talk to each other",
+ "part": 3,
+ "parts": 4,
+ "level": "INTERMEDIATE",
+ "topology": {
+  "nodes": [
+   {
+    "id": "R1",
+    "label": "R1",
+    "type": "router",
+    "x": 50,
+    "y": 8,
+    "sub": "ISR 4321",
+    "pos": "top"
+   },
+   {
+    "id": "SW1",
+    "label": "SW1",
+    "type": "switch",
+    "x": 28,
+    "y": 50,
+    "sub": "2960-8TC"
+   },
+   {
+    "id": "SW2",
+    "label": "SW2",
+    "type": "switch",
+    "x": 74,
+    "y": 50,
+    "sub": "2960-8TC"
+   },
+   {
+    "id": "PC1",
+    "label": "PC1",
+    "type": "pc",
+    "x": 8,
+    "y": 92,
+    "sub": "VLAN 10"
+   },
+   {
+    "id": "PC2",
+    "label": "PC2",
+    "type": "pc",
+    "x": 34,
+    "y": 92,
+    "sub": "VLAN 20"
+   },
+   {
+    "id": "PC3",
+    "label": "PC3",
+    "type": "pc",
+    "x": 66,
+    "y": 92,
+    "sub": "VLAN 10"
+   },
+   {
+    "id": "PC4",
+    "label": "PC4",
+    "type": "pc",
+    "x": 92,
+    "y": 92,
+    "sub": "VLAN 20"
+   }
+  ],
+  "links": [
+   {
+    "a": "R1",
+    "b": "SW1",
+    "kind": "trunk",
+    "la": "Gi0/0",
+    "lb": "Gi0/2"
+   },
+   {
+    "a": "SW1",
+    "b": "SW2",
+    "kind": "trunk",
+    "la": "Gi0/1",
+    "lb": "Gi0/1"
+   },
+   {
+    "a": "SW1",
+    "b": "PC1",
+    "lb": "Fa0/1"
+   },
+   {
+    "a": "SW1",
+    "b": "PC2",
+    "lb": "Fa0/2"
+   },
+   {
+    "a": "SW2",
+    "b": "PC3",
+    "lb": "Fa0/1"
+   },
+   {
+    "a": "SW2",
+    "b": "PC4",
+    "lb": "Fa0/2"
+   }
+  ]
+ },
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "intro",
+   "type": "labintro",
+   "narration": "So far, each V L A N is a sealed floor. PC one can't reach PC two, and that's by design. Now we'll build the elevator. Here's the plan. First, you'll see why V L A Ns need a router to talk. Then you'll build the classic router on a stick. You'll prove it with a ping between two different V L A Ns. And finally, you'll do the same job faster, on a layer three switch.",
+   "items": [
+    {
+     "t": "Understand why VLANs need a router",
+     "cue": 4
+    },
+    {
+     "t": "Configure router-on-a-stick",
+     "cue": 5
+    },
+    {
+     "t": "Prove it with a ping across VLANs",
+     "cue": 6
+    },
+    {
+     "t": "Do the same job on a Layer 3 switch",
+     "cue": 7
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Floors and an elevator",
+   "narration": "Each floor is a V L A N, and people can move around freely inside their own floor. To visit another floor, they need an elevator. Router on a stick is one elevator with a single door onto the shared corridor. A layer three switch is a whole bank of fast elevators built into the building.",
+   "items": [
+    {
+     "icon": "router",
+     "story": "The elevator",
+     "real": "A router, or a layer 3 switch",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "One elevator, one door",
+     "real": "Router on a stick",
+     "cue": 2
+    },
+    {
+     "icon": "switch",
+     "story": "A bank of elevators",
+     "real": "Layer 3 switch with SVIs",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "sw1",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "First, the switch side. The port facing the router must be a trunk. On SW one, we select the port that connects to R one. And we make it a trunk, so it can carry both V L A Ns.",
+   "steps": [
+    {
+     "cue": 2,
+     "note": "This port faces the router.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface gi0/2",
+       "p": "cfg"
+      }
+     ]
+    },
+    {
+     "cue": 3,
+     "note": "A trunk carries VLAN 10 and VLAN 20 together.",
+     "lines": [
+      {
+       "c": "switchport mode trunk",
+       "p": "if"
+      },
+      {
+       "c": "end",
+       "p": "if"
+      }
+     ],
+     "key": "switchport mode trunk"
+    }
+   ]
+  },
+  {
+   "id": "r1",
+   "type": "cli",
+   "device": "R1",
+   "heading": null,
+   "narration": "Now the router. One physical port will act as two gateways, using sub interfaces. We bring the physical port up, with no shutdown. It needs no address of its own. Then we create a sub interface for V L A N ten. We tell it to read the V L A N ten tag, using encapsulation dot one Q ten. And we give it the gateway address for that network. The same again for V L A N twenty, with its own address.",
+   "steps": [
+    {
+     "cue": 2,
+     "note": "Turn the port on. No IP here.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface gi0/0",
+       "p": "cfg"
+      },
+      {
+       "c": "no shutdown",
+       "p": "if"
+      }
+     ],
+     "key": "no shutdown"
+    },
+    {
+     "cue": 3,
+     "note": "A sub-interface is a virtual door.",
+     "lines": [
+      {
+       "c": "interface gi0/0.10",
+       "p": "if"
+      }
+     ],
+     "key": "interface gi0/0.10"
+    },
+    {
+     "cue": 4,
+     "note": "Match this sub-interface to VLAN 10 tags.",
+     "lines": [
+      {
+       "c": "encapsulation dot1Q 10",
+       "p": "sub"
+      }
+     ],
+     "key": "encapsulation dot1Q 10"
+    },
+    {
+     "cue": 5,
+     "note": "This becomes PC1 and PC3's gateway.",
+     "lines": [
+      {
+       "c": "ip address 192.168.10.1 255.255.255.0",
+       "p": "sub"
+      }
+     ],
+     "key": "ip address 192.168.10.1 255.255.255.0"
+    },
+    {
+     "cue": 6,
+     "note": "Repeat for VLAN 20.",
+     "lines": [
+      {
+       "c": "interface gi0/0.20",
+       "p": "sub"
+      },
+      {
+       "c": "encapsulation dot1Q 20",
+       "p": "sub"
+      },
+      {
+       "c": "ip address 192.168.20.1 255.255.255.0",
+       "p": "sub"
+      },
+      {
+       "c": "end",
+       "p": "sub"
+      }
+     ],
+     "key": "encapsulation dot1Q 20"
+    }
+   ]
+  },
+  {
+   "id": "check",
+   "type": "cli",
+   "device": "R1",
+   "heading": null,
+   "narration": "Let's check that the router sees both networks. Show I P interface brief lists the two sub interfaces, both up. And show I P route has both networks as directly connected. Now the proof. PC one pings PC two, which is in a completely different V L A N. It works. And notice the T T L is one twenty seven, one less than normal. That's the router in the middle.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "Both gateways are up.",
+     "lines": [
+      {
+       "c": "show ip interface brief",
+       "p": "exec",
+       "out": [
+        "Interface              IP-Address      OK? Method Status      Protocol",
+        "GigabitEthernet0/0     unassigned      YES unset  up          up",
+        "GigabitEthernet0/0.10  192.168.10.1    YES manual up          up",
+        "GigabitEthernet0/0.20  192.168.20.1    YES manual up          up"
+       ]
+      }
+     ],
+     "hl": [
+      "0.10",
+      "0.20"
+     ]
+    },
+    {
+     "cue": 2,
+     "note": "The router now knows both networks.",
+     "lines": [
+      {
+       "c": "show ip route",
+       "p": "exec",
+       "out": [
+        "C        192.168.10.0/24 is directly connected, GigabitEthernet0/0.10",
+        "L        192.168.10.1/32 is directly connected, GigabitEthernet0/0.10",
+        "C        192.168.20.0/24 is directly connected, GigabitEthernet0/0.20",
+        "L        192.168.20.1/32 is directly connected, GigabitEthernet0/0.20"
+       ]
+      }
+     ],
+     "hl": [
+      "C        192.168"
+     ]
+    },
+    {
+     "cue": 3,
+     "note": "Different VLAN. This only works with routing.",
+     "lines": [
+      {
+       "c": "ping 192.168.20.11",
+       "p": "user",
+       "out": [
+        "Pinging 192.168.20.11 with 32 bytes of data:",
+        "Reply from 192.168.20.11: bytes=32 time<1ms TTL=127",
+        "Reply from 192.168.20.11: bytes=32 time<1ms TTL=127",
+        "Ping statistics for 192.168.20.11:",
+        "    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)"
+       ]
+      }
+     ],
+     "dev": "PC1",
+     "clear": true,
+     "hl": [
+      "0% loss"
+     ]
+    },
+    {
+     "cue": 4,
+     "note": "TTL dropped by 1: one router hop.",
+     "lines": [],
+     "hl": [
+      "TTL=127"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Two ways to route",
+   "narration": "Here's how the two designs compare. Router on a stick uses one cable and sub interfaces. A layer three switch uses virtual interfaces, called S V Is, inside the switch itself. One uses a trunk, and the other needs no cable at all. The router link can bottleneck, but the switch routes at hardware speed. So use router on a stick for small sites, and a layer three switch for anything bigger.",
+   "left": {
+    "title": "Router on a stick",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Layer 3 switch",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "How it's built",
+     "l": "One trunk + subinterfaces",
+     "r": "SVIs inside the switch",
+     "cue": 1
+    },
+    {
+     "label": "Speed",
+     "l": "Can become a bottleneck",
+     "r": "Hardware speed",
+     "cue": 2
+    },
+    {
+     "label": "Best for",
+     "l": "Small networks, labs",
+     "r": "Campus and data centre",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "svi",
+   "type": "cli",
+   "device": "MLS1",
+   "heading": null,
+   "narration": "Now the layer three switch version. This is a Catalyst 3560, and routing is off by default. First we turn routing on, with I P routing. Then we create an S V I for V L A N ten, and give it the gateway address. And the same for V L A N twenty. Show I P interface brief shows both S V Is up. They only come up when a port in that V L A N is active. And show I P route has the two connected networks, with no router at all.",
+   "steps": [
+    {
+     "cue": 2,
+     "note": "Without this, the switch only switches.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "ip routing",
+       "p": "cfg"
+      }
+     ],
+     "key": "ip routing"
+    },
+    {
+     "cue": 3,
+     "note": "An SVI is the VLAN's virtual gateway.",
+     "lines": [
+      {
+       "c": "interface vlan 10",
+       "p": "cfg"
+      },
+      {
+       "c": "ip address 192.168.10.1 255.255.255.0",
+       "p": "if"
+      },
+      {
+       "c": "no shutdown",
+       "p": "if"
+      }
+     ],
+     "key": "interface vlan 10"
+    },
+    {
+     "cue": 4,
+     "note": "One SVI per VLAN.",
+     "lines": [
+      {
+       "c": "interface vlan 20",
+       "p": "if"
+      },
+      {
+       "c": "ip address 192.168.20.1 255.255.255.0",
+       "p": "if"
+      },
+      {
+       "c": "no shutdown",
+       "p": "if"
+      },
+      {
+       "c": "end",
+       "p": "if"
+      }
+     ],
+     "key": "interface vlan 20"
+    },
+    {
+     "cue": 5,
+     "note": "SVIs need an active port in their VLAN.",
+     "lines": [
+      {
+       "c": "show ip interface brief | include Vlan",
+       "p": "exec",
+       "out": [
+        "Vlan10                 192.168.10.1    YES manual up          up",
+        "Vlan20                 192.168.20.1    YES manual up          up"
+       ]
+      }
+     ],
+     "hl": [
+      "Vlan10",
+      "Vlan20"
+     ]
+    },
+    {
+     "cue": 6,
+     "note": "Routing happens inside the switch.",
+     "lines": [
+      {
+       "c": "show ip route",
+       "p": "exec",
+       "out": [
+        "C        192.168.10.0/24 is directly connected, Vlan10",
+        "L        192.168.10.1/32 is directly connected, Vlan10",
+        "C        192.168.20.0/24 is directly connected, Vlan20",
+        "L        192.168.20.1/32 is directly connected, Vlan20"
+       ]
+      }
+     ],
+     "hl": [
+      "Vlan10",
+      "Vlan20"
+     ]
+    }
+   ],
+   "topology": {
+    "nodes": [
+     {
+      "id": "MLS1",
+      "label": "MLS1",
+      "type": "l3",
+      "x": 50,
+      "y": 30,
+      "sub": "Catalyst 3560",
+      "pos": "top"
+     },
+     {
+      "id": "PC1",
+      "label": "PC1",
+      "type": "pc",
+      "x": 10,
+      "y": 88,
+      "sub": "VLAN 10"
+     },
+     {
+      "id": "PC2",
+      "label": "PC2",
+      "type": "pc",
+      "x": 37,
+      "y": 88,
+      "sub": "VLAN 10"
+     },
+     {
+      "id": "PC3",
+      "label": "PC3",
+      "type": "pc",
+      "x": 63,
+      "y": 88,
+      "sub": "VLAN 20"
+     },
+     {
+      "id": "PC4",
+      "label": "PC4",
+      "type": "pc",
+      "x": 90,
+      "y": 88,
+      "sub": "VLAN 20"
+     }
+    ],
+    "links": [
+     {
+      "a": "MLS1",
+      "b": "PC1",
+      "lb": "Fa0/1"
+     },
+     {
+      "a": "MLS1",
+      "b": "PC2",
+      "lb": "Fa0/2"
+     },
+     {
+      "a": "MLS1",
+      "b": "PC3",
+      "lb": "Fa0/3"
+     },
+     {
+      "a": "MLS1",
+      "b": "PC4",
+      "lb": "Fa0/4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three inter-VLAN routing traps. The switch port facing the router must be a trunk. Each sub interface needs its encapsulation line before the address. And a layer three switch will not route until you type I P routing.",
+   "items": [
+    {
+     "wrong": "Forgetting the trunk",
+     "right": "The router port needs a trunk on the switch",
+     "cue": 1
+    },
+    {
+     "wrong": "No encapsulation line",
+     "right": "Each sub-interface needs encapsulation dot1Q first",
+     "cue": 2
+    },
+    {
+     "wrong": "Forgetting ip routing",
+     "right": "A Layer 3 switch won't route until you enable it",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva inter-VLAN routing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Different V L A Ns need a router, or a layer three switch. Router on a stick uses sub interfaces with encapsulation dot one Q. A layer three switch uses S V Is, after I P routing. Ready to practise? Try the Courseiva inter-VLAN routing lab.",
+   "points": [
+    {
+     "t": "Different VLANs need a router or L3 switch",
+     "cue": 1
+    },
+    {
+     "t": "Router on a stick: subinterfaces + dot1Q",
+     "cue": 2
+    },
+    {
+     "t": "L3 switch: ip routing + SVIs",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

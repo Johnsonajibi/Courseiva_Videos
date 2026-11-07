@@ -17,7 +17,7 @@ export const TopicVideo: React.FC<TopicProps> = ({script, timing}) => {
       return (
         <Sequence key={s.id} from={s.startFrame} durationInFrames={s.frames}>
           <Audio src={staticFile(`${script.topic}/${s.audio}`)} />
-          <Scene data={data} cues={s.cues as Cue[]} frames={s.frames} kicker={script.kicker ?? "BEGINNER'S GUIDE"} />
+          <Scene data={data} cues={s.cues as Cue[]} frames={s.frames} kicker={script.kicker ?? "BEGINNER'S GUIDE"} script={script} />
         </Sequence>
       );
     })}

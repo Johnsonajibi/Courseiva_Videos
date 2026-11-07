@@ -3,15 +3,16 @@ import {interpolate, useCurrentFrame} from "remotion";
 import {C, cf, Check, Cue, FONT, MONO, prog, W} from "../theme";
 import {Stage} from "../scenes";
 import {Icon} from "./icons";
+import {LabIntroS, CliS} from "./lab";
 
 export type SceneData = {
   id: string;
-  type: "hook" | "story" | "flow" | "versus" | "terminal" | "traps" | "recap";
+  type: "hook" | "story" | "flow" | "versus" | "terminal" | "traps" | "recap" | "labintro" | "cli";
   narration: string;
   heading?: string;
   [k: string]: any;
 };
-type P = {data: SceneData; cues: Cue[]; frames: number; kicker: string};
+type P = {data: SceneData; cues: Cue[]; frames: number; kicker: string; script?: any};
 
 const PAL = [C.cyan, C.lime, C.orange, C.violet, C.sky];
 const col = (i: number) => PAL[i % PAL.length];
@@ -272,5 +273,7 @@ export const SCENE_TYPES: Record<string, React.FC<P>> = {
   terminal: TerminalS,
   traps: TrapsS,
   recap: RecapS,
+  labintro: LabIntroS as any,
+  cli: CliS as any,
 };
 void interpolate;

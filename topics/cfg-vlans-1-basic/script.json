@@ -1,0 +1,470 @@
+{
+ "topic": "cfg-vlans-1-basic",
+ "title": "VLAN Configuration, Part 1: Create VLANs and Assign Ports",
+ "kicker": "CONFIGURATION LAB \u00b7 VLANS \u00b7 PART 1",
+ "labTitle": "VLANs from scratch",
+ "labSub": "Create VLANs and put ports in them",
+ "part": 1,
+ "parts": 4,
+ "level": "BASIC",
+ "topology": {
+  "nodes": [
+   {
+    "id": "SW1",
+    "label": "SW1",
+    "type": "switch",
+    "x": 50,
+    "y": 30,
+    "sub": "2960-8TC",
+    "pos": "top"
+   },
+   {
+    "id": "PC1",
+    "label": "PC1",
+    "type": "pc",
+    "x": 10,
+    "y": 84,
+    "sub": "VLAN 10"
+   },
+   {
+    "id": "PC2",
+    "label": "PC2",
+    "type": "pc",
+    "x": 37,
+    "y": 84,
+    "sub": "VLAN 10"
+   },
+   {
+    "id": "PC3",
+    "label": "PC3",
+    "type": "pc",
+    "x": 63,
+    "y": 84,
+    "sub": "VLAN 20"
+   },
+   {
+    "id": "PC4",
+    "label": "PC4",
+    "type": "pc",
+    "x": 90,
+    "y": 84,
+    "sub": "VLAN 20"
+   }
+  ],
+  "links": [
+   {
+    "a": "SW1",
+    "b": "PC1",
+    "lb": "Fa0/1"
+   },
+   {
+    "a": "SW1",
+    "b": "PC2",
+    "lb": "Fa0/2"
+   },
+   {
+    "a": "SW1",
+    "b": "PC3",
+    "lb": "Fa0/3"
+   },
+   {
+    "a": "SW1",
+    "b": "PC4",
+    "lb": "Fa0/4"
+   }
+  ]
+ },
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "intro",
+   "type": "labintro",
+   "narration": "Welcome to the VLAN configuration series. In part one, we start with a brand new switch and nothing else. By the end, one switch will behave like two completely separate networks. Here's what you'll do. First, you'll look at a fresh switch and see where every port starts. Next, you'll create two V L A Ns and give them sensible names. Then you'll move the right ports into the right V L A N. Finally, you'll check your work, and avoid one classic mistake.",
+   "items": [
+    {
+     "t": "Look at a brand new switch and spot the default VLAN",
+     "cue": 4
+    },
+    {
+     "t": "Create two VLANs and give them names",
+     "cue": 5
+    },
+    {
+     "t": "Move the right ports into each VLAN",
+     "cue": 6
+    },
+    {
+     "t": "Check your work and avoid a classic mistake",
+     "cue": 7
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The idea in 20 seconds",
+   "narration": "Before we type anything, let's lock in the idea. Think of the switch as an apartment building. Each V L A N is a separate floor. Each port is a flat's front door. Mail never leaves its own floor, unless a router carries it.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "A VLAN is a floor",
+     "real": "Its own private network",
+     "cue": 1
+    },
+    {
+     "icon": "door",
+     "story": "A port is a front door",
+     "real": "It opens onto one floor",
+     "cue": 2
+    },
+    {
+     "icon": "envelope",
+     "story": "Floors don't mix",
+     "real": "Router needed to cross floors",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "look",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "We're connected to the console of switch S W one, in privileged mode. Let's start by looking at what a fresh switch gives us, with show V L A N brief. Every single port is sitting in V L A N one, called default. That means all four computers can talk to each other, and that's what we're about to change.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "show vlan brief lists every VLAN and its ports.",
+     "lines": [
+      {
+       "c": "show vlan brief",
+       "p": "exec",
+       "out": [
+        "VLAN Name                Status    Ports",
+        "---- ------------------- --------- ----------------------------",
+        "1    default             active    Fa0/1, Fa0/2, Fa0/3, Fa0/4",
+        "                                   Fa0/5, Fa0/6, Fa0/7, Fa0/8",
+        "                                   Gi0/1",
+        "1002 fddi-default        act/unsup",
+        "1003 token-ring-default  act/unsup"
+       ]
+      }
+     ]
+    },
+    {
+     "cue": 2,
+     "note": "A new switch puts every port in VLAN 1.",
+     "lines": [],
+     "hl": [
+      "default",
+      "Fa0/1"
+     ]
+    },
+    {
+     "cue": 3,
+     "note": "Today's goal: split them into two groups.",
+     "lines": []
+    }
+   ]
+  },
+  {
+   "id": "create",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "Step one is to create the V L A Ns. First we enter global configuration mode. Then we create V L A N ten, and give it a name. We do the same for V L A N twenty, which will be for engineering. Pressing end takes us straight back out, and show V L A N brief confirms both exist.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "configure terminal opens the settings.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec",
+       "out": [
+        "Enter configuration commands, one per line.  End with CNTL/Z."
+       ]
+      }
+     ]
+    },
+    {
+     "cue": 2,
+     "note": "vlan 10 creates it; name labels it.",
+     "lines": [
+      {
+       "c": "vlan 10",
+       "p": "cfg"
+      },
+      {
+       "c": "name SALES",
+       "p": "vlan"
+      }
+     ]
+    },
+    {
+     "cue": 3,
+     "note": "Same again for the second floor.",
+     "lines": [
+      {
+       "c": "exit",
+       "p": "vlan"
+      },
+      {
+       "c": "vlan 20",
+       "p": "cfg"
+      },
+      {
+       "c": "name ENGINEERING",
+       "p": "vlan"
+      }
+     ]
+    },
+    {
+     "cue": 4,
+     "note": "Both VLANs exist, but no ports are in them yet.",
+     "lines": [
+      {
+       "c": "end",
+       "p": "vlan"
+      },
+      {
+       "c": "show vlan brief",
+       "p": "exec",
+       "out": [
+        "VLAN Name                Status    Ports",
+        "---- ------------------- --------- ----------------------------",
+        "1    default             active    Fa0/1, Fa0/2, Fa0/3, Fa0/4",
+        "                                   Fa0/5, Fa0/6, Fa0/7, Fa0/8",
+        "                                   Gi0/1",
+        "10   SALES               active",
+        "20   ENGINEERING         active",
+        "1002 fddi-default        act/unsup"
+       ]
+      }
+     ],
+     "hl": [
+      "SALES",
+      "ENGINEERING"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "assign",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "Step two is to put the ports into those V L A Ns. We select fast ethernet one and two together, using the range command. We set them to access mode, which means one V L A N, for an ordinary computer. And we put them in V L A N ten. Now the engineering ports. Fast ethernet three and four go to V L A N twenty. Back to the top with end, and show V L A N brief shows the finished result.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "range lets you configure several ports at once.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface range fa0/1 - 2",
+       "p": "cfg"
+      }
+     ]
+    },
+    {
+     "cue": 2,
+     "note": "Access mode: this port serves one VLAN.",
+     "lines": [
+      {
+       "c": "switchport mode access",
+       "p": "range"
+      }
+     ]
+    },
+    {
+     "cue": 3,
+     "note": "This is the line that actually assigns the VLAN.",
+     "lines": [
+      {
+       "c": "switchport access vlan 10",
+       "p": "range"
+      }
+     ]
+    },
+    {
+     "cue": 4,
+     "note": "Same three steps, different VLAN.",
+     "lines": [
+      {
+       "c": "interface range fa0/3 - 4",
+       "p": "range"
+      },
+      {
+       "c": "switchport mode access",
+       "p": "range"
+      },
+      {
+       "c": "switchport access vlan 20",
+       "p": "range"
+      }
+     ]
+    },
+    {
+     "cue": 5,
+     "note": "Ports 1-2 are in SALES, 3-4 in ENGINEERING.",
+     "lines": [
+      {
+       "c": "end",
+       "p": "range"
+      },
+      {
+       "c": "show vlan brief",
+       "p": "exec",
+       "out": [
+        "VLAN Name                Status    Ports",
+        "---- ------------------- --------- ----------------------------",
+        "1    default             active    Fa0/5, Fa0/6, Fa0/7, Fa0/8",
+        "                                   Gi0/1",
+        "10   SALES               active    Fa0/1, Fa0/2",
+        "20   ENGINEERING         active    Fa0/3, Fa0/4",
+        "1002 fddi-default        act/unsup"
+       ]
+      }
+     ],
+     "hl": [
+      "Fa0/1, Fa0/2",
+      "Fa0/3, Fa0/4"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "verify",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "A good engineer always verifies. Show interfaces fast ethernet zero slash one switchport tells us exactly how one port is set. Static access, and V L A N ten called sales. Exactly what we wanted. And here is the classic mistake. If you assign a port to a V L A N that doesn't exist, the switch creates it for you. Always run show V L A N brief afterwards, so a typo can't hide.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "This command shows one port's VLAN settings.",
+     "lines": [
+      {
+       "c": "show interfaces fa0/1 switchport",
+       "p": "exec",
+       "out": [
+        "Name: Fa0/1",
+        "Switchport: Enabled",
+        "Administrative Mode: static access",
+        "Operational Mode: static access",
+        "Access Mode VLAN: 10 (SALES)"
+       ]
+      }
+     ],
+     "hl": [
+      "static access",
+      "VLAN: 10"
+     ]
+    },
+    {
+     "cue": 2,
+     "note": "It's in VLAN 10, as an access port.",
+     "lines": []
+    },
+    {
+     "cue": 3,
+     "note": "A typo here silently makes a new VLAN.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface fa0/5",
+       "p": "cfg"
+      },
+      {
+       "c": "switchport access vlan 30",
+       "p": "if",
+       "out": [
+        "% Access VLAN does not exist. Creating vlan 30"
+       ]
+      }
+     ],
+     "hl": [
+      "Creating vlan 30"
+     ]
+    },
+    {
+     "cue": 4,
+     "note": "Check before you walk away.",
+     "lines": [
+      {
+       "c": "end",
+       "p": "if"
+      },
+      {
+       "c": "show vlan brief",
+       "p": "exec",
+       "out": [
+        "10   SALES               active    Fa0/1, Fa0/2",
+        "20   ENGINEERING         active    Fa0/3, Fa0/4",
+        "30   VLAN0030            active    Fa0/5"
+       ]
+      }
+     ],
+     "hl": [
+      "VLAN0030"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three things to remember from this part. Every port starts in V L A N one. Creating a V L A N and assigning ports are two separate steps. And a mistyped V L A N number quietly creates a new one.",
+   "items": [
+    {
+     "wrong": "Ports start in VLAN 1",
+     "right": "Every new switch port is in VLAN 1",
+     "cue": 1
+    },
+    {
+     "wrong": "Creating the VLAN assigns ports",
+     "right": "Creating a VLAN and assigning ports are two steps",
+     "cue": 2
+    },
+    {
+     "wrong": "A typo is harmless",
+     "right": "A wrong VLAN number creates a new VLAN",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva VLAN lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Create the V L A N with vlan, then name it. Put ports in with switchport mode access and switchport access vlan. And always check with show V L A N brief. Ready to practise? Try the Courseiva VLAN lab.",
+   "points": [
+    {
+     "t": "vlan 10, then name SALES",
+     "cue": 1
+    },
+    {
+     "t": "switchport mode access + access vlan",
+     "cue": 2
+    },
+    {
+     "t": "Always check: show vlan brief",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,565 @@
+{
+ "topic": "cfg-vlans-4-hardening-troubleshooting",
+ "title": "VLAN Configuration, Part 4: Hardening and Troubleshooting",
+ "kicker": "CONFIGURATION LAB \u00b7 VLANS \u00b7 PART 4",
+ "labTitle": "Lock it down, then fix it",
+ "labSub": "VLAN security and a troubleshooting routine",
+ "part": 4,
+ "parts": 4,
+ "level": "ADVANCED",
+ "topology": {
+  "nodes": [
+   {
+    "id": "SW1",
+    "label": "SW1",
+    "type": "switch",
+    "x": 26,
+    "y": 28,
+    "sub": "2960-8TC",
+    "pos": "top"
+   },
+   {
+    "id": "SW2",
+    "label": "SW2",
+    "type": "switch",
+    "x": 74,
+    "y": 28,
+    "sub": "2960-8TC",
+    "pos": "top"
+   },
+   {
+    "id": "PC1",
+    "label": "PC1",
+    "type": "pc",
+    "x": 8,
+    "y": 86,
+    "sub": "VLAN 10"
+   },
+   {
+    "id": "PC2",
+    "label": "PC2",
+    "type": "pc",
+    "x": 34,
+    "y": 86,
+    "sub": "VLAN 20"
+   },
+   {
+    "id": "PC3",
+    "label": "PC3",
+    "type": "pc",
+    "x": 66,
+    "y": 86,
+    "sub": "VLAN 10"
+   },
+   {
+    "id": "PC4",
+    "label": "PC4",
+    "type": "pc",
+    "x": 92,
+    "y": 86,
+    "sub": "VLAN 20"
+   }
+  ],
+  "links": [
+   {
+    "a": "SW1",
+    "b": "SW2",
+    "kind": "trunk",
+    "la": "Gi0/1",
+    "lb": "Gi0/1",
+    "label": "802.1Q trunk"
+   },
+   {
+    "a": "SW1",
+    "b": "PC1",
+    "lb": "Fa0/1"
+   },
+   {
+    "a": "SW1",
+    "b": "PC2",
+    "lb": "Fa0/2"
+   },
+   {
+    "a": "SW2",
+    "b": "PC3",
+    "lb": "Fa0/1"
+   },
+   {
+    "a": "SW2",
+    "b": "PC4",
+    "lb": "Fa0/2"
+   }
+  ]
+ },
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "intro",
+   "type": "labintro",
+   "narration": "You can build V L A Ns in your sleep by now. This final part is about the two things that separate beginners from professionals. Locking the network down, and fixing it when it breaks. First, you'll block the two classic V L A N hopping attacks. Then you'll park every unused port somewhere harmless. Next, you'll learn a five step routine for tracking down faults. And you'll fix two real faults, plus one nasty gotcha.",
+   "items": [
+    {
+     "t": "Block VLAN hopping attacks",
+     "cue": 3
+    },
+    {
+     "t": "Park unused ports safely",
+     "cue": 4
+    },
+    {
+     "t": "Follow a 5-step troubleshooting routine",
+     "cue": 5
+    },
+    {
+     "t": "Fix two real faults and one nasty gotcha",
+     "cue": 6
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Two ways in",
+   "narration": "Attackers have two favourite tricks to jump from one V L A N to another. In the first, they trick a switch port into becoming a trunk, by pretending to be another switch. In the second, they stack two tags on one frame, so the outer tag is stripped and the inner one is used. Both tricks are stopped by a few simple settings, which we'll apply now.",
+   "items": [
+    {
+     "icon": "question",
+     "story": "Switch spoofing",
+     "real": "Abuses DTP negotiation",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "Double tagging",
+     "real": "Abuses the native VLAN",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "A few settings stop both",
+     "real": "Access mode, no DTP, unused native VLAN",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "harden1",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "We'll start with the trunk between the switches. First, we turn off trunk negotiation with switchport nonegotiate, so nobody can talk a port into trunking. Then we move the native V L A N to the unused V L A N ninety nine, so no user port can ever share it. Show interfaces switchport confirms trunk mode, negotiation off, and native V L A N ninety nine.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "No negotiation means no spoofing.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface gi0/1",
+       "p": "cfg"
+      },
+      {
+       "c": "switchport nonegotiate",
+       "p": "if"
+      }
+     ],
+     "key": "switchport nonegotiate"
+    },
+    {
+     "cue": 2,
+     "note": "No user ports in VLAN 99 = no double tagging.",
+     "lines": [
+      {
+       "c": "switchport trunk native vlan 99",
+       "p": "if"
+      },
+      {
+       "c": "end",
+       "p": "if"
+      }
+     ],
+     "key": "switchport trunk native vlan 99"
+    },
+    {
+     "cue": 3,
+     "note": "Check mode, negotiation and native VLAN.",
+     "lines": [
+      {
+       "c": "show interfaces gi0/1 switchport",
+       "p": "exec",
+       "out": [
+        "Name: Gi0/1",
+        "Administrative Mode: trunk",
+        "Operational Mode: trunk",
+        "Negotiation of Trunking: Off",
+        "Trunking Native Mode VLAN: 99 (NATIVE)"
+       ]
+      }
+     ],
+     "hl": [
+      "Off",
+      "VLAN: 99"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "harden2",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "Now the user ports and the unused ports. Every user port gets switchport mode access, which switches negotiation off for that port. Unused ports are an open door, so we create a black hole V L A N, ninety nine nine, that goes nowhere. We put all the unused ports in it, and shut them down. Show interfaces status gives a quick overview. Unused ports are disabled in V L A N nine nine nine.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "Never leave a user port on 'dynamic auto'.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface range fa0/1 - 2",
+       "p": "cfg"
+      },
+      {
+       "c": "switchport mode access",
+       "p": "range"
+      }
+     ],
+     "key": "switchport mode access"
+    },
+    {
+     "cue": 2,
+     "note": "A VLAN with no gateway, nowhere to go.",
+     "lines": [
+      {
+       "c": "vlan 999",
+       "p": "cfg"
+      },
+      {
+       "c": "name BLACKHOLE",
+       "p": "vlan"
+      }
+     ],
+     "key": "vlan 999"
+    },
+    {
+     "cue": 3,
+     "note": "Parked and switched off.",
+     "lines": [
+      {
+       "c": "interface range fa0/5 - 8",
+       "p": "cfg"
+      },
+      {
+       "c": "switchport mode access",
+       "p": "range"
+      },
+      {
+       "c": "switchport access vlan 999",
+       "p": "range"
+      },
+      {
+       "c": "shutdown",
+       "p": "range"
+      },
+      {
+       "c": "end",
+       "p": "range"
+      }
+     ],
+     "key": "switchport access vlan 999"
+    },
+    {
+     "cue": 4,
+     "note": "A one-glance health check.",
+     "lines": [
+      {
+       "c": "show interfaces status",
+       "p": "exec",
+       "out": [
+        "Port      Name   Status       Vlan  Duplex Speed Type",
+        "Fa0/1            connected    10    a-full a-100 10/100BaseTX",
+        "Fa0/2            connected    20    a-full a-100 10/100BaseTX",
+        "Fa0/5            disabled     999   auto   auto  10/100BaseTX",
+        "Fa0/6            disabled     999   auto   auto  10/100BaseTX",
+        "Gi0/1            connected    trunk a-full a-1000 10/100/1000BaseTX"
+       ]
+      }
+     ],
+     "hl": [
+      "disabled     999"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "The 5-step routine",
+   "narration": "When something breaks, don't guess. Follow the same five steps, in order. First, is the port in the right V L A N? Use show V L A N brief. Second, is the port up? Use show interfaces status. Third, does the trunk carry that V L A N? Use show interfaces trunk. Fourth, do both ends match on mode and native V L A N? Look for C D P warnings. And fifth, only then check addresses and the gateway.",
+   "steps": [
+    {
+     "icon": "list",
+     "title": "1. Right VLAN?",
+     "sub": "show vlan brief",
+     "cue": 1
+    },
+    {
+     "icon": "link",
+     "title": "2. Port up?",
+     "sub": "show interfaces status",
+     "cue": 2
+    },
+    {
+     "icon": "road",
+     "title": "3. Trunk carries it?",
+     "sub": "show interfaces trunk",
+     "cue": 3
+    },
+    {
+     "icon": "scale",
+     "title": "4. Both ends match?",
+     "sub": "show cdp neighbors, log",
+     "cue": 4
+    },
+    {
+     "icon": "map",
+     "title": "5. IP and gateway",
+     "sub": "show ip interface brief",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "fix1",
+   "type": "cli",
+   "device": "SW2",
+   "heading": null,
+   "narration": "Now a real fault. PC three can't reach PC one, across the trunk. Step one. On SW two, show V L A N brief shows fast ethernet zero slash one is still in V L A N one. Someone forgot to assign it. We fix that in two lines. Still failing? Step three. Show interfaces trunk shows only V L A N twenty is allowed across. We add V L A N ten, using the word add, so we don't wipe the list. Now the ping from PC three to PC one works.",
+   "steps": [
+    {
+     "cue": 2,
+     "note": "PC3's port is in the wrong VLAN.",
+     "lines": [
+      {
+       "c": "show vlan brief",
+       "p": "exec",
+       "out": [
+        "1    default             active    Fa0/1, Fa0/3, Fa0/4, Fa0/5",
+        "10   SALES               active",
+        "20   ENGINEERING         active    Fa0/2"
+       ]
+      }
+     ],
+     "hl": [
+      "Fa0/1, Fa0/3"
+     ]
+    },
+    {
+     "cue": 3,
+     "note": "Move the port into VLAN 10.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface fa0/1",
+       "p": "cfg"
+      },
+      {
+       "c": "switchport access vlan 10",
+       "p": "if"
+      },
+      {
+       "c": "end",
+       "p": "if"
+      }
+     ],
+     "key": "switchport access vlan 10"
+    },
+    {
+     "cue": 4,
+     "note": "VLAN 10 is missing from the allowed list.",
+     "lines": [
+      {
+       "c": "show interfaces trunk | begin allowed",
+       "p": "exec",
+       "out": [
+        "Port        Vlans allowed on trunk",
+        "Gi0/1       20"
+       ]
+      }
+     ],
+     "hl": [
+      "Gi0/1       20"
+     ]
+    },
+    {
+     "cue": 5,
+     "note": "'add' keeps what's already there.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "interface gi0/1",
+       "p": "cfg"
+      },
+      {
+       "c": "switchport trunk allowed vlan add 10",
+       "p": "if"
+      },
+      {
+       "c": "end",
+       "p": "if"
+      }
+     ],
+     "key": "switchport trunk allowed vlan add 10"
+    },
+    {
+     "cue": 6,
+     "note": "Fixed. Two faults, found by following the routine.",
+     "lines": [
+      {
+       "c": "ping 192.168.10.11",
+       "p": "user",
+       "out": [
+        "Pinging 192.168.10.11 with 32 bytes of data:",
+        "Reply from 192.168.10.11: bytes=32 time<1ms TTL=128",
+        "Reply from 192.168.10.11: bytes=32 time<1ms TTL=128",
+        "    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)"
+       ]
+      }
+     ],
+     "dev": "PC3",
+     "clear": true,
+     "hl": [
+      "0% loss"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gotcha",
+   "type": "cli",
+   "device": "SW1",
+   "heading": null,
+   "narration": "And here's the nasty gotcha. Say someone deletes V L A N twenty, because it looks unused. The ports aren't moved. They stay assigned to a V L A N that no longer exists. Everything on that port goes dead, with no warning. The fix is simply to create the V L A N again.",
+   "steps": [
+    {
+     "cue": 1,
+     "note": "Deleting a VLAN doesn't touch the ports.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "no vlan 20",
+       "p": "cfg"
+      },
+      {
+       "c": "end",
+       "p": "cfg"
+      }
+     ],
+     "key": "no vlan 20"
+    },
+    {
+     "cue": 2,
+     "note": "The port is orphaned, and silently dead.",
+     "lines": [
+      {
+       "c": "show interfaces fa0/2 switchport | include Access Mode",
+       "p": "exec",
+       "out": [
+        "Access Mode VLAN: 20 (Inactive)"
+       ]
+      }
+     ],
+     "hl": [
+      "Inactive"
+     ]
+    },
+    {
+     "cue": 3,
+     "note": "Re-create the VLAN and it comes back.",
+     "lines": [
+      {
+       "c": "configure terminal",
+       "p": "exec"
+      },
+      {
+       "c": "vlan 20",
+       "p": "cfg"
+      },
+      {
+       "c": "name ENGINEERING",
+       "p": "vlan"
+      },
+      {
+       "c": "end",
+       "p": "vlan"
+      }
+     ],
+     "key": "vlan 20"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three professional habits. Set every port explicitly, as access or trunk. Move the ports out first, then delete the V L A N. And troubleshoot in the same order every time.",
+   "items": [
+    {
+     "wrong": "Leaving ports on dynamic auto",
+     "right": "Set every port explicitly: access or trunk",
+     "cue": 1
+    },
+    {
+     "wrong": "Deleting a VLAN that has ports",
+     "right": "Move the ports first, then delete the VLAN",
+     "cue": 2
+    },
+    {
+     "wrong": "Troubleshooting by guessing",
+     "right": "Follow the same five steps every time",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva VLAN security lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Turn off negotiation, and use an unused native V L A N. Park unused ports in a black hole V L A N, shut down. And follow the five step routine, instead of guessing. Ready to practise? Try the Courseiva VLAN security lab.",
+   "points": [
+    {
+     "t": "No DTP + unused native VLAN",
+     "cue": 1
+    },
+    {
+     "t": "Unused ports: blackhole VLAN, shutdown",
+     "cue": 2
+    },
+    {
+     "t": "Troubleshoot in 5 ordered steps",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
