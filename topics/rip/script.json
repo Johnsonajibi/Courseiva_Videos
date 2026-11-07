@@ -1,0 +1,132 @@
+{
+ "topic": "rip",
+ "title": "RIP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 RIP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "R I P is the oldest routing protocol still on the exam. It counts steps and nothing else. It's simple, slow, and still tested.",
+   "lines": [
+    {
+     "t": "The oldest routing protocol",
+     "cue": 0
+    },
+    {
+     "t": "Counts steps, nothing else",
+     "cue": 1
+    },
+    {
+     "t": "Simple, slow and still tested",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The town crier",
+   "narration": "In a quiet village, every resident knows only their neighbours. Every thirty seconds, the town crier walks round shouting every house they know and how many steps away it is. You write it down and add one step. That count is the hop count. Fifteen steps is the limit, and sixteen means unreachable. It's simple, but a long road takes forever to hear about.",
+   "items": [
+    {
+     "icon": "mic",
+     "story": "Shouts every 30 seconds",
+     "real": "Periodic updates",
+     "cue": 1
+    },
+    {
+     "icon": "ruler",
+     "story": "Count the steps",
+     "real": "Hop count",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "Fifteen is the limit",
+     "real": "16 = unreachable",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Setting up RIPv2",
+   "narration": "To set it up, use version two. Turn off auto summary. Advertise your networks. And check with show I P protocols.",
+   "lines": [
+    {
+     "t": "router rip",
+     "note": "Start RIP",
+     "cue": 0
+    },
+    {
+     "t": "version 2",
+     "note": "Use RIPv2, not v1",
+     "cue": 1
+    },
+    {
+     "t": "no auto-summary",
+     "note": "Stop classful summarising",
+     "cue": 2
+    },
+    {
+     "t": "network 10.0.0.0",
+     "note": "Advertise this network",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. R I P version two uses multicast, not broadcast. You can turn off auto summary with one command. And R I P uses U D P port five twenty, not T C P.",
+   "items": [
+    {
+     "wrong": "RIPv2 uses broadcast",
+     "right": "It uses multicast 224.0.0.9",
+     "cue": 1
+    },
+    {
+     "wrong": "You can't turn off auto-summary",
+     "right": "Use: no auto-summary",
+     "cue": 2
+    },
+    {
+     "wrong": "RIP uses TCP 520",
+     "right": "It uses UDP 520",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva RIP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. R I P counts hops, and sixteen means unreachable. Use version two, and turn off auto summary. It updates every thirty seconds over U D P. Ready to practise? Try the Courseiva RIP lab.",
+   "points": [
+    {
+     "t": "RIP: hop count; 16 = unreachable",
+     "cue": 1
+    },
+    {
+     "t": "Use v2; no auto-summary",
+     "cue": 2
+    },
+    {
+     "t": "Updates every 30 s over UDP 520",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

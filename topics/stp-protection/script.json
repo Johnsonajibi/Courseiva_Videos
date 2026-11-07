@@ -1,0 +1,134 @@
+{
+ "topic": "stp-protection",
+ "title": "PortFast and BPDU Guard: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 STP PROTECTION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "door",
+   "narration": "You plug in a computer. And the port makes you wait thirty seconds before it works. That's spanning tree being careful. Let's speed it up, safely.",
+   "lines": [
+    {
+     "t": "Plug in a PC",
+     "cue": 0
+    },
+    {
+     "t": "Wait thirty seconds?",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "No thank you",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hotel key card",
+   "narration": "Walk into a hotel and swipe your card. The door opens at once. That's PortFast. Now picture a hotel that first checks with the front desk whether anyone else is already in the room. That's slow, but safe. Normal spanning tree is the cautious hotel. PortFast skips the wait for ports that only ever lead to a guest's room, meaning an end device. But what if someone plugs in a switch there? That's where B P D U Guard steps in and shuts the door.",
+   "items": [
+    {
+     "icon": "key",
+     "story": "Door opens at once",
+     "real": "PortFast",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "Wait and check first",
+     "real": "Normal STP: listening, learning",
+     "cue": 3
+    },
+    {
+     "icon": "laptop",
+     "story": "Rooms only hold guests",
+     "real": "Use on access ports only",
+     "cue": 6
+    },
+    {
+     "icon": "shield",
+     "story": "The door shuts if a switch appears",
+     "real": "BPDU Guard",
+     "cue": 8
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "The commands",
+   "narration": "Turn on PortFast for the port. Then turn on B P D U Guard. If a B P D U ever arrives, the port goes into error disabled.",
+   "lines": [
+    {
+     "t": "spanning-tree portfast",
+     "note": "Skip the wait on this port",
+     "cue": 0
+    },
+    {
+     "t": "spanning-tree bpduguard enable",
+     "note": "Shut the port if a BPDU arrives",
+     "cue": 1
+    },
+    {
+     "t": "show spanning-tree summary",
+     "note": "Verify",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. PortFast isn't a replacement for spanning tree. It only skips the waiting. Don't put it on trunk ports, because that can cause loops. And B P D U Guard doesn't turn spanning tree off. It shuts the port down when something unexpected shows up.",
+   "items": [
+    {
+     "wrong": "PortFast replaces STP",
+     "right": "STP still runs; only the wait is skipped",
+     "cue": 1
+    },
+    {
+     "wrong": "PortFast is safe anywhere",
+     "right": "Only on access ports, never trunks",
+     "cue": 2
+    },
+    {
+     "wrong": "BPDU Guard disables STP",
+     "right": "It err-disables the port instead",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva PortFast and BPDU Guard lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. PortFast makes access ports start forwarding immediately. B P D U Guard shuts a port if a switch is plugged in. Use them together on every user port. Ready to practise? Try the Courseiva PortFast and BPDU Guard lab.",
+   "points": [
+    {
+     "t": "PortFast: instant start on access ports",
+     "cue": 1
+    },
+    {
+     "t": "BPDU Guard: err-disables on a BPDU",
+     "cue": 2
+    },
+    {
+     "t": "Use both on every user port",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

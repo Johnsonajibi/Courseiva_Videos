@@ -1,0 +1,134 @@
+{
+ "topic": "floating-static",
+ "title": "Floating Static Routes: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 FLOATING STATIC",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "road",
+   "narration": "Your main link fails. Is there a plan B? A floating static route is the backup plan.",
+   "lines": [
+    {
+     "t": "Your main link fails",
+     "cue": 0,
+     "color": "#F87171"
+    },
+    {
+     "t": "Is there a plan B?",
+     "cue": 1
+    },
+    {
+     "t": "A floating static route",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The backup route",
+   "narration": "On a road trip, you plan the fast highway, and keep a longer route in reserve. Your G P S prefers the highway, but if it's closed, it quietly uses the backup. A floating static route works the same way. You give it a worse trust score, called a higher administrative distance. While the main route is working, the backup stays hidden. When the main route disappears, the backup floats up into the routing table.",
+   "items": [
+    {
+     "icon": "road",
+     "story": "The fast highway",
+     "real": "Primary route (low AD)",
+     "cue": 0
+    },
+    {
+     "icon": "map",
+     "story": "The longer backup",
+     "real": "Floating static (higher AD)",
+     "cue": 1
+    },
+    {
+     "icon": "scale",
+     "story": "Worse trust score",
+     "real": "AD higher than the primary",
+     "cue": 3
+    },
+    {
+     "icon": "bell",
+     "story": "Highway closes",
+     "real": "Backup enters the table",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Writing one",
+   "narration": "Here's the idea. A normal static route, and then the same route with a higher number on the end. If your main protocol is O S P F at one ten, use something above that, like one thirty.",
+   "lines": [
+    {
+     "t": "ip route 10.1.1.0 255.255.255.0 192.168.1.2",
+     "note": "Primary static (AD 1)",
+     "cue": 0
+    },
+    {
+     "t": "ip route 10.1.1.0 255.255.255.0 192.168.2.2 130",
+     "note": "Backup: AD 130",
+     "cue": 1
+    },
+    {
+     "t": "show ip route",
+     "note": "Only the primary shows while it works",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Raising the metric doesn't make a backup. The distance is what counts. A floating route only shows up when the main route is gone. And the default static distance is one, while connected is zero.",
+   "items": [
+    {
+     "wrong": "Higher metric makes a backup",
+     "right": "Use a higher admin distance",
+     "cue": 1
+    },
+    {
+     "wrong": "It's always in the table",
+     "right": "Only when the primary is missing",
+     "cue": 2
+    },
+    {
+     "wrong": "Static AD is 0",
+     "right": "Static is 1; connected is 0",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva floating static routes lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A floating static route is a backup with a higher administrative distance. Pick a number higher than your main protocol. It only appears when the main route fails. Ready to practise? Try the Courseiva floating static routes lab.",
+   "points": [
+    {
+     "t": "Backup route = higher AD",
+     "cue": 1
+    },
+    {
+     "t": "Choose an AD above the main protocol's",
+     "cue": 2
+    },
+    {
+     "t": "It appears only on failure",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "topic": "ethernet-frames",
+ "title": "Ethernet Frames: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 ETHERNET FRAMES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "Before data crosses a cable, it goes into an envelope. It has addresses on the front, and a check on the back. That's an Ethernet frame.",
+   "lines": [
+    {
+     "t": "Your data goes in an envelope",
+     "cue": 0
+    },
+    {
+     "t": "With addresses on the front",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's an Ethernet frame",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The postal envelope",
+   "narration": "The letter inside is your I P packet. The envelope has a return address, which is the source M A C. It has a destination address, the destination M A C. And a little note saying what's inside, which is the EtherType. At the end, the post office adds a seal, called the F C S, so the receiver can check nothing was damaged. If the seal doesn't match, the frame is thrown away.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "The envelope",
+     "real": "Ethernet frame",
+     "cue": 0
+    },
+    {
+     "icon": "map",
+     "story": "Return and destination",
+     "real": "Source and destination MAC",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "Note about contents",
+     "real": "EtherType (0x0800 = IPv4)",
+     "cue": 2
+    },
+    {
+     "icon": "stamp",
+     "story": "The seal",
+     "real": "FCS: checks for damage",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Sizes to know",
+   "narration": "Three numbers matter. The smallest frame is sixty-four bytes. The biggest standard payload is fifteen hundred. And the header is fourteen bytes, with a four byte trailer.",
+   "lines": [
+    {
+     "t": "Minimum frame   64 bytes",
+     "note": "Smaller = runt",
+     "cue": 0
+    },
+    {
+     "t": "Maximum payload   1500 bytes",
+     "note": "The MTU",
+     "cue": 1
+    },
+    {
+     "t": "Header 14 + FCS 4",
+     "note": "18 bytes of overhead",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three slip-ups. The preamble and S F D aren't counted in the frame size. The minimum payload is forty-six bytes, not sixty-four. And in Ethernet two, the EtherType says what's inside, not how long it is.",
+   "items": [
+    {
+     "wrong": "The preamble counts in the frame size",
+     "right": "It's physical layer overhead, not counted",
+     "cue": 1
+    },
+    {
+     "wrong": "Minimum payload is 64 bytes",
+     "right": "It's 46; the minimum frame is 64",
+     "cue": 2
+    },
+    {
+     "wrong": "EtherType is always a length",
+     "right": "In Ethernet II it's a protocol type",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Ethernet frames lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A frame has addresses, a type, the data and a check. Minimum is sixty-four bytes, and maximum payload is fifteen hundred. A bad F C S means the frame is dropped. Ready to practise? Try the Courseiva Ethernet frames lab.",
+   "points": [
+    {
+     "t": "Addresses, type, data, check",
+     "cue": 1
+    },
+    {
+     "t": "64 byte minimum; 1500 byte payload",
+     "cue": 2
+    },
+    {
+     "t": "Bad FCS = frame dropped",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

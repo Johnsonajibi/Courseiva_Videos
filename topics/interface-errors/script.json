@@ -1,0 +1,134 @@
+{
+ "topic": "interface-errors",
+ "title": "Interface Errors: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 INTERFACE ERRORS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "wrench",
+   "narration": "The link is up. But everything is slow. The interface counters can tell you why.",
+   "lines": [
+    {
+     "t": "The link is up",
+     "cue": 0
+    },
+    {
+     "t": "But everything is slow",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "The counters will tell you why",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The parcel sorting office",
+   "narration": "A sorting office has rules. Every parcel must be bigger than a shoebox and smaller than a suitcase. Too small is a runt, a broken fragment. Too big is a giant. If the seal doesn't match, that's a C R C error, usually a bad cable or noise. If two parcels crash on the belt late, that's a late collision, often a duplex mismatch. Watch which counter is growing, because it points straight at the cause.",
+   "items": [
+    {
+     "icon": "box",
+     "story": "Too small",
+     "real": "Runts",
+     "cue": 1
+    },
+    {
+     "icon": "box",
+     "story": "Too big",
+     "real": "Giants",
+     "cue": 2
+    },
+    {
+     "icon": "stamp",
+     "story": "Seal doesn't match",
+     "real": "CRC errors: cable or noise",
+     "cue": 3
+    },
+    {
+     "icon": "bell",
+     "story": "Late crash on the belt",
+     "real": "Late collisions: duplex mismatch",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Where to look",
+   "narration": "Start with show interfaces. Look at the input errors, C R C and collisions. And clear the counters, so you can watch what grows.",
+   "lines": [
+    {
+     "t": "show interfaces g0/1",
+     "note": "Look for CRC, runts, giants",
+     "cue": 0
+    },
+    {
+     "t": "show interfaces status",
+     "note": "Speed and duplex at a glance",
+     "cue": 1
+    },
+    {
+     "t": "clear counters g0/1",
+     "note": "Reset, then watch what grows",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three habits to build. A growing C R C count means a physical problem, not a configuration one. Late collisions on a full duplex link point at a mismatch. And a few old errors don't matter if the number isn't climbing.",
+   "items": [
+    {
+     "wrong": "CRC errors mean misconfiguration",
+     "right": "Usually cabling or interference",
+     "cue": 1
+    },
+    {
+     "wrong": "Late collisions are normal",
+     "right": "They signal a duplex mismatch",
+     "cue": 2
+    },
+    {
+     "wrong": "Any error count is a crisis",
+     "right": "Only worry if it keeps growing",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva interface errors lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Check the counters whenever a link feels slow. C R C points at the cable, and late collisions point at duplex. Clear the counters, then watch what grows. Ready to practise? Try the Courseiva interface errors lab.",
+   "points": [
+    {
+     "t": "Check counters on a slow link",
+     "cue": 1
+    },
+    {
+     "t": "CRC = cable; late collisions = duplex",
+     "cue": 2
+    },
+    {
+     "t": "Clear counters, watch what grows",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

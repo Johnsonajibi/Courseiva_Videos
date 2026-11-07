@@ -1,0 +1,143 @@
+{
+ "topic": "network-devices",
+ "title": "Collision and Broadcast Domains: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NETWORK DOMAINS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "An open plan office, or one with cubicles. Which one is quieter? Networks have the same question.",
+   "lines": [
+    {
+     "t": "Open plan office",
+     "cue": 0
+    },
+    {
+     "t": "Or cubicles",
+     "cue": 1
+    },
+    {
+     "t": "Which is quieter?",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Open plan or cubicles",
+   "narration": "In an open plan office, everyone hears everyone. If two people speak at once, it's a collision. That's a collision domain, like a hub. A switch gives every person a cubicle, so each port is its own collision domain. But if someone shouts for everyone, the whole floor still hears. That's a broadcast, and the floor is a broadcast domain. Only a router, or a V L A N, builds walls between floors.",
+   "items": [
+    {
+     "icon": "people",
+     "story": "Everyone hears everyone",
+     "real": "Collision domain (hub)",
+     "cue": 1
+    },
+    {
+     "icon": "switch",
+     "story": "Each person gets a cubicle",
+     "real": "Each switch port",
+     "cue": 3
+    },
+    {
+     "icon": "bell",
+     "story": "A shout everyone hears",
+     "real": "Broadcast domain",
+     "cue": 5
+    },
+    {
+     "icon": "router",
+     "story": "Walls between floors",
+     "real": "Routers and VLANs",
+     "cue": 6
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "What splits what",
+   "narration": "Here's the key. A hub makes one collision domain for all ports. A switch makes one per port. A switch alone keeps one broadcast domain. A router, or a V L A N, makes a new one.",
+   "left": {
+    "title": "Collision domains",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Broadcast domains",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Hub",
+     "l": "One for all ports",
+     "r": "One",
+     "cue": 0
+    },
+    {
+     "label": "Switch",
+     "l": "One per port",
+     "r": "One (unless VLANs)",
+     "cue": 1
+    },
+    {
+     "label": "Router",
+     "l": "One per interface",
+     "r": "One per interface",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. A switch doesn't make one big collision domain. It makes one for each port. V L A Ns split broadcast domains, not collision domains. And a router splits broadcast domains, while each of its interfaces is its own collision domain too.",
+   "items": [
+    {
+     "wrong": "A switch is one collision domain",
+     "right": "One per port",
+     "cue": 1
+    },
+    {
+     "wrong": "VLANs split collision domains",
+     "right": "VLANs split broadcast domains",
+     "cue": 2
+    },
+    {
+     "wrong": "Routers split both... confusingly",
+     "right": "They split broadcast; each interface is its own collision domain",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva network domains lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Switch ports split collision domains. Routers and V L A Ns split broadcast domains. Count them: that's a favourite exam question. Ready to practise? Try the Courseiva network domains lab.",
+   "points": [
+    {
+     "t": "Switch ports split collision domains",
+     "cue": 1
+    },
+    {
+     "t": "Routers and VLANs split broadcast domains",
+     "cue": 2
+    },
+    {
+     "t": "Count the domains: a common exam question",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

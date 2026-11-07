@@ -1,0 +1,134 @@
+{
+ "topic": "layer2-attacks",
+ "title": "DHCP Snooping: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 DHCP SNOOPING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "shield",
+   "narration": "Anyone can plug in a D H C P server. A rogue one hands out bad addresses, and sends your traffic to the attacker. D H C P snooping stops it.",
+   "lines": [
+    {
+     "t": "Anyone can run a DHCP server",
+     "cue": 0,
+     "color": "#F87171"
+    },
+    {
+     "t": "A rogue hands out bad addresses",
+     "cue": 1
+    },
+    {
+     "t": "DHCP snooping stops it",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The bouncer at the party",
+   "narration": "At a VIP party, the bouncer lets trusted hosts through the main door, and that's your real D H C P server. Everyone else uses side doors, and they're untrusted. If an untrusted guest tries to hand out party passes, the bouncer stops them. That means dropping offers and acknowledgements on untrusted ports. The bouncer also keeps a list of who got which address, called the binding database.",
+   "items": [
+    {
+     "icon": "door",
+     "story": "Main door for trusted hosts",
+     "real": "Trusted port (to the real server)",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "Side doors for everyone else",
+     "real": "Untrusted ports",
+     "cue": 2
+    },
+    {
+     "icon": "shield",
+     "story": "Stops fake handouts",
+     "real": "Drops Offer and Ack",
+     "cue": 3
+    },
+    {
+     "icon": "book",
+     "story": "The guest list",
+     "real": "Snooping binding database",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Setting it up",
+   "narration": "Turn it on globally. Turn it on per V L A N. And trust only the port that faces the real server.",
+   "lines": [
+    {
+     "t": "ip dhcp snooping",
+     "note": "Enable globally",
+     "cue": 0
+    },
+    {
+     "t": "ip dhcp snooping vlan 10",
+     "note": "Enable for this VLAN",
+     "cue": 1
+    },
+    {
+     "t": "ip dhcp snooping trust",
+     "note": "On the server-facing port only",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Snooping doesn't block all D H C P on untrusted ports. It blocks only the server messages. It's turned on globally and per V L A N, not interface by interface. And the database stores client addresses, not the server's.",
+   "items": [
+    {
+     "wrong": "Blocks all DHCP on untrusted ports",
+     "right": "Only server messages are blocked",
+     "cue": 1
+    },
+    {
+     "wrong": "Enabled per interface",
+     "right": "Global and per VLAN; trust is per interface",
+     "cue": 2
+    },
+    {
+     "wrong": "Database stores the server IP",
+     "right": "It stores client IP, MAC, VLAN, port",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva DHCP snooping lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. D H C P snooping blocks rogue D H C P servers. Only trust the port facing your real server. The binding database powers other protections too. Ready to practise? Try the Courseiva DHCP snooping lab.",
+   "points": [
+    {
+     "t": "Blocks rogue DHCP servers",
+     "cue": 1
+    },
+    {
+     "t": "Trust only the real server's port",
+     "cue": 2
+    },
+    {
+     "t": "The binding database helps other features",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

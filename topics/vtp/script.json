@@ -1,0 +1,148 @@
+{
+ "topic": "vtp",
+ "title": "VTP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 VTP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "book",
+   "narration": "You have fifty switches. You need to add one new V L A N. Do you really want to type it fifty times? V T P does it once.",
+   "lines": [
+    {
+     "t": "Fifty switches",
+     "cue": 0
+    },
+    {
+     "t": "Add one VLAN",
+     "cue": 1
+    },
+    {
+     "t": "Do it fifty times?",
+     "cue": 2,
+     "color": "#FB923C"
+    },
+    {
+     "t": "VTP does it once",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The library catalogue",
+   "narration": "Imagine a library with many branches. One head librarian keeps the master catalogue, which is the V L A N database. When a new book arrives, the head librarian updates the catalogue and sends fresh index cards to every branch. That's a V T P advertisement. Branches can be servers, who can change the catalogue, clients, who only copy it, or transparent, who keep their own and just pass cards along. Every update has a revision number, and the higher number always wins.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "The master catalogue",
+     "real": "VLAN database",
+     "cue": 1
+    },
+    {
+     "icon": "envelope",
+     "story": "Fresh index cards",
+     "real": "VTP advertisements",
+     "cue": 3
+    },
+    {
+     "icon": "people",
+     "story": "Server, client, transparent",
+     "real": "The three VTP modes",
+     "cue": 4
+    },
+    {
+     "icon": "scale",
+     "story": "Higher number wins",
+     "real": "Configuration revision number",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "The three modes",
+   "narration": "Here's how the modes behave. Servers create and delete V L A Ns, and share them. Clients can't create anything, they only learn. Transparent switches keep their own list, ignore the neighbours' updates, but still pass the messages on.",
+   "left": {
+    "title": "Server and client",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Transparent",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Can create VLANs",
+     "l": "Server only",
+     "r": "Yes, but local only",
+     "cue": 0
+    },
+    {
+     "label": "Learns from others",
+     "l": "Client and server",
+     "r": "No",
+     "cue": 1
+    },
+    {
+     "label": "Forwards updates",
+     "l": "Yes",
+     "r": "Yes",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three warnings. A client can't create V L A Ns locally. A transparent switch does forward updates, it just doesn't use them. And the revision number lives in a file called vlan dot dat, so reloading the switch does not reset it. That's how a lab switch with a high number can wipe out a whole network.",
+   "items": [
+    {
+     "wrong": "Clients can create VLANs",
+     "right": "Only servers can",
+     "cue": 1
+    },
+    {
+     "wrong": "Transparent doesn't forward VTP",
+     "right": "It forwards but doesn't apply",
+     "cue": 2
+    },
+    {
+     "wrong": "Reload resets the revision number",
+     "right": "It's stored in vlan.dat; it survives a reload",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva VTP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. V T P copies the V L A N list from one server to every switch. Remember the three modes: server, client and transparent. And always reset the revision number before adding a switch. Ready to practise? Try the Courseiva VTP lab.",
+   "points": [
+    {
+     "t": "VTP copies the VLAN list from a server",
+     "cue": 1
+    },
+    {
+     "t": "Server, client, transparent",
+     "cue": 2
+    },
+    {
+     "t": "Reset the revision number before adding a switch",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

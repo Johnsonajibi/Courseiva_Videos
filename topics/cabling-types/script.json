@@ -1,0 +1,138 @@
+{
+ "topic": "cabling-types",
+ "title": "Cabling Types: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CABLING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "road",
+   "narration": "Copper or fibre? One is cheap and short. The other is fast and goes far.",
+   "lines": [
+    {
+     "t": "Copper or fibre?",
+     "cue": 0
+    },
+    {
+     "t": "Cheap and short",
+     "cue": 1
+    },
+    {
+     "t": "Or fast and far",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Highway vs express lane",
+   "narration": "Copper Ethernet is a multi lane highway. It's cheap and easy, but beyond a hundred metres the traffic gets congested, and the signal fades. Fibre is a dedicated express lane that uses light. It goes much further, and noise can't touch it. Multimode fibre is for shorter runs in a building. Single mode fibre is for long distances between sites.",
+   "items": [
+    {
+     "icon": "road",
+     "story": "Cheap multi-lane highway",
+     "real": "Copper twisted pair",
+     "cue": 1
+    },
+    {
+     "icon": "ruler",
+     "story": "Congestion past 100 metres",
+     "real": "100 m limit",
+     "cue": 2
+    },
+    {
+     "icon": "wifi",
+     "story": "Express lane of light",
+     "real": "Fibre optic",
+     "cue": 3
+    },
+    {
+     "icon": "building",
+     "story": "Inside, or between sites",
+     "real": "Multimode vs single-mode",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Distances to know",
+   "narration": "A few distances show up on the exam. Copper stops at a hundred metres. Multimode gigabit fibre reaches five fifty metres. Single mode reaches five kilometres, or much more with better optics. And Cat six only carries ten gigabit to fifty-five metres, while Cat six A does a full hundred.",
+   "lines": [
+    {
+     "t": "Copper (Cat5e/6)   100 m",
+     "note": "Twisted pair limit",
+     "cue": 1
+    },
+    {
+     "t": "Multimode 1000BASE-SX   550 m",
+     "note": "Inside buildings",
+     "cue": 2
+    },
+    {
+     "t": "Single-mode 1000BASE-LX   5 km",
+     "note": "Between sites",
+     "cue": 3
+    },
+    {
+     "t": "Cat6 10GBASE-T   55 m",
+     "note": "Cat6a reaches 100 m",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Fibre has distance limits too, and they depend on the type. Not all Cat six carries ten gigabit for a hundred metres, only Cat six A. And a T D R test needs the interface shut down, because it sends test pulses down the cable.",
+   "items": [
+    {
+     "wrong": "Fibre has no limit",
+     "right": "Limits depend on the fibre type",
+     "cue": 1
+    },
+    {
+     "wrong": "Cat6 does 10G to 100 m",
+     "right": "Cat6 only to 55 m; Cat6a to 100 m",
+     "cue": 2
+    },
+    {
+     "wrong": "Run TDR on a live port",
+     "right": "Shut the interface down first",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva cabling lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Copper is cheap but stops at a hundred metres. Fibre goes further, and single mode goes furthest. Cat six A is what you need for ten gigabit at full distance. Ready to practise? Try the Courseiva cabling lab.",
+   "points": [
+    {
+     "t": "Copper: 100 m",
+     "cue": 1
+    },
+    {
+     "t": "Fibre goes further; single-mode furthest",
+     "cue": 2
+    },
+    {
+     "t": "Cat6a for 10G at 100 m",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

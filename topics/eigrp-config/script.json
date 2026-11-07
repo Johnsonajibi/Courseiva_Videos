@@ -1,0 +1,138 @@
+{
+ "topic": "eigrp-config",
+ "title": "EIGRP Configuration: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 EIGRP CONFIGURATION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "router",
+   "narration": "Five commands. And two routers are talking. Let's configure E I G R P.",
+   "lines": [
+    {
+     "t": "Five commands",
+     "cue": 0
+    },
+    {
+     "t": "And two routers are talking",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Let's configure EIGRP",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Couriers and route cards",
+   "narration": "Think of a team of couriers, one at each post office. Every five seconds, they swap route cards, called hello packets. When a new route turns up, they send a reliable update, and the other office must confirm it. Offices only become neighbours if they use the same autonomous system number. But the timers don't need to match, because each side uses its own hold time.",
+   "items": [
+    {
+     "icon": "clock",
+     "story": "Route cards every 5 seconds",
+     "real": "Hello packets",
+     "cue": 1
+    },
+    {
+     "icon": "envelope",
+     "story": "Update that must be confirmed",
+     "real": "Reliable updates",
+     "cue": 2
+    },
+    {
+     "icon": "key",
+     "story": "Same team number",
+     "real": "AS number must match",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "story": "Timers can differ",
+     "real": "Hello/Hold need not match",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "The configuration",
+   "narration": "Start the process with your A S number. Advertise the network, with a wildcard mask. Check your neighbours. And check your routes.",
+   "lines": [
+    {
+     "t": "router eigrp 100",
+     "note": "AS number must match",
+     "cue": 0
+    },
+    {
+     "t": "network 10.0.0.0 0.0.0.255",
+     "note": "Wildcard mask picks interfaces",
+     "cue": 1
+    },
+    {
+     "t": "show ip eigrp neighbors",
+     "note": "Who we've met",
+     "cue": 2
+    },
+    {
+     "t": "show ip route eigrp",
+     "note": "What we learned",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. The hello and hold timers don't have to match. E I G R P doesn't load balance unequal paths unless you set variance. And the network command uses a wildcard mask to pick exactly which interfaces to include.",
+   "items": [
+    {
+     "wrong": "Hello and Hold must match",
+     "right": "They don't have to",
+     "cue": 1
+    },
+    {
+     "wrong": "EIGRP balances unequal paths by default",
+     "right": "Only with the variance command",
+     "cue": 2
+    },
+    {
+     "wrong": "network is always classful",
+     "right": "A wildcard mask narrows it",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva EIGRP configuration lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. The A S number has to match on both sides. The network command picks interfaces, using a wildcard mask. Check with show I P eigrp neighbors. Ready to practise? Try the Courseiva EIGRP configuration lab.",
+   "points": [
+    {
+     "t": "AS number must match",
+     "cue": 1
+    },
+    {
+     "t": "network + wildcard mask picks interfaces",
+     "cue": 2
+    },
+    {
+     "t": "show ip eigrp neighbors",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

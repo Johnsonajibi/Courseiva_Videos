@@ -1,0 +1,136 @@
+{
+ "topic": "vlan-security",
+ "title": "VLAN Hopping: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 VLAN SECURITY",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "lock",
+   "narration": "You're only supposed to reach your own floor. But a clever attacker can sneak into someone else's. This is called V L A N hopping.",
+   "lines": [
+    {
+     "t": "Stuck on one floor",
+     "cue": 0
+    },
+    {
+     "t": "But a cheeky guest",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Sneaks into another",
+     "cue": 2,
+     "color": "#F87171"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hotel keycard mix-up",
+   "narration": "Think of a hotel where each floor is a V L A N, and the lift is a trunk. In a switch spoofing attack, a guest pretends to be hotel staff. They flash a fake master keycard, using D T P, and the lift treats them like a trunk. Suddenly they can reach every floor. In double tagging, the guest stacks two stickers on a letter. The first lift removes one, and the second delivers to a floor they shouldn't reach.",
+   "items": [
+    {
+     "icon": "person",
+     "story": "Guest pretends to be staff",
+     "real": "Switch spoofing (DTP)",
+     "cue": 1
+    },
+    {
+     "icon": "key",
+     "story": "Fake master keycard",
+     "real": "Dynamic desirable mode",
+     "cue": 2
+    },
+    {
+     "icon": "envelope",
+     "story": "Two stickers on one letter",
+     "real": "Double tagging",
+     "cue": 4
+    },
+    {
+     "icon": "building",
+     "story": "The lift delivers it",
+     "real": "Reaches another VLAN",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "How to stop it",
+   "narration": "The fixes are simple. Turn off D T P on access ports. Set unused ports to access mode and shut them down. And change the native V L A N to one nobody uses.",
+   "steps": [
+    {
+     "icon": "lock",
+     "title": "Turn off DTP",
+     "sub": "switchport nonegotiate",
+     "cue": 0
+    },
+    {
+     "icon": "door",
+     "title": "Fix ports as access",
+     "sub": "switchport mode access",
+     "cue": 1
+    },
+    {
+     "icon": "gear",
+     "title": "Move the native VLAN",
+     "sub": "Use an unused VLAN",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. D T P isn't a security feature. It's the thing attackers abuse. Double tagging can cross several switches if the native V L A N matches. And port security doesn't stop it, because it limits M A C addresses, not trunking.",
+   "items": [
+    {
+     "wrong": "DTP protects against trunking",
+     "right": "It can be abused to form trunks",
+     "cue": 1
+    },
+    {
+     "wrong": "Hopping needs the same switch",
+     "right": "Double tagging crosses switches",
+     "cue": 2
+    },
+    {
+     "wrong": "Port security stops it",
+     "right": "It limits MACs, not trunk negotiation",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva VLAN hopping lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Switch spoofing abuses D T P, and double tagging abuses the native V L A N. Turn D T P off on access ports. And move the native V L A N away from V L A N one. Ready to practise? Try the Courseiva VLAN hopping lab.",
+   "points": [
+    {
+     "t": "Spoofing abuses DTP; double tagging abuses native VLAN",
+     "cue": 1
+    },
+    {
+     "t": "Turn DTP off on access ports",
+     "cue": 2
+    },
+    {
+     "t": "Move the native VLAN away from VLAN 1",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

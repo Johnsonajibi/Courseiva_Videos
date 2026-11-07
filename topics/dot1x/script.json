@@ -1,0 +1,142 @@
+{
+ "topic": "dot1x",
+ "title": "802.1X Port Authentication: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 802.1X",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "key",
+   "narration": "Plug in a cable, and you're on the network. Unless the door checks your I D first. That's eight oh two dot one X.",
+   "lines": [
+    {
+     "t": "Plug in a cable",
+     "cue": 0
+    },
+    {
+     "t": "And you're on the network",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Unless the door checks your ID",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hotel key card system",
+   "narration": "A guest, called the supplicant, arrives with their I D. The lift, which is the authenticator, won't move until they've been checked. It passes the I D along to the front desk, the authentication server, which is a RADIUS server. The front desk checks the booking records, and says yes or no. The lift just follows the answer. The lift never makes the decision itself.",
+   "items": [
+    {
+     "icon": "person",
+     "story": "The guest",
+     "real": "Supplicant (the device)",
+     "cue": 0
+    },
+    {
+     "icon": "switch",
+     "story": "The lift",
+     "real": "Authenticator (the switch)",
+     "cue": 1
+    },
+    {
+     "icon": "server",
+     "story": "The front desk",
+     "real": "Authentication server (RADIUS)",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "Checks the booking",
+     "real": "Credentials verified",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "The sequence",
+   "narration": "It runs in four steps. The device connects. The switch asks who it is, using E A P O L. The switch relays the answer to the server. The server says accept or reject, and the port opens or stays shut.",
+   "steps": [
+    {
+     "icon": "laptop",
+     "title": "Device connects",
+     "sub": "Port is blocked",
+     "cue": 0
+    },
+    {
+     "icon": "switch",
+     "title": "Switch asks for identity",
+     "sub": "EAPOL",
+     "cue": 1
+    },
+    {
+     "icon": "server",
+     "title": "Server checks it",
+     "sub": "RADIUS",
+     "cue": 2
+    },
+    {
+     "icon": "door",
+     "title": "Port opens or stays shut",
+     "sub": "Accept or reject",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. The switch doesn't decide, the server does. E A P O L only runs between the device and the switch, and R A D I U S carries it onward. And eight oh two dot one X authenticates the supplicant on the device, which can still stand for a user.",
+   "items": [
+    {
+     "wrong": "The switch decides",
+     "right": "The RADIUS server decides",
+     "cue": 1
+    },
+    {
+     "wrong": "EAPOL goes all the way to the server",
+     "right": "Only to the switch; RADIUS carries it on",
+     "cue": 2
+    },
+    {
+     "wrong": "It only checks the device",
+     "right": "The supplicant can prove a user's identity",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva 802.1X lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Three roles: supplicant, authenticator and server. The port stays blocked until the server says yes. E A P O L is on the cable, and R A D I U S is behind the switch. Ready to practise? Try the Courseiva 802.1X lab.",
+   "points": [
+    {
+     "t": "Supplicant, authenticator, server",
+     "cue": 1
+    },
+    {
+     "t": "Port blocked until the server accepts",
+     "cue": 2
+    },
+    {
+     "t": "EAPOL on the wire, RADIUS behind the switch",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

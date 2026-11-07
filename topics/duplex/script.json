@@ -1,0 +1,143 @@
+{
+ "topic": "duplex",
+ "title": "Duplex and Autonegotiation: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 DUPLEX",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "mic",
+   "narration": "Walkie talkie or telephone? On one, you take turns. On the other, you talk at the same time. That's half duplex versus full duplex.",
+   "lines": [
+    {
+     "t": "Walkie talkie or telephone?",
+     "cue": 0
+    },
+    {
+     "t": "One talks, one listens",
+     "cue": 1
+    },
+    {
+     "t": "Or both at once",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Walkie talkie vs telephone",
+   "narration": "On a walkie talkie, you press to talk, and you can't hear the other person. If you both press at once, nobody hears anything, which is a collision. That's half duplex. A telephone lets both people talk and listen at the same time. That's full duplex, and it has no collisions. Modern switches negotiate this automatically, and it goes wrong if one side is hard set while the other is on auto.",
+   "items": [
+    {
+     "icon": "mic",
+     "story": "Press to talk",
+     "real": "Half duplex",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "Both press at once",
+     "real": "Collision",
+     "cue": 2
+    },
+    {
+     "icon": "people",
+     "story": "Talk and listen together",
+     "real": "Full duplex",
+     "cue": 3
+    },
+    {
+     "icon": "wrench",
+     "story": "One side hard set",
+     "real": "Duplex mismatch",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Half vs full",
+   "narration": "Here's the comparison. Half duplex sends or receives, never both. Collisions are normal, and so is the C S M A C D back off. Full duplex does both at the same time, with no collisions. The speed each way stays the same, so it doesn't double the link.",
+   "left": {
+    "title": "Half duplex",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Full duplex",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Send and receive",
+     "l": "One at a time",
+     "r": "Both together",
+     "cue": 0
+    },
+    {
+     "label": "Collisions",
+     "l": "Possible",
+     "r": "None",
+     "cue": 1
+    },
+    {
+     "label": "Used with",
+     "l": "Hubs or failed autonegotiation",
+     "r": "Switch ports",
+     "cue": 2
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. A switch isn't always full duplex. Hubs and failed negotiation can force half. Full duplex doesn't double the bandwidth in each direction. And autonegotiation doesn't always pick the best, especially if one side is hard coded. Then the other falls back to half.",
+   "items": [
+    {
+     "wrong": "A switch is always full duplex",
+     "right": "Hubs or failed autoneg can force half",
+     "cue": 1
+    },
+    {
+     "wrong": "Full duplex doubles bandwidth",
+     "right": "Each direction stays at link speed",
+     "cue": 2
+    },
+    {
+     "wrong": "Autoneg always picks best",
+     "right": "A hard-coded side breaks it",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva duplex lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Half duplex takes turns, and full duplex doesn't. A mismatch causes slow links and late collisions. Set both ends to auto, or both to the same fixed value. Ready to practise? Try the Courseiva duplex lab.",
+   "points": [
+    {
+     "t": "Half takes turns; full doesn't",
+     "cue": 1
+    },
+    {
+     "t": "Mismatch = slow link, late collisions",
+     "cue": 2
+    },
+    {
+     "t": "Both auto, or both fixed the same",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

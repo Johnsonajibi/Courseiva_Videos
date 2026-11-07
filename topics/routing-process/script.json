@@ -1,0 +1,141 @@
+{
+ "topic": "routing-process",
+ "title": "How a Router Forwards a Packet: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 ROUTING PROCESS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "router",
+   "narration": "A packet arrives at a router. It has a split second to decide where it goes. Here's how it thinks.",
+   "lines": [
+    {
+     "t": "A packet arrives",
+     "cue": 0
+    },
+    {
+     "t": "The router has a few seconds",
+     "cue": 1
+    },
+    {
+     "t": "To decide where it goes",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The sorting office",
+   "narration": "A sorting office gets letters in an outer envelope addressed to the office itself. That's the frame, with the router's own M A C address. The worker opens the outer envelope and reads the inner address. That's the I P address. Then they check a giant wall chart, which is the routing table, for the best match. They put the letter in a new outer envelope for the next stop, and cross one off the lifetime count.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "Outer envelope to the office",
+     "real": "Frame to the router's MAC",
+     "cue": 1
+    },
+    {
+     "icon": "book",
+     "story": "Read the inner address",
+     "real": "Destination IP",
+     "cue": 3
+    },
+    {
+     "icon": "map",
+     "story": "Check the wall chart",
+     "real": "Routing table lookup",
+     "cue": 4
+    },
+    {
+     "icon": "clock",
+     "story": "Cross one off the lifetime",
+     "real": "TTL minus 1",
+     "cue": 5
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "Four steps",
+   "narration": "Every hop runs the same four steps. Strip the old frame. Look up the destination in the table. Lower the T T L by one. And wrap it in a new frame for the next hop.",
+   "steps": [
+    {
+     "icon": "envelope",
+     "title": "Strip the old frame",
+     "sub": "Layer 2 removed",
+     "cue": 0
+    },
+    {
+     "icon": "map",
+     "title": "Look up the destination",
+     "sub": "Longest prefix match",
+     "cue": 1
+    },
+    {
+     "icon": "clock",
+     "title": "Reduce TTL by one",
+     "sub": "Drop it at zero",
+     "cue": 2
+    },
+    {
+     "icon": "box",
+     "title": "Re-wrap in a new frame",
+     "sub": "New MAC for the next hop",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Routers forward on the I P address, not the M A C. The T T L drops by exactly one at each router. And a router only uses a default route if you've configured one. Otherwise, it drops the packet.",
+   "items": [
+    {
+     "wrong": "Routers forward by MAC",
+     "right": "They route by destination IP",
+     "cue": 1
+    },
+    {
+     "wrong": "TTL drops by hops remaining",
+     "right": "It drops by exactly 1",
+     "cue": 2
+    },
+    {
+     "wrong": "A default route exists automatically",
+     "right": "You must configure 0.0.0.0/0",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva the routing process lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A router strips the frame, looks up the I P address, and wraps a new frame. The T T L goes down by one at every hop. No matching route and no default means the packet is dropped. Ready to practise? Try the Courseiva the routing process lab.",
+   "points": [
+    {
+     "t": "Strip, look up, re-wrap",
+     "cue": 1
+    },
+    {
+     "t": "TTL decreases by 1 per hop",
+     "cue": 2
+    },
+    {
+     "t": "No route and no default = dropped",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
