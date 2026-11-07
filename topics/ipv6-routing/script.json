@@ -1,0 +1,134 @@
+{
+ "topic": "ipv6-routing",
+ "title": "IPv6 Routing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IPV6 ROUTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Routing in I P version six does the same job. But the commands are a little different. Let's walk through them.",
+   "lines": [
+    {
+     "t": "Same job",
+     "cue": 0
+    },
+    {
+     "t": "Different commands",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Let's see them",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Postal service, new codes",
+   "narration": "Post offices still keep tables of where to send mail. First, you must switch routing on, with I P version six unicast routing. A static route names a prefix and a next hop. The default route is double colon slash zero. And O S P F version three uses link local addresses to talk.",
+   "items": [
+    {
+     "icon": "gear",
+     "story": "ipv6 unicast-routing",
+     "real": "Off by default",
+     "cue": 1
+    },
+    {
+     "icon": "map",
+     "story": "ipv6 route prefix/len next-hop",
+     "real": "Like IPv4 static",
+     "cue": 2
+    },
+    {
+     "icon": "road",
+     "story": "::/0",
+     "real": "The IPv6 default route",
+     "cue": 3
+    },
+    {
+     "icon": "router",
+     "story": "OSPFv3 uses link-local",
+     "real": "FE80 addresses",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "OSPFv3 setup",
+   "narration": "Setting up O S P F version three takes three lines. First, turn on I P version six routing. Then start O S P F version three. And enable it on each interface.",
+   "lines": [
+    {
+     "t": "ipv6 unicast-routing",
+     "note": "Enable IPv6 routing",
+     "cue": 1
+    },
+    {
+     "t": "router ospfv3 1",
+     "note": "Start the process",
+     "cue": 2
+    },
+    {
+     "t": "ipv6 ospf 1 area 0",
+     "note": "On each interface",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. The router I D is still thirty two bits. Neighbours use link local addresses. And a link local next hop needs an exit interface.",
+   "items": [
+    {
+     "wrong": "OSPFv3 uses IPv6 router IDs",
+     "right": "32-bit router ID",
+     "cue": 1
+    },
+    {
+     "wrong": "Neighbors use global addresses",
+     "right": "Link-local addresses",
+     "cue": 2
+    },
+    {
+     "wrong": "A link-local next hop needs no interface",
+     "right": "It requires an exit interface",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IPv6 routing lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Turn on I P version six unicast routing first. The default route is double colon slash zero. O S P F version three runs over link local addresses. Ready to practise? Try the Courseiva IPv6 routing lab.",
+   "points": [
+    {
+     "t": "Enable ipv6 unicast-routing",
+     "cue": 1
+    },
+    {
+     "t": "Default route: ::/0",
+     "cue": 2
+    },
+    {
+     "t": "OSPFv3 runs over link-local",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "topic": "network-topologies",
+ "title": "Network Topologies: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 TOPOLOGIES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Networks are laid out like city streets. Bus, star, ring and mesh are the main shapes. And each one has a catch.",
+   "lines": [
+    {
+     "t": "Street layouts",
+     "cue": 0
+    },
+    {
+     "t": "Bus, star, ring, mesh",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Each has a catch",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "City streets",
+   "narration": "Think of how the roads are arranged. A bus is one main road, with a driveway to each house. A star puts every house on its own road to a central square. A ring is a circular road, where traffic goes round one way. A mesh has roads from every house to every other house.",
+   "items": [
+    {
+     "icon": "road",
+     "story": "Bus",
+     "real": "One shared cable",
+     "cue": 1
+    },
+    {
+     "icon": "switch",
+     "story": "Star",
+     "real": "Central switch; easy to fix",
+     "cue": 2
+    },
+    {
+     "icon": "link",
+     "story": "Ring",
+     "real": "Closed loop, token passing",
+     "cue": 3
+    },
+    {
+     "icon": "map",
+     "story": "Mesh",
+     "real": "Most redundant, most expensive",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Strengths and weaknesses",
+   "narration": "Here is the trade-off. A star is cheap, but a mesh needs many links and ports. In a star, one cable failure loses one device, but a mesh just reroutes. The star's weak point is the central device.",
+   "left": {
+    "title": "Star",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Mesh",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Cost",
+     "l": "Low",
+     "r": "Highest",
+     "cue": 1
+    },
+    {
+     "label": "If a link fails",
+     "l": "One device lost",
+     "r": "Traffic reroutes",
+     "cue": 2
+    },
+    {
+     "label": "Weak point",
+     "l": "The central switch",
+     "r": "Complexity",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. A star can use a hub or a switch. A basic ring sends data in one direction. And mesh is the most expensive.",
+   "items": [
+    {
+     "wrong": "A star always uses a hub",
+     "right": "A hub or a switch",
+     "cue": 1
+    },
+    {
+     "wrong": "A ring is bidirectional",
+     "right": "A basic ring is one-way",
+     "cue": 2
+    },
+    {
+     "wrong": "Mesh is the cheapest",
+     "right": "Mesh is the most expensive",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva topologies lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Star is the most common, and mesh is the most resilient. Physical is the cabling, and logical is how data flows. A bus shares one collision domain. Ready to practise? Try the Courseiva topologies lab.",
+   "points": [
+    {
+     "t": "Star: common. Mesh: resilient",
+     "cue": 1
+    },
+    {
+     "t": "Physical vs logical",
+     "cue": 2
+    },
+    {
+     "t": "Bus: one collision domain",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

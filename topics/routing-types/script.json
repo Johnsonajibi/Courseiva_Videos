@@ -1,0 +1,144 @@
+{
+ "topic": "routing-types",
+ "title": "Static vs Dynamic Routing: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 STATIC VS DYNAMIC",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "You can navigate with a paper map. Or you can use a G P S that updates itself. Routers have the same choice.",
+   "lines": [
+    {
+     "t": "A paper map",
+     "cue": 0
+    },
+    {
+     "t": "Or with a GPS",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Routers choose too",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Road map vs GPS",
+   "narration": "A delivery driver needs a way to find customers. A paper map is static routing, and you write each route yourself. A G P S is dynamic routing, which updates when roads close. The map costs nothing to run, and nobody can mess with it. The G P S reacts faster when something breaks.",
+   "items": [
+    {
+     "icon": "map",
+     "story": "Static routing",
+     "real": "Manual, fixed",
+     "cue": 1
+    },
+    {
+     "icon": "wifi",
+     "story": "Dynamic routing",
+     "real": "OSPF, EIGRP",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "Static: no overhead",
+     "real": "Simple and predictable",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "story": "Dynamic: fast convergence",
+     "real": "Adapts to changes",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Comparison",
+   "narration": "Pick the right tool. Static is manual, and dynamic is automatic. Static suits small stable networks, and dynamic suits large ones. Dynamic uses some bandwidth and processing.",
+   "left": {
+    "title": "Static",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Dynamic",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Setup",
+     "l": "Manual",
+     "r": "Automatic",
+     "cue": 1
+    },
+    {
+     "label": "Best for",
+     "l": "Small, stable networks",
+     "r": "Large or changing networks",
+     "cue": 2
+    },
+    {
+     "label": "Overhead",
+     "l": "None",
+     "r": "Uses CPU and bandwidth",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Dynamic isn't always better. A static route needs a reachable next hop. And distance and metric are different things.",
+   "items": [
+    {
+     "wrong": "Dynamic is always better",
+     "right": "Static wins for small stable sites",
+     "cue": 1
+    },
+    {
+     "wrong": "A static route always works",
+     "right": "The next hop must be reachable",
+     "cue": 2
+    },
+    {
+     "wrong": "AD and metric are the same",
+     "right": "AD compares sources; metric compares paths",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva routing types lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Static is simple, and dynamic adapts. Static has a distance of one. Floating statics back up dynamic routes. Ready to practise? Try the Courseiva routing types lab.",
+   "points": [
+    {
+     "t": "Static: simple. Dynamic: adapts",
+     "cue": 1
+    },
+    {
+     "t": "Static AD = 1",
+     "cue": 2
+    },
+    {
+     "t": "Floating static = backup",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

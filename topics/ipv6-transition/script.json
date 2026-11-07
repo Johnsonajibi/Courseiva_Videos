@@ -1,0 +1,144 @@
+{
+ "topic": "ipv6-transition",
+ "title": "IPv6 Transition: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IPV6 TRANSITION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Picture an office where some speak English, and others speak Spanish. The building has to work for everyone. It has three strategies.",
+   "lines": [
+    {
+     "t": "An office of two languages",
+     "cue": 0
+    },
+    {
+     "t": "Everyone must cope",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Three strategies",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The bilingual building",
+   "narration": "The manager has three approaches. Dual stack means everyone speaks both languages at once. A tunnel carries one language inside the other. A translator converts between the two. Dual stack is the preferred way, since nothing is translated.",
+   "items": [
+    {
+     "icon": "people",
+     "story": "Dual stack",
+     "real": "IPv4 and IPv6 together",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "Tunnelling",
+     "real": "IPv6 inside IPv4",
+     "cue": 2
+    },
+    {
+     "icon": "envelope",
+     "story": "Translation",
+     "real": "NAT64 with DNS64",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "Preferred",
+     "real": "Dual stack first",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Tunnels",
+   "narration": "Two tunnel types come up often. Six to four links sites over the internet, while I S A T A P works inside one site. Six to four uses the prefix two thousand two. Both are older methods.",
+   "left": {
+    "title": "6to4",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "ISATAP",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Used for",
+     "l": "Site to site over the internet",
+     "r": "Inside a site",
+     "cue": 1
+    },
+    {
+     "label": "Prefix",
+     "l": "2002::/16",
+     "r": "Interface ID ::5EFE",
+     "cue": 2
+    },
+    {
+     "label": "Status",
+     "l": "Legacy",
+     "r": "Legacy",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Dual stack doesn't translate anything. Six to four and I S A T A P are different. N A T P T is deprecated, and N A T sixty four replaced it.",
+   "items": [
+    {
+     "wrong": "Dual stack translates",
+     "right": "It runs both independently",
+     "cue": 1
+    },
+    {
+     "wrong": "6to4 and ISATAP are the same",
+     "right": "Different scopes",
+     "cue": 2
+    },
+    {
+     "wrong": "NAT-PT is current",
+     "right": "NAT64 replaced it",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IPv6 transition lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Dual stack runs both versions side by side. Tunnels carry I P six over I P four. N A T sixty four translates between them. Ready to practise? Try the Courseiva IPv6 transition lab.",
+   "points": [
+    {
+     "t": "Dual stack: both side by side",
+     "cue": 1
+    },
+    {
+     "t": "Tunnels: IPv6 inside IPv4",
+     "cue": 2
+    },
+    {
+     "t": "NAT64 translates",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "topic": "ports-protocols",
+ "title": "Ports and Protocols: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 PORTS AND PROTOCOLS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "A big office building has one main phone number. Every department has its own extension. Ports are those extensions.",
+   "lines": [
+    {
+     "t": "One building",
+     "cue": 0
+    },
+    {
+     "t": "Many departments",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Ports are extensions",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Office extensions",
+   "narration": "An I P address is the main number. The port number tells the call which department to reach. The first group, up to one thousand twenty three, are well known. The middle group, up to forty nine thousand, are registered. The rest are dynamic, picked by your computer for each chat.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "The port number",
+     "real": "Picks the application",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "Well-known: 0 to 1023",
+     "real": "Standard services",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "Registered: 1024 to 49151",
+     "real": "Vendor applications",
+     "cue": 3
+    },
+    {
+     "icon": "laptop",
+     "story": "Dynamic: 49152 to 65535",
+     "real": "Client-side temporary ports",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "The big ones",
+   "narration": "Learn these by heart. Web uses eighty and four four three. S S H is twenty two, and Telnet is twenty three. Mail uses twenty five, one ten and one forty three. D N S is fifty three, and D H C P uses sixty seven and sixty eight.",
+   "left": {
+    "title": "TCP",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "UDP",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Web",
+     "l": "80 HTTP, 443 HTTPS",
+     "r": "",
+     "cue": 1
+    },
+    {
+     "label": "Remote login",
+     "l": "22 SSH, 23 Telnet",
+     "r": "",
+     "cue": 2
+    },
+    {
+     "label": "Mail",
+     "l": "25 SMTP, 110 POP3, 143 IMAP",
+     "r": "",
+     "cue": 3
+    },
+    {
+     "label": "Name and address",
+     "l": "53 DNS (zone transfers)",
+     "r": "53 DNS, 67/68 DHCP, 69 TFTP, 123 NTP, 161 SNMP",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three tips. U D P uses ports as well. Telnet is twenty three, not twenty two. D N S uses T C P for zone transfers.",
+   "items": [
+    {
+     "wrong": "Port numbers are only for TCP",
+     "right": "UDP uses them too",
+     "cue": 1
+    },
+    {
+     "wrong": "Telnet is port 22",
+     "right": "SSH is 22; Telnet is 23",
+     "cue": 2
+    },
+    {
+     "wrong": "DNS only uses UDP",
+     "right": "Zone transfers use TCP",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva ports lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A port number picks the application. Memorise the common ones: twenty two, twenty five, fifty three, eighty and four four three. Ports range from zero to sixty five thousand. Ready to practise? Try the Courseiva ports lab.",
+   "points": [
+    {
+     "t": "Port = which application",
+     "cue": 1
+    },
+    {
+     "t": "22, 25, 53, 80, 443",
+     "cue": 2
+    },
+    {
+     "t": "0 to 65535",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

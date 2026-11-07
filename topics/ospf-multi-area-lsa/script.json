@@ -1,0 +1,144 @@
+{
+ "topic": "ospf-multi-area-lsa",
+ "title": "OSPF Multi-Area: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 OSPF MULTI-AREA",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Picture a company with a headquarters and several branches. Every branch talks to the others through HQ. That's multi area O S P F.",
+   "lines": [
+    {
+     "t": "One big company",
+     "cue": 0
+    },
+    {
+     "t": "Everyone talks via HQ",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's multi-area OSPF",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "HQ and branches",
+   "narration": "Area zero is headquarters. Every other area, a branch, must connect straight to area zero. The router between a branch and HQ is the A B R. The A B R passes summaries using type three L S As. A router joining an outside network is an A S B R, with type five.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Area 0 is the backbone",
+     "real": "All areas touch it",
+     "cue": 1
+    },
+    {
+     "icon": "router",
+     "story": "ABR",
+     "real": "Sits in two areas",
+     "cue": 2
+    },
+    {
+     "icon": "envelope",
+     "story": "Type 3 LSA",
+     "real": "Inter-area summary",
+     "cue": 3
+    },
+    {
+     "icon": "cloud",
+     "story": "ASBR, Type 5 LSA",
+     "real": "External routes",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Stub areas",
+   "narration": "Branches can ask for less detail. A stub blocks type five, and a totally stubby area blocks types three, four and five. A stub keeps inter area routes, but totally stubby just gets a default. Both exist to shrink the routing table.",
+   "left": {
+    "title": "Stub",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Totally stubby",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Blocks",
+     "l": "Type 5",
+     "r": "Types 3, 4 and 5",
+     "cue": 1
+    },
+    {
+     "label": "Gets",
+     "l": "Default route plus Type 3",
+     "r": "Default route only",
+     "cue": 2
+    },
+    {
+     "label": "Why",
+     "l": "Smaller tables",
+     "r": "Smallest tables",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. An A B R needs at least one interface in area zero. Type three only carries the prefix and metric. A stub area blocks only type five.",
+   "items": [
+    {
+     "wrong": "An ABR needs two non-backbone areas",
+     "right": "One must be area 0",
+     "cue": 1
+    },
+    {
+     "wrong": "Type 3 carries full topology",
+     "right": "Prefix and metric only",
+     "cue": 2
+    },
+    {
+     "wrong": "Stub blocks all external and inter-area",
+     "right": "Only Type 5",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva multi-area OSPF lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Every area must touch area zero. A B R makes type three, and A S B R makes type five. Stub areas shrink routing tables. Ready to practise? Try the Courseiva multi-area OSPF lab.",
+   "points": [
+    {
+     "t": "Every area touches area 0",
+     "cue": 1
+    },
+    {
+     "t": "ABR: Type 3. ASBR: Type 5",
+     "cue": 2
+    },
+    {
+     "t": "Stub areas shrink tables",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

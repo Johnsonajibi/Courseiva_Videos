@@ -1,0 +1,139 @@
+{
+ "topic": "wan-technologies",
+ "title": "WAN Technologies: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 WAN TECHNOLOGIES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Your company has offices in different cities. How do their networks talk to each other? That's the job of a wide area network.",
+   "lines": [
+    {
+     "t": "Offices in different cities",
+     "cue": 0
+    },
+    {
+     "t": "How do they talk?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Meet the WAN",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Intercity rail lines",
+   "narration": "Think of each office network as a city's local streets. A WAN is the railway line between cities. Leased lines like T one and T three are private tracks you rent. MPLS is a managed express service run by a provider. And a V P N rides the public internet, with a locked tunnel.",
+   "items": [
+    {
+     "icon": "road",
+     "story": "The WAN",
+     "real": "Links your sites together",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "Leased lines: T1, T3",
+     "real": "1.544 and 44.7 Mbps",
+     "cue": 2
+    },
+    {
+     "icon": "cloud",
+     "story": "MPLS",
+     "real": "Provider-managed, label-based",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "VPN",
+     "real": "IPsec or SSL over the internet",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Speeds to know",
+   "narration": "Memorise a few numbers. A T one carries twenty four channels of sixty four kilobits. A T three is about forty four megabits. E one is two megabits, used outside North America. O C three is about a hundred and fifty five megabits.",
+   "lines": [
+    {
+     "t": "T1   1.544 Mbps",
+     "note": "24 channels of 64 kbps",
+     "cue": 1
+    },
+    {
+     "t": "T3   44.736 Mbps",
+     "note": "28 T1s",
+     "cue": 2
+    },
+    {
+     "t": "E1   2.048 Mbps",
+     "note": "Used outside North America",
+     "cue": 3
+    },
+    {
+     "t": "OC-3   155.52 Mbps",
+     "note": "OC-12: 622 Mbps",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Watch for these. I P sec uses U D P five hundred and forty five hundred, not T C P. S S L V P N uses T C P four four three. And M P L S sits between layer two and three.",
+   "items": [
+    {
+     "wrong": "IPsec uses TCP 443",
+     "right": "IPsec: UDP 500 and 4500",
+     "cue": 1
+    },
+    {
+     "wrong": "SSL VPN uses UDP 500",
+     "right": "SSL VPN: TCP 443",
+     "cue": 2
+    },
+    {
+     "wrong": "MPLS is Layer 3 only",
+     "right": "Layer 2.5",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva WAN technologies lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A WAN joins sites together, using leased lines, M P L S or V P N. T one is one point five four four megabits. I P sec uses U D P five hundred, and S S L uses T C P four four three. Ready to practise? Try the Courseiva WAN technologies lab.",
+   "points": [
+    {
+     "t": "Leased line, MPLS or VPN",
+     "cue": 1
+    },
+    {
+     "t": "T1 = 1.544 Mbps",
+     "cue": 2
+    },
+    {
+     "t": "IPsec: UDP 500. SSL: TCP 443",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "topic": "tcpip-model",
+ "title": "The TCP/IP Model: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 TCP/IP MODEL",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "envelope",
+   "narration": "The T C P I P model describes the same journey as O S I. It just uses fewer layers. Four, to be exact.",
+   "lines": [
+    {
+     "t": "Same journey as OSI",
+     "cue": 0
+    },
+    {
+     "t": "Fewer layers",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Four, to be exact",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Letter in an envelope",
+   "narration": "You write a letter, seal it, address it and post it. The application layer is you writing the letter. Transport is numbering the pages and tracking delivery. Internet is the address and the route. And network access is the van that carries it.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "Application",
+     "real": "HTTP, DNS, SMTP",
+     "cue": 1
+    },
+    {
+     "icon": "box",
+     "story": "Transport",
+     "real": "TCP and UDP",
+     "cue": 2
+    },
+    {
+     "icon": "map",
+     "story": "Internet",
+     "real": "IP",
+     "cue": 3
+    },
+    {
+     "icon": "road",
+     "story": "Network access",
+     "real": "Ethernet and Wi-Fi",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Names for the data",
+   "narration": "Each layer has its own name for the data. At the top it's just data. At transport, it's a segment. At the internet layer, it's a packet. And at the bottom, it's a frame and then bits.",
+   "lines": [
+    {
+     "t": "Application   Data",
+     "note": "Layers 5 to 7",
+     "cue": 1
+    },
+    {
+     "t": "Transport   Segment",
+     "note": "TCP or UDP",
+     "cue": 2
+    },
+    {
+     "t": "Internet   Packet",
+     "note": "IP",
+     "cue": 3
+    },
+    {
+     "t": "Network access   Frame, then bits",
+     "note": "Ethernet",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. The Cisco model has four layers. A R P belongs at the link layer. And in T C P I P, encryption is handled at the application layer.",
+   "items": [
+    {
+     "wrong": "TCP/IP has five layers",
+     "right": "Four in the Cisco CCNA model",
+     "cue": 1
+    },
+    {
+     "wrong": "ARP is a Layer 3 protocol",
+     "right": "It sits at the link layer",
+     "cue": 2
+    },
+    {
+     "wrong": "Presentation handles encryption",
+     "right": "In TCP/IP, the application layer does",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva the TCP/IP model lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. T C P I P has four layers. Data becomes a segment, then a packet, then a frame. Use show interfaces for the bottom layers. Ready to practise? Try the Courseiva the TCP/IP model lab.",
+   "points": [
+    {
+     "t": "Four layers",
+     "cue": 1
+    },
+    {
+     "t": "Segment, packet, frame",
+     "cue": 2
+    },
+    {
+     "t": "show interfaces checks layers 1 and 2",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

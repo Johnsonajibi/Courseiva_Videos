@@ -1,0 +1,139 @@
+{
+ "topic": "ipv6-ndp-dhcpv6",
+ "title": "IPv6 NDP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IPV6 NDP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "question",
+   "narration": "I P version six has no A R P. So who finds out which M A C goes with which address? The neighbour discovery protocol does.",
+   "lines": [
+    {
+     "t": "No ARP in IPv6",
+     "cue": 0
+    },
+    {
+     "t": "So who does the job?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "N D P does",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Apartment building directory",
+   "narration": "Every resident has an apartment number. A neighbour solicitation asks who owns this apartment. A neighbour advertisement is the answer. A router solicitation asks if any router is around. And a router advertisement announces the prefix and gateway.",
+   "items": [
+    {
+     "icon": "question",
+     "story": "Neighbor Solicitation (NS)",
+     "real": "Like an ARP request",
+     "cue": 1
+    },
+    {
+     "icon": "person",
+     "story": "Neighbor Advertisement (NA)",
+     "real": "Like an ARP reply",
+     "cue": 2
+    },
+    {
+     "icon": "router",
+     "story": "Router Solicitation (RS)",
+     "real": "Hosts look for routers",
+     "cue": 3
+    },
+    {
+     "icon": "bell",
+     "story": "Router Advertisement (RA)",
+     "real": "Every 200 seconds",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Message types",
+   "narration": "These are all I C M P version six messages. Router solicitation is type one thirty three. Router advertisement is one thirty four. Neighbour solicitation is one thirty five. And neighbour advertisement is one thirty six.",
+   "lines": [
+    {
+     "t": "RS   133",
+     "note": "Router Solicitation",
+     "cue": 1
+    },
+    {
+     "t": "RA   134",
+     "note": "Router Advertisement",
+     "cue": 2
+    },
+    {
+     "t": "NS   135",
+     "note": "Neighbor Solicitation",
+     "cue": 3
+    },
+    {
+     "t": "NA   136",
+     "note": "Neighbor Advertisement",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. N D P uses multicast, never broadcast. Stale only means reachability isn't confirmed recently. And routers send advertisements on a timer as well.",
+   "items": [
+    {
+     "wrong": "NDP uses broadcast",
+     "right": "It uses multicast",
+     "cue": 1
+    },
+    {
+     "wrong": "STALE means unreachable",
+     "right": "It just needs rechecking",
+     "cue": 2
+    },
+    {
+     "wrong": "RAs only answer an RS",
+     "right": "Sent periodically too",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IPv6 NDP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. N D P replaces A R P in I P version six. It uses I C M P version six, and multicast. D A D checks nobody else owns your address. Ready to practise? Try the Courseiva IPv6 NDP lab.",
+   "points": [
+    {
+     "t": "NDP replaces ARP",
+     "cue": 1
+    },
+    {
+     "t": "ICMPv6 and multicast",
+     "cue": 2
+    },
+    {
+     "t": "DAD checks for duplicates",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

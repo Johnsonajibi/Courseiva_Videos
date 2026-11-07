@@ -1,0 +1,134 @@
+{
+ "topic": "ospf-cost-path",
+ "title": "OSPF Cost: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 OSPF COST",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "road",
+   "narration": "There are two roads to the same city. One is a motorway, and the other a narrow lane. O S P F picks by cost.",
+   "lines": [
+    {
+     "t": "Two roads",
+     "cue": 0
+    },
+    {
+     "t": "A motorway and a country lane",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Cost decides",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Toll road pricing",
+   "narration": "Faster roads are cheaper to use. The cost equals the reference bandwidth divided by the link bandwidth. A hundred megabit link costs one, and a ten megabit link costs ten. You can set a link's cost by hand. Or change the reference, on every router, for fast links.",
+   "items": [
+    {
+     "icon": "scale",
+     "story": "Cost = ref BW / link BW",
+     "real": "Reference is 100 Mbps",
+     "cue": 1
+    },
+    {
+     "icon": "ruler",
+     "story": "100 Mbps = 1; 10 Mbps = 10",
+     "real": "Lower is better",
+     "cue": 2
+    },
+    {
+     "icon": "gear",
+     "story": "ip ospf cost",
+     "real": "Overrides the formula",
+     "cue": 3
+    },
+    {
+     "icon": "wrench",
+     "story": "auto-cost reference-bandwidth",
+     "real": "Must match everywhere",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Commands",
+   "narration": "Three commands to know. Set cost by hand on an interface. Or change the reference bandwidth. And check each interface's cost.",
+   "lines": [
+    {
+     "t": "ip ospf cost 50",
+     "note": "Set one interface's cost",
+     "cue": 1
+    },
+    {
+     "t": "auto-cost reference-bandwidth 10000",
+     "note": "Change reference (Mbps)",
+     "cue": 2
+    },
+    {
+     "t": "show ip ospf interface",
+     "note": "See each cost",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Cost comes from bandwidth, not hops. It uses the configured bandwidth value. Change the reference everywhere or paths will disagree.",
+   "items": [
+    {
+     "wrong": "Cost is hop count",
+     "right": "Cost comes from bandwidth",
+     "cue": 1
+    },
+    {
+     "wrong": "Uses the real link speed",
+     "right": "Uses the configured bandwidth",
+     "cue": 2
+    },
+    {
+     "wrong": "Reference only affects me",
+     "right": "Change it on every router",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva OSPF cost lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Cost is reference bandwidth divided by link bandwidth. Lower cost wins. Match the reference on every router. Ready to practise? Try the Courseiva OSPF cost lab.",
+   "points": [
+    {
+     "t": "Cost = ref BW / link BW",
+     "cue": 1
+    },
+    {
+     "t": "Lower cost wins",
+     "cue": 2
+    },
+    {
+     "t": "Same reference bandwidth everywhere",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

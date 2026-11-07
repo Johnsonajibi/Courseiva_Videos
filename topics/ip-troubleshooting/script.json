@@ -1,0 +1,129 @@
+{
+ "topic": "ip-troubleshooting",
+ "title": "IP Address Conflicts: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IP TROUBLESHOOTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "question",
+   "narration": "Imagine two houses with the same house number. The postman has no idea where to deliver. That's an I P address conflict.",
+   "lines": [
+    {
+     "t": "Two houses, one number",
+     "cue": 0
+    },
+    {
+     "t": "Where does the mail go?",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "That's an IP conflict",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The mailbox mix-up",
+   "narration": "When two devices share an address, trouble follows. One minute it works, and the next minute it doesn't. You may see a duplicate address warning pop up. The A R P table keeps flipping between two M A C addresses. Fixing it means changing one of the two addresses.",
+   "items": [
+    {
+     "icon": "people",
+     "story": "Intermittent connectivity",
+     "real": "The classic symptom",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "Duplicate IP warning",
+     "real": "From the operating system",
+     "cue": 2
+    },
+    {
+     "icon": "book",
+     "story": "ARP flapping",
+     "real": "Two MACs, one IP",
+     "cue": 3
+    },
+    {
+     "icon": "wrench",
+     "story": "Change one address",
+     "real": "Renew DHCP or edit static",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "How to find them",
+   "narration": "Two commands can track them down. A R P dash a shows the M A C that answered. And the switch's M A C table shows which port it sits on.",
+   "lines": [
+    {
+     "t": "arp -a",
+     "note": "Which MAC has the IP?",
+     "cue": 1
+    },
+    {
+     "t": "show mac address-table",
+     "note": "Which port?",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three tips. Rebooting only hides it for a while. A D H C P pool can collide with a static address. Reservations and excluded ranges prevent it.",
+   "items": [
+    {
+     "wrong": "Reboot fixes it",
+     "right": "It returns if both keep the IP",
+     "cue": 1
+    },
+    {
+     "wrong": "Only static IPs conflict",
+     "right": "DHCP can conflict with statics",
+     "cue": 2
+    },
+    {
+     "wrong": "Nothing prevents it",
+     "right": "Reservations and exclusions help",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IP conflicts lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Two devices with the same address cause random drops. Find them with A R P and the switch's M A C table. Prevent them with D H C P reservations. Ready to practise? Try the Courseiva IP conflicts lab.",
+   "points": [
+    {
+     "t": "Same IP = random drops",
+     "cue": 1
+    },
+    {
+     "t": "arp -a and the MAC table",
+     "cue": 2
+    },
+    {
+     "t": "Use DHCP reservations",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

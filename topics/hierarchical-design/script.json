@@ -1,0 +1,144 @@
+{
+ "topic": "hierarchical-design",
+ "title": "Hierarchical Network Design: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NETWORK DESIGN",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Picture a big corporate office tower. Every floor has a different job. Networks are built the same way.",
+   "lines": [
+    {
+     "t": "A big office tower",
+     "cue": 0
+    },
+    {
+     "t": "Three jobs",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "A network is built the same way",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The office building",
+   "narration": "A tidy network has three layers. The access layer is the floors where staff plug in. The distribution layer is the middle management who set the rules. The core layer is the lobby, moving people as fast as it can. Small buildings can merge the top two into a collapsed core.",
+   "items": [
+    {
+     "icon": "laptop",
+     "story": "Access layer",
+     "real": "End users, PoE, port security",
+     "cue": 1
+    },
+    {
+     "icon": "router",
+     "story": "Distribution layer",
+     "real": "Inter-VLAN routing, ACLs, QoS",
+     "cue": 2
+    },
+    {
+     "icon": "building",
+     "story": "Core layer",
+     "real": "High speed, no extras",
+     "cue": 3
+    },
+    {
+     "icon": "box",
+     "story": "Collapsed core",
+     "real": "Two-tier design",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Where things go",
+   "narration": "Keep the roles separate. The distribution layer applies policy, and the core just moves traffic. So ACLs live in distribution, never in the core. Small sites can merge them into one layer.",
+   "left": {
+    "title": "Distribution",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Core",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Job",
+     "l": "Policies and routing",
+     "r": "Fast transport",
+     "cue": 1
+    },
+    {
+     "label": "Features",
+     "l": "ACLs, QoS, inter-VLAN",
+     "r": "Nothing slow",
+     "cue": 2
+    },
+    {
+     "label": "Small networks",
+     "l": "Combined into one",
+     "r": "Combined into one",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Don't put A C Ls in the core. Access switches are normally layer two. And a two tier design is perfectly valid for small networks.",
+   "items": [
+    {
+     "wrong": "The core applies ACLs",
+     "right": "ACLs belong in distribution",
+     "cue": 1
+    },
+    {
+     "wrong": "Access switches are always Layer 3",
+     "right": "They're usually Layer 2",
+     "cue": 2
+    },
+    {
+     "wrong": "Three-tier is the only design",
+     "right": "Two-tier collapsed core is fine",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva hierarchical design lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Access, distribution and core. Keep policy in distribution, and speed in the core. Small sites can use a collapsed core. Ready to practise? Try the Courseiva hierarchical design lab.",
+   "points": [
+    {
+     "t": "Access, distribution, core",
+     "cue": 1
+    },
+    {
+     "t": "Policy: distribution. Speed: core",
+     "cue": 2
+    },
+    {
+     "t": "Small sites: collapsed core",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

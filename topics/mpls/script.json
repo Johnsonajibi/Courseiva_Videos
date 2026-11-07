@@ -1,0 +1,139 @@
+{
+ "topic": "mpls",
+ "title": "MPLS: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 MPLS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "road",
+   "narration": "Normally every router reads the full destination address. It does that at every single hop, which is slow. M P L S puts a short label on instead.",
+   "lines": [
+    {
+     "t": "Reading a full address",
+     "cue": 0
+    },
+    {
+     "t": "At every hop",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "MPLS skips that",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Express train labels",
+   "narration": "Think of a parcel sorting network. Normally every sorting centre reads the whole address. M P L S sticks a short label on at the first centre. Each centre in the middle just swaps the label and passes it on. The last centre removes the label and delivers it.",
+   "items": [
+    {
+     "icon": "envelope",
+     "story": "Normal IP routing",
+     "real": "Full lookup at every hop",
+     "cue": 1
+    },
+    {
+     "icon": "stamp",
+     "story": "Push at the ingress router",
+     "real": "LER adds the label",
+     "cue": 2
+    },
+    {
+     "icon": "road",
+     "story": "Swap at the middle routers",
+     "real": "LSRs swap labels",
+     "cue": 3
+    },
+    {
+     "icon": "door",
+     "story": "Pop at the egress router",
+     "real": "LER removes it",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Facts to remember",
+   "narration": "A few details show up on the exam. M P L S sits between layer two and layer three. A label is thirty two bits long. The three actions are push, swap and pop. L D P shares labels on port six four six.",
+   "lines": [
+    {
+     "t": "Layer 2.5",
+     "note": "Between Layer 2 and Layer 3",
+     "cue": 1
+    },
+    {
+     "t": "Label = 32 bits",
+     "note": "20 label, 3 EXP, 1 S, 8 TTL",
+     "cue": 2
+    },
+    {
+     "t": "push, swap, pop",
+     "note": "Ingress, middle, egress",
+     "cue": 3
+    },
+    {
+     "t": "LDP   port 646",
+     "note": "Shares labels between routers",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three mix-ups. Only the first router looks up the I P address. The label is pushed on at the ingress router. And penultimate hop popping means the second last router removes the label.",
+   "items": [
+    {
+     "wrong": "MPLS looks up the full IP at each hop",
+     "right": "Only at the ingress router",
+     "cue": 1
+    },
+    {
+     "wrong": "The label is added at the middle",
+     "right": "Added at the ingress (push)",
+     "cue": 2
+    },
+    {
+     "wrong": "PHP is done by the egress router",
+     "right": "The second-to-last router pops it",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva MPLS lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. M P L S forwards on short labels instead of full addresses. The actions are push, swap and pop. It sits at layer two and a half. Ready to practise? Try the Courseiva MPLS lab.",
+   "points": [
+    {
+     "t": "Forwards on labels, not full IPs",
+     "cue": 1
+    },
+    {
+     "t": "Push, swap, pop",
+     "cue": 2
+    },
+    {
+     "t": "Layer 2.5",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

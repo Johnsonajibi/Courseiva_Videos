@@ -1,0 +1,142 @@
+{
+ "topic": "ip-services-overview",
+ "title": "IP Services Overview: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 IP SERVICES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "A hotel has a front desk, a concierge and a switchboard. Together they make a guest's stay smooth. D H C P, N A T and D N S do the same for a network.",
+   "lines": [
+    {
+     "t": "A hotel",
+     "cue": 0
+    },
+    {
+     "t": "They work together",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "IP services do the same",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hotel",
+   "narration": "Three services quietly do most of the work. The front desk hands out a room number, which is D H C P. The switchboard presents one public number to the outside, which is N A T. The concierge turns names into room numbers, which is D N S. And a relay carries requests across buildings, which is the helper address.",
+   "items": [
+    {
+     "icon": "key",
+     "story": "DHCP",
+     "real": "Hands out IP addresses",
+     "cue": 1
+    },
+    {
+     "icon": "envelope",
+     "story": "NAT / PAT",
+     "real": "Many private to one public",
+     "cue": 2
+    },
+    {
+     "icon": "book",
+     "story": "DNS",
+     "real": "Names to addresses",
+     "cue": 3
+    },
+    {
+     "icon": "router",
+     "story": "ip helper-address",
+     "real": "DHCP relay",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "flow",
+   "type": "flow",
+   "heading": "DHCP in four steps",
+   "narration": "D H C P follows the word D O R A. Discover. Offer. Request. Acknowledge.",
+   "steps": [
+    {
+     "icon": "laptop",
+     "title": "D: Discover",
+     "sub": "Client shouts for a server",
+     "cue": 1
+    },
+    {
+     "icon": "server",
+     "title": "O: Offer",
+     "sub": "Server offers an address",
+     "cue": 2
+    },
+    {
+     "icon": "laptop",
+     "title": "R: Request",
+     "sub": "Client asks for it",
+     "cue": 3
+    },
+    {
+     "icon": "server",
+     "title": "A: Ack",
+     "sub": "Server confirms",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. N A T isn't a firewall. D H C P gives a whole configuration. And D N S resolves internal names as well.",
+   "items": [
+    {
+     "wrong": "NAT is a firewall",
+     "right": "It translates; it doesn't inspect",
+     "cue": 1
+    },
+    {
+     "wrong": "DHCP only gives an IP",
+     "right": "Also mask, gateway, DNS",
+     "cue": 2
+    },
+    {
+     "wrong": "DNS is for browsing only",
+     "right": "It resolves any internal name too",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva IP services lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. D H C P assigns, N A T translates and D N S names. Remember D O R A. N A T is not a firewall. Ready to practise? Try the Courseiva IP services lab.",
+   "points": [
+    {
+     "t": "DHCP assigns, NAT translates, DNS names",
+     "cue": 1
+    },
+    {
+     "t": "DORA",
+     "cue": 2
+    },
+    {
+     "t": "NAT is not a firewall",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

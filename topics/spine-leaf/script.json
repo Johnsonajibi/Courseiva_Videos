@@ -1,0 +1,144 @@
+{
+ "topic": "spine-leaf",
+ "title": "Spine-Leaf: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 SPINE-LEAF",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "Picture a thousand passengers at one busy airport. In the old design, they all queue at one checkpoint. Spine leaf gives everyone a short, even path.",
+   "lines": [
+    {
+     "t": "A thousand passengers",
+     "cue": 0
+    },
+    {
+     "t": "One security checkpoint",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "Spine and leaf fixes that",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The airport terminal",
+   "narration": "Spine leaf has just two tiers. Leaf switches sit at the top of each rack, and connect to the servers. Spine switches form the backbone. Every leaf connects to every spine. So any two servers are always exactly two hops apart.",
+   "items": [
+    {
+     "icon": "server",
+     "story": "Leaf switches",
+     "real": "Top-of-rack",
+     "cue": 1
+    },
+    {
+     "icon": "router",
+     "story": "Spine switches",
+     "real": "The backbone",
+     "cue": 2
+    },
+    {
+     "icon": "link",
+     "story": "Full mesh, leaf to spine",
+     "real": "No leaf-to-leaf links",
+     "cue": 3
+    },
+    {
+     "icon": "road",
+     "story": "Two hops, always",
+     "real": "Predictable latency",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Old vs new",
+   "narration": "Here's why data centres use it. Paths vary in a three tier network, but spine leaf is always two hops. It suits east west traffic between servers. It uses routing and E C M P instead of spanning tree.",
+   "left": {
+    "title": "Three-tier",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "Spine-leaf",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Path",
+     "l": "Varies",
+     "r": "Always 2 hops",
+     "cue": 1
+    },
+    {
+     "label": "Traffic flow",
+     "l": "North-south",
+     "r": "East-west",
+     "cue": 2
+    },
+    {
+     "label": "Loop control",
+     "l": "STP",
+     "r": "Routing and ECMP",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It's mainly a layer three routed design. Spine switches don't link to each other. And leaf switches don't link to each other either.",
+   "items": [
+    {
+     "wrong": "Spine-leaf is Layer 2 with STP",
+     "right": "It's a Layer 3 routed fabric",
+     "cue": 1
+    },
+    {
+     "wrong": "Spines connect to each other",
+     "right": "No spine-to-spine links",
+     "cue": 2
+    },
+    {
+     "wrong": "Leaves can link directly",
+     "right": "No leaf-to-leaf links",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva spine-leaf lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Every leaf connects to every spine. Any two servers are two hops apart. It uses routing and E C M P. Ready to practise? Try the Courseiva spine-leaf lab.",
+   "points": [
+    {
+     "t": "Every leaf to every spine",
+     "cue": 1
+    },
+    {
+     "t": "Always two hops",
+     "cue": 2
+    },
+    {
+     "t": "Routed, with ECMP",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

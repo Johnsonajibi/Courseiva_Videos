@@ -1,0 +1,144 @@
+{
+ "topic": "wan-internet-access",
+ "title": "Cable Modem vs DSL: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CABLE VS DSL",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "cloud",
+   "narration": "There are two classic ways to get internet into a home. One shares a big pipe with the neighbours. The other has its own private line.",
+   "lines": [
+    {
+     "t": "Two ways home",
+     "cue": 0
+    },
+    {
+     "t": "Cable",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "DSL",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Shared pipe or private pipe",
+   "narration": "Think of water coming into a street. With cable, one big main pipe feeds the whole street. With D S L, every house gets its own pipe to the water company. But D S L slows down the further your house is from the exchange. And cable can slow down when everyone is online at the same time.",
+   "items": [
+    {
+     "icon": "people",
+     "story": "Cable: shared bandwidth",
+     "real": "Neighbours share one channel",
+     "cue": 1
+    },
+    {
+     "icon": "building",
+     "story": "DSL: dedicated line",
+     "real": "Your own line to the exchange",
+     "cue": 2
+    },
+    {
+     "icon": "ruler",
+     "story": "DSL speed vs distance",
+     "real": "Longer line = slower",
+     "cue": 3
+    },
+    {
+     "icon": "clock",
+     "story": "Cable at peak time",
+     "real": "Sharing slows everyone",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Cable vs DSL",
+   "narration": "Here are the key facts. Cable uses coaxial and shares it, while D S L uses the phone line on its own. At the provider, cable ends on a C M T S, and D S L ends on a D S L A M. Cable follows the DOCSIS standard, and D S L often logs in using P P P o E.",
+   "left": {
+    "title": "Cable",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "DSL",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Line",
+     "l": "Shared coaxial",
+     "r": "Dedicated phone line",
+     "cue": 1
+    },
+    {
+     "label": "ISP side",
+     "l": "CMTS",
+     "r": "DSLAM",
+     "cue": 2
+    },
+    {
+     "label": "Standard",
+     "l": "DOCSIS",
+     "r": "PPPoE login",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three things to remember. D S L is dedicated, not shared. Its speed drops the further you are from the exchange. And the C M T S is for cable, while the D S L A M is for D S L.",
+   "items": [
+    {
+     "wrong": "DSL shares bandwidth like cable",
+     "right": "DSL has a dedicated line",
+     "cue": 1
+    },
+    {
+     "wrong": "DSL speed is the same everywhere",
+     "right": "It drops with distance",
+     "cue": 2
+    },
+    {
+     "wrong": "The CMTS is for DSL",
+     "right": "CMTS is cable; DSLAM is DSL",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva cable and DSL lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Cable shares bandwidth, and D S L has its own line. D S L slows down with distance. C M T S means cable, and D S L A M means D S L. Ready to practise? Try the Courseiva cable and DSL lab.",
+   "points": [
+    {
+     "t": "Cable: shared. DSL: dedicated",
+     "cue": 1
+    },
+    {
+     "t": "DSL slows with distance",
+     "cue": 2
+    },
+    {
+     "t": "CMTS = cable; DSLAM = DSL",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

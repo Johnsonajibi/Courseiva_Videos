@@ -48,3 +48,30 @@ def rc(label, pts):
     """Standard recap. pts = [(spoken, on_screen)] x3 -> narration 'So, to recap. a. b. c. Ready to practise? Try the Courseiva <label> lab.'"""
     nar = "So, to recap. " + " ".join(p[0] for p in pts) + f" Ready to practise? Try the Courseiva {label} lab."
     return recap(nar, [(pts[i][1], i + 1) for i in range(len(pts))], f"Try the Courseiva {label} lab", len(pts) + 1)
+
+# ---- auto-cue helpers: narration = intro + one sentence per row; cues assigned automatically ----
+def _j(*s): return " ".join(x.strip() for x in s if x and x.strip())
+
+def H(icon, items):
+    """items=[(on_screen, sentence[, color])] -> 1 sentence per line (cue i)."""
+    return hook(icon, [(it[0], i, *(it[2:])) for i, it in enumerate(items)], _j(*[it[1] for it in items]))
+
+def S(heading, intro, rows):
+    """rows=[(icon, sentence, story, real)] -> cue i+1."""
+    return story(heading, _j(intro, *[r[1] for r in rows]), [(r[0], r[2], r[3], i + 1) for i, r in enumerate(rows)])
+
+def F(heading, intro, rows):
+    """rows=[(icon, sentence, title, sub)]"""
+    return flow(heading, _j(intro, *[r[1] for r in rows]), [(r[0], r[2], r[3], i + 1) for i, r in enumerate(rows)])
+
+def V(heading, left, right, intro, rows):
+    """rows=[(label, l, r, sentence)]"""
+    return versus(heading, left, right, _j(intro, *[r[3] for r in rows]), [(r[0], r[1], r[2], i + 1) for i, r in enumerate(rows)])
+
+def T(heading, intro, rows):
+    """rows=[(code, note, sentence[, color])]"""
+    return term(heading, _j(intro, *[r[2] for r in rows]), [(r[0], r[1], i + 1, *(r[3:])) for i, r in enumerate(rows)])
+
+def TR(intro, rows):
+    """rows=[(wrong, right, sentence)]"""
+    return traps(_j(intro, *[r[2] for r in rows]), [(r[0], r[1], i + 1) for i, r in enumerate(rows)])
