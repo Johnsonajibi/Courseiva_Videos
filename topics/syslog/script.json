@@ -1,0 +1,139 @@
+{
+ "topic": "syslog",
+ "title": "Syslog: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 SYSLOG",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "bell",
+   "narration": "Your network devices are constantly reporting what happens. Some messages are trivial, and some are urgent. Syslog severity sorts them out.",
+   "lines": [
+    {
+     "t": "Devices are talking",
+     "cue": 0
+    },
+    {
+     "t": "Too much noise",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Severity sorts them",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The hospital triage",
+   "narration": "A hospital triages patients from zero to seven. Zero is an emergency, the most serious of all. Three is an error, and four is a warning. Six is informational, and seven is debugging. Messages travel over U D P port five fourteen by default.",
+   "items": [
+    {
+     "icon": "bell",
+     "story": "0: Emergency",
+     "real": "Most severe",
+     "cue": 1
+    },
+    {
+     "icon": "wrench",
+     "story": "3: Error, 4: Warning",
+     "real": "Common levels",
+     "cue": 2
+    },
+    {
+     "icon": "book",
+     "story": "6: Info, 7: Debug",
+     "real": "Least severe",
+     "cue": 3
+    },
+    {
+     "icon": "link",
+     "story": "UDP 514",
+     "real": "TCP optional",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Basic setup",
+   "narration": "Send logs to a server like this. Choose the log server. Pick the severity to send. Add timestamps. And read the local log.",
+   "lines": [
+    {
+     "t": "logging host 192.168.1.50",
+     "note": "Where to send messages",
+     "cue": 1
+    },
+    {
+     "t": "logging trap informational",
+     "note": "Level to send",
+     "cue": 2
+    },
+    {
+     "t": "service timestamps log datetime",
+     "note": "Add the time",
+     "cue": 3
+    },
+    {
+     "t": "show logging",
+     "note": "See the buffer",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Zero is the most severe. The default trap level is six. It uses U D P five fourteen.",
+   "items": [
+    {
+     "wrong": "Zero is the least severe",
+     "right": "Zero is the most severe",
+     "cue": 1
+    },
+    {
+     "wrong": "Default trap level is 7",
+     "right": "It's 6, informational",
+     "cue": 2
+    },
+    {
+     "wrong": "Syslog uses TCP 514",
+     "right": "UDP 514",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva syslog lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Severity zero is the worst, and seven is the chattiest. Default trap level is informational. It runs on U D P five fourteen. Ready to practise? Try the Courseiva syslog lab.",
+   "points": [
+    {
+     "t": "0 worst; 7 chattiest",
+     "cue": 1
+    },
+    {
+     "t": "Default trap level: 6",
+     "cue": 2
+    },
+    {
+     "t": "UDP 514",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

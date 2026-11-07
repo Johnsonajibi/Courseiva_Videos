@@ -1,0 +1,110 @@
+{
+ "topic": "network-management",
+ "title": "Network Management Tools: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NETWORK MANAGEMENT",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "A building superintendent has several tools. Each one does a different job. Picking the right one is the skill.",
+   "lines": [
+    {
+     "t": "The building superintendent",
+     "cue": 0
+    },
+    {
+     "t": "One for each job",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Pick the right one",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The superintendent",
+   "narration": "Each protocol answers a different question. S N M P polls devices and sends traps. Syslog collects event messages. NetFlow shows who is talking to whom. Severity zero is the most critical in syslog.",
+   "items": [
+    {
+     "icon": "gear",
+     "story": "SNMP",
+     "real": "UDP 161 and 162",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "Syslog",
+     "real": "UDP 514",
+     "cue": 2
+    },
+    {
+     "icon": "map",
+     "story": "NetFlow",
+     "real": "UDP 2055",
+     "cue": 3
+    },
+    {
+     "icon": "scale",
+     "story": "Severity 0",
+     "real": "Most critical",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. S N M P traps alert in real time. S N M P gives interface totals. Zero is the most critical.",
+   "items": [
+    {
+     "wrong": "Syslog is best for real-time alerts",
+     "right": "SNMP traps are",
+     "cue": 1
+    },
+    {
+     "wrong": "NetFlow shows interface totals",
+     "right": "SNMP does",
+     "cue": 2
+    },
+    {
+     "wrong": "Level one is the most critical",
+     "right": "Zero is",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva management tools lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. S N M P polls, syslog logs, and NetFlow shows flows. Zero is the worst syslog level. Know the ports: one sixty one, five fourteen, two zero five five. Ready to practise? Try the Courseiva management tools lab.",
+   "points": [
+    {
+     "t": "SNMP polls; syslog logs; NetFlow shows flows",
+     "cue": 1
+    },
+    {
+     "t": "Syslog 0 = worst",
+     "cue": 2
+    },
+    {
+     "t": "161, 514, 2055",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

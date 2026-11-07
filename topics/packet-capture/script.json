@@ -1,0 +1,110 @@
+{
+ "topic": "packet-capture",
+ "title": "Reading Packet Captures: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 PACKET CAPTURES",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "book",
+   "narration": "A packet capture is a recording of what crossed the wire. Reading one is a skill the exam now tests. Let's learn to spot the clues.",
+   "lines": [
+    {
+     "t": "A packet capture",
+     "cue": 0
+    },
+    {
+     "t": "Reading it is a skill",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Look for the clues",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The postal investigation",
+   "narration": "Each type of packet leaves a clue. A R P requests with no reply point to a layer two problem. I C M P type three code four means the packet needed fragmenting. One time exceeded message is normal, since that's how traceroute works. T C P retransmissions point to loss, or to a slow receiver.",
+   "items": [
+    {
+     "icon": "question",
+     "story": "ARP, no reply",
+     "real": "Wrong VLAN, host down",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "ICMP 3/4",
+     "real": "MTU problem",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "ICMP Time Exceeded",
+     "real": "Not always a loop",
+     "cue": 3
+    },
+    {
+     "icon": "envelope",
+     "story": "TCP retransmits",
+     "real": "Not always loss",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It might be a VLAN or a host issue. Traceroute causes them too. They can mean other things.",
+   "items": [
+    {
+     "wrong": "No ARP reply means the IP is wrong",
+     "right": "Could be VLAN or host",
+     "cue": 1
+    },
+    {
+     "wrong": "One Time Exceeded means a loop",
+     "right": "Traceroute causes these",
+     "cue": 2
+    },
+    {
+     "wrong": "Retransmits always mean loss",
+     "right": "Could be a slow receiver",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva packet captures lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. A R P with no reply means look at layer two. I C M P three four means M T U trouble. Don't jump to conclusions from one packet. Ready to practise? Try the Courseiva packet captures lab.",
+   "points": [
+    {
+     "t": "ARP no reply = Layer 2",
+     "cue": 1
+    },
+    {
+     "t": "ICMP 3/4 = MTU",
+     "cue": 2
+    },
+    {
+     "t": "Don't conclude from one packet",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

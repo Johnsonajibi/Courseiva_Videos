@@ -1,0 +1,110 @@
+{
+ "topic": "data-formats",
+ "title": "JSON for Networking: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 JSON",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "list",
+   "narration": "A shipping manifest lists everything in a neat, standard way. Machines can read it without guessing. That's what J S O N does for data.",
+   "lines": [
+    {
+     "t": "A shipping manifest",
+     "cue": 0
+    },
+    {
+     "t": "Machines read it easily",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's JSON",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The manifest",
+   "narration": "J S O N has a few strict rules. Keys and text must use double quotes. It has six types, including objects and arrays. No trailing commas are allowed. And no comments are allowed either.",
+   "items": [
+    {
+     "icon": "lock",
+     "story": "Double quotes only",
+     "real": "Not single",
+     "cue": 1
+    },
+    {
+     "icon": "box",
+     "story": "Six data types",
+     "real": "String, number, boolean, null, object, array",
+     "cue": 2
+    },
+    {
+     "icon": "wrench",
+     "story": "No trailing commas",
+     "real": "Common mistake",
+     "cue": 3
+    },
+    {
+     "icon": "book",
+     "story": "No comments",
+     "real": "Not like code",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Only double quotes work. J S O N has no comments. The pipe doesn't work on every command.",
+   "items": [
+    {
+     "wrong": "Single quotes are fine",
+     "right": "Double only",
+     "cue": 1
+    },
+    {
+     "wrong": "Comments are allowed",
+     "right": "They aren't",
+     "cue": 2
+    },
+    {
+     "wrong": "| json works everywhere",
+     "right": "Not every command",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva JSON lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Double quotes, no trailing commas, no comments. Six data types. It's how scripts read device data. Ready to practise? Try the Courseiva JSON lab.",
+   "points": [
+    {
+     "t": "Double quotes; no trailing commas; no comments",
+     "cue": 1
+    },
+    {
+     "t": "Six data types",
+     "cue": 2
+    },
+    {
+     "t": "How scripts read device data",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

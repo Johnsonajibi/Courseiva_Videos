@@ -1,0 +1,139 @@
+{
+ "topic": "rest-apis",
+ "title": "REST APIs: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 REST APIS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "book",
+   "narration": "Picture a restaurant with a menu and a waiter. You order from the menu, and the waiter brings it back. That's how a R E S T A P I works.",
+   "lines": [
+    {
+     "t": "A restaurant",
+     "cue": 0
+    },
+    {
+     "t": "You order, they bring it",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's a REST API",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Ordering at the restaurant",
+   "narration": "Each H T T P method is a kind of order. GET reads something from the menu. POST creates a new order. PUT replaces an order, and PATCH changes part of it. DELETE cancels it.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "GET",
+     "real": "Read",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "POST",
+     "real": "Create",
+     "cue": 2
+    },
+    {
+     "icon": "gear",
+     "story": "PUT / PATCH",
+     "real": "Replace / modify",
+     "cue": 3
+    },
+    {
+     "icon": "lock",
+     "story": "DELETE",
+     "real": "Remove",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Status codes",
+   "narration": "The waiter answers with a number. Two hundred means it worked. Two oh one means something new was created. Four oh one means you're not logged in. And four oh four means it doesn't exist.",
+   "lines": [
+    {
+     "t": "200 OK",
+     "note": "It worked",
+     "cue": 1
+    },
+    {
+     "t": "201 Created",
+     "note": "New item made",
+     "cue": 2
+    },
+    {
+     "t": "401 Unauthorized",
+     "note": "Log in first",
+     "cue": 3
+    },
+    {
+     "t": "404 Not Found",
+     "note": "No such item",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Network devices use it too. One replaces, one modifies. Four oh three means forbidden.",
+   "items": [
+    {
+     "wrong": "REST is only for websites",
+     "right": "Network devices use it too",
+     "cue": 1
+    },
+    {
+     "wrong": "PUT and PATCH are the same",
+     "right": "Replace vs modify",
+     "cue": 2
+    },
+    {
+     "wrong": "401 means forbidden",
+     "right": "403 means forbidden",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva REST APIs lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. GET reads, POST creates, PUT replaces, DELETE removes. Two hundred means success. Four oh one is login, and four oh three is forbidden. Ready to practise? Try the Courseiva REST APIs lab.",
+   "points": [
+    {
+     "t": "GET, POST, PUT, DELETE",
+     "cue": 1
+    },
+    {
+     "t": "200 = OK",
+     "cue": 2
+    },
+    {
+     "t": "401 login; 403 forbidden",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

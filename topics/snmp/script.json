@@ -1,0 +1,144 @@
+{
+ "topic": "snmp",
+ "title": "SNMP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 SNMP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "gear",
+   "narration": "A network might have a hundred devices to watch. You can't walk up to each one. S N M P lets you ask them remotely.",
+   "lines": [
+    {
+     "t": "A hundred devices",
+     "cue": 0
+    },
+    {
+     "t": "You can't visit each one",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "SNMP asks them remotely",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "A gated community",
+   "narration": "Think of a gated community with different gate systems. Version two C uses a community string, like a shared password. Version three adds real logins and encryption. Auth priv gives both authentication and encryption. Queries use U D P one sixty one, and traps use one sixty two.",
+   "items": [
+    {
+     "icon": "book",
+     "story": "SNMPv2c",
+     "real": "Plaintext community",
+     "cue": 1
+    },
+    {
+     "icon": "shield",
+     "story": "SNMPv3",
+     "real": "Users, auth, privacy",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "authPriv",
+     "real": "MD5 or SHA, plus AES",
+     "cue": 3
+    },
+    {
+     "icon": "link",
+     "story": "UDP 161 / 162",
+     "real": "Polls and traps",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "versus",
+   "type": "versus",
+   "heading": "Versions",
+   "narration": "Here's how they compare. Version two C uses a community string, and version three uses a username. Version two C has no encryption, but version three can encrypt. And version three has three security levels.",
+   "left": {
+    "title": "SNMPv2c",
+    "color": "#FB923C"
+   },
+   "right": {
+    "title": "SNMPv3",
+    "color": "#A3E635"
+   },
+   "rows": [
+    {
+     "label": "Login",
+     "l": "Community string",
+     "r": "Username",
+     "cue": 1
+    },
+    {
+     "label": "Encryption",
+     "l": "None",
+     "r": "AES available",
+     "cue": 2
+    },
+    {
+     "label": "Security level",
+     "l": "None",
+     "r": "noAuth, auth, authPriv",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Auth no priv doesn't encrypt. Community strings are plaintext. Version three uses users, not strings.",
+   "items": [
+    {
+     "wrong": "authNoPriv encrypts",
+     "right": "It authenticates only",
+     "cue": 1
+    },
+    {
+     "wrong": "Community strings are encrypted",
+     "right": "They're plaintext",
+     "cue": 2
+    },
+    {
+     "wrong": "v3 uses community strings",
+     "right": "It uses users",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva SNMP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Version three is the secure one. Queries use U D P one sixty one, and traps use one sixty two. Community strings are plaintext. Ready to practise? Try the Courseiva SNMP lab.",
+   "points": [
+    {
+     "t": "SNMPv3 is secure",
+     "cue": 1
+    },
+    {
+     "t": "UDP 161 queries; 162 traps",
+     "cue": 2
+    },
+    {
+     "t": "Community strings are plaintext",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

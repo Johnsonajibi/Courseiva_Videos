@@ -1,0 +1,110 @@
+{
+ "topic": "performance",
+ "title": "Bandwidth Saturation: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 PERFORMANCE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "road",
+   "narration": "The highway is jammed at rush hour. Some cars wait, and some are turned away. A busy link does exactly the same.",
+   "lines": [
+    {
+     "t": "The highway is jammed",
+     "cue": 0
+    },
+    {
+     "t": "Cars wait or give up",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Links do the same",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Highway congestion",
+   "narration": "A link fills up when too much traffic arrives at once. Sustained use above seventy percent is a warning. Above ninety percent is critical. The key symptom is output drops on the interface. I perf measures the real throughput between two points.",
+   "items": [
+    {
+     "icon": "scale",
+     "story": "70%: warning",
+     "real": "Sustained utilisation",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "90%: critical",
+     "real": "Expect problems",
+     "cue": 2
+    },
+    {
+     "icon": "box",
+     "story": "Output drops",
+     "real": "show interface",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "story": "iPerf3",
+     "real": "Active test",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three tips. It just means the link is busy. Output drops are the real clue. I perf measures throughput.",
+   "items": [
+    {
+     "wrong": "Full usage always means a fault",
+     "right": "It means saturation",
+     "cue": 1
+    },
+    {
+     "wrong": "Only input counters matter",
+     "right": "Output drops are the clue",
+     "cue": 2
+    },
+    {
+     "wrong": "A ping shows throughput",
+     "right": "iPerf does",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva saturation lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Seventy percent is a warning, and ninety is critical. Look for output drops. Test with I perf. Ready to practise? Try the Courseiva saturation lab.",
+   "points": [
+    {
+     "t": "70% warn; 90% critical",
+     "cue": 1
+    },
+    {
+     "t": "Output drops",
+     "cue": 2
+    },
+    {
+     "t": "Test with iPerf",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

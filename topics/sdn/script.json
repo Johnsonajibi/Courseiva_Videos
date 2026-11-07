@@ -1,0 +1,110 @@
+{
+ "topic": "sdn",
+ "title": "Software-Defined Networking: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 SDN",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "building",
+   "narration": "An airport has one control tower guiding every plane. The planes only follow the instructions. S D N brings that idea to networks.",
+   "lines": [
+    {
+     "t": "An airport control tower",
+     "cue": 0
+    },
+    {
+     "t": "Planes just fly",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "SDN works like that",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The control tower",
+   "narration": "S D N splits the brain from the muscle. The controller is the control tower, the control plane. Switches only forward, which is the data plane. Northbound A P Is connect apps to the controller. Southbound A P Is connect the controller to devices.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Control plane",
+     "real": "Centralised controller",
+     "cue": 1
+    },
+    {
+     "icon": "switch",
+     "story": "Data plane",
+     "real": "Forwarding devices",
+     "cue": 2
+    },
+    {
+     "icon": "cloud",
+     "story": "Northbound",
+     "real": "REST APIs",
+     "cue": 3
+    },
+    {
+     "icon": "link",
+     "story": "Southbound",
+     "real": "OpenFlow, NETCONF",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Routing logic moves, it doesn't vanish. REST is northbound. There are other southbound options.",
+   "items": [
+    {
+     "wrong": "SDN removes routing protocols",
+     "right": "It centralises control",
+     "cue": 1
+    },
+    {
+     "wrong": "REST is southbound",
+     "right": "REST is northbound",
+     "cue": 2
+    },
+    {
+     "wrong": "OpenFlow is the only southbound",
+     "right": "NETCONF too",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva SDN lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. The controller is the brain, and the devices only forward. Northbound talks to apps. Southbound talks to devices. Ready to practise? Try the Courseiva SDN lab.",
+   "points": [
+    {
+     "t": "Controller = brain; devices forward",
+     "cue": 1
+    },
+    {
+     "t": "Northbound: apps",
+     "cue": 2
+    },
+    {
+     "t": "Southbound: devices",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

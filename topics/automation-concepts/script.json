@@ -1,0 +1,110 @@
+{
+ "topic": "automation-concepts",
+ "title": "Network Automation: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NETWORK AUTOMATION",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "gear",
+   "narration": "A factory assembly line builds the same thing, perfectly, every time. Handcrafting is slow, and no two are alike. Automation puts the network on the assembly line.",
+   "lines": [
+    {
+     "t": "A factory line",
+     "cue": 0
+    },
+    {
+     "t": "Handcrafting is slow",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Automation is the line",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Assembly line vs handcrafting",
+   "narration": "Automation brings a few clear benefits. It applies the same settings to every device. Idempotent means running it twice changes nothing new. Ansible is agentless, so nothing is installed on devices. It frees engineers for the work that matters.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "Consistency",
+     "real": "Fewer human errors",
+     "cue": 1
+    },
+    {
+     "icon": "clock",
+     "story": "Idempotency",
+     "real": "Safe to repeat",
+     "cue": 2
+    },
+    {
+     "icon": "people",
+     "story": "Ansible",
+     "real": "Agentless",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "Doesn't replace engineers",
+     "real": "Helps all sizes",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It helps engineers, not replaces them. Small networks benefit too. Ansible is agentless.",
+   "items": [
+    {
+     "wrong": "Automation replaces engineers",
+     "right": "It supports them",
+     "cue": 1
+    },
+    {
+     "wrong": "Only for huge networks",
+     "right": "Small ones benefit too",
+     "cue": 2
+    },
+    {
+     "wrong": "Ansible needs an agent",
+     "right": "Agentless",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva automation lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Automation means fewer mistakes and faster changes. Idempotent means safe to repeat. Ansible is agentless. Ready to practise? Try the Courseiva automation lab.",
+   "points": [
+    {
+     "t": "Fewer mistakes; faster changes",
+     "cue": 1
+    },
+    {
+     "t": "Idempotent = safe to repeat",
+     "cue": 2
+    },
+    {
+     "t": "Ansible is agentless",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

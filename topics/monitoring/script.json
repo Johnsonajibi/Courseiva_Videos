@@ -1,0 +1,110 @@
+{
+ "topic": "monitoring",
+ "title": "Network Monitoring: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 MONITORING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "gear",
+   "narration": "A building manager watches every room from one screen. They get readings, and alarms when something breaks. S N M P does that for networks.",
+   "lines": [
+    {
+     "t": "A building management system",
+     "cue": 0
+    },
+    {
+     "t": "Alarms and readings",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "SNMP does that for networks",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The control room",
+   "narration": "S N M P has two ways to hear from a device. Polling means the manager asks for a reading. A trap is the device shouting that something happened. Only version three has real security. Old community strings are public for read and private for write.",
+   "items": [
+    {
+     "icon": "mic",
+     "story": "Polling",
+     "real": "UDP 161",
+     "cue": 1
+    },
+    {
+     "icon": "bell",
+     "story": "Trap",
+     "real": "UDP 162, unsolicited",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "SNMPv3",
+     "real": "Auth and encryption",
+     "cue": 3
+    },
+    {
+     "icon": "book",
+     "story": "public / private",
+     "real": "v1 and v2c defaults",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Quick facts. Traps use one sixty two. Community strings are plaintext. Only version three is secure.",
+   "items": [
+    {
+     "wrong": "Traps go to port 161",
+     "right": "Traps use 162",
+     "cue": 1
+    },
+    {
+     "wrong": "Strings are secret",
+     "right": "They're plaintext",
+     "cue": 2
+    },
+    {
+     "wrong": "Version two is secure",
+     "right": "Only version three",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva monitoring lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Polls are on one sixty one, and traps are on one sixty two. A trap is an alert from the device. Use version three for security. Ready to practise? Try the Courseiva monitoring lab.",
+   "points": [
+    {
+     "t": "161 polls; 162 traps",
+     "cue": 1
+    },
+    {
+     "t": "Trap = alert from device",
+     "cue": 2
+    },
+    {
+     "t": "Use SNMPv3",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "topic": "cdp-lldp",
+ "title": "CDP and LLDP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 CDP AND LLDP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "people",
+   "narration": "At a conference, people swap business cards. Network devices swap cards with their neighbours. C D P and L L D P are those cards.",
+   "lines": [
+    {
+     "t": "A conference",
+     "cue": 0
+    },
+    {
+     "t": "Switches do too",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "CDP and LLDP are the cards",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Business cards",
+   "narration": "Both protocols advertise who a device is. C D P is Cisco's own, and it's on by default. L L D P is the open standard, and it's off by default. C D P sends a card every sixty seconds. Neither crosses a router, so it only finds direct neighbours.",
+   "items": [
+    {
+     "icon": "stamp",
+     "story": "CDP",
+     "real": "Cisco proprietary, on by default",
+     "cue": 1
+    },
+    {
+     "icon": "list",
+     "story": "LLDP",
+     "real": "IEEE 802.1AB, off by default",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "CDP timer: 60 s",
+     "real": "Hold time 180 s",
+     "cue": 3
+    },
+    {
+     "icon": "door",
+     "story": "Layer 2 only",
+     "real": "One hop",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Commands",
+   "narration": "Check neighbours like this. See your C D P neighbours. Turn on L L D P. And see the L L D P neighbours.",
+   "lines": [
+    {
+     "t": "show cdp neighbors",
+     "note": "Who's next door",
+     "cue": 1
+    },
+    {
+     "t": "lldp run",
+     "note": "Turn LLDP on",
+     "cue": 2
+    },
+    {
+     "t": "show lldp neighbors",
+     "note": "LLDP neighbours",
+     "cue": 3,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. L L D P is off by default. It stops at the first router. The hold time is longer than the timer.",
+   "items": [
+    {
+     "wrong": "LLDP is on by default",
+     "right": "CDP is; LLDP isn't",
+     "cue": 1
+    },
+    {
+     "wrong": "CDP crosses routers",
+     "right": "Direct neighbours only",
+     "cue": 2
+    },
+    {
+     "wrong": "Holdtime equals timer",
+     "right": "Hold is three times longer",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva CDP and LLDP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. C D P is Cisco, and L L D P is the standard. Only C D P is on by default. They find direct neighbours only. Ready to practise? Try the Courseiva CDP and LLDP lab.",
+   "points": [
+    {
+     "t": "CDP: Cisco. LLDP: standard",
+     "cue": 1
+    },
+    {
+     "t": "CDP on by default",
+     "cue": 2
+    },
+    {
+     "t": "Direct neighbours only",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

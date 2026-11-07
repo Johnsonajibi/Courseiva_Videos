@@ -1,0 +1,110 @@
+{
+ "topic": "config-mgmt-tools",
+ "title": "Ansible: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 ANSIBLE",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "list",
+   "narration": "An orchestra conductor reads from sheet music. The players simply follow along. That's how Ansible works.",
+   "lines": [
+    {
+     "t": "A conductor and sheet music",
+     "cue": 0
+    },
+    {
+     "t": "The players follow",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's Ansible",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The orchestra",
+   "narration": "Ansible pushes instructions out to every device. The control node is the conductor. It connects to each device over S S H. The sheet music is a playbook, written in Y A M L. Each task calls a module to do one job.",
+   "items": [
+    {
+     "icon": "laptop",
+     "story": "Control node",
+     "real": "Pushes the config",
+     "cue": 1
+    },
+    {
+     "icon": "lock",
+     "story": "SSH",
+     "real": "No agent needed",
+     "cue": 2
+    },
+    {
+     "icon": "book",
+     "story": "Playbook (YAML)",
+     "real": "Plays and tasks",
+     "cue": 3
+    },
+    {
+     "icon": "gear",
+     "story": "Modules",
+     "real": "Run on the control node",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It's agentless. Playbooks are written in Y A M L. Modules run on the control node.",
+   "items": [
+    {
+     "wrong": "Ansible needs an agent",
+     "right": "Agentless",
+     "cue": 1
+    },
+    {
+     "wrong": "Playbooks are JSON",
+     "right": "YAML",
+     "cue": 2
+    },
+    {
+     "wrong": "Modules run on the device",
+     "right": "On the control node",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Ansible lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Ansible pushes over S S H, with no agent. Playbooks are Y A M L. Modules run on the control node. Ready to practise? Try the Courseiva Ansible lab.",
+   "points": [
+    {
+     "t": "Push over SSH; no agent",
+     "cue": 1
+    },
+    {
+     "t": "Playbooks are YAML",
+     "cue": 2
+    },
+    {
+     "t": "Modules run on the control node",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

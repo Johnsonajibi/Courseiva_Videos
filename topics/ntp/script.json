@@ -1,0 +1,139 @@
+{
+ "topic": "ntp",
+ "title": "NTP: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NTP",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "clock",
+   "narration": "Every device has its own clock, and they all drift. Logs from different devices stop lining up. N T P keeps every clock in step.",
+   "lines": [
+    {
+     "t": "Every clock disagrees",
+     "cue": 0
+    },
+    {
+     "t": "Logs become useless",
+     "cue": 1,
+     "color": "#F87171"
+    },
+    {
+     "t": "NTP fixes the time",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The town clock",
+   "narration": "Think of a town clock that everyone sets their pocket watch by. The most accurate source is stratum zero, like an atomic clock. Each step away adds one to the stratum number. Sixteen means the device isn't in sync at all. It all runs over U D P port one two three.",
+   "items": [
+    {
+     "icon": "clock",
+     "story": "Stratum 0",
+     "real": "Reference clock",
+     "cue": 1
+    },
+    {
+     "icon": "building",
+     "story": "Stratum 1 to 15",
+     "real": "Further from the source",
+     "cue": 2
+    },
+    {
+     "icon": "lock",
+     "story": "Stratum 16",
+     "real": "Unsynchronised",
+     "cue": 3
+    },
+    {
+     "icon": "link",
+     "story": "UDP 123",
+     "real": "Time messages",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Setting it up",
+   "narration": "Setup is short. Point the device at a time server. Turn on authentication. Check the status. And check who it's syncing with.",
+   "lines": [
+    {
+     "t": "ntp server 192.168.1.10",
+     "note": "Point at a time source",
+     "cue": 1
+    },
+    {
+     "t": "ntp authenticate",
+     "note": "Check the source is genuine",
+     "cue": 2
+    },
+    {
+     "t": "show ntp status",
+     "note": "Is it synced?",
+     "cue": 3
+    },
+    {
+     "t": "show ntp associations",
+     "note": "Who are we syncing to?",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. That command makes it a client. You must also turn on authentication. Only use master when there's no better source.",
+   "items": [
+    {
+     "wrong": "ntp server makes it a server",
+     "right": "It makes it a client",
+     "cue": 1
+    },
+    {
+     "wrong": "A key alone enables authentication",
+     "right": "Also ntp authenticate",
+     "cue": 2
+    },
+    {
+     "wrong": "Every server needs ntp master",
+     "right": "Only when no upstream",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva NTP lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. N T P keeps clocks in sync over U D P one two three. Lower stratum means closer to the source. Stratum sixteen means unsynchronised. Ready to practise? Try the Courseiva NTP lab.",
+   "points": [
+    {
+     "t": "NTP: UDP 123",
+     "cue": 1
+    },
+    {
+     "t": "Lower stratum = closer to source",
+     "cue": 2
+    },
+    {
+     "t": "Stratum 16 = unsynced",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

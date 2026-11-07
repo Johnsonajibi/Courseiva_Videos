@@ -1,0 +1,110 @@
+{
+ "topic": "netflow",
+ "title": "NetFlow: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 NETFLOW",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Who is using all your bandwidth? Interface counters only show the total. NetFlow shows who, and what they're doing.",
+   "lines": [
+    {
+     "t": "Who's using the bandwidth?",
+     "cue": 0
+    },
+    {
+     "t": "Interface counters don't say",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "NetFlow shows who and what",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Toll booth cameras",
+   "narration": "Imagine cameras at a toll booth logging every car. A flow is a stream of packets sharing the same seven fields. Those include addresses, ports, protocol, type of service and interface. Flows are exported after thirty minutes, or fifteen seconds quiet. Records go to a collector over U D P port two zero five five.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "A flow",
+     "real": "Same 7 key fields",
+     "cue": 1
+    },
+    {
+     "icon": "map",
+     "story": "Key fields",
+     "real": "IPs, ports, protocol, ToS, interface",
+     "cue": 2
+    },
+    {
+     "icon": "clock",
+     "story": "Timeouts",
+     "real": "Active 30 min; inactive 15 s",
+     "cue": 3
+    },
+    {
+     "icon": "server",
+     "story": "UDP 2055",
+     "real": "Collector",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It only records header information. Export uses U D P. The active timeout is thirty minutes.",
+   "items": [
+    {
+     "wrong": "NetFlow captures payloads",
+     "right": "Only headers and counts",
+     "cue": 1
+    },
+    {
+     "wrong": "Export uses TCP",
+     "right": "UDP",
+     "cue": 2
+    },
+    {
+     "wrong": "Active timeout is 15 seconds",
+     "right": "30 minutes",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva NetFlow lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. NetFlow shows who talks to whom, not what they say. A flow has seven key fields. Export goes to a collector on U D P two zero five five. Ready to practise? Try the Courseiva NetFlow lab.",
+   "points": [
+    {
+     "t": "Who talks to whom",
+     "cue": 1
+    },
+    {
+     "t": "7 key fields",
+     "cue": 2
+    },
+    {
+     "t": "UDP 2055 to a collector",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

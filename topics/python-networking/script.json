@@ -1,0 +1,110 @@
+{
+ "topic": "python-networking",
+ "title": "Python for Networking: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 PYTHON",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "laptop",
+   "narration": "Imagine a robot chef who follows recipe cards. Python is the recipe card for your network. Netmiko is the chef that logs into devices.",
+   "lines": [
+    {
+     "t": "A robot chef",
+     "cue": 0
+    },
+    {
+     "t": "Python is the recipe",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "Netmiko is the chef",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The robot chef",
+   "narration": "A few libraries do the heavy lifting. Paramiko is the low level S S H library. Netmiko is simpler, and built for network devices. You give it a dictionary with the device type, host, user and password. Use send command to read, and send config set to change.",
+   "items": [
+    {
+     "icon": "lock",
+     "story": "Paramiko",
+     "real": "Low-level SSH",
+     "cue": 1
+    },
+    {
+     "icon": "gear",
+     "story": "Netmiko",
+     "real": "Easier for networks",
+     "cue": 2
+    },
+    {
+     "icon": "list",
+     "story": "ConnectHandler",
+     "real": "device_type, host, username, password",
+     "cue": 3
+    },
+    {
+     "icon": "book",
+     "story": "send_command / send_config_set",
+     "real": "Read vs change",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Netmiko is easier for network gear. It normally runs on your own computer. Use send config set for changes.",
+   "items": [
+    {
+     "wrong": "Paramiko is easier than Netmiko",
+     "right": "Netmiko is simpler",
+     "cue": 1
+    },
+    {
+     "wrong": "Python runs on the device",
+     "right": "Runs on your computer",
+     "cue": 2
+    },
+    {
+     "wrong": "send_command enters config mode",
+     "right": "Use send_config_set",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva Python networking lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Netmiko makes S S H easy. Send command reads, and send config set changes. Scripts run on your computer. Ready to practise? Try the Courseiva Python networking lab.",
+   "points": [
+    {
+     "t": "Netmiko makes SSH easy",
+     "cue": 1
+    },
+    {
+     "t": "send_command reads; send_config_set changes",
+     "cue": 2
+    },
+    {
+     "t": "Scripts run on your computer",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

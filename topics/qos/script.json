@@ -1,0 +1,110 @@
+{
+ "topic": "qos",
+ "title": "QoS: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 QOS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "clock",
+   "narration": "Voice and video can't wait in a queue. Email can wait quite happily. Q o S decides who goes first.",
+   "lines": [
+    {
+     "t": "Voice and video can't wait",
+     "cue": 0
+    },
+    {
+     "t": "Email can",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "QoS decides who goes first",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The VIP security lane",
+   "narration": "Think of an airport with a fast lane for VIPs. Classification spots which packets are which. Marking stamps them with a priority value, called D S C P. Voice gets E F, which is forty six. L L Q gives voice a strict priority queue.",
+   "items": [
+    {
+     "icon": "list",
+     "story": "Classify",
+     "real": "Identify traffic",
+     "cue": 1
+    },
+    {
+     "icon": "stamp",
+     "story": "Mark: DSCP",
+     "real": "Layer 3 marking",
+     "cue": 2
+    },
+    {
+     "icon": "mic",
+     "story": "EF = 46",
+     "real": "Voice",
+     "cue": 3
+    },
+    {
+     "icon": "door",
+     "story": "LLQ",
+     "real": "Strict priority",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It doesn't create bandwidth. Priority is limited. C o S doesn't cross routers.",
+   "items": [
+    {
+     "wrong": "QoS gives more bandwidth",
+     "right": "It only chooses who goes first",
+     "cue": 1
+    },
+    {
+     "wrong": "Priority gives unlimited bandwidth",
+     "right": "It's policed",
+     "cue": 2
+    },
+    {
+     "wrong": "CoS survives routers",
+     "right": "Only DSCP does",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva QoS lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Classify, mark, then queue. Voice is E F, forty six. Q o S can't create bandwidth. Ready to practise? Try the Courseiva QoS lab.",
+   "points": [
+    {
+     "t": "Classify, mark, queue",
+     "cue": 1
+    },
+    {
+     "t": "Voice = EF (46)",
+     "cue": 2
+    },
+    {
+     "t": "QoS adds no bandwidth",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

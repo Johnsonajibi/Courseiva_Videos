@@ -1,0 +1,139 @@
+{
+ "topic": "troubleshooting-method",
+ "title": "Troubleshooting Method: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 TROUBLESHOOTING",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "wrench",
+   "narration": "Something on the network is broken. Most people start guessing. Good engineers start at the bottom.",
+   "lines": [
+    {
+     "t": "Something's broken",
+     "cue": 0
+    },
+    {
+     "t": "Where do you start?",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "Start at the bottom",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The car mechanic",
+   "narration": "A mechanic checks the simple things first. Start at layer one, the cables and the link lights. Then layer two, such as V L A Ns and trunks. Then layer three, addresses and routes. Work up one layer at a time until you find it.",
+   "items": [
+    {
+     "icon": "wrench",
+     "story": "Layer 1",
+     "real": "Cables, power, link",
+     "cue": 1
+    },
+    {
+     "icon": "switch",
+     "story": "Layer 2",
+     "real": "VLANs, trunks, MAC",
+     "cue": 2
+    },
+    {
+     "icon": "router",
+     "story": "Layer 3",
+     "real": "IP, routing",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "story": "Bottom-up",
+     "real": "Don't skip layers",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "commands",
+   "type": "terminal",
+   "heading": "Go-to commands",
+   "narration": "A few commands cover most checks. Check the interface. Check the V L A N. Check the trunk. And check the route.",
+   "lines": [
+    {
+     "t": "show interfaces",
+     "note": "Status and errors",
+     "cue": 1
+    },
+    {
+     "t": "show vlan brief",
+     "note": "Right VLAN?",
+     "cue": 2
+    },
+    {
+     "t": "show interfaces trunk",
+     "note": "Trunk allowed?",
+     "cue": 3
+    },
+    {
+     "t": "show ip route",
+     "note": "Is there a route?",
+     "cue": 4,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. Up up can still hide errors. A ping doesn't prove everything works. Reboot is a last resort.",
+   "items": [
+    {
+     "wrong": "Up/up means layer 1 is perfect",
+     "right": "Errors can hide",
+     "cue": 1
+    },
+    {
+     "wrong": "A good ping means all is well",
+     "right": "Apps can still fail",
+     "cue": 2
+    },
+    {
+     "wrong": "Reboot first",
+     "right": "Last resort",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva troubleshooting lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. Start at layer one and work up. Check interfaces, V L A Ns, trunks and routes. Never reboot first. Ready to practise? Try the Courseiva troubleshooting lab.",
+   "points": [
+    {
+     "t": "Bottom-up",
+     "cue": 1
+    },
+    {
+     "t": "Interfaces, VLANs, trunks, routes",
+     "cue": 2
+    },
+    {
+     "t": "Reboot last",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

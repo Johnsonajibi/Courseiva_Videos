@@ -1,0 +1,110 @@
+{
+ "topic": "netconf-yang",
+ "title": "YANG and NETCONF: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 YANG AND NETCONF",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "map",
+   "narration": "Every device needs a blueprint for how it's configured. A shared blueprint lets tools talk to any device. That blueprint is called YANG.",
+   "lines": [
+    {
+     "t": "Blueprints for devices",
+     "cue": 0
+    },
+    {
+     "t": "A shared language",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "That's YANG",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "Building blueprints",
+   "narration": "Three names get mixed up all the time. YANG is the data model, the blueprint itself. NETCONF delivers it, using X M L. RESTCONF delivers it too, using X M L or J S O N. Models starting with I E T F are standard.",
+   "items": [
+    {
+     "icon": "map",
+     "story": "YANG",
+     "real": "A modelling language",
+     "cue": 1
+    },
+    {
+     "icon": "link",
+     "story": "NETCONF",
+     "real": "XML, over SSH",
+     "cue": 2
+    },
+    {
+     "icon": "cloud",
+     "story": "RESTCONF",
+     "real": "XML or JSON",
+     "cue": 3
+    },
+    {
+     "icon": "list",
+     "story": "ietf- models",
+     "real": "e.g. ietf-interfaces",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It's a model, not a protocol. It models state too. It can use X M L or J S O N.",
+   "items": [
+    {
+     "wrong": "YANG is a protocol",
+     "right": "It's a data model",
+     "cue": 1
+    },
+    {
+     "wrong": "YANG only models config",
+     "right": "Also operational state",
+     "cue": 2
+    },
+    {
+     "wrong": "RESTCONF is JSON only",
+     "right": "XML or JSON",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva YANG lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. YANG is the blueprint. NETCONF and RESTCONF carry it. It covers config and state. Ready to practise? Try the Courseiva YANG lab.",
+   "points": [
+    {
+     "t": "YANG = blueprint",
+     "cue": 1
+    },
+    {
+     "t": "NETCONF and RESTCONF carry it",
+     "cue": 2
+    },
+    {
+     "t": "Config and state",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

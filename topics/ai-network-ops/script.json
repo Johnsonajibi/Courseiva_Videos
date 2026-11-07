@@ -1,0 +1,110 @@
+{
+ "topic": "ai-network-ops",
+ "title": "AI in Network Operations: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 AI NETWORK OPS",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "gear",
+   "narration": "A fleet manager watches hundreds of vehicles. They spot trouble before it happens. An A I agent can do the same for a network.",
+   "lines": [
+    {
+     "t": "A fleet manager",
+     "cue": 0
+    },
+    {
+     "t": "Spots trouble early",
+     "cue": 1,
+     "color": "#22D3EE"
+    },
+    {
+     "t": "An AI agent does that",
+     "cue": 2,
+     "color": "#FB923C"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The autonomous fleet manager",
+   "narration": "An agent follows a simple loop. It observes the network, using S N M P, NetFlow and logs. It builds a baseline of what normal looks like. It decides, and then it acts. A human stays in charge of the limits.",
+   "items": [
+    {
+     "icon": "wifi",
+     "story": "Observe",
+     "real": "Telemetry",
+     "cue": 1
+    },
+    {
+     "icon": "book",
+     "story": "Baseline",
+     "real": "Detect anomalies",
+     "cue": 2
+    },
+    {
+     "icon": "gear",
+     "story": "Decide and act",
+     "real": "Within guardrails",
+     "cue": 3
+    },
+    {
+     "icon": "person",
+     "story": "Human oversight",
+     "real": "Guardrails",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "traps",
+   "type": "traps",
+   "heading": "Common mix-ups",
+   "narration": "Three traps. It makes decisions, not just scripts. It needs guardrails. It depends on good data.",
+   "items": [
+    {
+     "wrong": "It's just scripting",
+     "right": "It decides on its own",
+     "cue": 1
+    },
+    {
+     "wrong": "No oversight needed",
+     "right": "Guardrails are essential",
+     "cue": 2
+    },
+    {
+     "wrong": "It needs no data",
+     "right": "Data is the fuel",
+     "cue": 3
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva AI network ops lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. An agent observes, decides and acts. It learns what normal looks like. Humans set the guardrails. Ready to practise? Try the Courseiva AI network ops lab.",
+   "points": [
+    {
+     "t": "Observe, decide, act",
+     "cue": 1
+    },
+    {
+     "t": "Learns a baseline",
+     "cue": 2
+    },
+    {
+     "t": "Humans set guardrails",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "topic": "sdwan",
+ "title": "SD-WAN: The Complete Beginner's Guide",
+ "kicker": "BEGINNER'S GUIDE \u00b7 SD-WAN",
+ "voice": "af_heart",
+ "lang": "en-us",
+ "speed": 0.95,
+ "version": "1.0",
+ "scenes": [
+  {
+   "id": "hook",
+   "type": "hook",
+   "icon": "road",
+   "narration": "Old networks relied on one expensive private line. Cheaper links sat unused. S D W A N uses every link at once.",
+   "lines": [
+    {
+     "t": "One expensive line",
+     "cue": 0
+    },
+    {
+     "t": "Cheap links sit idle",
+     "cue": 1,
+     "color": "#FB923C"
+    },
+    {
+     "t": "SD WAN uses them all",
+     "cue": 2,
+     "color": "#22D3EE"
+    }
+   ]
+  },
+  {
+   "id": "story",
+   "type": "story",
+   "heading": "The smart highway",
+   "narration": "Think of a highway system that watches the traffic. Control is centralised, so policy is set in one place. It can use M P L S, broadband and L T E together. It picks the best path for each application. If a link degrades, traffic moves automatically.",
+   "items": [
+    {
+     "icon": "building",
+     "story": "Central policy",
+     "real": "Controller",
+     "cue": 1
+    },
+    {
+     "icon": "road",
+     "story": "Multiple transports",
+     "real": "MPLS, broadband, LTE",
+     "cue": 2
+    },
+    {
+     "icon": "wifi",
+     "story": "Application-aware routing",
+     "real": "Per app",
+     "cue": 3
+    },
+    {
+     "icon": "shield",
+     "story": "Automatic failover",
+     "real": "Resilience",
+     "cue": 4
+    }
+   ]
+  },
+  {
+   "id": "recap",
+   "type": "recap",
+   "heading": "Remember this",
+   "cta": "Try the Courseiva SD-WAN lab",
+   "ctaCue": 4,
+   "narration": "So, to recap. S D W A N uses many links at once. Policy is set centrally. Traffic moves to the best path. Ready to practise? Try the Courseiva SD-WAN lab.",
+   "points": [
+    {
+     "t": "Many links at once",
+     "cue": 1
+    },
+    {
+     "t": "Central policy",
+     "cue": 2
+    },
+    {
+     "t": "Best path per app",
+     "cue": 3
+    }
+   ]
+  }
+ ]
+}
