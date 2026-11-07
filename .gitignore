@@ -8,3 +8,4 @@ topics/*/props.json
 public/*/
 !public/fonts/
 *.log
+__pycache__/

@@ -57,8 +57,8 @@ const Topology: React.FC<{topo: any; x: number; y: number; w: number; h: number;
             <Icon name={ICON[n.type] ?? "box"} x={p.x} y={p.y} s={0.78 * scale} color={col} />
             {n.pos === "top" ? (
               <>
-                <text x={p.x} y={p.y - r - 12 * scale - (n.sub ? 24 * scale : 0)} fontSize={24 * scale} fontFamily={FONT} fontWeight={800} fill={on ? C.cyan : C.text} textAnchor="middle">{n.label ?? n.id}</text>
-                {n.sub && <text x={p.x} y={p.y - r - 12 * scale} fontSize={19 * scale} fontFamily={MONO} fill={C.muted} textAnchor="middle">{n.sub}</text>}
+                <text x={p.x} y={p.y - r - 26 * scale - (n.sub ? 24 * scale : 0)} fontSize={24 * scale} fontFamily={FONT} fontWeight={800} fill={on ? C.cyan : C.text} textAnchor="middle">{n.label ?? n.id}</text>
+                {n.sub && <text x={p.x} y={p.y - r - 26 * scale} fontSize={19 * scale} fontFamily={MONO} fill={C.muted} textAnchor="middle">{n.sub}</text>}
               </>
             ) : (
               <>
@@ -113,8 +113,11 @@ const build = (data: any, cues: Cue[], frames: number): Ln[] => {
   const steps: any[] = data.steps;
   const out: Ln[] = [];
   let epoch = 0;
+  let prevDev: string = data.device;
   steps.forEach((st, i) => {
-    if (st.clear) epoch++;
+    const sd = st.dev ?? data.device;
+    if (st.clear || (i > 0 && sd !== prevDev)) epoch++;
+    prevDev = sd;
     const s = cf(cues, st.cue) + 4;
     const e = i + 1 < steps.length ? cf(cues, steps[i + 1].cue) : frames - 24;
     const win = Math.max(20, e - s - 10);
